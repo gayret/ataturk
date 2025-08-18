@@ -27,6 +27,12 @@ export default function Content() {
 
   const selectedItem = data.find((item: ItemType) => item.id === Number(searchParams.get('id')))
 
+  useEffect(() => {
+    document.title = selectedItem
+      ? `${selectedItem.title} - Atatürk Kronolojisi`
+      : 'Atatürk Kronolojisi'
+  }, [selectedItem])
+
   // ESC ile modal kapatma
   useEffect(() => {
     if (!modalImage) return
@@ -42,7 +48,7 @@ export default function Content() {
       <div className={styles.content}>
         <div className={styles.dateAndTitle}>
           <div className={styles.date}>{formatDate(selectedItem?.date || '')}</div>
-          <p className={styles.title}>
+          <h1 className={styles.title}>
             {selectedItem?.title}
             {selectedItem?.source && (
               <span className={styles.source} title={`Bilgi kaynağı: ${selectedItem.source}`}>
@@ -51,7 +57,7 @@ export default function Content() {
                 </a>
               </span>
             )}
-          </p>
+          </h1>
 
           {selectedItem?.description && (
             <p className={styles.description}>{selectedItem.description}</p>
