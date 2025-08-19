@@ -2,6 +2,7 @@ import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import styles from './About.module.css'
 import Contributors from './widgets/Contributors'
 import DonateButton from './widgets/donate-button/DonateButton'
+import Thanks from './widgets/thanks/Thanks'
 
 export default function About() {
   return (
@@ -13,6 +14,7 @@ export default function About() {
             Ulu Önder Gazi Mustafa Kemal Atatürk, Türk milletinin bağımsızlık mücadelesine önderlik
             ederek Türkiye Cumhuriyeti&apos;nin kurucusu olmuştur.
           </p>
+
           <p>
             Bu projenin amacı, Atatürk&apos;ün cesaret, vizyon ve özveriyle dolu olan hayatını
             kronolojik olarak anlatıp gençlere ilham vermektir.
@@ -25,22 +27,9 @@ export default function About() {
             inceleyebilirsiniz. Klavyenizdeki yön tuşlarıyla tarihler arasında geçiş yapabilirsiniz.
           </p>
 
-          <h4>Katkıda bulunun</h4>
-          <p>
-            Projenin kaynak kodları ve verileri herkese açıktır. Katkıda bulunmak için{' '}
-            <a href='https://github.com/gayret/ataturk' target='_blank'>
-              GitHub&#39;a
-            </a>{' '}
-            göz atabilirsiniz.
-          </p>
-
           <Contributors />
 
-          <h4>Teşekkür</h4>
-          <small>
-            Projeyi hayata geçirmem için yardımcı olan biricik karım İrem Çiftler Gayret&apos;e
-            teşekkür ederim.
-          </small>
+          <Thanks />
 
           <DonateButton />
         </div>

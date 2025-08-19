@@ -3,8 +3,22 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.contributor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
 }
 
 .contributor img {
-  border-radius: 50%;
+  border-radius: 1rem;
+}
+
+.contributor img:hover {
+  scale: 1.1;
+  transition: all 0.3s ease-in-out;
 }

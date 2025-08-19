@@ -34,9 +34,16 @@ export default function Contributors() {
   return (
     contributors.length > 0 && (
       <section>
-        <div>
-          <h4>Katkıda bulunanlar</h4>
-        </div>
+        <h4>Geliştirenler</h4>
+
+        <small>
+          Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için{' '}
+          <a href='https://github.com/gayret/ataturk' target='_blank'>
+            <strong>GitHub</strong>&#39;a
+          </a>{' '}
+          göz atabilirsiniz.
+        </small>
+
         <div className={styles.contributors}>
           {contributors.map((contributor, index) => (
             <a

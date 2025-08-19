@@ -13,6 +13,7 @@ type ItemType = {
   description?: string
   images?: ImageType[]
   source?: string
+  sounds?: { url: string; alt: string; source?: string }[]
 }
 
 type ImageType = {

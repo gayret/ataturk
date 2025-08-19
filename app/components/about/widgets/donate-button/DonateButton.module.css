@@ -11,7 +11,8 @@
   margin-inline: auto;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.1rem;
+  padding: 0.5rem 1.1rem;
+  padding-bottom: 0.8rem;
   border-radius: 999px;
   background: var(--btn-bg);
   color: var(--btn-text);
