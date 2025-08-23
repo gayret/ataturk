@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { useEffect, useRef } from 'react'
+import TurkishCountryLabels from './widgets/TurkishCountryLabels'
 
 const icon = L.icon({
   iconUrl: '/icons/location.svg',
@@ -52,7 +53,7 @@ function MapCenterUpdater({ location }: MapProps) {
 }
 
 export default function Map({ location }: MapProps) {
-  // Random zoom between 6 and 8
+  // Random zoom level
   const initialZoom = Math.floor(Math.random() * 3) + 6
 
   return (
@@ -70,6 +71,7 @@ export default function Map({ location }: MapProps) {
         />
         <Marker position={[location.lat, location.lon]} icon={icon} />
         <MapCenterUpdater location={location} />
+        <TurkishCountryLabels />
       </MapContainer>
     </div>
   )
