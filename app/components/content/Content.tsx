@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import { ImageType } from './widgets/Images'
 import Images from './widgets/Images'
+import StreetView from './widgets/StreetView'
 
 export type ItemType = {
   id: number
@@ -15,6 +16,7 @@ export type ItemType = {
   images?: ImageType[]
   source?: string
   sounds?: { url: string; alt: string; source?: string }[]
+  streetView?: string
 }
 
 export default function Content() {
@@ -30,6 +32,8 @@ export default function Content() {
 
   return (
     <SwipeWrapper>
+      {selectedItem?.streetView && <StreetView url={selectedItem?.streetView} />}
+
       <div className={styles.content}>
         <div className={styles.dateAndTitle}>
           <div className={styles.date}>{formatDate(selectedItem?.date || '')}</div>
