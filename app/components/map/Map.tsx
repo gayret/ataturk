@@ -54,7 +54,7 @@ function MapCenterUpdater({ location }: MapProps) {
 
 export default function Map({ location }: MapProps) {
   // Random zoom level
-  const initialZoom = Math.floor(Math.random() * 3) + 6
+  const initialZoom = Math.floor(Math.random() * 5) + 7
 
   return (
     <div className={styles.map}>
@@ -64,10 +64,11 @@ export default function Map({ location }: MapProps) {
         scrollWheelZoom
         keyboard={false}
         style={{ height: '100%' }}
+        zoomControl={false}
       >
         <TileLayer
           attribution='&copy; <a target="_blank" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
         />
         <Marker position={[location.lat, location.lon]} icon={icon} />
         <MapCenterUpdater location={location} />
