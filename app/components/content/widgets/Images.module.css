@@ -1,0 +1,83 @@
+.images {
+  margin-top: 0.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 200px));
+  justify-content: center;
+  gap: 1rem;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.image {
+  border-radius: 5px;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  padding: 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(5px);
+  pointer-events: all;
+}
+
+.image:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.image img {
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 0.5rem;
+}
+
+.image:hover img {
+  transform: scale(1.03);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image p {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: all;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  text-align: center;
+}
+
+.modalContent img {
+  max-height: 70dvh;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.closeButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
