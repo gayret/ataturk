@@ -37,6 +37,7 @@
       "lon": 22.9444
     },
     "images": [],
+    "streetView": "https://maps.app.goo.gl/TdSrpf7JyBJCP12X6",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -88,6 +89,7 @@
         "source": "https://ata.msb.gov.tr/Genel/icerik/manastir-askeri-idadisindeki-ogrenimi"
       }
     ],
+    "streetView": "https://maps.app.goo.gl/vAxBJom5TLkzLeqF6",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -115,6 +117,7 @@
         "source": "https://ata.msb.gov.tr/Genel/icerik/harbiyedeki-ogrenimi"
       }
     ],
+    "streetView": "https://maps.app.goo.gl/EfApiQ8YPdcs9bE88",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -537,6 +540,7 @@
       "lon": 22.6224084
     },
     "images": [],
+    "streetView": "https://maps.app.goo.gl/EfApiQ8YPdcs9bE88",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
