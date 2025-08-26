@@ -14,7 +14,7 @@ export default function Thanks() {
             href='https://www.linkedin.com/in/osman-emre-hac%C4%B1arap-a1182a23b'
             target='_blank'
           >
-            Osman Emre Hacıarap <i className={styles.detail}>(Kullanıcı testleri ve analiz)</i>
+            Osman Emre Hacıarap <i className={styles.detail}>(Seslendirme Yönetmeni)</i>
           </Link>
         </li>
       </ul>
