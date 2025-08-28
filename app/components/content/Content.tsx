@@ -1,12 +1,12 @@
 import styles from './Content.module.css'
 import { useSearchParams } from 'next/navigation'
-import data from '@/app/data/data.json'
 import { formatDate } from '@/app/helpers/date'
 import { useEffect } from 'react'
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import { ImageType } from './widgets/Images'
 import Images from './widgets/Images'
 import StreetView from './widgets/StreetView'
+import { useEventsData } from '@/app/helpers/data'
 
 export type ItemType = {
   id: number
@@ -21,8 +21,9 @@ export type ItemType = {
 
 export default function Content() {
   const searchParams = useSearchParams()
+  const events = useEventsData()
 
-  const selectedItem = data.find((item: ItemType) => item.id === Number(searchParams.get('id')))
+  const selectedItem = events.find((item: ItemType) => item.id === Number(searchParams.get('id')))
 
   useEffect(() => {
     document.title = selectedItem

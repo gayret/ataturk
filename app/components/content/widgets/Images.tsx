@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './Images.module.css'
-import data from '@/app/data/data.json'
+import { useEventsData } from '@/app/helpers/data'
 import { useSearchParams } from 'next/navigation'
 import { ItemType } from '../Content'
 
@@ -12,10 +12,11 @@ export type ImageType = {
 }
 
 export default function Images() {
+  const events = useEventsData()
   const [modalImage, setModalImage] = useState<ImageType | null>(null)
   const searchParams = useSearchParams()
 
-  const selectedItem = data.find((item: ItemType) => item.id === Number(searchParams.get('id')))
+  const selectedItem = events.find((item: ItemType) => item.id === Number(searchParams.get('id')))
 
   // ESC ile modal kapatma
   useEffect(() => {

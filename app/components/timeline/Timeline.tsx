@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './Timeline.module.css'
-import data from '@/app/data/data.json'
+import { useEventsData } from '@/app/helpers/data'
 import { getYear } from '@/app/helpers/date'
 import { useSearchParams } from 'next/navigation'
 import { useRef, useEffect, useCallback } from 'react'
@@ -11,19 +11,20 @@ import chevronLeft from '@/app/assets/icons/chevron-left.svg'
 import chevronRight from '@/app/assets/icons/chevron-right.svg'
 
 export default function Timeline() {
+  const events = useEventsData()
   const searchParams = useSearchParams()
 
   const timelineContainerRef = useRef<HTMLDivElement>(null)
 
   // group by year and get unique years
-  const groupedByYear = data.reduce((acc, item) => {
+  const groupedByYear = events.reduce((acc, item) => {
     const year = getYear(item.date)
     if (!acc[year]) {
       acc[year] = []
     }
     acc[year].push(item)
     return acc
-  }, {} as Record<string, typeof data>)
+  }, {} as Record<string, typeof events>)
 
   const uniqueYears = Object.entries(groupedByYear).map(([year, items]) => ({
     year: year,
@@ -56,20 +57,20 @@ export default function Timeline() {
   const onGoPrev = useCallback(() => {
     const url = new URL(window.location.href)
     const currentId = searchParams.get('id')
-    const currentIndex = data.findIndex((item) => item.id === Number(currentId))
-    const prevIndex = (currentIndex - 1 + data.length) % data.length
-    url.searchParams.set('id', data[prevIndex].id.toString())
+    const currentIndex = events.findIndex((item) => item.id === Number(currentId))
+    const prevIndex = (currentIndex - 1 + events.length) % events.length
+    url.searchParams.set('id', events[prevIndex].id.toString())
     window.history.pushState({}, '', url.toString())
-  }, [searchParams])
+  }, [searchParams, events])
 
   const onGoNext = useCallback(() => {
     const url = new URL(window.location.href)
     const currentId = searchParams.get('id')
-    const currentIndex = data.findIndex((item) => item.id === Number(currentId))
-    const nextIndex = (currentIndex + 1) % data.length
-    url.searchParams.set('id', data[nextIndex].id.toString())
+    const currentIndex = events.findIndex((item) => item.id === Number(currentId))
+    const nextIndex = (currentIndex + 1) % events.length
+    url.searchParams.set('id', events[nextIndex].id.toString())
     window.history.pushState({}, '', url.toString())
-  }, [searchParams])
+  }, [searchParams, events])
 
   useEffect(() => {
     // Handle keyboard navigation for left and right arrows

@@ -1,10 +1,11 @@
 import styles from './Search.module.css'
-import data from '@/app/data/data.json'
+import { useEventsData } from '@/app/helpers/data'
 import { formatDate } from '@/app/helpers/date'
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 
 export default function Search() {
+  const events = useEventsData()
   const [searchText, setSearchText] = useState('')
   const [isVisibleResults, setIsVisibleResults] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -44,7 +45,7 @@ export default function Search() {
 
       {isVisibleResults && (
         <div className={styles.resultsContainer}>
-          {data
+          {events
             .filter(
               (item) =>
                 item.title.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()) ||
