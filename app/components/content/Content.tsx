@@ -1,7 +1,7 @@
 import styles from './Content.module.css'
 import { useSearchParams } from 'next/navigation'
 import { formatDate } from '@/app/helpers/date'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import { ImageType } from './widgets/Images'
 import Images from './widgets/Images'
@@ -20,6 +20,7 @@ export type ItemType = {
 }
 
 export default function Content() {
+  const [computedAge, setComputedAge] = useState<number | null>(null)
   const searchParams = useSearchParams()
   const events = useEventsData()
 
@@ -31,13 +32,22 @@ export default function Content() {
       : 'Atatürk Kronolojisi'
   }, [selectedItem])
 
+  useEffect(() => {
+    setComputedAge(selectedItem?.date ? new Date(selectedItem.date).getFullYear() - 1881 : null)
+  }, [selectedItem])
+
   return (
     <SwipeWrapper>
       {selectedItem?.streetView && <StreetView url={selectedItem?.streetView} />}
 
       <div className={styles.content}>
         <div className={styles.dateAndTitle}>
-          <div className={styles.date}>{formatDate(selectedItem?.date || '')}</div>
+          <div className={styles.date}>
+            {formatDate(selectedItem?.date || '')}
+            {computedAge !== null && computedAge > 0 && computedAge <= 57 && (
+              <span className={styles.computedAge}>{computedAge}. yaş</span>
+            )}
+          </div>
           <h1 className={styles.title}>
             {selectedItem?.title}
             {selectedItem?.source && (

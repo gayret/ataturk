@@ -33,7 +33,12 @@
 }
 
 .date {
+  display: flex;
   font-weight: 100;
+}
+
+.computedAge {
+  margin-left: auto;
 }
 
 .mapAndDetails {
