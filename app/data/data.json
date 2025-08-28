@@ -747,7 +747,18 @@
       "lat": 42.6954026,
       "lon": 23.2415466
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/bulgaristan.jpg",
+        "alt": "Kurmay Yarbay Mustafa Kemal arkadaşlarıyla, Sofya, Bulgaristan, 1914.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/sofyadaki-balo.jpg",
+        "alt": "Kurmay Yarbay Mustafa Kemal, Sofya’daki baloda yeniçeri kıyafetiyle, Bulgaristan, Sofya, 11-12 Mayıs 1914.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -825,7 +836,18 @@
       "lat": 40.2355886,
       "lon": 26.3582045
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/gelibolu-mayis-1915.jpg",
+        "alt": "Kurmay Yarbay Mustafa Kemal cephede, Gelibolu, Çanakkale, 2 Mayıs 1915.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/gelibolu-1915.jpg",
+        "alt": "Gelibolu, Çanakkale, 1915.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -836,7 +858,13 @@
       "lat": 40.2355886,
       "lon": 26.3582045
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/gelibolu-1915-2.jpg",
+        "alt": "Gelibolu, Çanakkale, 1915.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -865,7 +893,13 @@
       "lat": 40.2355886,
       "lon": 26.3582045
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/gelibolu-haziran-1915.jpg",
+        "alt": "Kurmay Albay Mustafa Kemal, Gelibolu, Çanakkale, 17 Haziran 1915.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -876,7 +910,18 @@
       "lat": 40.2355886,
       "lon": 26.3582045
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/gelibolu-temmuz-1915.jpg",
+        "alt": "Gelibolu, Çanakkale, 16 Temmuz 1915.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/gelibolu-temmuz-1915-2.jpg",
+        "alt": "İstanbul’dan gelen gazeteci, yazar ve şairler heyeti ile, Gelibolu, Çanakkale, 16 Temmuz 1915.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1008,7 +1053,13 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/mirliva-1916.jpg",
+        "alt": "Mirliva (Tümgeneral) Mustafa Kemal, 1916.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1063,7 +1114,13 @@
       "lat": 38.4044977,
       "lon": 42.09232
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/bitlis.jpg",
+        "alt": "16’ncı Kolordu Komutanı Mustafa Kemal Paşa, Bitlis, 16 Kasım 1916.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1140,7 +1197,13 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/diyarbakir-1917.jpg",
+        "alt": "2’nci Ordu Komutanı Mustafa Kemal Paşa, Diyarbakır, Mart 1917.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1151,7 +1214,28 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/diyarbakir-1917-2.jpg",
+        "alt": "Avusturya-Macaristan otomobil kolunu denetlerken, Diyarbakır, 1917.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/diyarbakir-1917-3.jpg",
+        "alt": "Diyarbakır, 1917.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/diyarbakir-4.jpg",
+        "alt": "Diyarbakır, 1917.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/diyarbakir-5.jpg",
+        "alt": "Diyarbakır, 1917.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1218,7 +1302,23 @@
       "lat": 36.2064064,
       "lon": 37.0661848
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/halep-1917.jpg",
+        "alt": "Halep, 1917.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/halep-1917-2.jpg",
+        "alt": "7’nci Ordu Komutanı Mustafa Kemal Paşa, yaverleri Salih (BOZOK), Şükrü (TEZER) ve Cevat Abbas (GÜRER) Beyler ile, Halep, 15 Ekim 1917.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/halep-1917-3.jpg",
+        "alt": "Halep, 1917.",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
