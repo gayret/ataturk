@@ -12,7 +12,7 @@ export default function DonateButton() {
       <span className={styles.icon} aria-hidden='true'>
         🤝🏻
       </span>
-      <span className={styles.text}>Bağış yap</span>
+      <span className={styles.text}>Projeye destek ol</span>
     </Link>
   )
 }
