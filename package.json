@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "leaflet": "^1.9.4",
-    "next": "15.3.5",
+    "next": "15.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-leaflet": "^5.0.0"
