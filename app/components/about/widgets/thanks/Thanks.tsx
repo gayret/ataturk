@@ -17,6 +17,11 @@ export default function Thanks() {
             Osman Emre Hacıarap <i className={styles.detail}>(Seslendirme Yönetmeni)</i>
           </Link>
         </li>
+        <li className={styles.listItem}>
+          <Link href='https://marasavucumda.com' target='_blank'>
+            Yusuf Köleli <i className={styles.detail}>(Konsept Danışmanı)</i>
+          </Link>
+        </li>
       </ul>
     </div>
   )
