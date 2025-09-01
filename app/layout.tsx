@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Barlow } from 'next/font/google'
 import { Suspense } from 'react'
+import { Analytics } from '@vercel/analytics/next'
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -23,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang='tr'>
       <Suspense>
-        <body className={barlow.className}>{children}</body>
+        <body className={barlow.className}>
+          {children}
+          <Analytics />
+        </body>
       </Suspense>
     </html>
   )
