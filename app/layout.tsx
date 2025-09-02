@@ -14,11 +14,25 @@ const barlow = Barlow({
 export const metadata: Metadata = {
   title: 'Atatürk Kronolojisi',
   description: "Mustafa Kemal ATATÜRK'ün hayatı",
-  keywords: 'Atatürk, Mustafa Kemal, kronoloji, Türk tarihi, Cumhuriyet, İstiklal Savaşı',
-  author: 'Atatürk Kronolojisi',
-  viewport: 'width=device-width, initial-scale=1',
-  robots: 'index, follow',
-  canonical: 'https://ataturk-kronolojisi.org'
+  keywords: [
+    'Atatürk',
+    'Mustafa Kemal',
+    'kronoloji',
+    'Türk tarihi',
+    'Cumhuriyet',
+    'İstiklal Savaşı',
+  ],
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://ataturk-kronolojisi.org',
+  },
 }
 
 export default function RootLayout({
