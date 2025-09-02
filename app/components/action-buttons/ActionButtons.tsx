@@ -6,6 +6,7 @@ import { useEventsData } from '@/app/helpers/data'
 import Share from './widgets/share/Share'
 import Direction from './widgets/direction/Direction'
 import ShowAllLocations from './widgets/show-all-locations/ShowAllLocations'
+import Search from './widgets/search/Search'
 
 export default function ActionButtons() {
   const searchParams = useSearchParams()
@@ -22,6 +23,8 @@ export default function ActionButtons() {
           <ShowAllLocations />
 
           <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
+
+          <Search />
 
           <Share />
         </>
