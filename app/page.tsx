@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 import { useSearchParams } from 'next/navigation'
 import { useMemo } from 'react'
 import Content from './components/content/Content'
+import ActionButtons from './components/action-buttons/ActionButtons'
 
 export default function Home() {
   const events = useEventsData()
@@ -53,6 +54,7 @@ export default function Home() {
         />
         <Header />
         <Content />
+        <ActionButtons />
         <Timeline />
       </>
     )

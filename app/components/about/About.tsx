@@ -1,6 +1,6 @@
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import styles from './About.module.css'
-import Contributors from './widgets/Contributors'
+import Contributors from './widgets/contributors/Contributors'
 import Thanks from './widgets/thanks/Thanks'
 
 export default function About() {

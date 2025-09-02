@@ -44,6 +44,11 @@
   min-height: 1.5rem;
 }
 
+.timelineDate:hover {
+  scale: 1.8;
+  transition: all 0.2s ease-in-out;
+}
+
 .timelineItem::before {
   content: '';
   position: absolute;
@@ -92,6 +97,7 @@
 
 .actionButton:hover {
   backdrop-filter: invert(0.7);
+  scale: 0.5;
 }
 
 @media (max-width: 600px) {

@@ -4,14 +4,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 type StreetViewProps = {
-  url: string
+  lat: number
+  lon: number
 }
 
 export default function StreetView(props: StreetViewProps) {
-  if (!props.url) return
+  if (!props.lat || !props.lon || props.lat === 0 || props.lon === 0) return null
+
+  const url = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${props.lat},${props.lon}`
 
   return (
-    <Link className={styles.streetView} target='_blank' href={props.url}>
+    <Link className={styles.streetView} target='_blank' href={url}>
       <Image src={iconStreetView} alt='Street View ikonu' width={16} height={16} />
     </Link>
   )

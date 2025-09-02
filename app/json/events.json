@@ -4,8 +4,8 @@
     "title": "Ulu Önder Mustafa Kemal ATATÜRK'ün doğumu.",
     "date": "1881-05-19T00:00:00Z",
     "location": {
-      "lat": 40.635833,
-      "lon": 22.954444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [
       {
@@ -24,7 +24,6 @@
         "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "streetView": "https://maps.app.goo.gl/SGQE1mHfUVco2RHd7",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -33,11 +32,10 @@
     "description": "(Kısa bir süre mahalle mektebine devam etmiş, daha sonra çağdaş eğitim yapan Şemsi Efendi Okuluna geçerek ilkokulu burada bitirmiştir.)",
     "date": "1886T00:00:00Z",
     "location": {
-      "lat": 40.6401,
-      "lon": 22.9444
+      "lat": 40.639956,
+      "lon": 22.9471617
     },
     "images": [],
-    "streetView": "https://maps.app.goo.gl/TdSrpf7JyBJCP12X6",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -74,8 +72,8 @@
     "title": "Manastır Askerî İdadisine girmesi.",
     "date": "1896T00:00:00Z",
     "location": {
-      "lat": 41.023889,
-      "lon": 21.335556
+      "lat": 41.0235901,
+      "lon": 21.336195
     },
     "images": [
       {
@@ -89,7 +87,6 @@
         "source": "https://ata.msb.gov.tr/Genel/icerik/manastir-askeri-idadisindeki-ogrenimi"
       }
     ],
-    "streetView": "https://maps.app.goo.gl/vAxBJom5TLkzLeqF6",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -97,8 +94,8 @@
     "title": "İstanbul'da Harp Okuluna girmesi.",
     "date": "1899-03-13T00:00:00Z",
     "location": {
-      "lat": 41.0082,
-      "lon": 28.9784
+      "lat": 41.0481642,
+      "lon": 28.9878852
     },
     "images": [
       {
@@ -117,7 +114,6 @@
         "source": "https://ata.msb.gov.tr/Genel/icerik/harbiyedeki-ogrenimi"
       }
     ],
-    "streetView": "https://maps.app.goo.gl/EfApiQ8YPdcs9bE88",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -609,8 +605,8 @@
     "description": "(Bu küçük kitap, 5'inci Kolordunun 19-20 Nisan 1911 günleri yaptığı ve kendisinin de katıldığı bir askerî tatbikatın not ve krokilerinden oluşmuştur.)",
     "date": "1911T00:00:00Z",
     "location": {
-      "lat": 42.6977,
-      "lon": 23.3219
+      "lat": 41.0481642,
+      "lon": 28.9878852
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -624,7 +620,6 @@
       "lon": 22.6224084
     },
     "images": [],
-    "streetView": "https://maps.app.goo.gl/EfApiQ8YPdcs9bE88",
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {

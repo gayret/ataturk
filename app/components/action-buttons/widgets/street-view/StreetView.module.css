@@ -1,8 +1,4 @@
 .streetView {
-  position: fixed;
-  bottom: 3rem;
-  right: 2rem;
-  scale: 1.5;
   background-color: rgba(255, 166, 0, 0.397);
   fill: orange;
   padding: 0.3rem;
@@ -10,7 +6,7 @@
 }
 
 .streetView:hover {
-  scale: 2;
+  scale: 1.2;
   transition: scale 0.3s ease-in-out;
 }
 

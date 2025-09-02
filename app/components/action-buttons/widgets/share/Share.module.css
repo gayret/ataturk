@@ -1,0 +1,17 @@
+.share {
+  position: relative;
+  display: inline-block;
+}
+
+.opened {
+  position: absolute;
+  right: 130%;
+  bottom: 0.5rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
