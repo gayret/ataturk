@@ -4,6 +4,7 @@ import StreetView from './widgets/street-view/StreetView'
 import { ItemType } from '../content/Content'
 import { useEventsData } from '@/app/helpers/data'
 import Share from './widgets/share/Share'
+import Direction from './widgets/direction/Direction'
 
 export default function ActionButtons() {
   const searchParams = useSearchParams()
@@ -16,6 +17,8 @@ export default function ActionButtons() {
       {selectedItem && (
         <>
           <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
+
+          <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
           <Share />
         </>

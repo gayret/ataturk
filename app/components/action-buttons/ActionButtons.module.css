@@ -11,6 +11,7 @@
 @media (max-width: 768px) {
   .actionButtons {
     bottom: 7rem;
+    right: 0.2rem;
   }
 }
 
