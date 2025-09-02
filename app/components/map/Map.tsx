@@ -6,10 +6,21 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { useEffect, useRef } from 'react'
 import TurkishCountryLabels from './widgets/TurkishCountryLabels'
+import { useEventsData } from '@/app/helpers/data'
+import { useSearchParams } from 'next/navigation'
 
-const icon = L.icon({
-  iconUrl: '/icons/location.svg',
-  iconSize: [25, 41],
+const iconActive = L.icon({
+  iconUrl: '/icons/location-active.svg',
+  iconSize: [50, 66],
+  iconAnchor: [21, 50],
+  popupAnchor: [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize: [200, 200],
+})
+
+const iconPassive = L.icon({
+  iconUrl: '/icons/location-passive.svg',
+  iconSize: [35, 51],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   tooltipAnchor: [16, -28],
@@ -53,6 +64,10 @@ function MapCenterUpdater({ location }: MapProps) {
 }
 
 export default function Map({ location }: MapProps) {
+  const searchParams = useSearchParams()
+  const showAllLocations = searchParams.get('show-all-locations') === 'true'
+  const events = useEventsData()
+  if (events.length === 0) return null
   // Random zoom level
   const initialZoom = Math.floor(Math.random() * 5) + 7
 
@@ -70,8 +85,29 @@ export default function Map({ location }: MapProps) {
           attribution='&copy; <a target="_blank" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png'
         />
-        <Marker position={[location.lat, location.lon]} icon={icon} />
+
+        {showAllLocations &&
+          events
+            .filter((item) => item.location && item.location.lat && item.location.lon)
+            .map((item) => (
+              <Marker
+                key={item.id}
+                eventHandlers={{
+                  click: () => {
+                    const url = new URL(window.location.href)
+                    url.searchParams.set('id', item.id.toString())
+                    window.history.pushState({}, '', url.toString())
+                  },
+                }}
+                position={[item.location!.lat, item.location!.lon]}
+                icon={iconPassive}
+              />
+            ))}
+
+        <Marker position={[location.lat, location.lon]} icon={iconActive} />
+
         <MapCenterUpdater location={location} />
+
         <TurkishCountryLabels />
       </MapContainer>
     </div>
