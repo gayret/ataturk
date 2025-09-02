@@ -49,7 +49,7 @@ export default function Share() {
 
   return (
     <div className={styles.share}>
-      <button onClick={() => setOpen(!open)}>
+      <button onClick={() => setOpen(!open)} title='Bu olayı paylaş'>
         <Image src={iconShare} alt='Share ikonu' width={16} height={16} />
       </button>
 

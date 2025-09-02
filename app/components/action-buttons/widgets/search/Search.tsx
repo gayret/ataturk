@@ -48,6 +48,7 @@ export default function Search() {
           setIsVisibleResults(false)
         }}
         className={styles.searchButton}
+        title='Arama'
       >
         {isSearchOpen ? (
           <Image src={iconClose} alt='Arama ikonu' width={16} height={16} />

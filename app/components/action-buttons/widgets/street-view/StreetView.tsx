@@ -13,7 +13,7 @@ export default function StreetView(props: StreetViewProps) {
   const url = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${props.lat},${props.lon}`
 
   return (
-    <Link target='_blank' href={url}>
+    <Link target='_blank' href={url} rel='noopener noreferrer' title='Sokak Görünümü'>
       <button>
         <Image src={iconStreetView} alt='Street View ikonu' width={16} height={16} />
       </button>
