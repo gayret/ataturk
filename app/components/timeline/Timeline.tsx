@@ -32,7 +32,7 @@ export default function Timeline() {
     items,
   }))
 
-  useEffect(() => {}, [searchParams])
+  useEffect(() => { }, [searchParams])
 
   const onOpenId = (id: number) => () => {
     const url = new URL(window.location.href)

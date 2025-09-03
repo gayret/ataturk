@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './Content.module.css'
 import { useSearchParams } from 'next/navigation'
 import { formatDate } from '@/app/helpers/date'
@@ -17,10 +19,10 @@ export type ItemType = {
   sounds?: { url: string; alt: string; source?: string }[]
 }
 
-export default function Content() {
+export default function Content({ lang }: { lang: string }) {
   const [computedAge, setComputedAge] = useState<number | null>(null)
   const searchParams = useSearchParams()
-  const events = useEventsData()
+  const events = useEventsData({ locale: lang })
 
   const selectedItem = events.find((item: ItemType) => item.id === Number(searchParams.get('id')))
 
@@ -60,7 +62,7 @@ export default function Content() {
           )}
         </div>
 
-        <Images />
+        <Images lang={lang} />
 
         {selectedItem?.sounds && selectedItem.sounds.length > 0 && (
           <div className={styles.sounds}>

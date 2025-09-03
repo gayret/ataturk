@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import styles from './Contributors.module.css'
+import Link from 'next/link'
 
 type Contributor = {
   login: string
@@ -100,7 +101,7 @@ const HoverCard = ({
   )
 }
 
-export default function Contributors() {
+export default function Contributors({ lang }: { lang: string }) {
   const [contributors, setContributors] = useState<Contributor[]>([])
   const [hoveredUser, setHoveredUser] = useState<string | null>(null)
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null)
@@ -179,14 +180,34 @@ export default function Contributors() {
     contributors.length > 0 && (
       <>
         <section>
-          <h4>Geliştirenler</h4>
+          <h4>
+            {
+              lang === 'tr' ?
+                'Geliştirenler'
+                :
+                'Developers'
+            }
+          </h4>
 
           <small>
-            Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için{' '}
-            <a href='https://github.com/gayret/ataturk' target='_blank'>
-              <strong>GitHub</strong>&#39;a
-            </a>{' '}
-            göz atabilirsiniz.
+            {
+              lang === 'tr' ?
+                <>
+                  Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için
+                  &nbsp;<Link href='https://github.com/gayret/ataturk' target='_blank'>
+                    <strong>GitHub</strong>&#39;a
+                  </Link>&nbsp;
+                  göz atabilirsiniz.
+                </>
+                :
+                <>
+                  The project's source code and data are open to everyone. You can check out the
+                  &nbsp;<Link href='https://github.com/gayret/ataturk' target='_blank'>
+                    <strong>GitHub</strong>
+                  </Link>&nbsp;
+                  address to develop it.
+                </>
+            }
           </small>
 
           <div className={styles.contributors}>

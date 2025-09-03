@@ -11,8 +11,8 @@ export type ImageType = {
   source?: string
 }
 
-export default function Images() {
-  const events = useEventsData()
+export default function Images({ lang }: { lang: string }) {
+  const events = useEventsData({ locale: lang })
   const [modalImage, setModalImage] = useState<ImageType | null>(null)
   const searchParams = useSearchParams()
 
