@@ -151,10 +151,6 @@ export default function Timeline() {
                       title={subItem.title}
                       role='button'
                       tabIndex={0}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        onOpenId(subItem.id)()
-                      }}
                     ></span>
                   ))}
                 </div>
@@ -170,10 +166,6 @@ export default function Timeline() {
                       title={subItem.title}
                       role='button'
                       tabIndex={0}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        onOpenId(subItem.id)()
-                      }}
                     ></span>
                   ))}
                 </div>

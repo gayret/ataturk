@@ -8,6 +8,7 @@ import { useEffect, useRef } from 'react'
 import TurkishCountryLabels from './widgets/TurkishCountryLabels'
 import { useEventsData } from '@/app/helpers/data'
 import { useSearchParams } from 'next/navigation'
+import { formatDate } from '@/app/helpers/date'
 
 const iconActive = L.icon({
   iconUrl: '/icons/location-active.svg',
@@ -87,24 +88,24 @@ export default function Map({ location }: MapProps) {
         />
 
         {showAllLocations &&
-          events
-            .filter((item) => item.location && item.location.lat && item.location.lon)
-            .map((item) => (
-              <Marker
-                key={item.id}
-                eventHandlers={{
-                  click: () => {
-                    const url = new URL(window.location.href)
-                    url.searchParams.set('id', item.id.toString())
-                    window.history.pushState({}, '', url.toString())
-                  },
-                }}
-                position={[item.location!.lat, item.location!.lon]}
-                icon={iconPassive}
-              />
-            ))}
+          events.map((item) => (
+            <Marker
+              opacity={0.5}
+              key={item.id}
+              eventHandlers={{
+                click: () => {
+                  const url = new URL(window.location.href)
+                  url.searchParams.set('id', item.id.toString())
+                  window.history.pushState({}, '', url.toString())
+                },
+              }}
+              position={[item.location!.lat, item.location!.lon]}
+              icon={iconPassive}
+              title={formatDate(item.date) + ' - ' + item.title}
+            />
+          ))}
 
-        <Marker position={[location.lat, location.lon]} icon={iconActive} />
+        <Marker position={[location.lat, location.lon]} icon={iconActive} zIndexOffset={1} />
 
         <MapCenterUpdater location={location} />
 
