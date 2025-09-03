@@ -1,0 +1,30 @@
+ .container {
+     position: fixed;
+     top: 12px;
+     right: 12px;
+     display: flex;
+     gap: 8px;
+     z-index: 1000;
+ }
+
+ .button {
+     width: 36px;
+     height: 36px;
+     border-radius: 50%;
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     background: #ffffffcc;
+     backdrop-filter: blur(6px);
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 18px;
+     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+     font-size: 12px;
+ }
+
+ .button:hover {
+     transform: translateY(-1px);
+     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+     background: #fff;
+ }

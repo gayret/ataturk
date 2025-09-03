@@ -1,6 +1,16 @@
 import { useMemo } from 'react'
-import jsonData from '../json/events.json'
+import jsonDataTr from '../json/events_tr.json'
+import jsonDataEn from '../json/events_en.json'
 
-export const useEventsData = () => {
-  return useMemo(() => jsonData, [])
+export const useEventsData = ({ locale }: { locale?: string } = {}) => {
+  return useMemo(() => {
+    switch (locale) {
+      case 'tr':
+        return jsonDataTr
+      case 'en':
+        return jsonDataEn
+      default:
+        return jsonDataTr
+    }
+  }, [])
 }
