@@ -13,7 +13,8 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
   title: 'Atatürk Kronolojisi',
-  description: "Mustafa Kemal ATATÜRK'ün hayatı",
+  description:
+    "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
   keywords: [
     'Atatürk',
     'Mustafa Kemal',
@@ -32,6 +33,29 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://ataturk-kronolojisi.org',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://ataturk-kronolojisi.org',
+    title: 'Atatürk Kronolojisi',
+    description:
+      "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
+    images: [
+      {
+        url: 'https://ataturk-kronolojisi.org/images/1910-1940/ataturk-1911.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Mustafa Kemal Atatürk',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    url: 'https://ataturk-kronolojisi.org',
+    title: 'Atatürk Kronolojisi',
+    description:
+      "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
+    images: ['https://ataturk-kronolojisi.org/images/1910-1940/ataturk-1911.jpg'],
   },
 }
 

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ataturk-kronolojisi.org/sitemap.xml
