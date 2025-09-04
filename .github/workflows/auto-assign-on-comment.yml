@@ -1,0 +1,16 @@
+name: Auto Assign on Comment
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  assign:
+    if: contains(github.event.comment.body, '/Ben bu konuyu alıyorum')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign issue to commenter
+        uses: peter-evans/assign-issue@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          assignees: ${{ github.event.comment.user.login }}
