@@ -2,7 +2,7 @@
   margin: 1rem auto;
   padding: 1.5rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-left: 4px solid #E30A17;
+  border-left: 4px solid #e30a17;
   border-radius: 0 8px 8px 0;
   position: relative;
   max-width: 50%;
@@ -16,7 +16,7 @@
 
 .quoteMark {
   font-size: 3rem;
-  color: #E30A17;
+  color: #e30a17;
   font-family: Georgia, serif;
   position: absolute;
   top: -1rem;
@@ -31,7 +31,7 @@
   line-height: 1.6;
   color: #2c3e50;
   padding-left: 1rem;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, 'Times New Roman', serif;
   text-align: justify;
 }
 
@@ -56,21 +56,21 @@
 @media (max-width: 768px) {
   .quoteContainer {
     padding: 1rem;
-    max-width: 100%;
+    max-width: 90%;
     width: 100%;
   }
-  
+
   .quoteMark {
     font-size: 3rem;
     top: -0.8rem;
     left: -0.3rem;
   }
-  
+
   .quoteText {
     font-size: 1rem;
     padding-left: 1.5rem;
   }
-  
+
   .sourceInline a {
     font-size: 1rem;
   }
@@ -79,11 +79,10 @@
 @media (max-width: 480px) {
   .quoteContainer {
     padding: 1rem;
-    max-width: 100%;
+    max-width: 90%;
     width: 100%;
-    margin: 0.4rem;
   }
-  
+
   .quoteText {
     padding-left: 1rem;
   }
