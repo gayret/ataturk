@@ -1,16 +1,24 @@
-name: Auto Assign on Comment
+name: auto-assign-on-comment
 
 on:
   issue_comment:
     types: [created]
 
 jobs:
-  assign:
+  claim:
     if: contains(github.event.comment.body, '/Ben bu konuyu alıyorum')
     runs-on: ubuntu-latest
     steps:
-      - name: Assign issue to commenter
-        uses: peter-evans/assign-issue@v2
+      - name: Add claimed label
+        uses: actions-ecosystem/action-add-labels@v1
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: claimed
+
+      - name: Confirm claim with comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
-          assignees: ${{ github.event.comment.user.login }}
+          body: |
+            Tamamdır @${{ github.event.comment.user.login }}, bu issue artık senin!
