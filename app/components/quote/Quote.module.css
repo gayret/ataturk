@@ -1,13 +1,13 @@
 .quoteContainer {
-  margin: 1rem auto;          
+  margin: 1rem auto;
   padding: 1.5rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-left: 4px solid #d4b106;
+  border-left: 4px solid #E30A17;
   border-radius: 0 8px 8px 0;
   position: relative;
   max-width: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  pointer-events: all;         
+  pointer-events: all;
 }
 
 .quoteContent {
@@ -16,7 +16,7 @@
 
 .quoteMark {
   font-size: 3rem;
-  color: #947c03;
+  color: #E30A17;
   font-family: Georgia, serif;
   position: absolute;
   top: -1rem;
@@ -35,42 +35,29 @@
   text-align: justify;
 }
 
-.author {
-  text-align: right;
-  font-weight: 600;
-  color: #34495e;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
+.sourceInline {
+  display: inline;
 }
 
-.source {
-  display: inline-flex;
-  align-items: center;
-}
-
-.source a {
-  color: #d4b106;
+.sourceInline a {
+  color: #2c3e50;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: 3px;
-  transition: all 0.2s ease;
-  background-color: rgba(212, 177, 6, 0.1);
+  font-weight: normal;
+  font-size: 1.4rem;
+  background: transparent;
+  transition: none;
 }
 
-.source a:hover {
-  background-color: rgba(212, 177, 6, 0.2);
-  transform: scale(1.1);
+.sourceInline a:hover {
+  background: transparent;
+  transform: none;
 }
 
 @media (max-width: 768px) {
   .quoteContainer {
     padding: 1rem;
-    max-width: 80%;
+    max-width: 100%;
+    width: 100%;
   }
   
   .quoteMark {
@@ -84,17 +71,17 @@
     padding-left: 1.5rem;
   }
   
-  .author {
-    font-size: 0.9rem;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.3rem;
+  .sourceInline a {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .quoteContainer {
-    padding: 0;
+    padding: 1rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0.4rem;
   }
   
   .quoteText {
