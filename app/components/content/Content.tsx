@@ -19,10 +19,10 @@ export type ItemType = {
   sounds?: { url: string; alt: string; source?: string }[]
 }
 
-export default function Content({ lang }: { lang: string }) {
+export default function Content() {
   const [computedAge, setComputedAge] = useState<number | null>(null)
   const searchParams = useSearchParams()
-  const events = useEventsData({ locale: lang })
+  const events = useEventsData()
 
   const selectedItem = events.find((item: ItemType) => item.id === Number(searchParams.get('id')))
 
@@ -62,7 +62,7 @@ export default function Content({ lang }: { lang: string }) {
           )}
         </div>
 
-        <Images lang={lang} />
+        <Images />
 
         {selectedItem?.sounds && selectedItem.sounds.length > 0 && (
           <div className={styles.sounds}>

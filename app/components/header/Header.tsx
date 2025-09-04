@@ -1,20 +1,21 @@
+"use client"
 import styles from './Header.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import HeaderPicture from '@/app/assets/images/header.jpg'
+import { useLanguageStore } from '@/app/stores/languageStore';
 
-export default function Header({ lang }: { lang: string }) {
+export default function Header() {
+  const { t, currentLanguageCode } = useLanguageStore()
   return (
     <header className={styles.header}>
-      <Link href={`/${lang}/?id=about`} className={styles.link}>
+      <Link
+        href={{ pathname: '/', query: { id: 'about', language: currentLanguageCode } }}
+        className={styles.link}
+      >
         <Image className={styles.logo} src={HeaderPicture} alt='logo' width={200} height={200} />
         <h1 className={styles.title}>
-          {
-            lang === 'tr' ?
-              'Atatürk Kronolojisi'
-              :
-              'Atatürk Timeline'
-          }
+          {t.Header.title}
         </h1>
       </Link>
     </header>

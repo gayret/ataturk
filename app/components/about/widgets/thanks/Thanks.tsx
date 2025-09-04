@@ -1,32 +1,34 @@
+import { useSearchParams } from 'next/navigation';
 import styles from './Thanks.module.css'
 import Link from 'next/link'
+import { useLanguageStore } from '@/app/stores/languageStore';
 
-export default function Thanks({ lang }: { lang: string }) {
+export default function Thanks() {
+
+  const searchParams = useSearchParams();
+  const language = searchParams.get("language");
+  const { t } = useLanguageStore()
+
   return (
     <div>
       <h4 className={styles.title}>
-        {
-          lang === 'tr' ?
-            'Emek verenler'
-            :
-            'Those who work hard'
-        }
+        {t.Thanks.title}
       </h4>
       <ul className={styles.thanksList}>
         <li className={styles.listItem}>
-          İrem Çiftler Gayret <i className={styles.detail}>({lang === 'tr' ? 'Kullanıcı testleri ve analiz' : 'User testing and analysis'})</i>
+          {t.Thanks.description} <i className={styles.detail}>({t.Thanks.description2})</i>
         </li>
         <li className={styles.listItem}>
           <Link
             href='https://www.linkedin.com/in/osman-emre-hac%C4%B1arap-a1182a23b'
             target='_blank'
           >
-            Osman Emre Hacıarap <i className={styles.detail}>({lang === 'tr' ? 'Seslendirme Yönetmeni' : 'Voice Director'})</i>
+            {t.Thanks.description3} <i className={styles.detail}>({t.Thanks.description4})</i>
           </Link>
         </li>
         <li className={styles.listItem}>
           <Link href='https://marasavucumda.com' target='_blank'>
-            Yusuf Köleli <i className={styles.detail}>({lang === 'tr' ? 'Konsept Danışmanı' : 'Concept Consultant'})</i>
+            {t.Thanks.description5} <i className={styles.detail}>({t.Thanks.description6})</i>
           </Link>
         </li>
       </ul>

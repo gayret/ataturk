@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
 import styles from './Contributors.module.css'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 type Contributor = {
   login: string
@@ -101,13 +103,17 @@ const HoverCard = ({
   )
 }
 
-export default function Contributors({ lang }: { lang: string }) {
+export default function Contributors() {
   const [contributors, setContributors] = useState<Contributor[]>([])
   const [hoveredUser, setHoveredUser] = useState<string | null>(null)
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null)
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 })
   const [isLoadingProfile, setIsLoadingProfile] = useState(false)
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const { t } = useLanguageStore()
+
+  const searchParams = useSearchParams();
+  const language = searchParams.get("language");
 
   useEffect(() => {
     // Fetch contributors from GitHub API
@@ -181,49 +187,33 @@ export default function Contributors({ lang }: { lang: string }) {
       <>
         <section>
           <h4>
-            {
-              lang === 'tr' ?
-                'Geliştirenler'
-                :
-                'Developers'
-            }
+            {t.Contributors.title}
           </h4>
 
           <small>
-            {
-              lang === 'tr' ?
-                <>
-                  Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için
-                  &nbsp;<Link href='https://github.com/gayret/ataturk' target='_blank'>
-                    <strong>GitHub</strong>&#39;a
-                  </Link>&nbsp;
-                  göz atabilirsiniz.
-                </>
-                :
-                <>
-                  The project's source code and data are open to everyone. You can check out the
-                  &nbsp;<Link href='https://github.com/gayret/ataturk' target='_blank'>
-                    <strong>GitHub</strong>
-                  </Link>&nbsp;
-                  address to develop it.
-                </>
-            }
+            {t.Contributors.description}&nbsp;
+            <Link href='https://github.com/gayret/ataturk' target='_blank'>
+              {t.Contributors.description2}
+            </Link>
+            .
           </small>
 
           <div className={styles.contributors}>
-            {contributors.map((contributor, index) => (
-              <a
-                href={contributor.html_url}
-                key={index}
-                title={contributor.login}
-                target='_blank'
-                className={styles.contributor}
-                onMouseEnter={(e) => handleMouseEnter(contributor, e)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <img src={contributor.avatar_url} width={50} height={50} alt={contributor.login} />
-              </a>
-            ))}
+            {
+              contributors.map((contributor, index) => (
+                <a
+                  href={contributor.html_url}
+                  key={index}
+                  title={contributor.login}
+                  target='_blank'
+                  className={styles.contributor}
+                  onMouseEnter={(e) => handleMouseEnter(contributor, e)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <img src={contributor.avatar_url} width={50} height={50} alt={contributor.login} />
+                </a>
+              ))
+            }
           </div>
         </section>
 

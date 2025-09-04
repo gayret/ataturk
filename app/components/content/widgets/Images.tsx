@@ -11,10 +11,11 @@ export type ImageType = {
   source?: string
 }
 
-export default function Images({ lang }: { lang: string }) {
-  const events = useEventsData({ locale: lang })
+export default function Images() {
   const [modalImage, setModalImage] = useState<ImageType | null>(null)
   const searchParams = useSearchParams()
+  const language = searchParams.get("language")
+  const events = useEventsData({ locale: language?.toString() })
 
   const selectedItem = events.find((item: ItemType) => item.id === Number(searchParams.get('id')))
 

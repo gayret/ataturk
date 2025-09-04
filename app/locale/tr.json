@@ -1,0 +1,26 @@
+{
+    "Header": {
+        "title": "Atatürk Kronolojisi"
+    },
+    "About": {
+        "title": "Çocuklara ve Türk Gençliğine!",
+        "description": "Ulu Önder Gazi Mustafa Kemal Atatürk, Türk milletinin bağımsızlık mücadelesine önderlik ederek Türkiye Cumhuriyeti'nin kurucusu olmuştur.",
+        "description2": "Bu projenin amacı, Atatürk'ün cesaret, vizyon ve özveriyle dolu olan hayatını kronolojik olarak anlatıp gençlere ilham vermektir.",
+        "usage": "Kullanım",
+        "usage2": "Bu projenin amacı, Atatürk'ün cesaret, vizyon ve özveriyle dolu olan hayatını kronolojik olarak anlatıp gençlere ilham vermektir."
+    },
+    "Contributors": {
+        "title": "Geliştirenler",
+        "description": "Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için",
+        "description2": "GitHub"
+    },
+    "Thanks": {
+        "title": "Emek verenler",
+        "description": "Irem Çiftler Gayret",
+        "description2": "Kullanıcı testleri ve analiz",
+        "description3": "Osman Emre Hacıarap",
+        "description4": "Seslendirme Yönetmeni",
+        "description5": "Yusuf Köleli",
+        "description6": "Konsept Danışmanı"
+    }
+}

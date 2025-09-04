@@ -31,9 +31,8 @@ export default function Share() {
   const pathname = usePathname()
   const baseUrl = 'https://ataturk-kronolojisi.org'
 
-  const fullUrl = `${baseUrl}${pathname}${
-    searchParams.toString() ? `?${searchParams.toString()}` : ''
-  }`
+  const fullUrl = `${baseUrl}${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''
+    }`
 
   const encodedUrl = encodeURIComponent(fullUrl)
   const encodedText = encodeURIComponent(
