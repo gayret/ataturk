@@ -1,4 +1,3 @@
-import { useSearchParams } from 'next/navigation';
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import styles from './About.module.css'
 import Contributors from './widgets/contributors/Contributors'
@@ -6,9 +5,6 @@ import Thanks from './widgets/thanks/Thanks'
 import { useLanguageStore } from '@/app/stores/languageStore'
 
 export default function About() {
-
-  const searchParams = useSearchParams();
-  const language = searchParams.get("language");
   const { t } = useLanguageStore()
   return (
     <SwipeWrapper onlyNext>

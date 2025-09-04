@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import styles from './Contributors.module.css'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
 import { useLanguageStore } from '@/app/stores/languageStore'
 
 type Contributor = {
@@ -111,9 +110,6 @@ export default function Contributors() {
   const [isLoadingProfile, setIsLoadingProfile] = useState(false)
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const { t } = useLanguageStore()
-
-  const searchParams = useSearchParams();
-  const language = searchParams.get("language");
 
   useEffect(() => {
     // Fetch contributors from GitHub API

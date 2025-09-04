@@ -1,12 +1,9 @@
-import { useSearchParams } from 'next/navigation';
 import styles from './Thanks.module.css'
 import Link from 'next/link'
 import { useLanguageStore } from '@/app/stores/languageStore';
 
 export default function Thanks() {
 
-  const searchParams = useSearchParams();
-  const language = searchParams.get("language");
   const { t } = useLanguageStore()
 
   return (
