@@ -12,7 +12,7 @@ import { formatDate } from '@/app/helpers/date'
 
 const iconActive = L.icon({
   iconUrl: '/icons/location-active.svg',
-  iconSize: [50, 66],
+  iconSize: [40, 55],
   iconAnchor: [21, 50],
   popupAnchor: [1, -34],
   tooltipAnchor: [16, -28],
