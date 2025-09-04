@@ -51,7 +51,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    url: 'https://ataturk-kronolojisi.org',
     title: 'Atatürk Kronolojisi',
     description:
       "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
