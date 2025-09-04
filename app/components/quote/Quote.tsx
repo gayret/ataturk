@@ -1,5 +1,6 @@
 import { QuoteType } from '../content/Content'
 import styles from './Quote.module.css'
+import Link from 'next/link'
 
 interface QuoteProps {
   quote: QuoteType
@@ -9,14 +10,14 @@ export default function Quote({ quote }: QuoteProps) {
   return (
     <div className={styles.quoteContainer}>
       <div className={styles.quoteContent}>
-        <div className={styles.quoteMark}>"</div>
+        <div className={styles.quoteMark}>&quot;</div>
         <div className={styles.quoteText}>
           {quote.text}
           {quote.source && (
             <span className={styles.sourceInline}>
-              <a href={quote.source} target="_blank" rel="noopener noreferrer">
+              <Link href={quote.source} target='_blank' rel='noopener noreferrer'>
                 *
-              </a>
+              </Link>
             </span>
           )}
         </div>
