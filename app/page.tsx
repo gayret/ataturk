@@ -9,6 +9,8 @@ import { useSearchParams } from 'next/navigation'
 import { useMemo } from 'react'
 import Content from './components/content/Content'
 import ActionButtons from './components/action-buttons/ActionButtons'
+import Ceremonies from './components/ceremonies/Ceremonies'
+import Balloons from './components/ballons/Balloons'
 
 export default function Home() {
   const events = useEventsData()
@@ -28,6 +30,7 @@ export default function Home() {
         <Header />
         <Timeline />
         <About />
+        <Balloons />
       </>
     )
   }
@@ -46,6 +49,7 @@ export default function Home() {
         <Content />
         <ActionButtons />
         <Timeline />
+        <Ceremonies />
       </>
     )
   }

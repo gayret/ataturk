@@ -75,7 +75,9 @@ export default function Search() {
               (item) =>
                 item.title.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()) ||
                 (item.description &&
-                  item.description.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()))
+                  item.description.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) ||
+                (formatDate(item.date).toLocaleLowerCase() &&
+                  formatDate(item.date).toLocaleLowerCase().includes(searchText))
             )
             .map((item, index) => (
               <Link
