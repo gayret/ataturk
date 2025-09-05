@@ -1489,10 +1489,16 @@
     "title": "Mareşal Liman von Sanders'in, Yıldırım Orduları Grup Komutanlığını Mustafa Kemal ATATÜRK'e devretmesi.",
     "date": "1918-10-31T00:00:00Z",
     "location": {
-      "lat": 36.2064064,
-      "lon": 37.0661848
+      "lat": 36.9973865,
+      "lon": 35.2056667
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/yildirim-grubu.jpg",
+        "alt": "Mustafa Kemal Paşa, Yıldırım Orduları Grubu Komutanlığını devraldığı Mareşal Liman von Sanders ile",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1624,7 +1630,13 @@
       "lat": 40.6544618,
       "lon": 35.4192545
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/amasya.jpg",
+        "alt": "Amasya",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1647,7 +1659,13 @@
       "lat": 39.9118927,
       "lon": 41.2223171
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/erzurum.jpg",
+        "alt": "Erzurum",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1738,7 +1756,18 @@
       "lat": 39.7483892,
       "lon": 36.95471
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/sivas.jpg",
+        "alt": "Rauf (ORBAY) Bey ile",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/sivas-3.jpg",
+        "alt": "5’inci Kafkas Tümeni Komutanı Cemil Cahit (TOYDEMİR) Bey ile",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1749,7 +1778,13 @@
       "lat": 39.7483892,
       "lon": 36.95471
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/sivas-2.jpg",
+        "alt": "Sivas Kongresi üyeleriyle beraber",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1761,7 +1796,18 @@
       "lat": 39.7483892,
       "lon": 36.95471
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/sivas-4.jpg",
+        "alt": "Bekir Sami (KUNDUH) Bey ve Rauf (ORBAY) Bey ile",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/sivas-6.jpg",
+        "alt": "Bekir Sami (KUNDUH) Bey ve Rauf (ORBAY) Bey ile",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1892,19 +1938,35 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/23nisan.jpg",
+        "alt": "Türkiye Büyük Millet Meclisi'nin açılışı",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
+      {
+        "url": "/images/1910-1940/23nisan-2.jpg",
+        "alt": "Türkiye Büyük Millet Meclisi'nin açılışı",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
     "id": 142,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisi başkanlığına seçilmesi ve teşekkür konuşması",
-    "description": "... Gerek askerî gerekse siyasî hayatımın bütün dönemlerini işgal eden mücadelelerimde daima hareket kuralım, millî iradeye dayanarak milletin ve vatanın muhtaç olduğu amaçlara yürümek olmuştur. ...",
     "date": "1920-04-24T00:00:00Z",
     "location": {
       "lat": 39.902959,
       "lon": 32.4509541
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "...Gerek askerî gerekse siyasî hayatımın bütün dönemlerini işgal eden mücadelelerimde daima hareket kuralım, millî iradeye dayanarak milletin ve vatanın muhtaç olduğu amaçlara yürümek olmuştur...",
+        "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1943,13 +2005,24 @@
   {
     "id": 146,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisinde konuşması.",
-    "description": "... Memleketimizin ellide biri değil bütünü tahrip edilse, bütünü ateşler içinde bırakılsa, biz bu toprakların üstünde bir tepeye çıkacağız ve oradan savunma ile meşgul olacağız!...",
     "date": "1920-07-08T00:00:00Z",
     "location": {
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/ankara-temmuz-1920.jpg",
+        "alt": "Ankara",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
+    "quotes": [
+      {
+        "text": "...Memleketimizin ellide biri değil bütünü tahrip edilse, bütünü ateşler içinde bırakılsa, biz bu toprakların üstünde bir tepeye çıkacağız ve oradan savunma ile meşgul olacağız!...",
+        "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -1966,7 +2039,6 @@
   {
     "id": 148,
     "title": "Mustafa Kemal'in 'Halkçılık Programı' adı altında bir broşür yayımlaması, bu broşürün Türkiye Büyük Millet Meclisine takdimi ve üyelere dağıtılması.",
-    "description": "... Memleketimizin ellide biri değil bütünü tahrip edilse, bütünü ateşler içinde bırakılsa, biz bu toprakların üstünde bir tepeye çıkacağız ve oradan savunma ile meşgul olacağız!...",
     "date": "1920-09-13T00:00:00Z",
     "location": {
       "lat": 39.902959,
@@ -1983,7 +2055,13 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
+    "images": [
+      {
+        "url": "/images/1910-1940/ankara-aralik-1920.jpg",
+        "alt": "Ankara",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -2011,13 +2089,18 @@
   {
     "id": 152,
     "title": "Mustafa Kemal'in, Birinci İnönü Zaferi münasebetiyle Batı Cephesi Komutanı İsmet (İnönü) Bey'e tebrik telgrafı:",
-    "description": "... Bu muvaffakiyetin mukaddes topraklarımızı düşman istilasından tamamen kurtaracak olan kesin zafere bir hayırlı başlangıç olmasını Allah'tan diler ve bu kutlamanın tüm Batı Ordusu er ve subaylarına iletilmesini rica ederim.",
     "date": "1921-01-11T00:00:00Z",
     "location": {
       "lat": 39.9420298,
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "...Bu muvaffakiyetin mukaddes topraklarımızı düşman istilasından tamamen kurtaracak olan kesin zafere bir hayırlı başlangıç olmasını Allah'tan diler ve bu kutlamanın tüm Batı Ordusu er ve subaylarına iletilmesini rica ederim.",
+        "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -2034,13 +2117,18 @@
   {
     "id": 154,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisinin birinci devre ikinci toplantı yılını açış konuşması:",
-    "description": "... Bugün anlaşılmıştır ki Sevr Anlaşması hükümleri Türkiye'ye zorla uygulanamaz. ...",
     "date": "1921-03-01T00:00:00Z",
     "location": {
       "lat": 39.9420298,
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "...Bugün anlaşılmıştır ki Sevr Anlaşması hükümleri Türkiye'ye zorla uygulanamaz...",
+        "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -2057,13 +2145,18 @@
   {
     "id": 156,
     "title": "İkinci İnönü Zaferi. Mustafa Kemal'in, Batı Cephesi Komutanı İsmet Paşa'ya cevap telgrafı:",
-    "description": "... Siz orada yalnız düşmanı değil, milletin ters talihini de yendiniz. İstila altındaki bedbaht topraklarımızla beraber bütün vatan, bugün en uzak köşelerine kadar zaferinizi kutluyor. Düşmanın istila hırsı, azim ve hamiyetinizin yalçın kayalarına çarparak hurdahaş oldu.",
     "date": "1921-04-01T00:00:00Z",
     "location": {
       "lat": 39.7612458,
       "lon": 30.0489326
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "...Siz orada yalnız düşmanı değil, milletin ters talihini de yendiniz. İstila altındaki bedbaht topraklarımızla beraber bütün vatan, bugün en uzak köşelerine kadar zaferinizi kutluyor. Düşmanın istila hırsı, azim ve hamiyetinizin yalçın kayalarına çarparak hurdahaş oldu.",
+        "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -2091,13 +2184,18 @@
   {
     "id": 159,
     "title": "Mustafa Kemal'in, Ankara'da toplanan ve 21 Temmuz 1921'e kadar çalışmalarına devam eden Maarif Kongresi'ni açış konuşması:",
-    "description": "... Çocuklarımız ve gençlerimiz yetiştirilirken onlara bilhassa varlığı ile, hakkı ile, birliği ile çelişen bütün yabancı unsurlarla mücadele lüzumunu ve millî düşünceleri, tam bir imanla her karşı fikre karşı şiddetle ve fedakârâne savunma gereği telkin edilmelidir.",
     "date": "1921-07-16T00:00:00Z",
     "location": {
       "lat": 39.9420298,
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "...Çocuklarımız ve gençlerimiz yetiştirilirken onlara bilhassa varlığı ile, hakkı ile, birliği ile çelişen bütün yabancı unsurlarla mücadele lüzumunu ve millî düşünceleri, tam bir imanla her karşı fikre karşı şiddetle ve fedakârâne savunma gereği telkin edilmelidir.",
+        "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -2126,13 +2224,18 @@
   {
     "id": 162,
     "title": "Mustafa Kemal'e, geniş yetkilerle ve üç ay süre ile Başkomutanlık yetkisi veren Kanun'un Büyük Millet Meclisinde kabulü. Mustafa Kemal'in başkomutan olmasından sonra Türkiye Büyük Millet Meclisinde konuşması:",
-    "description": "... Milletimizi esir etmek isteyen düşmanları, Allah'ın yardımıyla ne olursa olsun mağlup edeceğimize dair olan güven ve itimadım bir dakika olsun sarsılmamıştır. Bu dakikada bu kesin inancımı yüksek heyetinize karşı, bütün millete karşı ve bütün âleme karşı ilân ederim.",
     "date": "1921-08-05T00:00:00Z",
     "location": {
       "lat": 39.9420298,
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "...Milletimizi esir etmek isteyen düşmanları, Allah'ın yardımıyla ne olursa olsun mağlup edeceğimize dair olan güven ve itimadım bir dakika olsun sarsılmamıştır. Bu dakikada bu kesin inancımı yüksek heyetinize karşı, bütün millete karşı ve bütün âleme karşı ilân ederim.",
+        "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
@@ -2148,7 +2251,8 @@
   },
   {
     "id": 164,
-    "title": "Yunan ordusunun taarruzu ve Sakarya Meydan Muharebesi'nin başlaması. (22 gün 22 gece devam etmiştir.)",
+    "title": "Yunan ordusunun taarruzu ve Sakarya Meydan Muharebesi'nin başlaması.",
+    "description": "(22 gün 22 gece devam etmiştir.)",
     "date": "1921-08-23T00:00:00Z",
     "location": {
       "lat": 39.7463489,
@@ -2160,13 +2264,18 @@
   {
     "id": 165,
     "title": "Başkomutan Mustafa Kemal'in birliklere emri:",
-    "description": "Hatt-ı müdafaa yoktur, sath-ı müdafaa vardır. O satıh bütün vatandır. Vatanın her karış toprağı, vatandaşın kanıyla ıslanmadıkça terk olunamaz!",
     "date": "1921-08-26T00:00:00Z",
     "location": {
       "lat": 39.7463489,
       "lon": 32.4784766
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Hatt-ı müdafaa yoktur, sath-ı müdafaa vardır. O satıh bütün vatandır. Vatanın her karış toprağı, vatandaşın kanıyla ıslanmadıkça terk olunamaz!",
+        "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {

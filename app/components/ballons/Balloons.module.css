@@ -68,10 +68,28 @@
   0% {
     transform: translateX(-50%) rotate(0deg);
   }
+  25% {
+    transform: translateX(-52%) rotate(6deg);
+  }
   50% {
-    transform: translateX(-50%) rotate(3deg);
+    transform: translateX(-50%) rotate(6deg);
+  }
+  75% {
+    transform: translateX(-48%) rotate(6deg);
   }
   100% {
-    transform: translateX(-50%) rotate(-3deg);
+    transform: translateX(-50%) rotate(-6deg);
   }
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  width: 2px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.4);
+  transform: translateX(-50%);
+  animation: rope-sway 1.5s ease-in-out infinite;
 }
