@@ -12,7 +12,8 @@ export default function ActionButtons() {
   const searchParams = useSearchParams()
   const events = useEventsData()
 
-  const selectedItem = events.find((item: ItemType) => item.id === Number(searchParams.get('id')))
+  const selectedItem =
+    events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
 
   return (
     <div className={styles.actionButtons}>

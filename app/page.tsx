@@ -21,14 +21,6 @@ export default function Home() {
     []
   )
 
-  // Eğer id yoksa, searchParams'a id=1 ekle
-  if (typeof window !== 'undefined' && searchParams.get('id') === null) {
-    const params = new URLSearchParams(window.location.search)
-    params.set('id', '1')
-    window.location.search = params.toString()
-    return null
-  }
-
   // Eğer searchParams 'about' ise
   if (searchParams.get('id') === 'about') {
     return (
@@ -41,15 +33,13 @@ export default function Home() {
   }
 
   // Eğer searchParams 'about' değilse ve null değilse, normal render et
-  if (searchParams.get('id') !== 'about' && searchParams.get('id') !== null) {
+  if (searchParams.get('id') !== 'about') {
     return (
       <>
         <MapWithNoSSR
           location={
-            events.find((item) => item.id === Number(searchParams.get('id')))?.location || {
-              lat: 0,
-              lon: 0,
-            }
+            events.find((item) => item.id === Number(searchParams.get('id')))?.location ||
+            events[0].location!
           }
         />
         <Header />

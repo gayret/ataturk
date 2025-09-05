@@ -16,7 +16,8 @@ export default function Images() {
   const [modalImage, setModalImage] = useState<ImageType | null>(null)
   const searchParams = useSearchParams()
 
-  const selectedItem = events.find((item: ItemType) => item.id === Number(searchParams.get('id')))
+  const selectedItem =
+    events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
 
   // ESC ile modal kapatma
   useEffect(() => {
