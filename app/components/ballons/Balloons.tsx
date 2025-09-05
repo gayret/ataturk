@@ -17,7 +17,7 @@ export default function Balloons() {
           className={styles.balloon}
           style={{
             left: `${Math.random() * 100}%`,
-            backgroundImage: "url('/images/Bayrak.png')",
+            backgroundImage: "url('/images/bayrak.png')",
             animationDuration: '5s',
             animationDelay: `${Math.random() * 3}s`,
             scale: `${0.5 + Math.random() * 0.5}`,
