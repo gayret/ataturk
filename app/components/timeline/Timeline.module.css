@@ -88,14 +88,15 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  transition: all 0.8s ease-in-out;
+  transition: all 0.2s ease-in-out;
   backdrop-filter: invert(0.3);
-  scale: 0.4;
+  scale: 0.8;
+  cursor: pointer;
 }
 
 .actionButton:hover {
   backdrop-filter: invert(0.7);
-  scale: 0.5;
+  scale: 1;
 }
 
 @media (max-width: 600px) {

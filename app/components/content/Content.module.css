@@ -1,8 +1,7 @@
 .content {
   margin-block: 1rem;
   margin-bottom: 50dvh;
-  top: 6rem;
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 100%;
   pointer-events: none;
