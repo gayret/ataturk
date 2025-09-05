@@ -63,7 +63,7 @@ export default function Timeline() {
 
   const onGoNext = useCallback(() => {
     const url = new URL(window.location.href)
-    const currentId = searchParams.get('id')
+    const currentId = searchParams.get('id') || 1
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     const nextIndex = (currentIndex + 1) % events.length
     url.searchParams.set('id', events[nextIndex].id.toString())
