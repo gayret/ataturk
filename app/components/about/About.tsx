@@ -19,7 +19,7 @@ export default function About() {
             kronolojik olarak anlatıp gençlere ilham vermektir.
           </p>
 
-          <h4>Kullanımı</h4>
+          <h2>Kullanımı</h2>
           <p>
             Sayfanın altındaki zaman çizelgesinde Atatürk&apos;ün hayatındaki önemli olayları
             görebilirsiniz. Tarihlere tıklayarak olay detaylarını ve haritada ilgili bölgeleri

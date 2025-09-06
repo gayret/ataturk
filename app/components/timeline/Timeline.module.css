@@ -122,7 +122,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.2rem;
   position: absolute;
   bottom: 75.5%;
   gap: 0.1px;
@@ -132,7 +131,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.2rem;
   position: absolute;
   top: 75%;
   gap: 0.1px;

@@ -179,7 +179,7 @@ export default function Contributors() {
     contributors.length > 0 && (
       <>
         <section>
-          <h4>Geliştirenler</h4>
+          <h2>Geliştirenler</h2>
 
           <small>
             Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için{' '}
