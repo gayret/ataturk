@@ -99,3 +99,11 @@
 .visible {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .cloud {
+    width: auto;
+    height: 150dvh;
+    object-fit: contain;
+  }
+}
