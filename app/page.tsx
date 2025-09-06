@@ -39,7 +39,8 @@ export default function Home() {
   // Eğer searchParams 'about' değilse ve null değilse, normal render et
   if (searchParams.get('id') !== 'about') {
     return (
-      <Clouds>
+      <>
+        <Clouds />
         <MapWithNoSSR
           location={
             events.find((item) => item.id === Number(searchParams.get('id')))?.location ||
@@ -51,7 +52,7 @@ export default function Home() {
         <ActionButtons />
         <Timeline />
         <Ceremonies />
-      </Clouds>
+      </>
     )
   }
 }
