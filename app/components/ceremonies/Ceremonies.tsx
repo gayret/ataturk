@@ -1,9 +1,9 @@
 import { useSearchParams } from 'next/navigation'
-import Balloons from '../ballons/Balloons'
+import Balloons from './widgets/ballons/Balloons'
 
 enum CERENOMIES {
-  CUMHURIYETIN_ILANI = 195,
   TBMM_ACILISI = 141,
+  CUMHURIYETIN_ILANI = 195,
 }
 
 export default function Ceremonies() {

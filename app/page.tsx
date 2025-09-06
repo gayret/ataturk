@@ -10,7 +10,8 @@ import { useMemo } from 'react'
 import Content from './components/content/Content'
 import ActionButtons from './components/action-buttons/ActionButtons'
 import Ceremonies from './components/ceremonies/Ceremonies'
-import Balloons from './components/ballons/Balloons'
+import Balloons from './components/ceremonies/widgets/ballons/Balloons'
+import Clouds from './components/ceremonies/widgets/clouds/Clouds'
 
 export default function Home() {
   const events = useEventsData()
@@ -38,7 +39,7 @@ export default function Home() {
   // Eğer searchParams 'about' değilse ve null değilse, normal render et
   if (searchParams.get('id') !== 'about') {
     return (
-      <>
+      <Clouds>
         <MapWithNoSSR
           location={
             events.find((item) => item.id === Number(searchParams.get('id')))?.location ||
@@ -50,7 +51,7 @@ export default function Home() {
         <ActionButtons />
         <Timeline />
         <Ceremonies />
-      </>
+      </Clouds>
     )
   }
 }
