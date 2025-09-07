@@ -14,9 +14,6 @@ export default function Thanks() {
             Osman Emre Hacıarap <i className={styles.detail}>(Seslendirme Yönetmeni)</i>
           </Link>
         </li>
-        <li className={styles.listItem}>
-          Umut Karakoç <i className={styles.detail}>(Konsept Danışmanı)</i>
-        </li>
       </ul>
     </div>
   )
