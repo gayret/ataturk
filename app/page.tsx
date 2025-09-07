@@ -40,13 +40,15 @@ export default function Home() {
   if (searchParams.get('id') !== 'about') {
     return (
       <>
-        <Clouds />
+        {searchParams.get('id') !== null && <Clouds />}
+
         <MapWithNoSSR
           location={
             events.find((item) => item.id === Number(searchParams.get('id')))?.location ||
             events[0].location!
           }
         />
+
         <Header />
         <Content />
         <ActionButtons />
