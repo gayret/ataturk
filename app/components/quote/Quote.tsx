@@ -10,7 +10,7 @@ export default function Quote({ quote }: QuoteProps) {
   return (
     <div className={styles.quoteContainer}>
       <div className={styles.quoteContent}>
-        <div className={styles.quoteMark}>&quot;</div>
+        <div className={styles.quoteMark} aria-hidden="true">&quot;</div>
         <div className={styles.quoteText}>
           {quote.text}
           {quote.source && (

@@ -40,7 +40,7 @@ export default function Images() {
               onClick={() => setModalImage(image)}
               style={{ cursor: 'pointer' }}
             >
-              <Image src={image.url} alt='External Image' width={2000} height={2000} />
+              <Image src={image.url} alt={image.alt} width={2000} height={2000} />
               <p title={`Bilgi kaynağı: ${image.source}`}>
                 {image.alt}
                 <a href={image.source} target='_blank' rel='noopener noreferrer'>
@@ -53,7 +53,7 @@ export default function Images() {
       )}
 
       {modalImage && (
-        <div className={styles.modal} onClick={() => setModalImage(null)}>
+        <div className={styles.modal} onClick={() => setModalImage(null)} role="dialog" aria-modal="true">
           <div
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
@@ -64,7 +64,7 @@ export default function Images() {
               onClick={() => setModalImage(null)}
               aria-label='Kapat'
             >
-              ×
+              &#x2715;
             </button>
 
             <Image

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { Barlow } from 'next/font/google'
 import { Suspense } from 'react'
@@ -23,10 +23,6 @@ export const metadata: Metadata = {
     'Cumhuriyet',
     'İstiklal Savaşı',
   ],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -56,6 +52,11 @@ export const metadata: Metadata = {
       "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
     images: ['https://ataturk-kronolojisi.org/images/1910-1940/ataturk-1911.jpg'],
   },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

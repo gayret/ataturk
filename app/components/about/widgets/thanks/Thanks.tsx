@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Thanks() {
   return (
     <div>
-      <h4 className={styles.title}>Emek verenler</h4>
+      <h2 className={styles.title}>Emek verenler</h2>
       <ul className={styles.thanksList}>
         <li className={styles.listItem}>
           İrem Çiftler Gayret <i className={styles.detail}>(Kullanıcı testleri ve analiz)</i>
