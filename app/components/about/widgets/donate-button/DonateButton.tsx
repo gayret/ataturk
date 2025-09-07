@@ -5,7 +5,7 @@ export default function DonateButton() {
   return (
     <Link
       className={styles.button}
-      href='https://buymeacoffee.com/safagayret'
+      href='https://donate.stripe.com/4gMdRaeg7acBfC3eYl33W06'
       target='_blank'
       rel='noopener'
     >

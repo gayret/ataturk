@@ -1,6 +1,7 @@
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import styles from './About.module.css'
 import Contributors from './widgets/contributors/Contributors'
+import DonateButton from './widgets/donate-button/DonateButton'
 import Thanks from './widgets/thanks/Thanks'
 
 export default function About() {
@@ -29,6 +30,8 @@ export default function About() {
           <Contributors />
 
           <Thanks />
+
+          <DonateButton />
         </div>
       </div>
     </SwipeWrapper>

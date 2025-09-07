@@ -22,6 +22,9 @@ export default function Thanks() {
             Yusuf Köleli <i className={styles.detail}>(Konsept Danışmanı)</i>
           </Link>
         </li>
+        <li className={styles.listItem}>
+          Umut Karakoç <i className={styles.detail}>(Konsept Danışmanı)</i>
+        </li>
       </ul>
     </div>
   )
