@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
     images: [
       {
-        url: 'https://ataturk-kronolojisi.org/images/1910-1940/ataturk-1911.jpg',
+        url: 'https://ataturk-kronolojisi.org/images/1910-1940/gelibolu-1915.jpg',
         width: 800,
         height: 600,
         alt: 'Mustafa Kemal Atatürk',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: 'Atatürk Kronolojisi',
     description:
       "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
-    images: ['https://ataturk-kronolojisi.org/images/1910-1940/ataturk-1911.jpg'],
+    images: ['https://ataturk-kronolojisi.org/images/1910-1940/gelibolu-1915.jpg'],
   },
 }
 
