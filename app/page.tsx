@@ -3,7 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 
 // Fetch data at build time (SEO friendly, static)
-export async function getEventsData() {
+async function getEventsData() {
   try {
     const filePath = path.join(process.cwd(), "app", "json", "events.json");
     const fileContents = await fs.readFile(filePath, "utf8");
