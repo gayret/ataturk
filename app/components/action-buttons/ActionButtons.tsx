@@ -7,6 +7,7 @@ import Share from './widgets/share/Share'
 import Direction from './widgets/direction/Direction'
 import ShowAllLocations from './widgets/show-all-locations/ShowAllLocations'
 import Search from './widgets/search/Search'
+import ToggleAnnouncement from './widgets/toggle-announcement/ToggleAnnouncement'
 
 export default function ActionButtons() {
   const searchParams = useSearchParams()
@@ -19,6 +20,8 @@ export default function ActionButtons() {
     <div className={styles.actionButtons}>
       {selectedItem && (
         <>
+          <ToggleAnnouncement />
+
           <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
           <ShowAllLocations />

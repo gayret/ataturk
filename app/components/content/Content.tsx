@@ -90,7 +90,12 @@ export default function Content() {
                     </a>
                   )}
                 </p>
-                <audio controls controlsList='nodownload' onContextMenu={(e) => e.preventDefault()} aria-label={`Play sound of ${sound.alt}`}>
+                <audio
+                  controls
+                  controlsList='nodownload'
+                  onContextMenu={(e) => e.preventDefault()}
+                  aria-label={`Play sound of ${sound.alt}`}
+                >
                   <source src={sound.url} type='audio/mpeg' />
                   İnternet tarayıcınız ses yürütmeyi desteklemiyor.
                 </audio>
