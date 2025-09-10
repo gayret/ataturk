@@ -1,60 +1,21 @@
-'use client'
+import HomeClient from "@/app/components/home/Home";
+import fs from "fs/promises";
+import path from "path";
 
-import About from './components/about/About'
-import Header from './components/header/Header'
-import Timeline from './components/timeline/Timeline'
-import { useEventsData } from '@/app/helpers/data'
-import dynamic from 'next/dynamic'
-import { useSearchParams } from 'next/navigation'
-import { useMemo } from 'react'
-import Content from './components/content/Content'
-import ActionButtons from './components/action-buttons/ActionButtons'
-import Ceremonies from './components/ceremonies/Ceremonies'
-import Balloons from './components/ceremonies/widgets/ballons/Balloons'
-import Clouds from './components/ceremonies/widgets/clouds/Clouds'
-
-export default function Home() {
-  const events = useEventsData()
-  const searchParams = useSearchParams()
-  const MapWithNoSSR = useMemo(
-    () =>
-      dynamic(() => import('@/app/components/map/Map'), {
-        ssr: false,
-      }),
-    []
-  )
-
-  // Eğer searchParams 'about' ise
-  if (searchParams.get('id') === 'about') {
-    return (
-      <>
-        <Header />
-        <Timeline />
-        <About />
-        <Balloons />
-      </>
-    )
+// Fetch data at build time (SEO friendly, static)
+export async function getEventsData() {
+  try {
+    const filePath = path.join(process.cwd(), "app", "json", "events.json");
+    const fileContents = await fs.readFile(filePath, "utf8");
+    return JSON.parse(fileContents);
+  } catch (error) {
+    console.error("Error loading events:", error);
+    return [];
   }
+}
 
-  // Eğer searchParams 'about' değilse ve null değilse, normal render et
-  if (searchParams.get('id') !== 'about') {
-    return (
-      <>
-        {searchParams.get('id') !== null && <Clouds />}
+export default async function Home() {
+  const events = await getEventsData();
 
-        <MapWithNoSSR
-          location={
-            events.find((item) => item.id === Number(searchParams.get('id')))?.location ||
-            events[0].location!
-          }
-        />
-
-        <Header />
-        <Content />
-        <ActionButtons />
-        <Timeline />
-        <Ceremonies />
-      </>
-    )
-  }
+  return <HomeClient events={events} />;
 }
