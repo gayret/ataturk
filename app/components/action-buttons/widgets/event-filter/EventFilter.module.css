@@ -1,0 +1,27 @@
+.filter {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .opened {
+    position: absolute;
+    right: 130%;
+    bottom: 50%;
+    transform: translateY(50%);
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  
+  .filterItemWrapper {
+    cursor: pointer;
+    transition: transform 0.3s ease-in
+  }
+
+  .activeFilterItem {
+    transform: scale(1.5);
+  }
