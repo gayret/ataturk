@@ -70,19 +70,35 @@ export default function Map({ location }: MapProps) {
   const showAllLocations = true;
   const events = useEventsData();
   const [filteredEvents, setFilteredEvents] = useState(events);
+
+  const handleMarkerClick = (id: number) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("id", id.toString());
+    window.history.pushState({}, "", url.toString());
+  }
+
+
+  // Olay filtrelemesi yapıldıkça haritadaki markerleri güncelleyen fonksiyon
   useEffect(() => {
-    // URL’den paramı al
-    const displayedLocations =
-      searchParams.get("displayed-locations")?.split(",") || [];
+    const displayedLocations = searchParams.get("displayed-locations")?.split(",") || [];
+    let newFilteredEvents;
+    
     if (displayedLocations.length === 0) {
-      // Hiç param yoksa, hepsini göster
-      setFilteredEvents(events);
+      newFilteredEvents = events;
     } else {
-      // Sadece paramda olanları göster
-      const newFiltered = events.filter((event) =>
+      newFilteredEvents = events.filter((event) =>
         displayedLocations.includes(event.category || "")
       );
-      setFilteredEvents([...newFiltered]);
+    }
+    
+    setFilteredEvents([...newFilteredEvents]);
+    
+    // Güncellenmiş filteredEvents ile kontrol et
+    const activeMarker = newFilteredEvents.find(event => event.id === Number(searchParams.get("id")));
+    console.log(activeMarker);
+    
+    if (!activeMarker && newFilteredEvents.length > 0) {
+      handleMarkerClick(newFilteredEvents[0].id);
     }
   }, [searchParams, events]);
   if (filteredEvents.length === 0) return null;
@@ -124,9 +140,7 @@ export default function Map({ location }: MapProps) {
               key={item.id}
               eventHandlers={{
                 click: () => {
-                  const url = new URL(window.location.href);
-                  url.searchParams.set("id", item.id.toString());
-                  window.history.pushState({}, "", url.toString());
+                  handleMarkerClick(item.id);
                 },
               }}
               position={[item.location!.lat, item.location!.lon]}
