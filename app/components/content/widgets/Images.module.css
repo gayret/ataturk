@@ -55,12 +55,23 @@
   pointer-events: all;
 }
 
-.modalContent {
+.imagesWrapper {
   background: #fff;
   padding: 24px;
   border-radius: 8px;
   max-width: 90vw;
   max-height: 90vh;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.chevronButton {
+  border: none;
+  cursor: pointer;
+}
+
+.modalContent {
   overflow: auto;
   text-align: center;
 }
