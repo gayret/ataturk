@@ -1,33 +1,61 @@
-import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import styles from './Images.module.css'
-import { useEventsData } from '@/app/helpers/data'
-import { useSearchParams } from 'next/navigation'
-import { ItemType } from '../Content'
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import styles from "./Images.module.css";
+import { useEventsData } from "@/app/helpers/data";
+import { useSearchParams } from "next/navigation";
+import { ItemType } from "../Content";
+import ChevronLeft from "@/app/assets/icons/chevron-left.svg";
+import ChevronRight from "@/app/assets/icons/chevron-right.svg";
 
 export type ImageType = {
-  url: string
-  alt: string
-  source?: string
-}
+  url: string;
+  alt: string;
+  source?: string;
+};
 
 export default function Images() {
-  const events = useEventsData()
-  const [modalImage, setModalImage] = useState<ImageType | null>(null)
-  const searchParams = useSearchParams()
+  const events = useEventsData();
+  const [modalImage, setModalImage] = useState<ImageType | null>(null);
+  const searchParams = useSearchParams();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const [currentImages, setCurrentImages] = useState<ImageType[]>([]);
 
   const selectedItem =
-    events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
+    events.find(
+      (item: ItemType) => item.id === Number(searchParams.get("id"))
+    ) || events[0];
+
+    // Resimlere tıklanıp modal açılırken çağırılan fonksiyon
+    const openModal = (image: ImageType) => {
+      setModalImage(image);
+      const imageIndex = selectedItem.images.findIndex(img => img.url === image.url);
+      setCurrentImageIndex(imageIndex);
+      setCurrentImages(selectedItem.images);
+    };
+
+    // Önceki resme geçme
+    const goToPrevious = () => {
+      const prevIndex = currentImageIndex > 0 ? currentImageIndex - 1 : currentImages.length - 1;
+      setCurrentImageIndex(prevIndex);
+      setModalImage(currentImages[prevIndex]);
+    };
+    
+    // Sonraki resme geçme
+    const goToNext = () => {
+      const nextIndex = currentImageIndex < currentImages.length - 1 ? currentImageIndex + 1 : 0;
+      setCurrentImageIndex(nextIndex);
+      setModalImage(currentImages[nextIndex]);
+    };
 
   // ESC ile modal kapatma
   useEffect(() => {
-    if (!modalImage) return
+    if (!modalImage) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setModalImage(null)
-    }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [modalImage])
+      if (e.key === "Escape") setModalImage(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [modalImage]);
 
   return (
     <div>
@@ -37,13 +65,22 @@ export default function Images() {
             <div
               key={index}
               className={styles.image}
-              onClick={() => setModalImage(image)}
-              style={{ cursor: 'pointer' }}
+              onClick={() => openModal(image)}
+              style={{ cursor: "pointer" }}
             >
-              <Image src={image.url} alt={image.alt} width={2000} height={2000} />
+              <Image
+                src={image.url}
+                alt={image.alt}
+                width={2000}
+                height={2000}
+              />
               <p title={`Bilgi kaynağı: ${image.source}`}>
                 {image.alt}
-                <a href={image.source} target='_blank' rel='noopener noreferrer'>
+                <a
+                  href={image.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   *
                 </a>
               </p>
@@ -53,38 +90,56 @@ export default function Images() {
       )}
 
       {modalImage && (
-        <div className={styles.modal} onClick={() => setModalImage(null)} role="dialog" aria-modal="true">
-          <div
-            className={styles.modalContent}
-            onClick={(e) => e.stopPropagation()}
-            style={{ position: 'relative' }}
-          >
-            <button
-              className={styles.closeButton}
-              onClick={() => setModalImage(null)}
-              aria-label='Kapat'
-            >
-              &#x2715;
+        <div
+          className={styles.modal}
+          onClick={() => setModalImage(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div onClick={(e) => e.stopPropagation()} className={styles.imagesWrapper}>
+            <button className={styles.chevronButton} onClick={() => goToPrevious()}>
+              <Image src={ChevronLeft} alt="Sol" width={16} height={16} />
             </button>
+            <div
+              className={styles.modalContent}
+              style={{ position: "relative" }}
+            >
+              <button
+                className={styles.closeButton}
+                onClick={() => setModalImage(null)}
+                aria-label="Kapat"
+              >
+                &#x2715;
+              </button>
 
-            <Image
-              src={modalImage.url}
-              alt={modalImage.alt}
-              width={800}
-              height={800}
-              style={{ width: '100%', height: 'auto' }}
-            />
-            <p title={`Bilgi kaynağı: ${modalImage.source}`}>
-              {modalImage.alt}
-              {modalImage.source && (
-                <a href={modalImage.source} target='_blank' rel='noopener noreferrer'>
-                  {modalImage.source.includes('https://') ? '*' : 'Bilgi Kaynağı'}
-                </a>
-              )}
-            </p>
+              <Image
+                src={modalImage.url}
+                alt={modalImage.alt}
+                width={800}
+                height={800}
+                style={{ width: "100%", height: "auto" }}
+              />
+              <p title={`Bilgi kaynağı: ${modalImage.source}`}>
+                {modalImage.alt}
+                {modalImage.source && (
+                  <a
+                    href={modalImage.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {modalImage.source.includes("https://")
+                      ? "*"
+                      : "Bilgi Kaynağı"}
+                  </a>
+                )}
+              </p>
+            </div>
+            <button className={styles.chevronButton} onClick={() => goToNext()}>
+              <Image src={ChevronRight} alt="Sağ" width={16} height={16} />
+            </button>
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }
