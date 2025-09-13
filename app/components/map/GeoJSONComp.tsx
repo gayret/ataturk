@@ -77,16 +77,21 @@ const GeoJSONComp = ({ events, searchParams }: GeoJSONProps) => {
 
   if (filteredData.features.length === 0) return null;
 
-  return <GeoJSON key={geoJsonKey} data={filteredData} style={(feature) => {
-    const countryName = feature?.properties.cntry_name.toLowerCase() || ''
-
-    return {
-      color: "#555555",
-      weight: 1,
-      fillColor: countryName.includes("turkey") ? "#E30A17" : "#f0f0f0",
-      fillOpacity: 0.4,
-    };
-  }} />;
+  return ( 
+    <GeoJSON 
+      key={geoJsonKey} 
+      data={filteredData} 
+      style={(feature) => {
+        const countryName = feature?.properties.cntry_name.toLowerCase() || ''
+        return {
+          color: "#555555",
+          weight: 1,
+          fillColor: countryName.includes("turkey") ? "#E30A17" : "#f0f0f0",
+          fillOpacity: 0.4,
+        };
+      }}
+    />
+  );
 };
 
 export default GeoJSONComp;
