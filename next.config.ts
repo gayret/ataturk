@@ -59,6 +59,15 @@ const nextConfig: NextConfig = {
         source: "/(.*)", // apply to all routes
         headers: securityHeaders,
       },
+      {
+        source: "/data/worldBorder.json",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=315360000, immutable",
+          },
+        ],
+      },
     ];
   },
   async redirects() {
