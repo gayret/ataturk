@@ -9,6 +9,7 @@ import TurkishCountryLabels from './widgets/TurkishCountryLabels'
 import { useEventsData } from '@/app/helpers/data'
 import { useSearchParams } from 'next/navigation'
 import { formatDate } from '@/app/helpers/date'
+import GeoJSONComp from './GeoJSONComp'
 
 const iconActive = L.icon({
   iconUrl: '/icons/location-active.svg',
@@ -105,6 +106,8 @@ export default function Map({ location }: MapProps) {
             />
           ))}
 
+        <GeoJSONComp events={events} searchParams={searchParams} />
+        
         <Marker position={[location.lat, location.lon]} icon={iconActive} zIndexOffset={1} />
 
         <MapCenterUpdater location={location} />
