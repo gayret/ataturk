@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { convertDateFormat } from '@/app/helpers/date'
 import { GeoJSON } from 'react-leaflet'
 
+const INITIAL_YEAR = "01.01.1881 23:00:00"
+
 type GeoFeature = {
   properties: {
     gwsdate: string
@@ -51,7 +53,7 @@ const GeoJSONComp = ({ events, searchParams }: GeoJSONProps) => {
 
   const year = useMemo(() => {
     const event = events?.find((e) => e.id === Number(searchParams.get('id')))
-    return event ? new Date(event.date).getTime() : null
+    return new Date(event?.date || INITIAL_YEAR ).getTime()
   }, [events, searchParams])
 
   const filteredData = useMemo(() => {
