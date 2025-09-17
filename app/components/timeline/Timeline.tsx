@@ -1,9 +1,9 @@
 'use client'
 
 import styles from './Timeline.module.css'
-import { useEventsData } from '@/app/helpers/data'
+import useEventsData from '@/app/hooks/useEventsData'
+import useUpdateQueryParam from '@/app/hooks/useQueryParam'
 import { getYear } from '@/app/helpers/date'
-import { useSearchParams } from 'next/navigation'
 import { useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 
@@ -12,7 +12,7 @@ import chevronRight from '@/app/assets/icons/chevron-right.svg'
 
 export default function Timeline() {
   const events = useEventsData()
-  const searchParams = useSearchParams()
+  const { setQueryParam, getQueryParam } = useUpdateQueryParam()
 
   const timelineContainerRef = useRef<HTMLDivElement>(null)
 
@@ -33,10 +33,10 @@ export default function Timeline() {
   }))
 
   const onOpenId = (id: number) => () => {
-    const url = new URL(window.location.href)
-    url.searchParams.set('id', id.toString())
-    window.history.pushState({}, '', url.toString())
-  }
+    setQueryParam('id', id.toString())
+  };
+
+  const currentId = getQueryParam("id");
 
   useEffect(() => {
     if (timelineContainerRef.current) {
@@ -50,25 +50,21 @@ export default function Timeline() {
         })
       }
     }
-  }, [searchParams])
+  }, [currentId])
 
   const onGoPrev = useCallback(() => {
-    const url = new URL(window.location.href)
-    const currentId = searchParams.get('id')
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     const prevIndex = (currentIndex - 1 + events.length) % events.length
-    url.searchParams.set('id', events[prevIndex].id.toString())
-    window.history.pushState({}, '', url.toString())
-  }, [searchParams, events])
+
+    setQueryParam('id', events[prevIndex].id.toString())  
+  }, [currentId, events, setQueryParam])
 
   const onGoNext = useCallback(() => {
-    const url = new URL(window.location.href)
-    const currentId = searchParams.get('id') || 1
-    const currentIndex = events.findIndex((item) => item.id === Number(currentId))
+    const currentIndex = events.findIndex((item) => item.id === Number(currentId || 1))
     const nextIndex = (currentIndex + 1) % events.length
-    url.searchParams.set('id', events[nextIndex].id.toString())
-    window.history.pushState({}, '', url.toString())
-  }, [searchParams, events])
+
+    setQueryParam('id', events[nextIndex].id.toString())
+  }, [currentId, events, setQueryParam])
 
   useEffect(() => {
     // Handle keyboard navigation for left and right arrows
@@ -122,7 +118,7 @@ export default function Timeline() {
 
       <div className={styles.timelineContainer} ref={timelineContainerRef}>
         {uniqueYears.map((item, index) => {
-          const activeId = Number(searchParams.get('id'))
+          const activeId = Number(getQueryParam('id'))
           const isActiveYear = item.ids.includes(activeId)
 
           return (

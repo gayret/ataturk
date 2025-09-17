@@ -6,8 +6,8 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { useEffect, useRef } from 'react'
 import TurkishCountryLabels from './widgets/TurkishCountryLabels'
-import { useEventsData } from '@/app/helpers/data'
-import { useSearchParams } from 'next/navigation'
+import useEventsData from '@/app/hooks/useEventsData'
+import useUpdateQueryParam from '@/app/hooks/useQueryParam'
 import { formatDate } from '@/app/helpers/date'
 import GeoJSONComp from './GeoJSONComp'
 
@@ -66,9 +66,10 @@ function MapCenterUpdater({ location }: MapProps) {
 }
 
 export default function Map({ location }: MapProps) {
-  const searchParams = useSearchParams()
-  const showAllLocations = searchParams.get('show-all-locations') === 'true'
   const events = useEventsData()
+  const { setQueryParam, getQueryParam } = useUpdateQueryParam();
+  const showAllLocations = getQueryParam('show-all-locations') === 'true'
+
   if (events.length === 0) return null
   // Random zoom level
   const initialZoom = Math.floor(Math.random() * 5) + 7
@@ -94,11 +95,7 @@ export default function Map({ location }: MapProps) {
               opacity={0.5}
               key={item.id}
               eventHandlers={{
-                click: () => {
-                  const url = new URL(window.location.href)
-                  url.searchParams.set('id', item.id.toString())
-                  window.history.pushState({}, '', url.toString())
-                },
+                click: () => setQueryParam('id', item.id.toString()),
               }}
               position={[item.location!.lat, item.location!.lon]}
               icon={iconPassive}
@@ -106,7 +103,7 @@ export default function Map({ location }: MapProps) {
             />
           ))}
 
-        <GeoJSONComp events={events} searchParams={searchParams} />
+        <GeoJSONComp events={events} getQueryParam={getQueryParam} />
         
         <Marker position={[location.lat, location.lon]} icon={iconActive} zIndexOffset={1} />
 

@@ -22,10 +22,10 @@ interface Event {
 
 interface GeoJSONProps {
   events: Event[]
-  searchParams: URLSearchParams
+  getQueryParam: (key: string) => string | null
 }
 
-const GeoJSONComp = ({ events, searchParams }: GeoJSONProps) => {
+const GeoJSONComp = ({ events, getQueryParam }: GeoJSONProps) => {
   const [geoData, setGeoData] = useState<GeoData | null>(null)
 
   useEffect(() => {
@@ -52,9 +52,9 @@ const GeoJSONComp = ({ events, searchParams }: GeoJSONProps) => {
   }, [])
 
   const year = useMemo(() => {
-    const event = events?.find((e) => e.id === Number(searchParams.get('id')))
+    const event = events?.find((e) => e.id === Number(getQueryParam('id')))
     return new Date(event?.date || INITIAL_YEAR ).getTime()
-  }, [events, searchParams])
+  }, [events, getQueryParam])
 
   const filteredData = useMemo(() => {
     if (!year) return { ...geoData, type: 'FeatureCollection' as const, features: [] }

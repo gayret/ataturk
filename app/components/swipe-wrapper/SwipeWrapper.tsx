@@ -1,7 +1,7 @@
 'use client'
 import { ReactNode, useCallback, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
-import { useEventsData } from '@/app/helpers/data'
+import useEventsData from '@/app/hooks/useEventsData'
+import useUpdateQueryParam from '@/app/hooks/useQueryParam'
 
 type SwipeWrapperProps = {
   children: ReactNode
@@ -15,11 +15,11 @@ export default function SwipeWrapper({
   minSwipeDistance = 50,
 }: SwipeWrapperProps) {
   const events = useEventsData()
-  const searchParams = useSearchParams()
+  const { setQueryParam, getQueryParam } = useUpdateQueryParam()
+  const currentId = getQueryParam('id')
 
   const [touchStartX, setTouchStartX] = useState<number | null>(null)
   const [touchEndX, setTouchEndX] = useState<number | null>(null)
-
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEndX(null)
     setTouchStartX(e.targetTouches[0].clientX)
@@ -30,22 +30,18 @@ export default function SwipeWrapper({
   }
 
   const onGoPrev = useCallback(() => {
-    const url = new URL(window.location.href)
-    const currentId = searchParams.get('id')
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     const prevIndex = (currentIndex - 1 + events.length) % events.length
-    url.searchParams.set('id', events[prevIndex].id.toString())
-    window.history.pushState({}, '', url.toString())
-  }, [searchParams, events])
+
+    setQueryParam('id', events[prevIndex].id.toString())
+  }, [events, currentId, setQueryParam])
 
   const onGoNext = useCallback(() => {
-    const url = new URL(window.location.href)
-    const currentId = searchParams.get('id')
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     const nextIndex = (currentIndex + 1) % events.length
-    url.searchParams.set('id', events[nextIndex].id.toString())
-    window.history.pushState({}, '', url.toString())
-  }, [searchParams, events])
+    
+    setQueryParam('id', events[nextIndex].id.toString())
+  }, [events, currentId, setQueryParam])
 
   const handleTouchEnd = () => {
     if (!touchStartX || !touchEndX) return
