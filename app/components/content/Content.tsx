@@ -4,7 +4,7 @@ import { formatDate } from '@/app/helpers/date'
 import { useEffect, useState } from 'react'
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import Images from './widgets/Images'
-import { useEventsData } from '@/app/helpers/data'
+import useEventsData from '@/app/hooks/useEventsData'
 import Quote from '../quote/Quote'
 import { ImageType } from './widgets/Images'
 

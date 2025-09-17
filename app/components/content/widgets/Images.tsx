@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './Images.module.css'
-import { useEventsData } from '@/app/helpers/data'
+import useEventsData from '@/app/hooks/useEventsData'
 import { useSearchParams } from 'next/navigation'
 import { ItemType } from '../Content'
 import ChevronLeft from '@/app/assets/icons/chevron-left.svg'

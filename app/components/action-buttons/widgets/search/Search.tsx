@@ -1,5 +1,5 @@
 import styles from './Search.module.css'
-import { useEventsData } from '@/app/helpers/data'
+import useEventsData from '@/app/hooks/useEventsData'
 import { formatDate } from '@/app/helpers/date'
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
