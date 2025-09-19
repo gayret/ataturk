@@ -11,6 +11,7 @@ import Clouds from '@/app/components/ceremonies/widgets/clouds/Clouds'
 import ActionButtons from '@/app/components/action-buttons/ActionButtons'
 import Ceremonies from '@/app/components/ceremonies/Ceremonies'
 import Content from '@/app/components/content/Content'
+import PageViews from '../page-views/PageViews'
 
 interface EventImage {
   url: string
@@ -49,8 +50,7 @@ export default function HomeClient({ events }: HomeClientProps) {
 
   const currentId = searchParams?.get('id')
   const selectedLocation =
-    events.find((item) => item.id === Number(currentId))?.location ||
-    events[0]?.location
+    events.find((item) => item.id === Number(currentId))?.location || events[0]?.location
 
   if (currentId === 'about') {
     return (
@@ -72,6 +72,7 @@ export default function HomeClient({ events }: HomeClientProps) {
         <ActionButtons />
         <Timeline />
         <Ceremonies />
+        <PageViews />
       </>
     )
   }
