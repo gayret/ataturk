@@ -34,6 +34,8 @@
 .date {
   display: flex;
   font-weight: 100;
+  display: flex;
+  gap: 4rem;
 }
 
 .computedAge {

@@ -2616,6 +2616,22 @@
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
   },
   {
+    "id": 194.1,
+    "title": "",
+    "date": "1923-10-28T00:00:00Z",
+    "location": {
+      "lat": 39.9420298,
+      "lon": 32.8509197
+    },
+    "images": [],
+    "quotes": [
+      {
+        "text": "Efendiler! Yarın cumhuriyeti ilan edeceğiz!",
+        "source": "http://www.golbasi.gov.tr/efendiler-yarin-cumhuriyeti-ilan-edecegiz"
+      }
+    ]
+  },
+  {
     "id": 195,
     "title": "Cumhuriyet'in ilanı ve Mustafa Kemal'in Cumhurbaşkanlığına seçilmesi.",
     "date": "1923-10-29T00:00:00Z",
