@@ -10,6 +10,7 @@ import { useEventsData } from "@/app/helpers/data";
 import { useSearchParams } from "next/navigation";
 import { formatDate } from "@/app/helpers/date";
 import EventTypes from "@/app/constants/EventTypes";
+import GeoJSONComp from './GeoJSONComp'
 
 const iconActive = L.icon({
   iconUrl: "/icons/location-active.svg",
@@ -149,11 +150,8 @@ export default function Map({ location }: MapProps) {
             />
           ))}
 
-        <Marker
-          position={[location.lat, location.lon]}
-          icon={iconActive}
-          zIndexOffset={1}
-        />
+        <GeoJSONComp events={events} searchParams={searchParams} />
+       
 
         <MapCenterUpdater location={location} />
 

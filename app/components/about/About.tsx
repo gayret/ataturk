@@ -30,9 +30,9 @@ export default function About() {
           <h2>Projenin hikayesi</h2>
           <iframe
             src='https://www.linkedin.com/embed/feed/update/urn:li:share:7357917656097730560?collapsed=1'
-            height='1000px'
+            height='950px'
             width='100%'
-            frameBorder='0'
+            className={styles.borderNone}
             title='Gömülü gönderi'
           ></iframe>
         </div>

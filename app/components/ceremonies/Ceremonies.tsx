@@ -1,5 +1,6 @@
 import { useSearchParams } from 'next/navigation'
 import Balloons from './widgets/ballons/Balloons'
+import FlagDecoration from './widgets/flag-decoration/FlagDecoration'
 
 enum CERENOMIES {
   TBMM_ACILISI = 141,
@@ -12,7 +13,12 @@ export default function Ceremonies() {
 
   return (
     <section>
-      {(id === CERENOMIES.TBMM_ACILISI || id === CERENOMIES.CUMHURIYETIN_ILANI) && <Balloons />}
+      {(id === CERENOMIES.TBMM_ACILISI || id === CERENOMIES.CUMHURIYETIN_ILANI) && (
+        <>
+          <Balloons />
+          <FlagDecoration />
+        </>
+      )}
     </section>
   )
 }

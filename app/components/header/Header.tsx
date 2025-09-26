@@ -8,7 +8,7 @@ export default function Header() {
     <header className={styles.header}>
       <Link href='/?id=about' className={styles.link}>
         <Image className={styles.logo} src={HeaderPicture} alt='logo' width={200} height={200} />
-        <h1 className={styles.title}>Atatürk Kronolojisi</h1>
+        <h2 className={styles.title}>Atatürk Kronolojisi</h2>
       </Link>
     </header>
   )

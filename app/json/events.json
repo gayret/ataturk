@@ -59,8 +59,8 @@
     "date": "1894T00:00:00Z",
     "category": "egitim",
     "location": {
-      "lat": 40.6211852,
-      "lon": 22.9048279
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [
       {
@@ -128,8 +128,8 @@
     "date": "1902-02-10T00:00:00Z",
     "category": "egitim",
     "location": {
-      "lat": 41.0082,
-      "lon": 28.9784
+      "lat": 41.0481642,
+      "lon": 28.9878852
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -140,8 +140,8 @@
     "date": "1903T00:00:00Z",
     "category": "egitim",
     "location": {
-      "lat": 41.0082,
-      "lon": 28.9784
+      "lat": 41.0481642,
+      "lon": 28.9878852
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -152,8 +152,8 @@
     "date": "1905T00:00:00Z",
     "category": "egitim",
     "location": {
-      "lat": 41.0082,
-      "lon": 28.9784
+      "lat": 41.0481642,
+      "lon": 28.9878852
     },
     "images": [
       {
@@ -186,6 +186,11 @@
       "lon": 36.2919
     },
     "images": [
+      {
+        "url": "/images/medals/besinci-rutbeden-mecidi-nisani-1906.jpg",
+        "alt": "Nişan",
+        "source": "https://ata.msb.gov.tr/Content/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      },
       {
         "url": "/images/1881-1909/beyrut-1906.jpg",
         "alt": "Beyrut, 1906.",
@@ -234,8 +239,8 @@
     "date": "1907-10-13T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 40.635833,
-      "lon": 22.954444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -246,8 +251,8 @@
     "date": "1908T00:00:00Z",
     "category": "egitim",
     "location": {
-      "lat": 40.6401,
-      "lon": 22.9444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -258,8 +263,8 @@
     "date": "1908-06-22T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 40.6401,
-      "lon": 22.9444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -270,8 +275,8 @@
     "date": "1908-07-23T00:00:00Z",
     "category": "politik",
     "location": {
-      "lat": 40.635833,
-      "lon": 22.954444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -294,8 +299,8 @@
     "date": "1909-01-13T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 41.0082,
-      "lon": 28.9784
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -306,8 +311,8 @@
     "date": "1909-04-13T00:00:00Z",
     "category": "politik",
     "location": {
-      "lat": 40.635833,
-      "lon": 22.954444
+      "lat": 41.032251,
+      "lon": 28.988042
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -351,8 +356,8 @@
     "date": "1909-05-01T00:00:00Z",
     "category": "ziyaret",
     "location": {
-      "lat": 40.6401,
-      "lon": 22.9444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -363,8 +368,8 @@
     "date": "1909-08-30T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 40.6401,
-      "lon": 22.9444
+      "lat": 41.747033,
+      "lon": 22.1982176
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -376,8 +381,8 @@
     "date": "1909-09-22T00:00:00Z",
     "category": "politik",
     "location": {
-      "lat": 40.6401,
-      "lon": 22.9444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -388,8 +393,8 @@
     "date": "1909-10-05T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 40.6401,
-      "lon": 22.9444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -401,8 +406,8 @@
     "date": "1909-10-06T00:00:00Z",
     "category": "egitim",
     "location": {
-      "lat": 40.6401,
-      "lon": 22.9444
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -413,8 +418,8 @@
     "date": "1910-09-06T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 41.0082,
-      "lon": 28.9784
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [
       {
@@ -494,8 +499,8 @@
     "date": "1910-11T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 41.0082,
-      "lon": 28.9784
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
@@ -506,8 +511,8 @@
     "date": "1911-01T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 42.6977,
-      "lon": 23.3219
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [
       {
@@ -525,8 +530,8 @@
     "date": "1911-04-19T00:00:00Z",
     "category": "askeri",
     "location": {
-      "lat": 42.6977,
-      "lon": 23.3219
+      "lat": 40.6355501,
+      "lon": 22.9543124
     },
     "images": [
       {
@@ -2803,6 +2808,22 @@
     },
     "images": [],
     "source": "https://ata.msb.gov.tr/Genel/icerik/ataturk-kronolojisi"
+  },
+  {
+    "id": 194.1,
+    "title": "",
+    "date": "1923-10-28T00:00:00Z",
+    "location": {
+      "lat": 39.9420298,
+      "lon": 32.8509197
+    },
+    "images": [],
+    "quotes": [
+      {
+        "text": "Efendiler! Yarın cumhuriyeti ilan edeceğiz!",
+        "source": "http://www.golbasi.gov.tr/efendiler-yarin-cumhuriyeti-ilan-edecegiz"
+      }
+    ]
   },
   {
     "id": 195,
