@@ -11,7 +11,6 @@ import Clouds from '@/app/components/ceremonies/widgets/clouds/Clouds'
 import ActionButtons from '@/app/components/action-buttons/ActionButtons'
 import Ceremonies from '@/app/components/ceremonies/Ceremonies'
 import Content from '@/app/components/content/Content'
-import PageViews from '../page-views/PageViews'
 
 interface EventImage {
   url: string
@@ -72,7 +71,6 @@ export default function HomeClient({ events }: HomeClientProps) {
         <ActionButtons />
         <Timeline />
         <Ceremonies />
-        <PageViews />
       </>
     )
   }
