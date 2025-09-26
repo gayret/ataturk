@@ -33,7 +33,7 @@ export default function Content() {
     events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
 
   useEffect(() => {
-    document.title = selectedItem
+    document.title = selectedItem.title
       ? `${selectedItem.title} - Atatürk Kronolojisi`
       : 'Atatürk Kronolojisi'
   }, [selectedItem])
