@@ -110,7 +110,7 @@ export default function Map({ location }: MapProps) {
     const iconSrc = EventTypes.find(eventType => eventType.title === category)?.icon?.src || iconPassive
     return L.icon({
       iconUrl: iconSrc,
-      iconSize: [24, 24],
+      iconSize: [16, 16],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
       tooltipAnchor: [16, -28],

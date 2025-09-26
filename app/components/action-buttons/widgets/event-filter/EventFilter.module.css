@@ -18,10 +18,13 @@
   }
   
   .filterItemWrapper {
-    cursor: pointer;
-    transition: transform 0.3s ease-in
+    border: none !important;
+    transition: transform 0.3s ease-in !important;
+    border-radius: 100% !important;
+    padding: 0.5rem !important;
   }
 
-  .activeFilterItem {
-    transform: scale(1.5);
+  .activeFilterItemWrapper {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
+    background-color: #0000000c !important;
   }
