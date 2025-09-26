@@ -5,7 +5,7 @@ import { ItemType } from '../content/Content'
 import { useEventsData } from '@/app/helpers/data'
 import Share from './widgets/share/Share'
 import Direction from './widgets/direction/Direction'
-import ShowAllLocations from './widgets/show-all-locations/ShowAllLocations'
+import EventFilter from './widgets/event-filter/EventFilter'
 import Search from './widgets/search/Search'
 
 export default function ActionButtons() {
@@ -21,7 +21,7 @@ export default function ActionButtons() {
         <>
           <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
-          <ShowAllLocations />
+          <EventFilter />
 
           <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
