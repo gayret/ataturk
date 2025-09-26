@@ -8,6 +8,8 @@
   max-width: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   pointer-events: all;
+  max-width: max-content;
+  width: 500px;
 }
 
 .quoteContent {
@@ -27,7 +29,7 @@
 
 .quoteText {
   font-style: italic;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: #2c3e50;
   padding-left: 1rem;
