@@ -49,6 +49,7 @@ export default function Images() {
   useEffect(() => {
     if (!modalImage) return
     const handleKeyDown = (e: KeyboardEvent) => {
+      console.log(e.key)
       if (e.key === 'Escape') setModalImage(null)
     }
     window.addEventListener('keydown', handleKeyDown)
@@ -81,24 +82,23 @@ export default function Images() {
       {modalImage && (
         <div
           className={styles.modal}
-          onClick={() => setModalImage(null)}
+          onClick={(e) => {
+            const element = e.target as HTMLImageElement
+            if (element.classList[0]?.split(' ')[0]?.includes('chevronButton')) return
+            setModalImage(null)
+          }}
           role='dialog'
           aria-modal='true'
         >
-          <div onClick={(e) => e.stopPropagation()} className={styles.imagesWrapper}>
-            <button
-              className={styles.closeButton}
-              onClick={() => setModalImage(null)}
-              aria-label='Kapat'
-            >
-              &#x2715;
-            </button>
+          <button
+            className={styles.closeButton}
+            onClick={() => setModalImage(null)}
+            aria-label='Kapat'
+          >
+            &#x2715;
+          </button>
 
-            {currentImageIndex > 0 && (
-              <button className={styles.chevronButton} onClick={() => goToPrevious()}>
-                <Image src={ChevronLeft} alt='Sol' width={16} height={16} />
-              </button>
-            )}
+          <div onClick={(e) => e.stopPropagation()} className={styles.imagesWrapper}>
             <div className={styles.modalContent} style={{ position: 'relative' }}>
               <Image
                 src={modalImage.url}
@@ -116,11 +116,16 @@ export default function Images() {
                 )}
               </p>
             </div>
-            {currentImageIndex < currentImages.length - 1 && (
-              <button className={styles.chevronButton} onClick={() => goToNext()}>
-                <Image src={ChevronRight} alt='Sağ' width={16} height={16} />
-              </button>
-            )}
+          </div>
+
+          <div className={styles.chevronContainer} aria-hidden='true'>
+            <button className={styles.chevronButton} onClick={() => goToPrevious()}>
+              <Image src={ChevronLeft} alt='Sol' width={16} height={16} />
+            </button>
+
+            <button className={styles.chevronButton} onClick={() => goToNext()}>
+              <Image src={ChevronRight} alt='Sağ' width={16} height={16} />
+            </button>
           </div>
         </div>
       )}

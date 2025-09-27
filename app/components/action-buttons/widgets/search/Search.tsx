@@ -97,12 +97,14 @@ export default function Search() {
                 onClick={() => {
                   setIsVisibleResults(false)
                   setIsSearchOpen(false)
+                  setSearchText('')
                 }}
                 className={styles.resultLink}
                 key={index}
               >
                 <div className={styles.resultItem}>
                   <h3>{item.title}</h3>
+                  <h3>{!item.title && item.quotes && item.quotes[0].text}</h3>
                   <p>{formatDate(item.date)}</p>
                   {item.description && <p>{item.description}</p>}
                 </div>

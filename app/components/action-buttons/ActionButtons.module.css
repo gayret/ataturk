@@ -25,7 +25,6 @@
   padding: 0.5rem;
   transition: all 0.2s ease-in-out;
   backdrop-filter: blur(5px);
-  border: 1px solid #ccc;
 }
 
 .actionButtons button:hover {

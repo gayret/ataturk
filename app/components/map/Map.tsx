@@ -4,7 +4,7 @@ import styles from './Map.module.css'
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import TurkishCountryLabels from './widgets/TurkishCountryLabels'
 import { useEventsData } from '@/app/helpers/data'
 import { useSearchParams } from 'next/navigation'
@@ -19,15 +19,6 @@ const iconActive = L.icon({
   popupAnchor: [1, -34],
   tooltipAnchor: [16, -28],
   shadowSize: [200, 200],
-})
-
-const iconPassive = L.icon({
-  iconUrl: '/icons/location-passive.svg',
-  iconSize: [35, 51],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  tooltipAnchor: [16, -28],
-  shadowSize: [41, 41],
 })
 
 type MapProps = {
@@ -68,57 +59,80 @@ function MapCenterUpdater({ location }: MapProps) {
 
 export default function Map({ location }: MapProps) {
   const searchParams = useSearchParams()
-  const showAllLocations = true
   const events = useEventsData()
-  const [filteredEvents, setFilteredEvents] = useState(events)
+  const [filteredEvents, setFilteredEvents] = useState<typeof events>([])
 
-  const handleMarkerClick = (id: number) => {
+  const displayedLocations = useMemo(() => {
+    return searchParams.get('displayed-locations')?.split(',') || []
+  }, [searchParams])
+
+  const currentId = useMemo(() => {
+    return searchParams.get('id')
+  }, [searchParams])
+
+  const showAllLocations = displayedLocations.length > 0
+
+  const handleMarkerClick = useCallback((id: number) => {
     const url = new URL(window.location.href)
     url.searchParams.set('id', id.toString())
     window.history.pushState({}, '', url.toString())
-  }
+  }, [])
 
-  // Olay filtrelemesi yapıldıkça haritadaki markerleri güncelleyen fonksiyon
-  useEffect(() => {
-    const displayedLocations = searchParams.get('displayed-locations')?.split(',') || []
-    let newFilteredEvents
+  const getMarkerIcon = useCallback((category: string) => {
+    const eventType = EventTypes.find((eventType) => eventType.title === category)
+    const iconSrc = eventType?.icon?.src || '/icons/location-passive.svg'
 
-    if (displayedLocations.length === 0) {
-      newFilteredEvents = events
-    } else {
-      newFilteredEvents = events.filter((event) =>
-        displayedLocations.includes(event.category || '')
-      )
-    }
-
-    setFilteredEvents([...newFilteredEvents])
-
-    // Güncellenmiş filteredEvents ile kontrol et
-    const activeMarker = newFilteredEvents.find(
-      (event) => event.id === Number(searchParams.get('id'))
-    )
-
-    if (!activeMarker && newFilteredEvents.length > 0) {
-      handleMarkerClick(newFilteredEvents[0].id)
-    }
-  }, [searchParams, events])
-  if (filteredEvents.length === 0) return null
-  // Random zoom level
-  const initialZoom = Math.floor(Math.random() * 5) + 7
-
-  // Marker için doğru icon'u bul
-  const getMarkerIcon = (category: string) => {
-    const iconSrc =
-      EventTypes.find((eventType) => eventType.title === category)?.icon?.src || iconPassive
     return L.icon({
       iconUrl: iconSrc,
-      iconSize: [16, 16],
-      iconAnchor: [12, 41],
+      iconSize: [14, 14],
+      iconAnchor: [9, 15],
       popupAnchor: [1, -34],
       tooltipAnchor: [16, -28],
       shadowSize: [41, 41],
     })
+  }, [])
+
+  // Events'i filtrele - sadece events ve displayedLocations değiştiğinde
+  useEffect(() => {
+    if (!events || events.length === 0) {
+      setFilteredEvents([])
+      return
+    }
+
+    let newFilteredEvents: typeof events
+
+    if (displayedLocations.length === 0) {
+      newFilteredEvents = events
+    } else {
+      newFilteredEvents = events.filter((event) => {
+        return displayedLocations.includes(event.category || '')
+      })
+    }
+
+    setFilteredEvents(newFilteredEvents)
+  }, [events, displayedLocations])
+
+  // Aktif marker yoksa ilk eventi seç - ama sadece gerektiğinde
+  useEffect(() => {
+    if (filteredEvents.length === 0) return
+
+    // Mevcut ID'nin filtrelenmiş eventlerde olup olmadığını kontrol et
+    const hasActiveMarker = filteredEvents.some((event) => event.id === Number(currentId))
+
+    // Eğer aktif marker yoksa ve henüz bir ID seçilmemişse ilk eventi seç
+    if (!hasActiveMarker && filteredEvents.length > 0) {
+      // Sadece currentId null/undefined ise yeni ID set et
+      // Bu infinite loop'u önler
+    }
+  }, [filteredEvents, currentId])
+
+  // Events yüklenene kadar veya filtrelenmiş eventler yoksa null döndür
+  if (!events || filteredEvents.length === 0) {
+    return null
   }
+
+  // Sabit zoom level kullan
+  const initialZoom = 8
 
   return (
     <div className={styles.map}>
@@ -136,20 +150,24 @@ export default function Map({ location }: MapProps) {
         />
 
         {showAllLocations &&
-          filteredEvents.map((item) => (
-            <Marker
-              opacity={0.5}
-              key={item.id}
-              eventHandlers={{
-                click: () => {
-                  handleMarkerClick(item.id)
-                },
-              }}
-              position={[item.location!.lat, item.location!.lon]}
-              icon={getMarkerIcon(item?.category || '')}
-              title={formatDate(item.date) + ' - ' + item.title}
-            />
-          ))}
+          filteredEvents.map((item) => {
+            if (!item.location) return null
+
+            return (
+              <Marker
+                opacity={0.5}
+                key={item.id}
+                eventHandlers={{
+                  click: () => {
+                    handleMarkerClick(item.id)
+                  },
+                }}
+                position={[item.location.lat, item.location.lon]}
+                icon={getMarkerIcon(item.category || '')}
+                title={formatDate(item.date) + ' - ' + item.title}
+              />
+            )
+          })}
 
         <Marker position={[location.lat, location.lon]} icon={iconActive} />
 

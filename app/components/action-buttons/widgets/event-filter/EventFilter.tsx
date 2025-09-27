@@ -54,15 +54,21 @@ export default function EventFilter() {
       {open && (
         <div className={styles.opened}>
           {EventTypes.map((eventType) => {
-            const isActive = searchParams.get('displayed-locations')?.split(',').includes(eventType.title)
+            const isActive = searchParams
+              .get('displayed-locations')
+              ?.split(',')
+              .includes(eventType.title)
             return (
               <button
-              type='button'
+                type='button'
                 key={eventType?.id}
-                className={`${styles.filterItemWrapper} ${isActive ? styles.activeFilterItemWrapper : ''}`}
+                className={`${styles.filterItemWrapper} ${
+                  isActive ? styles.activeFilterItemWrapper : ''
+                }`}
                 title={eventType?.label}
                 onClick={() => handleClick(eventType.title)}
               >
+                <span className={styles.filterItemLabel}>{eventType?.label}</span>
                 <Image
                   src={eventType?.icon}
                   alt={eventType?.label}

@@ -55,27 +55,45 @@
 }
 
 .imagesWrapper {
-  position: relative;
   border-radius: 8px;
   max-width: 90vw;
   max-height: 90vh;
   display: flex;
   align-items: center;
   gap: 1rem;
+  background-color: #ffffff20;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
 }
 
 .imagesWrapper p {
-  background-color: #fff;
-  border-radius: 0.3rem;
   max-width: 335px;
   margin: auto;
+  color: #fff;
+}
+
+.chevronContainer {
+  position: absolute;
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+  padding-inline: 2rem;
 }
 
 .chevronButton {
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
   border-radius: 0.5rem;
+  scale: 1.5;
+  background-color: #ffffff20;
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+}
+
+.chevronButton img {
+  filter: invert(1);
+  pointer-events: none;
 }
 
 .modalContent {
@@ -90,12 +108,13 @@
 }
 
 .closeButton {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   position: absolute;
-  bottom: 100%;
-  right: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  top: 1rem;
+  right: 1rem;
+  background-color: #fff;
+  color: #666;
 }
