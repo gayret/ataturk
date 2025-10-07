@@ -49,7 +49,6 @@ export default function Images() {
   useEffect(() => {
     if (!modalImage) return
     const handleKeyDown = (e: KeyboardEvent) => {
-      console.log(e.key)
       if (e.key === 'Escape') setModalImage(null)
     }
     window.addEventListener('keydown', handleKeyDown)
