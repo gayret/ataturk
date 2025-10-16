@@ -104,7 +104,7 @@ export default function Images() {
                 alt={modalImage.alt}
                 width={800}
                 height={800}
-                style={{ width: '100%', height: 'auto' }}
+                style={{ minWidth: '100%', maxWidth: '80dvw', height: 'auto' }}
               />
               <p title={`Bilgi kaynağı: ${modalImage.source}`}>
                 {modalImage.alt}
