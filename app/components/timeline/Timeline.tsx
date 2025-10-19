@@ -4,13 +4,18 @@ import styles from './Timeline.module.css'
 import { useEventsData } from '@/app/helpers/data'
 import { getYear } from '@/app/helpers/date'
 import { useSearchParams } from 'next/navigation'
-import { useRef, useEffect, useCallback } from 'react'
+import { useRef, useEffect, useCallback, forwardRef, useImperativeHandle } from 'react'
 import Image from 'next/image'
 
 import chevronLeft from '@/app/assets/icons/chevron-left.svg'
 import chevronRight from '@/app/assets/icons/chevron-right.svg'
 
-export default function Timeline() {
+export interface TimelineRef {
+  goNext: () => void
+  goPrev: () => void
+}
+
+const Timeline = forwardRef<TimelineRef>((props, ref) => {
   const events = useEventsData()
   const searchParams = useSearchParams()
 
@@ -114,6 +119,12 @@ export default function Timeline() {
     }
   }, [])
 
+  // Expose methods to parent components
+  useImperativeHandle(ref, () => ({
+    goNext: onGoNext,
+    goPrev: onGoPrev,
+  }), [onGoNext, onGoPrev])
+
   return (
     <section className={styles.timeline}>
       <button className={styles.actionButton} onClick={onGoPrev}>
@@ -178,4 +189,8 @@ export default function Timeline() {
       </button>
     </section>
   )
-}
+})
+
+Timeline.displayName = 'Timeline'
+
+export default Timeline

@@ -38,6 +38,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  reactStrictMode: false, // Disable React Strict Mode to prevent Leaflet double initialization
   images: {
     remotePatterns: [
       {

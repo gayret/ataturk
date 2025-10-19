@@ -61,6 +61,7 @@ export default function Map({ location }: MapProps) {
   const searchParams = useSearchParams()
   const events = useEventsData()
   const [filteredEvents, setFilteredEvents] = useState<typeof events>([])
+  const mapRef = useRef<L.Map | null>(null)
 
   const displayedLocations = useMemo(() => {
     return searchParams.get('displayed-locations')?.split(',') || []
@@ -126,6 +127,16 @@ export default function Map({ location }: MapProps) {
     }
   }, [filteredEvents, currentId])
 
+  // Cleanup effect
+  useEffect(() => {
+    return () => {
+      if (mapRef.current) {
+        mapRef.current.remove()
+        mapRef.current = null
+      }
+    }
+  }, [])
+
   // Events yüklenene kadar veya filtrelenmiş eventler yoksa null döndür
   if (!events || filteredEvents.length === 0) {
     return null
@@ -143,6 +154,7 @@ export default function Map({ location }: MapProps) {
         keyboard={false}
         style={{ height: '100%' }}
         zoomControl={false}
+        ref={mapRef}
       >
         <TileLayer
           attribution='&copy; <a target="_blank" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
