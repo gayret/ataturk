@@ -15,7 +15,11 @@ export interface TimelineRef {
   goPrev: () => void
 }
 
-const Timeline = forwardRef<TimelineRef>((props, ref) => {
+interface TimelineProps {
+  onEndReached?: () => void
+}
+
+const Timeline = forwardRef<TimelineRef, TimelineProps>(({ onEndReached }, ref) => {
   const events = useEventsData()
   const searchParams = useSearchParams()
 
@@ -70,10 +74,22 @@ const Timeline = forwardRef<TimelineRef>((props, ref) => {
     const url = new URL(window.location.href)
     const currentId = searchParams.get('id') || 1
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
-    const nextIndex = (currentIndex + 1) % events.length
+    
+    // Son event'te miyiz kontrol et
+    if (currentIndex === events.length - 1) {
+      // Son event'teyiz, ana sayfaya yönlendir ve callback çağır
+      url.searchParams.delete('id')
+      window.history.pushState({}, '', url.toString())
+      if (onEndReached) {
+        onEndReached()
+      }
+      return
+    }
+    
+    const nextIndex = currentIndex + 1
     url.searchParams.set('id', events[nextIndex].id.toString())
     window.history.pushState({}, '', url.toString())
-  }, [searchParams, events])
+  }, [searchParams, events, onEndReached])
 
   useEffect(() => {
     // Handle keyboard navigation for left and right arrows

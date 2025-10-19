@@ -37,7 +37,6 @@ export default function Timer({ duration, isActive, onComplete, onReset, onProgr
           
           setProgress(newProgress)
           
-          // Progress callback'ini çağır
           if (onProgressRef.current) {
             onProgressRef.current(newProgress, remainingSeconds)
           }

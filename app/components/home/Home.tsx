@@ -73,7 +73,6 @@ export default function HomeClient({ events }: HomeClientProps) {
   const handleAutoSwitchToggle = async (isActive: boolean) => {
     if (isActive) {
       setIsAutoSwitchActive(true)
-      // Auto-switch aktif olduğunda tam ekrana geç
       if (!document.fullscreenElement) {
         try {
           await document.documentElement.requestFullscreen()
@@ -100,6 +99,10 @@ export default function HomeClient({ events }: HomeClientProps) {
     setTimerDuration(duration)
   }, [])
 
+  const handleTimelineEndReached = useCallback(async () => {
+    await stopAutoSwitchAndExitFullscreen()
+  }, [])
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement
@@ -119,7 +122,6 @@ export default function HomeClient({ events }: HomeClientProps) {
     }
 
     const handleClick = (event: MouseEvent) => {
-      // Auto-switch butonuna tıklanmışsa ignore et
       const target = event.target as HTMLElement
       const isAutoSwitchButton = target.closest('[data-auto-switch-button="true"]')
       
@@ -133,7 +135,6 @@ export default function HomeClient({ events }: HomeClientProps) {
     }
 
     const handleMouseDown = (event: MouseEvent) => {
-      // Auto-switch butonuna tıklanmışsa ignore et
       const target = event.target as HTMLElement
       const isAutoSwitchButton = target.closest('[data-auto-switch-button="true"]')
       
@@ -177,7 +178,7 @@ export default function HomeClient({ events }: HomeClientProps) {
     return (
       <>
         <Header />
-        <Timeline ref={timelineRef} />
+        <Timeline ref={timelineRef} onEndReached={handleTimelineEndReached} />
         <About />
         <Balloons />
       </>
@@ -204,7 +205,7 @@ export default function HomeClient({ events }: HomeClientProps) {
           duration={timerDuration}
           onDurationChange={handleDurationChange}
         />
-        <Timeline ref={timelineRef} />
+        <Timeline ref={timelineRef} onEndReached={handleTimelineEndReached} />
         <Ceremonies />
         <SupportMe />
       </>
