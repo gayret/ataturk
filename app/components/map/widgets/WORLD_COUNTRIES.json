@@ -1,5 +1,6 @@
 [
   { "name": "Türkiye", "lat": 39.0, "lng": 35.0, "minZoom": 0 },
+  { "name": "K. K. T. C.", "lat": 35.3563029, "lng": 32.9975088, "minZoom": 0 },
   { "name": "Rusya", "lat": 60.0, "lng": 100.0, "minZoom": 0 },
   { "name": "Amerika Birleşik Devletleri", "lat": 40.0, "lng": -100.0, "minZoom": 0 },
   { "name": "Kanada", "lat": 60.0, "lng": -95.0, "minZoom": 0 },

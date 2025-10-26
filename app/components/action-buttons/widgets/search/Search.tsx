@@ -71,24 +71,40 @@ export default function Search() {
       {isVisibleResults && (
         <div className={styles.resultsContainer}>
           {events
-            .filter(
-              (item) =>
-                item.title.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()) ||
-                (item.description &&
-                  item.description.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()))
-            )
+            .filter((item) => {
+              const search = searchText.toLocaleLowerCase()
+
+              const inTitle = item.title.toLocaleLowerCase().includes(search)
+
+              const inDescription =
+                item.description && item.description.toLocaleLowerCase().includes(search)
+
+              const inDate = formatDate(item.date).toLocaleLowerCase().includes(search)
+
+              const inQuotes =
+                item.quotes &&
+                item.quotes.some(
+                  (q) =>
+                    q.text.toLocaleLowerCase().includes(search) ||
+                    q.source.toLocaleLowerCase().includes(search)
+                )
+
+              return inTitle || inDescription || inDate || inQuotes
+            })
             .map((item, index) => (
               <Link
                 href={`/?id=${item.id}`}
                 onClick={() => {
                   setIsVisibleResults(false)
                   setIsSearchOpen(false)
+                  setSearchText('')
                 }}
                 className={styles.resultLink}
                 key={index}
               >
                 <div className={styles.resultItem}>
                   <h3>{item.title}</h3>
+                  <h3>{!item.title && item.quotes && item.quotes[0].text}</h3>
                   <p>{formatDate(item.date)}</p>
                   {item.description && <p>{item.description}</p>}
                 </div>

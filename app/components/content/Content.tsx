@@ -5,9 +5,15 @@ import { useSearchParams } from 'next/navigation'
 import { formatDate } from '@/app/helpers/date'
 import { useEffect, useState } from 'react'
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
-import { ImageType } from './widgets/Images'
 import Images from './widgets/Images'
 import { useEventsData } from '@/app/helpers/data'
+import Quote from '../quote/Quote'
+import { ImageType } from './widgets/Images'
+
+export type QuoteType = {
+  text: string
+  source?: string
+}
 
 export type ItemType = {
   id: number
@@ -17,17 +23,19 @@ export type ItemType = {
   images?: ImageType[]
   source?: string
   sounds?: { url: string; alt: string; source?: string }[]
+  quotes?: QuoteType[]
 }
 
 export default function Content() {
   const [computedAge, setComputedAge] = useState<number | null>(null)
   const searchParams = useSearchParams()
-  const events = useEventsData()
+  const events = useEventsData() as ItemType[]
 
-  const selectedItem = events.find((item: ItemType) => item.id === Number(searchParams.get('id')))
+  const selectedItem =
+    events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
 
   useEffect(() => {
-    document.title = selectedItem
+    document.title = selectedItem.title
       ? `${selectedItem.title} - Atatürk Kronolojisi`
       : 'Atatürk Kronolojisi'
   }, [selectedItem])
@@ -56,13 +64,21 @@ export default function Content() {
               </span>
             )}
           </h1>
-
           {selectedItem?.description && (
             <p className={styles.description}>{selectedItem.description}</p>
           )}
         </div>
 
         <Images />
+
+        {/* if selectedItem has quotes render each Quote component */}
+        {selectedItem?.quotes && selectedItem.quotes.length > 0 && (
+          <>
+            {selectedItem.quotes.map((quote, index) => (
+              <Quote key={index} quote={quote} />
+            ))}
+          </>
+        )}
 
         {selectedItem?.sounds && selectedItem.sounds.length > 0 && (
           <div className={styles.sounds}>
@@ -76,8 +92,12 @@ export default function Content() {
                     </a>
                   )}
                 </p>
-
-                <audio controls controlsList='nodownload' onContextMenu={(e) => e.preventDefault()}>
+                <audio
+                  controls
+                  controlsList='nodownload'
+                  onContextMenu={(e) => e.preventDefault()}
+                  aria-label={`Play sound of ${sound.alt}`}
+                >
                   <source src={sound.url} type='audio/mpeg' />
                   İnternet tarayıcınız ses yürütmeyi desteklemiyor.
                 </audio>

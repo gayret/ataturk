@@ -1,0 +1,82 @@
+.overlay {
+  position: fixed; /* önemli: sayfa içeriğinin üstüne gelsin */
+  inset: 0;
+  background: transparent;
+  z-index: 9999; /* içerikten önde */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.6s ease;
+  pointer-events: none; /* içerik tıklanabilir olsun */
+}
+
+.overlayHidden {
+  opacity: 0;
+}
+
+/* Bulut görselleri */
+.cloud {
+  position: absolute;
+  width: 150dvw;
+  height: auto;
+  opacity: 0.95;
+}
+
+/* Animasyonlar */
+.cloudTop {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveUp 2.5s forwards;
+}
+.cloudBottom {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveDown 2.5s forwards;
+}
+.cloudLeft {
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveLeft 2.5s forwards;
+}
+.cloudRight {
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveRight 2.5s forwards;
+}
+
+@keyframes moveUp {
+  to {
+    transform: translate(-50%, -200%) scale(5);
+    opacity: 0;
+  }
+}
+@keyframes moveDown {
+  to {
+    transform: translate(-50%, 200%) scale(5);
+    opacity: 0;
+  }
+}
+@keyframes moveLeft {
+  to {
+    transform: translate(-200%, -50%) scale(5);
+    opacity: 0;
+  }
+}
+@keyframes moveRight {
+  to {
+    transform: translate(200%, -50%) scale(5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .cloud {
+    width: auto;
+    height: 150dvh;
+    object-fit: contain;
+  }
+}

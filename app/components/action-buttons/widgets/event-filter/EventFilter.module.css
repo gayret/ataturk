@@ -1,0 +1,41 @@
+.filter {
+  position: relative;
+  display: inline-block;
+}
+
+.opened {
+  position: absolute;
+  right: 130%;
+  bottom: 50%;
+  transform: translateY(50%);
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.filterItemWrapper {
+  padding: 0.5rem;
+}
+
+.activeFilterItemWrapper {
+  box-shadow: 0 0 4px rgba(255, 0, 0, 0.5) !important;
+  background-color: #c7fae2 !important;
+}
+
+.filterItemWrapper span {
+  display: none;
+  position: absolute;
+  right: 110%;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filterItemWrapper:hover span {
+  display: inline;
+}

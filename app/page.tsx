@@ -1,5 +1,8 @@
-'use client'
+import HomeClient from "@/app/components/home/Home";
+import fs from "fs/promises";
+import path from "path";
 
+<<<<<<< HEAD
 import About from '@/app/components/about/About'
 import Header from '@/app/components/header/Header'
 import Timeline from '@/app/components/timeline/Timeline'
@@ -76,5 +79,22 @@ export default function Home() {
         <Timeline />
       </>
     )
+=======
+// Fetch data at build time (SEO friendly, static)
+async function getEventsData() {
+  try {
+    const filePath = path.join(process.cwd(), "app", "json", "events.json");
+    const fileContents = await fs.readFile(filePath, "utf8");
+    return JSON.parse(fileContents);
+  } catch (error) {
+    console.error("Error loading events:", error);
+    return [];
+>>>>>>> main
   }
+}
+
+export default async function Home() {
+  const events = await getEventsData();
+
+  return <HomeClient events={events} />;
 }

@@ -26,6 +26,9 @@
   margin: 0;
   padding: 0;
 }
+.borderNone {
+  border: 0;
+}
 
 @media (max-width: 600px) {
   .description {

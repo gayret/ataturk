@@ -32,8 +32,11 @@ export default function Timeline() {
     items,
   }))
 
+<<<<<<< HEAD
   useEffect(() => { }, [searchParams])
 
+=======
+>>>>>>> main
   const onOpenId = (id: number) => () => {
     const url = new URL(window.location.href)
     url.searchParams.set('id', id.toString())
@@ -65,7 +68,7 @@ export default function Timeline() {
 
   const onGoNext = useCallback(() => {
     const url = new URL(window.location.href)
-    const currentId = searchParams.get('id')
+    const currentId = searchParams.get('id') || 1
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     const nextIndex = (currentIndex + 1) % events.length
     url.searchParams.set('id', events[nextIndex].id.toString())
@@ -151,10 +154,6 @@ export default function Timeline() {
                       title={subItem.title}
                       role='button'
                       tabIndex={0}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        onOpenId(subItem.id)()
-                      }}
                     ></span>
                   ))}
                 </div>
@@ -170,10 +169,6 @@ export default function Timeline() {
                       title={subItem.title}
                       role='button'
                       tabIndex={0}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        onOpenId(subItem.id)()
-                      }}
                     ></span>
                   ))}
                 </div>

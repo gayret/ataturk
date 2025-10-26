@@ -4,27 +4,21 @@ import styles from './Map.module.css'
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import TurkishCountryLabels from './widgets/TurkishCountryLabels'
 import { useEventsData } from '@/app/helpers/data'
 import { useSearchParams } from 'next/navigation'
+import { formatDate } from '@/app/helpers/date'
+import EventTypes from '@/app/constants/EventTypes'
+import GeoJSONComp from './GeoJSONComp'
 
 const iconActive = L.icon({
   iconUrl: '/icons/location-active.svg',
-  iconSize: [50, 66],
+  iconSize: [40, 55],
   iconAnchor: [21, 50],
   popupAnchor: [1, -34],
   tooltipAnchor: [16, -28],
   shadowSize: [200, 200],
-})
-
-const iconPassive = L.icon({
-  iconUrl: '/icons/location-passive.svg',
-  iconSize: [35, 51],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  tooltipAnchor: [16, -28],
-  shadowSize: [41, 41],
 })
 
 type MapProps = {
@@ -65,11 +59,80 @@ function MapCenterUpdater({ location }: MapProps) {
 
 export default function Map({ location }: MapProps) {
   const searchParams = useSearchParams()
-  const showAllLocations = searchParams.get('show-all-locations') === 'true'
   const events = useEventsData()
-  if (events.length === 0) return null
-  // Random zoom level
-  const initialZoom = Math.floor(Math.random() * 5) + 7
+  const [filteredEvents, setFilteredEvents] = useState<typeof events>([])
+
+  const displayedLocations = useMemo(() => {
+    return searchParams.get('displayed-locations')?.split(',') || []
+  }, [searchParams])
+
+  const currentId = useMemo(() => {
+    return searchParams.get('id')
+  }, [searchParams])
+
+  const showAllLocations = displayedLocations.length > 0
+
+  const handleMarkerClick = useCallback((id: number) => {
+    const url = new URL(window.location.href)
+    url.searchParams.set('id', id.toString())
+    window.history.pushState({}, '', url.toString())
+  }, [])
+
+  const getMarkerIcon = useCallback((category: string) => {
+    const eventType = EventTypes.find((eventType) => eventType.title === category)
+    const iconSrc = eventType?.icon?.src || '/icons/location-passive.svg'
+
+    return L.icon({
+      iconUrl: iconSrc,
+      iconSize: [14, 14],
+      iconAnchor: [9, 15],
+      popupAnchor: [1, -34],
+      tooltipAnchor: [16, -28],
+      shadowSize: [41, 41],
+    })
+  }, [])
+
+  // Events'i filtrele - sadece events ve displayedLocations değiştiğinde
+  useEffect(() => {
+    if (!events || events.length === 0) {
+      setFilteredEvents([])
+      return
+    }
+
+    let newFilteredEvents: typeof events
+
+    if (displayedLocations.length === 0) {
+      newFilteredEvents = events
+    } else {
+      newFilteredEvents = events.filter((event) => {
+        return displayedLocations.includes(event.category || '')
+      })
+    }
+
+    setFilteredEvents(newFilteredEvents)
+  }, [events, displayedLocations])
+
+  // Aktif marker yoksa ilk eventi seç - ama sadece gerektiğinde
+  useEffect(() => {
+    if (filteredEvents.length === 0) return
+
+    // Mevcut ID'nin filtrelenmiş eventlerde olup olmadığını kontrol et
+    const hasActiveMarker = filteredEvents.some((event) => event.id === Number(currentId))
+
+    // Eğer aktif marker yoksa ve henüz bir ID seçilmemişse ilk eventi seç
+    if (!hasActiveMarker && filteredEvents.length > 0) {
+      // Sadece currentId null/undefined ise yeni ID set et
+      // Bu infinite loop'u önler
+    }
+  }, [filteredEvents, currentId])
+
+  // Events yüklenene kadar veya filtrelenmiş eventler yoksa null döndür
+  if (!events || filteredEvents.length === 0) {
+    return null
+  }
+
+  // Sabit zoom level kullan
+  const initialZoom = 8
 
   return (
     <div className={styles.map}>
@@ -87,24 +150,28 @@ export default function Map({ location }: MapProps) {
         />
 
         {showAllLocations &&
-          events
-            .filter((item) => item.location && item.location.lat && item.location.lon)
-            .map((item) => (
+          filteredEvents.map((item) => {
+            if (!item.location) return null
+
+            return (
               <Marker
+                opacity={0.5}
                 key={item.id}
                 eventHandlers={{
                   click: () => {
-                    const url = new URL(window.location.href)
-                    url.searchParams.set('id', item.id.toString())
-                    window.history.pushState({}, '', url.toString())
+                    handleMarkerClick(item.id)
                   },
                 }}
-                position={[item.location!.lat, item.location!.lon]}
-                icon={iconPassive}
+                position={[item.location.lat, item.location.lon]}
+                icon={getMarkerIcon(item.category || '')}
+                title={formatDate(item.date) + ' - ' + item.title}
               />
-            ))}
+            )
+          })}
 
         <Marker position={[location.lat, location.lon]} icon={iconActive} />
+
+        <GeoJSONComp events={events} searchParams={searchParams} />
 
         <MapCenterUpdater location={location} />
 

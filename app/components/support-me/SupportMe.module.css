@@ -1,0 +1,46 @@
+.book {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  width: 70px;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
+}
+
+.book img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.2rem;
+}
+
+.book:hover {
+  width: 200px;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.description {
+  display: none;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+.book:hover .description {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .book {
+    bottom: 100px;
+    width: 50px;
+  }
+
+  .book:hover {
+    width: 50px;
+  }
+
+  .book:hover .description {
+    display: none;
+  }
+}
