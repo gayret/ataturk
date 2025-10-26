@@ -23,11 +23,7 @@ export default function ActionButtons() {
           <>
             <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
-<<<<<<< HEAD
-            <ShowAllLocations />
-=======
-          <EventFilter />
->>>>>>> main
+            <EventFilter />
 
             <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 

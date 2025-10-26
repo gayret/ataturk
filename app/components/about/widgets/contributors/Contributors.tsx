@@ -182,13 +182,7 @@ export default function Contributors() {
     contributors.length > 0 && (
       <>
         <section>
-<<<<<<< HEAD
-          <h4>
-            {t.Contributors.title}
-          </h4>
-=======
           <h2>Geliştirenler</h2>
->>>>>>> main
 
           <small>
             {t.Contributors.description}&nbsp;

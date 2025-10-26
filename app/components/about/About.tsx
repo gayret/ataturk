@@ -1,11 +1,7 @@
+import { useLanguageStore } from '@/app/stores/languageStore'
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import styles from './About.module.css'
 import Contributors from './widgets/contributors/Contributors'
-<<<<<<< HEAD
-import Thanks from './widgets/thanks/Thanks'
-import { useLanguageStore } from '@/app/stores/languageStore'
-=======
->>>>>>> main
 
 export default function About() {
   const { t } = useLanguageStore()
@@ -24,13 +20,7 @@ export default function About() {
             {t.About.description2}
           </p>
 
-<<<<<<< HEAD
-          <h4>
-            {t.About.usage}
-          </h4>
-=======
           <h2>Kullanımı</h2>
->>>>>>> main
           <p>
             {t.About.usage2}
           </p>
