@@ -4,35 +4,51 @@ import { useEffect, useState, useRef } from 'react'
 import styles from './Timer.module.css'
 
 interface TimerProps {
-  duration: number // milliseconds
+  duration: number
   isActive: boolean
+  speedMultiplier?: number
   onComplete: () => void
   onReset?: () => void
   onProgress?: (progress: number, remainingSeconds: number) => void
 }
 
-export default function Timer({ duration, isActive, onComplete, onReset, onProgress }: TimerProps) {
+export default function Timer({ duration, isActive, speedMultiplier = 1, onComplete, onReset, onProgress }: TimerProps) {
   const [progress, setProgress] = useState(0)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
   const startTimeRef = useRef<number | null>(null)
+  const totalElapsedRef = useRef<number>(0)
   const onCompleteRef = useRef(onComplete)
   const onProgressRef = useRef(onProgress)
 
-  // Ref'leri güncel tut
   useEffect(() => {
     onCompleteRef.current = onComplete
     onProgressRef.current = onProgress
   }, [onComplete, onProgress])
 
   useEffect(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+      intervalRef.current = null
+    }
+
     if (isActive) {
+      if (startTimeRef.current === null) {
+        totalElapsedRef.current = 0
+      }
+      
       startTimeRef.current = Date.now()
       
       intervalRef.current = setInterval(() => {
         if (startTimeRef.current) {
-          const elapsed = Date.now() - startTimeRef.current
-          const newProgress = Math.min((elapsed / duration) * 100, 100)
-          const remainingMs = Math.max(duration - elapsed, 0)
+          const sessionElapsed = Date.now() - startTimeRef.current
+          
+          const speedAdjustedElapsed = sessionElapsed * speedMultiplier
+          totalElapsedRef.current += speedAdjustedElapsed
+          
+          startTimeRef.current = Date.now()
+          
+          const newProgress = Math.min((totalElapsedRef.current / duration) * 100, 100)
+          const remainingMs = Math.max(duration - totalElapsedRef.current, 0)
           const remainingSeconds = Math.ceil(remainingMs / 1000)
           
           setProgress(newProgress)
@@ -41,19 +57,17 @@ export default function Timer({ duration, isActive, onComplete, onReset, onProgr
             onProgressRef.current(newProgress, remainingSeconds)
           }
           
-          if (newProgress >= 100) {
+          if (totalElapsedRef.current >= duration) {
             setProgress(0)
-            startTimeRef.current = Date.now() // Yeniden başlat
+            totalElapsedRef.current = 0
+            startTimeRef.current = Date.now()
             onCompleteRef.current()
           }
         }
-      }, 16) // ~60fps for smooth animation
+      }, 16)
     } else {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-        intervalRef.current = null
-      }
       setProgress(0)
+      totalElapsedRef.current = 0
       startTimeRef.current = null
     }
 
@@ -62,11 +76,12 @@ export default function Timer({ duration, isActive, onComplete, onReset, onProgr
         clearInterval(intervalRef.current)
       }
     }
-  }, [isActive, duration])
+  }, [isActive, duration, speedMultiplier])
 
   useEffect(() => {
     if (onReset) {
       setProgress(0)
+      totalElapsedRef.current = 0
       startTimeRef.current = isActive ? Date.now() : null
     }
   }, [onReset, isActive])

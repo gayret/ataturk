@@ -14,6 +14,7 @@ import Content from '@/app/components/content/Content'
 import SupportMe from '../support-me/SupportMe'
 import Timer from '@/app/components/timer/Timer'
 import AutoSwitch from '@/app/components/action-buttons/widgets/auto-switch/auto-switch'
+import { calculateReadingTime } from '@/app/helpers/readingTime'
 
 interface EventImage {
   url: string
@@ -29,6 +30,8 @@ interface EventLocation {
 interface Event {
   id: number
   title: string
+  description?: string | null
+  quote?: string | null
   date: string
   location: EventLocation
   images: EventImage[]
@@ -43,7 +46,7 @@ export default function HomeClient({ events }: HomeClientProps) {
   const searchParams = useSearchParams()
   const [isAutoSwitchActive, setIsAutoSwitchActive] = useState(false)
   const [remainingSeconds, setRemainingSeconds] = useState<number>(0)
-  const [timerDuration, setTimerDuration] = useState<number>(10) // seconds
+  const [speedMultiplier, setSpeedMultiplier] = useState<number>(1)
   const timelineRef = useRef<TimelineRef>(null)
 
   const MapWithNoSSR = useMemo(
@@ -55,8 +58,24 @@ export default function HomeClient({ events }: HomeClientProps) {
   )
 
   const currentId = searchParams?.get('id')
-  const selectedLocation =
-    events.find((item) => item.id === Number(currentId))?.location || events[0]?.location
+  const selectedEvent = events.find((item) => item.id === Number(currentId)) || events[0]
+  const selectedLocation = selectedEvent?.location || events[0]?.location
+  
+  const baseDuration = useMemo(() => {
+    if (selectedEvent) {
+      return calculateReadingTime({
+        title: selectedEvent.title,
+        description: selectedEvent.description,
+        quote: selectedEvent.quote,
+        images: selectedEvent.images
+      })
+    }
+    return 10
+  }, [selectedEvent])
+
+  const timerDuration = useMemo(() => {
+    return Math.round(baseDuration / speedMultiplier)
+  }, [baseDuration, speedMultiplier])
 
   const stopAutoSwitchAndExitFullscreen = async () => {
     setIsAutoSwitchActive(false)
@@ -70,9 +89,11 @@ export default function HomeClient({ events }: HomeClientProps) {
     }
   }
 
-  const handleAutoSwitchToggle = async (isActive: boolean) => {
+  const handleAutoSwitchToggle = useCallback(async (isActive: boolean) => {
     if (isActive) {
+      setRemainingSeconds(timerDuration)
       setIsAutoSwitchActive(true)
+      
       if (!document.fullscreenElement) {
         try {
           await document.documentElement.requestFullscreen()
@@ -83,7 +104,7 @@ export default function HomeClient({ events }: HomeClientProps) {
     } else {
       await stopAutoSwitchAndExitFullscreen()
     }
-  }
+  }, [timerDuration])
 
   const handleTimerComplete = useCallback(() => {
     if (timelineRef.current) {
@@ -95,9 +116,11 @@ export default function HomeClient({ events }: HomeClientProps) {
     setRemainingSeconds(remainingSeconds)
   }, [])
 
-  const handleDurationChange = useCallback((duration: number) => {
-    setTimerDuration(duration)
+  const handleSpeedChange = useCallback((speed: number) => {
+    setSpeedMultiplier(speed)
   }, [])
+
+
 
   const handleTimelineEndReached = useCallback(async () => {
     await stopAutoSwitchAndExitFullscreen()
@@ -188,7 +211,8 @@ export default function HomeClient({ events }: HomeClientProps) {
     return (
       <>
         <Timer
-          duration={timerDuration * 1000} // convert to milliseconds
+          duration={baseDuration * 1000}
+          speedMultiplier={speedMultiplier}
           isActive={isAutoSwitchActive}
           onComplete={handleTimerComplete}
           onProgress={handleTimerProgress}
@@ -202,8 +226,9 @@ export default function HomeClient({ events }: HomeClientProps) {
           onToggle={handleAutoSwitchToggle}
           isActive={isAutoSwitchActive}
           remainingSeconds={remainingSeconds}
-          duration={timerDuration}
-          onDurationChange={handleDurationChange}
+          duration={baseDuration}
+          speedMultiplier={speedMultiplier}
+          onSpeedChange={handleSpeedChange}
         />
         <Timeline ref={timelineRef} onEndReached={handleTimelineEndReached} />
         <Ceremonies />

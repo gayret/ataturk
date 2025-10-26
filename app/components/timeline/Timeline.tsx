@@ -75,10 +75,8 @@ const Timeline = forwardRef<TimelineRef, TimelineProps>(({ onEndReached }, ref) 
     const currentId = searchParams.get('id') || 1
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     
-    // Son event'te miyiz kontrol et
     if (currentIndex === events.length - 1) {
-      // Son event'teyiz, ana sayfaya yönlendir ve callback çağır
-      url.searchParams.delete('id')
+      url.searchParams.set('id', '1')
       window.history.pushState({}, '', url.toString())
       if (onEndReached) {
         onEndReached()
@@ -135,7 +133,6 @@ const Timeline = forwardRef<TimelineRef, TimelineProps>(({ onEndReached }, ref) 
     }
   }, [])
 
-  // Expose methods to parent components
   useImperativeHandle(ref, () => ({
     goNext: onGoNext,
     goPrev: onGoPrev,

@@ -1,7 +1,5 @@
 'use client'
 
-
-import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import autoSwitchIcon from '@/app/assets/icons/auto-switch.svg'
 
@@ -10,82 +8,44 @@ interface AutoSwitchProps {
     isActive: boolean
     remainingSeconds?: number
     duration?: number
-    onDurationChange?: (duration: number) => void
+    speedMultiplier?: number
+    onSpeedChange?: (speed: number) => void
 }
 
-export default function AutoSwitch({ onToggle, isActive, remainingSeconds, duration = 10, onDurationChange }: AutoSwitchProps) {
-    const [showMenu, setShowMenu] = useState(false)
-    const [inputValue, setInputValue] = useState(duration.toString())
-    const inputRef = useRef<HTMLInputElement>(null)
+export default function AutoSwitch({ onToggle, isActive, remainingSeconds, duration = 10, speedMultiplier = 1, onSpeedChange }: AutoSwitchProps) {
+    const speedOptions = [0.5, 1, 1.5, 2]
 
-    const handleClick = () => {
+    const handleTimerClick = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        e.preventDefault()
         onToggle(!isActive)
     }
 
-    const handleContextMenu = (e: React.MouseEvent) => {
+    const handleSpeedClick = (e: React.MouseEvent) => {
+        e.stopPropagation()
         e.preventDefault()
-        if (!isActive) {
-            setInputValue(duration.toString())
-            setShowMenu(true)
+        if (onSpeedChange) {
+            const currentIndex = speedOptions.indexOf(speedMultiplier)
+            const nextIndex = (currentIndex + 1) % speedOptions.length
+            const nextSpeed = speedOptions[nextIndex]
+            onSpeedChange(nextSpeed)
         }
     }
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value
-        // Sadece sayı girişine izin ver
-        if (/^\d*$/.test(value)) {
-            setInputValue(value)
-        }
-    }
-
-    const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
-            e.preventDefault()
-            handleSubmit(false)
-        } else if (e.key === ' ') {
-            e.preventDefault()
-            handleSubmit(true) // Space ile kaydedince timer'ı da başlat
-        }
-    }
-
-    const handleSubmit = (startTimer = false) => {
-        const newDuration = parseInt(inputValue)
-        if (newDuration >= 5 && newDuration <= 20 && onDurationChange) {
-            onDurationChange(newDuration)
-        } else {
-            // Invalid input, reset to current duration
-            setInputValue(duration.toString())
-        }
-        setShowMenu(false)
-
-        // Space ile kaydedildiyse timer'ı başlat
-        if (startTimer && !isActive) {
-            onToggle(true)
-        }
-    }
-
-    // Focus input when menu opens
-    useEffect(() => {
-        if (showMenu && inputRef.current) {
-            setTimeout(() => {
-                if (inputRef.current) {
-                    inputRef.current.focus()
-                    inputRef.current.select()
-                }
-            }, 50)
-        }
-    }, [showMenu])
 
     return (
         <div style={{
             position: 'fixed',
             bottom: '1.5rem',
             right: '1rem',
-            zIndex: 1000
+            zIndex: 1000,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '4px'
         }}>
+            {/* Main Timer Button */}
             <button
-                onClick={handleClick}
-                onContextMenu={handleContextMenu}
+                onClick={handleTimerClick}
                 data-auto-switch-button="true"
                 style={{
                     all: 'unset',
@@ -115,7 +75,7 @@ export default function AutoSwitch({ onToggle, isActive, remainingSeconds, durat
                         e.currentTarget.style.transform = 'scale(1)'
                     }
                 }}
-                title={isActive ? 'Otomatik geçişi durdur (Space)' : `Otomatik geçiş (${duration}s) - Sağ tık: Süre ayarla`}
+                title={isActive ? 'Otomatik geçişi durdur (Space)' : `Otomatik geçiş (${duration}s)`}
             >
                 {isActive && remainingSeconds !== undefined ? (
                     <span style={{
@@ -134,33 +94,44 @@ export default function AutoSwitch({ onToggle, isActive, remainingSeconds, durat
                 )}
             </button>
 
-            {showMenu && (
-                <input
-                    ref={inputRef}
-                    type="text"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                    onKeyDown={handleInputKeyDown}
-                    onBlur={() => handleSubmit(false)}
-                    placeholder={duration.toString()}
-                    style={{
-                        position: 'absolute',
-                        bottom: '100%',
-                        right: '0',
-                        marginBottom: '8px',
-                        width: '40px',
-                        padding: '4px 6px',
-                        border: '1px solid #007bff',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        textAlign: 'center',
-                        outline: 'none',
-                        backgroundColor: 'white',
-                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
-                    }}
-                    maxLength={2}
-                />
-            )}
+            {/* Speed Button */}
+            <button
+                onClick={handleSpeedClick}
+                data-auto-switch-button="true"
+                style={{
+                    all: 'unset',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: '12px',
+                    padding: '2px 6px',
+                    minWidth: '24px',
+                    height: '16px',
+                    transition: 'all 0.2s ease-in-out',
+                    backdropFilter: 'blur(5px)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                    opacity: 1
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'
+                    e.currentTarget.style.transform = 'scale(1.05)'
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'
+                    e.currentTarget.style.transform = 'scale(1)'
+                }}
+                title={`Hız: ${speedMultiplier}x - Tıkla değiştir`}
+            >
+                <span style={{
+                    color: 'black',
+                    fontSize: '10px',
+                    fontWeight: 'bold',
+                    textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)'
+                }}>
+                    {speedMultiplier}x
+                </span>
+            </button>
         </div>
     )
 }
