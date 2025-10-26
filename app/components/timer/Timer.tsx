@@ -35,28 +35,28 @@ export default function Timer({ duration, isActive, speedMultiplier = 1, onCompl
       if (startTimeRef.current === null) {
         totalElapsedRef.current = 0
       }
-      
+
       startTimeRef.current = Date.now()
-      
+
       intervalRef.current = setInterval(() => {
         if (startTimeRef.current) {
           const sessionElapsed = Date.now() - startTimeRef.current
-          
+
           const speedAdjustedElapsed = sessionElapsed * speedMultiplier
           totalElapsedRef.current += speedAdjustedElapsed
-          
+
           startTimeRef.current = Date.now()
-          
+
           const newProgress = Math.min((totalElapsedRef.current / duration) * 100, 100)
           const remainingMs = Math.max(duration - totalElapsedRef.current, 0)
           const remainingSeconds = Math.ceil(remainingMs / 1000)
-          
+
           setProgress(newProgress)
-          
+
           if (onProgressRef.current) {
             onProgressRef.current(newProgress, remainingSeconds)
           }
-          
+
           if (totalElapsedRef.current >= duration) {
             setProgress(0)
             totalElapsedRef.current = 0
@@ -92,7 +92,7 @@ export default function Timer({ duration, isActive, speedMultiplier = 1, onCompl
 
   return (
     <div className={styles.timerContainer}>
-      <div 
+      <div
         className={styles.timerBar}
         style={{ width: `${progress}%` }}
       />

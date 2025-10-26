@@ -3,11 +3,21 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './Clouds.module.css'
 
-export default function Clouds() {
+interface CloudsProps {
+  onComplete?: () => void
+}
+
+export default function Clouds({ onComplete }: CloudsProps) {
   const [isAnimating, setIsAnimating] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsAnimating(false), 2500) // 2.5s animasyon süresi
+    setIsAnimating(true)
+    const timer = setTimeout(() => {
+      setIsAnimating(false)
+      if (onComplete) {
+        onComplete()
+      }
+    }, 2500)
     return () => clearTimeout(timer)
   }, [])
 

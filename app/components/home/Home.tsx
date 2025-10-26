@@ -48,6 +48,13 @@ export default function HomeClient({ events }: HomeClientProps) {
   const [remainingSeconds, setRemainingSeconds] = useState<number>(0)
   const [speedMultiplier, setSpeedMultiplier] = useState<number>(1)
   const timelineRef = useRef<TimelineRef>(null)
+  const prevCurrentIdRef = useRef<string | null>(null)
+  const hasBeenSetRef = useRef(false)
+
+  const currentId = searchParams?.get('id')
+
+  const isInitialLoad = prevCurrentIdRef.current === null
+  const [cloudTriggerKey, setCloudTriggerKey] = useState(isInitialLoad ? 1 : 0)
 
   const MapWithNoSSR = useMemo(
     () =>
@@ -57,10 +64,31 @@ export default function HomeClient({ events }: HomeClientProps) {
     []
   )
 
-  const currentId = searchParams?.get('id')
   const selectedEvent = events.find((item) => item.id === Number(currentId)) || events[0]
   const selectedLocation = selectedEvent?.location || events[0]?.location
-  
+
+  useEffect(() => {
+    const prevId = prevCurrentIdRef.current
+    const isFromAbout = prevId === 'about' && currentId !== 'about' && currentId !== null
+
+    const isDirectEventLoad = prevId === null && currentId !== null && !hasBeenSetRef.current
+    
+    if (!hasBeenSetRef.current) {
+      hasBeenSetRef.current = true
+    }
+    
+    prevCurrentIdRef.current = currentId
+
+    if (isFromAbout || isDirectEventLoad) {
+      setCloudTriggerKey(prev => prev + 1)
+    }
+  }, [currentId])
+
+  useEffect(() => {
+    if (isInitialLoad) {
+    }
+  }, [])
+
   const baseDuration = useMemo(() => {
     if (selectedEvent) {
       return calculateReadingTime({
@@ -93,7 +121,7 @@ export default function HomeClient({ events }: HomeClientProps) {
     if (isActive) {
       setRemainingSeconds(timerDuration)
       setIsAutoSwitchActive(true)
-      
+
       if (!document.fullscreenElement) {
         try {
           await document.documentElement.requestFullscreen()
@@ -106,11 +134,24 @@ export default function HomeClient({ events }: HomeClientProps) {
     }
   }, [timerDuration])
 
-  const handleTimerComplete = useCallback(() => {
-    if (timelineRef.current) {
-      timelineRef.current.goNext()
+  const handleTimerComplete = useCallback(async () => {
+    const currentEventId = Number(currentId)
+    const lastEventId = events[events.length - 1]?.id
+    
+    if (currentEventId === lastEventId) {
+      setCloudTriggerKey(prev => prev + 1)
+      
+      await stopAutoSwitchAndExitFullscreen()
+      
+      const url = new URL(window.location.href)
+      url.searchParams.delete('id')
+      window.history.pushState({}, '', url.toString())
+    } else {
+      if (timelineRef.current) {
+        timelineRef.current.goNext()
+      }
     }
-  }, [])
+  }, [currentId, events])
 
   const handleTimerProgress = useCallback((_progress: number, remainingSeconds: number) => {
     setRemainingSeconds(remainingSeconds)
@@ -147,7 +188,7 @@ export default function HomeClient({ events }: HomeClientProps) {
     const handleClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement
       const isAutoSwitchButton = target.closest('[data-auto-switch-button="true"]')
-      
+
       if (isAutoSwitchButton) {
         return
       }
@@ -160,7 +201,7 @@ export default function HomeClient({ events }: HomeClientProps) {
     const handleMouseDown = (event: MouseEvent) => {
       const target = event.target as HTMLElement
       const isAutoSwitchButton = target.closest('[data-auto-switch-button="true"]')
-      
+
       if (isAutoSwitchButton) {
         return
       }
@@ -217,7 +258,12 @@ export default function HomeClient({ events }: HomeClientProps) {
           onComplete={handleTimerComplete}
           onProgress={handleTimerProgress}
         />
-        {currentId !== null && <Clouds />}
+        {cloudTriggerKey > 0 && (
+          <Clouds 
+            key={cloudTriggerKey} 
+            onComplete={() => setCloudTriggerKey(0)} 
+          />
+        )}
         <MapWithNoSSR key="main-map" location={selectedLocation} />
         <Header />
         <Content />

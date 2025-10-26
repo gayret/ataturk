@@ -52,11 +52,22 @@ const Timeline = forwardRef<TimelineRef, TimelineProps>(({ onEndReached }, ref) 
       const activeButton = timelineContainerRef.current.querySelector(`.${styles.active}`)
 
       if (activeButton) {
-        activeButton.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center',
-        })
+        const handleTransitionEnd = () => {
+          activeButton.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center',
+          })
+        }
+
+        const computedStyle = window.getComputedStyle(activeButton)
+        const transitionDuration = parseFloat(computedStyle.transitionDuration) * 1000
+
+        if (transitionDuration > 0) {
+          activeButton.addEventListener('transitionend', handleTransitionEnd, { once: true })
+        } else {
+          handleTransitionEnd()
+        }
       }
     }
   }, [searchParams])
@@ -64,6 +75,13 @@ const Timeline = forwardRef<TimelineRef, TimelineProps>(({ onEndReached }, ref) 
   const onGoPrev = useCallback(() => {
     const url = new URL(window.location.href)
     const currentId = searchParams.get('id')
+    
+    if (!currentId) {
+      url.searchParams.set('id', events[events.length - 1].id.toString())
+      window.history.pushState({}, '', url.toString())
+      return
+    }
+    
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     const prevIndex = (currentIndex - 1 + events.length) % events.length
     url.searchParams.set('id', events[prevIndex].id.toString())
@@ -76,18 +94,15 @@ const Timeline = forwardRef<TimelineRef, TimelineProps>(({ onEndReached }, ref) 
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     
     if (currentIndex === events.length - 1) {
-      url.searchParams.set('id', '1')
+      url.searchParams.set('id', events[0].id.toString())
       window.history.pushState({}, '', url.toString())
-      if (onEndReached) {
-        onEndReached()
-      }
       return
     }
     
     const nextIndex = currentIndex + 1
     url.searchParams.set('id', events[nextIndex].id.toString())
     window.history.pushState({}, '', url.toString())
-  }, [searchParams, events, onEndReached])
+  }, [searchParams, events])
 
   useEffect(() => {
     // Handle keyboard navigation for left and right arrows
