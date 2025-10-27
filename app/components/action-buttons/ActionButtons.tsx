@@ -7,6 +7,7 @@ import Share from './widgets/share/Share'
 import Direction from './widgets/direction/Direction'
 import EventFilter from './widgets/event-filter/EventFilter'
 import Search from './widgets/search/Search'
+import LanguageSelector from './widgets/language-selector/LanguageSelector'
 
 export default function ActionButtons() {
   const searchParams = useSearchParams()
@@ -17,19 +18,23 @@ export default function ActionButtons() {
 
   return (
     <div className={styles.actionButtons}>
-      {selectedItem && (
-        <>
-          <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
+      {
+        selectedItem && (
+          <>
+            <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
-          <EventFilter />
+            <EventFilter />
 
-          <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
+            <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
-          <Search />
+            <Search />
 
-          <Share />
-        </>
-      )}
+            <Share />
+
+            <LanguageSelector />
+          </>
+        )
+      }
     </div>
   )
 }

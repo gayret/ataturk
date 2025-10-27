@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './Content.module.css'
 import { useSearchParams } from 'next/navigation'
 import { formatDate } from '@/app/helpers/date'

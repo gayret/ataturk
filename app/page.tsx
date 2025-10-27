@@ -5,7 +5,7 @@ import path from "path";
 // Fetch data at build time (SEO friendly, static)
 async function getEventsData() {
   try {
-    const filePath = path.join(process.cwd(), "app", "json", "events.json");
+    const filePath = path.join(process.cwd(), "app", "json", "events_tr.json");
     const fileContents = await fs.readFile(filePath, "utf8");
     return JSON.parse(fileContents);
   } catch (error) {
