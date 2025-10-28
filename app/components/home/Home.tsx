@@ -24,9 +24,16 @@ interface EventLocation {
   lon: number
 }
 
+interface EventQuote {
+  text: string
+  source: string
+}
+
 interface Event {
   id: number
   title: string
+  description?: string | null
+  quotes?: EventQuote[]
   date: string
   location: EventLocation
   images: EventImage[]
@@ -40,6 +47,8 @@ interface HomeClientProps {
 export default function HomeClient({ events }: HomeClientProps) {
   const searchParams = useSearchParams()
 
+  const currentId = searchParams?.get('id')
+
   const MapWithNoSSR = useMemo(
     () =>
       dynamic(() => import('@/app/components/map/Map'), {
@@ -48,9 +57,8 @@ export default function HomeClient({ events }: HomeClientProps) {
     []
   )
 
-  const currentId = searchParams?.get('id')
-  const selectedLocation =
-    events.find((item) => item.id === Number(currentId))?.location || events[0]?.location
+  const selectedEvent = events.find((item) => item.id === Number(currentId)) || events[0]
+  const selectedLocation = selectedEvent?.location || events[0]?.location
 
   if (currentId === 'about') {
     return (
