@@ -45,7 +45,8 @@ export default function AutoPlay() {
     }, [events])
 
     const currentEventDurationMs = useMemo(() => {
-        return eventDurationsMs[currentIndex] || 10000
+        const effectiveIndex = currentIndex === -1 ? 0 : currentIndex
+        return eventDurationsMs[effectiveIndex] || 10000
     }, [eventDurationsMs, currentIndex])
 
     const totalDurationSeconds = useMemo(() => {
@@ -58,8 +59,9 @@ export default function AutoPlay() {
 
     useEffect(() => {
         if (isActive && initialTotalDurationRef.current === 0) {
+            const startIndex = currentIndex === -1 ? 0 : currentIndex
             const totalMs = eventDurationsMs
-                .slice(currentIndex)
+                .slice(startIndex)
                 .reduce((total, duration) => total + duration, 0)
 
             initialTotalDurationRef.current = totalMs
@@ -149,20 +151,22 @@ export default function AutoPlay() {
     }, [isActive, stopAutoPlay, startAutoPlay])
 
     const goToNextEvent = useCallback(() => {
-        const isLastEvent = currentIndex >= events.length - 1
-
-        if (isLastEvent) {
+        const effectiveCurrentId = currentId || '1'
+        const effectiveCurrentIndex = events.findIndex(item => item.id === Number(effectiveCurrentId))
+        const nextIndex = (effectiveCurrentIndex + 1) % events.length
+        
+        if (nextIndex === 0) {
             window.history.replaceState({}, '', '/')
             router.push('/')
             setTimeout(() => scrollToStart(), 100)
             return
         }
 
-        const nextEventId = events[currentIndex + 1].id
+        const nextEventId = events[nextIndex].id
         const url = new URL(window.location.href)
         url.searchParams.set('id', nextEventId.toString())
         router.push(url.toString())
-    }, [currentIndex, events, router, scrollToStart])
+    }, [currentId, events, router, scrollToStart])
 
     const handleTimerComplete = useCallback(() => {
         goToNextEvent()
@@ -172,8 +176,9 @@ export default function AutoPlay() {
         setCurrentTimerMs(remainingMs)
 
         if (initialTotalDurationRef.current > 0) {
+            const effectiveIndex = currentIndex === -1 ? 0 : currentIndex
             const futureEventsMs = eventDurationsMs
-                .slice(currentIndex + 1)
+                .slice(effectiveIndex + 1)
                 .reduce((total, duration) => total + duration, 0)
 
             setTotalRemainingMs(remainingMs + futureEventsMs)
