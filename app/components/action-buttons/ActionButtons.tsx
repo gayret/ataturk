@@ -7,7 +7,7 @@ import Share from './widgets/share/Share'
 import Direction from './widgets/direction/Direction'
 import EventFilter from './widgets/event-filter/EventFilter'
 import Search from './widgets/search/Search'
-import AutoPlay from './widgets/auto-play/auto-play'
+import AutoPlay from './widgets/auto-play/AutoPlay'
 
 export default function ActionButtons() {
   const searchParams = useSearchParams()
