@@ -10,22 +10,23 @@ export const useEventsData = () => {
   const pathname = usePathname()
   const { currentLanguageCode, setLanguage } = useLanguageStore()
 
-  // Öncelik sırası: URL parametresi > localStorage > varsayılan olarak tr
+  // Öncelik sırası: URL parametresi > localStorage > Tarayıcı dili > tr
   const urlLanguage = searchParams.get('language')
 
   useEffect(() => {
+    // 1. URL parametresi varsa store'u güncelle
     if (urlLanguage && urlLanguage !== currentLanguageCode) {
-      // URL parametresi varsa ve farklıysa store'u güncelle
       setLanguage(urlLanguage)
-    } else if (!urlLanguage && currentLanguageCode !== 'tr') {
-      // URL'de dil parametresi yoksa ama localStorage'da farklı bir dil varsa, URL'e ekle
+    }
+    // 2. URL'de dil parametresi yoksa, mevcut dili URL'e ekle (tr dahil)
+    else if (!urlLanguage && currentLanguageCode) {
       const params = new URLSearchParams(searchParams.toString())
       params.set('language', currentLanguageCode)
       router.replace(`${pathname}?${params.toString()}`, { scroll: false })
     }
   }, [urlLanguage, currentLanguageCode, setLanguage, router, pathname, searchParams])
 
-  // Hangi dili kullanacağını belirle
+  // Aktif dili belirle: URL > store (localStorage veya tarayıcı dili)
   const activeLanguage = urlLanguage || currentLanguageCode
 
   return useMemo(() => {

@@ -55,5 +55,9 @@
         "autoPlayIconAlt": "Automatic transition icon",
         "languageSelectorTitle": "Select language",
         "languageSelectorIconAlt": "Language icon"
+    },
+    "SupportMe": {
+        "description": "Support me by buying the book",
+        "imageAlt": "Book cover"
     }
 }

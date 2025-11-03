@@ -10,12 +10,20 @@ import Search from './widgets/search/Search'
 import AutoPlay from './widgets/auto-play/AutoPlay'
 import LanguageSelector from './widgets/language-selector/LanguageSelector'
 
-export default function ActionButtons() {
+export default function ActionButtons({ showOnlyLanguageSelector = false }: { showOnlyLanguageSelector?: boolean }) {
   const searchParams = useSearchParams()
   const events = useEventsData()
 
   const selectedItem =
     events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
+
+  if (showOnlyLanguageSelector) {
+    return (
+      <div className={styles.actionButtons}>
+        <LanguageSelector />
+      </div>
+    )
+  }
 
   return (
     <div className={styles.actionButtons}>

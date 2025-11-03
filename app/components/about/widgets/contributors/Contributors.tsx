@@ -116,6 +116,12 @@ export default function Contributors() {
     fetch('https://api.github.com/repos/gayret/ataturk/contributors')
       .then((response) => response.json())
       .then((data) => {
+        // data bir dizi değilse (hata durumunda)
+        if (!Array.isArray(data)) {
+          setContributors([])
+          return
+        }
+
         const contributors = data.map((contributor: Contributor) => ({
           login: contributor.login,
           avatar_url: contributor.avatar_url,

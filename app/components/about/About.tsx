@@ -2,6 +2,7 @@ import { useLanguageStore } from '@/app/stores/languageStore'
 import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import styles from './About.module.css'
 import Contributors from './widgets/contributors/Contributors'
+import ActionButtons from '../action-buttons/ActionButtons'
 
 export default function About() {
   const { t } = useLanguageStore()
@@ -32,16 +33,17 @@ export default function About() {
             <a href='https://www.linkedin.com/in/a-enes-sol/'>* A. Enes Söl - İngilizce</a>
           </p>
 
-          <h2>{"asddsa"}</h2>
+          <h2>{t.About.Story.title}</h2>
           <iframe
             src='https://www.linkedin.com/embed/feed/update/urn:li:share:7357917656097730560?collapsed=1'
             height='950px'
             width='100%'
             className={styles.borderNone}
-            title={"asds"}
+            title={t.About.Story.iframeTitle}
           ></iframe>
         </div>
       </div>
+      <ActionButtons showOnlyLanguageSelector={true} />
     </SwipeWrapper>
   )
 }
