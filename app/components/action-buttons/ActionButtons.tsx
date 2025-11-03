@@ -8,6 +8,7 @@ import Direction from './widgets/direction/Direction'
 import EventFilter from './widgets/event-filter/EventFilter'
 import Search from './widgets/search/Search'
 import AutoPlay from './widgets/auto-play/AutoPlay'
+import LanguageSelector from './widgets/language-selector/LanguageSelector'
 
 export default function ActionButtons() {
   const searchParams = useSearchParams()
@@ -29,11 +30,13 @@ export default function ActionButtons() {
 
             <Search />
 
-          <Share />
+            <Share />
 
-          <AutoPlay />
-        </>
-      )}
+            <AutoPlay />
+
+            <LanguageSelector />
+          </>
+        )}
     </div>
   )
 }
