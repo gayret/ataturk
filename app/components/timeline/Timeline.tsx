@@ -120,7 +120,7 @@ export default function Timeline() {
         <Image src={chevronLeft} alt='Önceki' width={24} height={24} />
       </button>
 
-      <div className={styles.timelineContainer} ref={timelineContainerRef}>
+      <div className={styles.timelineContainer} ref={timelineContainerRef} data-timeline-container>
         {uniqueYears.map((item, index) => {
           const activeId = Number(searchParams.get('id'))
           const isActiveYear = item.ids.includes(activeId)
