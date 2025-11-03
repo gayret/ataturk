@@ -113,7 +113,11 @@ export default function Contributors() {
 
   useEffect(() => {
     // Fetch contributors from GitHub API
-    fetch('https://api.github.com/repos/gayret/ataturk/contributors')
+    fetch('https://api.github.com/repos/gayret/ataturk/contributors', {
+      headers: {
+        Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         // data bir dizi değilse (hata durumunda)
