@@ -1,26 +1,59 @@
 {
     "Header": {
-        "title": "Atatürk Timeline"
+        "title": "A Chronological History of Atatürk"
     },
     "About": {
         "title": "To the Children and Youth of Turkey!",
         "description": "The Great Leader Gazi Mustafa Kemal Atatürk led the Turkish nation's struggle for independence and became the founder of the Republic of Turkey.",
-        "description2": "The aim of this project is to chronologically narrate Atatürk's life, filled with courage, vision, and self-sacrifice, and to inspire young people.",
-        "usage": "Usage",
-        "usage2": "The aim of this project is to chronologically narrate Atatürk's life, filled with courage, vision, and self-sacrifice, and to inspire young people."
+        "mission": "The aim of this project is to chronologically narrate Atatürk's life, filled with courage, vision, and self-sacrifice, and to inspire young people.",
+        "usageTitle": "Usage",
+        "usageDescription": "The aim of this project is to chronologically narrate Atatürk's life, filled with courage, vision, and self-sacrifice, and to inspire young people.",
+        "translatorsTitle": "Translators",
+        "Contributors": {
+            "title": "Developers",
+            "intro": "The source code and data of the project are open to everyone. You can view the code on",
+            "linkText": "GitHub"
+        },
+        "Story": {
+            "title": "Our Journey",
+            "iframeTitle": "Embedded post"
+        }
     },
-    "Contributors": {
-        "title": "Developers",
-        "description": "The source code and data of the project are open to everyone. You can view the code on",
-        "description2": "GitHub"
+    "Share": {
+        "title": "Share this event"
     },
-    "Thanks": {
-        "title": "Those who work hard",
-        "description": "Irem Çiftler Gayret",
-        "description2": "User testing and analysis",
-        "description3": "Osman Emre Hacıarap",
-        "description4": "Voice Director",
-        "description5": "Yusuf Köleli",
-        "description6": "Concept Consultant"
+    "Content": {
+        "ageText": "years old"
+    },
+    "ActionButtons": {
+        "streetViewTitle": "Street View",
+        "streetViewIconAlt": "Street View icon",
+        "eventFilterOpen": "Open filters",
+        "eventFilterClose": "Close filters",
+        "directionTitle": "Direction",
+        "directionIconAlt": "Direction icon",
+        "searchTitle": "Search",
+        "searchIconAlt": "Search icon",
+        "searchPlaceholder": "Search...",
+        "shareTitle": "Share this event",
+        "shareIconAlt": "Share icon",
+        "shareLinkedinTitle": "Share on LinkedIn",
+        "shareLinkedinIconAlt": "LinkedIn icon",
+        "shareTwitterTitle": "Share on Twitter",
+        "shareTwitterIconAlt": "Twitter icon",
+        "shareFacebookTitle": "Share on Facebook",
+        "shareFacebookIconAlt": "Facebook icon",
+        "shareWhatsappTitle": "Share on WhatsApp",
+        "shareWhatsappIconAlt": "WhatsApp icon",
+        "shareText": "A Chronological History of Atatürk - Discover the life of Mustafa Kemal Atatürk through maps, visual and audio sources!",
+        "autoPlayActiveTitle": "Automatic transition active",
+        "autoPlayActiveStopTitle": "Stop (Space)",
+        "autoPlaySpeedTitle": "Speed",
+        "autoPlaySpeedChangeTitle": "Click to change",
+        "autoPlayMinutesText": "m",
+        "autoPlaySecondsText": "s",
+        "autoPlayIconAlt": "Automatic transition icon",
+        "languageSelectorTitle": "Select language",
+        "languageSelectorIconAlt": "Language icon"
     }
 }

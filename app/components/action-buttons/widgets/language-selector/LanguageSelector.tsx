@@ -13,7 +13,7 @@ export default function LanguageSelector() {
     const router = useRouter()
     const pathname = usePathname()
     const searchParams = useSearchParams()
-    const { setLanguage } = useLanguageStore()
+    const { t, setLanguage } = useLanguageStore()
 
     const handleSelect = (langCode: string) => {
         setLanguage(langCode)
@@ -42,8 +42,8 @@ export default function LanguageSelector() {
 
     return (
         <div className={styles.language}>
-            <button onClick={() => setOpen(!open)} title='Dil seç'>
-                <Image src={languageIcon} alt='Dil ikonu' width={16} height={16} />
+            <button onClick={() => setOpen(!open)} title={t.ActionButtons.languageSelectorTitle}>
+                <Image src={languageIcon} alt={t.ActionButtons.languageSelectorIconAlt} width={16} height={16} />
             </button>
 
             {open && (
@@ -56,7 +56,7 @@ export default function LanguageSelector() {
                                 title={language.name}
                                 aria-label={language.name}
                             >
-                                {language.code.toUpperCase()}
+                                {language.name}
                             </button>
                         ))
                     }

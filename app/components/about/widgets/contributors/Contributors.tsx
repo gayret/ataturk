@@ -182,12 +182,12 @@ export default function Contributors() {
     contributors.length > 0 && (
       <>
         <section>
-          <h2>Geliştirenler</h2>
+          <h2>{t.About.Contributors.title}</h2>
 
           <small>
-            {t.Contributors.description}&nbsp;
+            {t.About.Contributors.intro}&nbsp;
             <Link href='https://github.com/gayret/ataturk' target='_blank'>
-              {t.Contributors.description2}
+              {t.About.Contributors.linkText}
             </Link>
             .
           </small>

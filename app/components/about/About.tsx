@@ -17,23 +17,28 @@ export default function About() {
           </p>
 
           <p>
-            {t.About.description2}
+            {t.About.mission}
           </p>
 
-          <h2>Kullanımı</h2>
+          <h2>{t.About.usageTitle}</h2>
           <p>
-            {t.About.usage2}
+            {t.About.usageDescription}
           </p>
 
           <Contributors />
 
-          <h2>Projenin hikayesi</h2>
+          <h2>{t.About.translatorsTitle}</h2>
+          <p>
+            <a href='https://www.linkedin.com/in/a-enes-sol/'>* A. Enes Söl - İngilizce</a>
+          </p>
+
+          <h2>{"asddsa"}</h2>
           <iframe
             src='https://www.linkedin.com/embed/feed/update/urn:li:share:7357917656097730560?collapsed=1'
             height='950px'
             width='100%'
             className={styles.borderNone}
-            title='Gömülü gönderi'
+            title={"asds"}
           ></iframe>
         </div>
       </div>

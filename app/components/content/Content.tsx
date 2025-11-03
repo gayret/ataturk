@@ -9,6 +9,7 @@ import Images from './widgets/Images'
 import { useEventsData } from '@/app/helpers/data'
 import Quote from '../quote/Quote'
 import { ImageType } from './widgets/Images'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 export type QuoteType = {
   text: string
@@ -28,8 +29,11 @@ export type ItemType = {
 
 export default function Content() {
   const [computedAge, setComputedAge] = useState<number | null>(null)
+  const [formattedDate, setFormattedDate] = useState<string>('')
   const searchParams = useSearchParams()
   const events = useEventsData() as ItemType[]
+  const currentLanguageCode = useLanguageStore((state) => state.currentLanguageCode)
+  const { t } = useLanguageStore()
 
   const selectedItem =
     events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
@@ -42,16 +46,17 @@ export default function Content() {
 
   useEffect(() => {
     setComputedAge(selectedItem?.date ? new Date(selectedItem.date).getFullYear() - 1881 : null)
-  }, [selectedItem])
+    setFormattedDate(formatDate(selectedItem?.date || ''))
+  }, [selectedItem, currentLanguageCode])
 
   return (
     <SwipeWrapper>
       <div className={styles.content}>
         <div className={styles.dateAndTitle}>
           <div className={styles.date}>
-            {formatDate(selectedItem?.date || '')}
+            {formattedDate}
             {computedAge !== null && computedAge > 0 && computedAge <= 57 && (
-              <span className={styles.computedAge}>{computedAge}. yaş</span>
+              <span className={styles.computedAge}>{computedAge}. {t.Content.ageText}</span>
             )}
           </div>
           <h1 className={styles.title}>

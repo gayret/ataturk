@@ -8,10 +8,12 @@ import linkedinIcon from '@/app/assets/icons/linkedin.svg'
 import twitterIcon from '@/app/assets/icons/twitter.svg'
 import facebookIcon from '@/app/assets/icons/facebook.svg'
 import whatsappIcon from '@/app/assets/icons/whatsapp.svg'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 export default function Share() {
   const searchParams = useSearchParams()
   const [open, setOpen] = useState(false)
+  const { t } = useLanguageStore()
 
   // Eğer kullanıcı sayfanın dışına tıklarsa open'ı false yap
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function Share() {
 
   const encodedUrl = encodeURIComponent(fullUrl)
   const encodedText = encodeURIComponent(
-    "Atatürk Kronolojisi - Mustafa Kemal Atatürk'ün hayatını haritalar, görsel ve işitsel kaynaklarla keşfedin!"
+    `${t.ActionButtons.shareText}`
   )
 
   const shareLinks = {
@@ -48,8 +50,8 @@ export default function Share() {
 
   return (
     <div className={styles.share}>
-      <button onClick={() => setOpen(!open)} title='Bu olayı paylaş'>
-        <Image src={iconShare} alt='Share ikonu' width={16} height={16} />
+      <button onClick={() => setOpen(!open)} title={t.ActionButtons.shareTitle}>
+        <Image src={iconShare} alt={t.ActionButtons.shareIconAlt} width={16} height={16} />
       </button>
 
       {open && (
@@ -58,31 +60,31 @@ export default function Share() {
             href={shareLinks.linkedin}
             target='_blank'
             rel='noopener noreferrer'
-            title="LinkedIn'de paylaş"
+            title={t.ActionButtons.shareLinkedinTitle}
           >
-            <Image src={linkedinIcon} alt='LinkedIn ikonu' width={16} height={16} />
+            <Image src={linkedinIcon} alt={t.ActionButtons.shareLinkedinIconAlt} width={16} height={16} />
           </Link>
 
-          <Link href={shareLinks.x} target='_blank' rel='noopener noreferrer' title="X'te paylaş">
-            <Image src={twitterIcon} alt='X ikonu' width={16} height={16} />
+          <Link href={shareLinks.x} target='_blank' rel='noopener noreferrer' title={t.ActionButtons.shareTwitterTitle}>
+            <Image src={twitterIcon} alt={t.ActionButtons.shareTwitterIconAlt} width={16} height={16} />
           </Link>
 
           <Link
             href={shareLinks.facebook}
             target='_blank'
             rel='noopener noreferrer'
-            title="Facebook'ta paylaş"
+            title={t.ActionButtons.shareFacebookTitle}
           >
-            <Image src={facebookIcon} alt='Facebook ikonu' width={16} height={16} />
+            <Image src={facebookIcon} alt={t.ActionButtons.shareFacebookIconAlt} width={16} height={16} />
           </Link>
 
           <Link
             href={shareLinks.whatsapp}
             target='_blank'
             rel='noopener noreferrer'
-            title="WhatsApp'ta paylaş"
+            title={t.ActionButtons.shareWhatsappTitle}
           >
-            <Image src={whatsappIcon} alt='Facebook ikonu' width={16} height={16} />
+            <Image src={whatsappIcon} alt={t.ActionButtons.shareWhatsappIconAlt} width={16} height={16} />
           </Link>
         </div>
       )}

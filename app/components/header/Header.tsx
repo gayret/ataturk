@@ -14,7 +14,7 @@ export default function Header() {
         className={styles.link}
       >
         <Image className={styles.logo} src={HeaderPicture} alt='logo' width={200} height={200} />
-        <h2 className={styles.title}>Atatürk Kronolojisi</h2>
+        <h2 className={styles.title}>{t.Header.title}</h2>
       </Link>
     </header>
   )
