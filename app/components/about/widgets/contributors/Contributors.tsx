@@ -58,7 +58,7 @@ const HoverCard = ({
       {isLoading ? (
         <div className={styles.hovercardLoading}>
           <div className={styles.loadingSpinner}></div>
-          <span>Yükleniyor...</span>
+          <span>Loading...</span>
         </div>
       ) : userProfile ? (
         <>
@@ -188,8 +188,6 @@ export default function Contributors() {
     contributors.length > 0 && (
       <>
         <section>
-          <h2>{t.About.Contributors.title}</h2>
-
           <small>
             {t.About.Contributors.intro}&nbsp;
             <Link href='https://github.com/gayret/ataturk' target='_blank'>
@@ -198,22 +196,22 @@ export default function Contributors() {
             .
           </small>
 
+          <h2>{t.About.Contributors.title}</h2>
+
           <div className={styles.contributors}>
-            {
-              contributors.map((contributor, index) => (
-                <a
-                  href={contributor.html_url}
-                  key={index}
-                  title={contributor.login}
-                  target='_blank'
-                  className={styles.contributor}
-                  onMouseEnter={(e) => handleMouseEnter(contributor, e)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <img src={contributor.avatar_url} width={50} height={50} alt={contributor.login} />
-                </a>
-              ))
-            }
+            {contributors.map((contributor, index) => (
+              <a
+                href={contributor.html_url}
+                key={index}
+                title={contributor.login}
+                target='_blank'
+                className={styles.contributor}
+                onMouseEnter={(e) => handleMouseEnter(contributor, e)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <img src={contributor.avatar_url} width={50} height={50} alt={contributor.login} />
+              </a>
+            ))}
           </div>
         </section>
 

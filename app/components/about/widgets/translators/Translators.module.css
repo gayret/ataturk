@@ -1,0 +1,28 @@
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.list {
+  all: unset;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.list li,
+.list li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.list img {
+  border-radius: 1rem;
+}
+
+.list a:hover {
+  opacity: 0.8;
+  margin-left: 1rem;
+}

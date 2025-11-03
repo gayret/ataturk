@@ -3,6 +3,7 @@ import SwipeWrapper from '../swipe-wrapper/SwipeWrapper'
 import styles from './About.module.css'
 import Contributors from './widgets/contributors/Contributors'
 import ActionButtons from '../action-buttons/ActionButtons'
+import Translators from './widgets/translators/Translators'
 
 export default function About() {
   const { t } = useLanguageStore()
@@ -10,28 +11,17 @@ export default function About() {
     <SwipeWrapper onlyNext>
       <div className={styles.content}>
         <div className={styles.description}>
-          <h1 className={styles.title}>
-            {t.About.title}
-          </h1>
-          <p>
-            {t.About.description}
-          </p>
+          <h1 className={styles.title}>{t.About.title}</h1>
+          <p>{t.About.description}</p>
 
-          <p>
-            {t.About.mission}
-          </p>
+          <p>{t.About.mission}</p>
 
           <h2>{t.About.usageTitle}</h2>
-          <p>
-            {t.About.usageDescription}
-          </p>
+          <p>{t.About.usageDescription}</p>
 
           <Contributors />
 
-          <h2>{t.About.translatorsTitle}</h2>
-          <p>
-            <a href='https://www.linkedin.com/in/a-enes-sol/'>* A. Enes Söl - İngilizce</a>
-          </p>
+          <Translators />
 
           <h2>{t.About.Story.title}</h2>
           <iframe
