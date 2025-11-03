@@ -1,29 +1,28 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const securityHeaders = [
   {
-    key: "Strict-Transport-Security",
-    value: "max-age=63072000; includeSubDomains; preload", // force HTTPS
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload', // force HTTPS
   },
   {
-    key: "X-Content-Type-Options",
-    value: "nosniff", // prevent MIME sniffing
+    key: 'X-Content-Type-Options',
+    value: 'nosniff', // prevent MIME sniffing
   },
   {
-    key: "X-Frame-Options",
-    value: "SAMEORIGIN", // prevent clickjacking
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN', // prevent clickjacking
   },
   {
-    key: "Referrer-Policy",
-    value: "strict-origin-when-cross-origin", // safer referrer info
+    key: 'Referrer-Policy',
+    value: 'strict-origin-when-cross-origin', // safer referrer info
   },
   {
-    key: "Permissions-Policy",
-    value:
-      "camera=(), microphone=(), geolocation=(), interest-cohort=()", // block FLoC & unneeded APIs
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()', // block FLoC & unneeded APIs
   },
   {
-    key: "Content-Security-Policy",
+    key: 'Content-Security-Policy',
     value: `
       default-src 'self';
       script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;
@@ -33,20 +32,21 @@ const securityHeaders = [
       connect-src 'self' https:;
       frame-src 'self' https://www.linkedin.com https://www.youtube.com https://platform.twitter.com;
       frame-ancestors 'self';
-    `.replace(/\n/g, " "),
-  }
-];
+    `.replace(/\n/g, ' '),
+  },
+]
 
 const nextConfig: NextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "avatars.githubusercontent.com",
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
       },
       {
-        protocol: "https",
-        hostname: "ataturk-kronolojisi.org",
+        protocol: 'https',
+        hostname: 'ataturk-kronolojisi.org',
       },
     ],
   },
@@ -56,29 +56,29 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)", // apply to all routes
+        source: '/(.*)', // apply to all routes
         headers: securityHeaders,
       },
       {
-        source: "/data/worldBorder.json",
+        source: '/data/worldBorder.json',
         headers: [
           {
-            key: "Cache-Control",
-            value: "public, max-age=315360000, immutable",
+            key: 'Cache-Control',
+            value: 'public, max-age=315360000, immutable',
           },
         ],
       },
-    ];
+    ]
   },
   async redirects() {
     return [
       {
-        source: "/index",
-        destination: "/",
+        source: '/index',
+        destination: '/',
         permanent: true, // canonical root
       },
-    ];
+    ]
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig
