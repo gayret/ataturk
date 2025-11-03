@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import { ItemType } from '../Content'
 import ChevronLeft from '@/app/assets/icons/chevron-left.svg'
 import ChevronRight from '@/app/assets/icons/chevron-right.svg'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 export type ImageType = {
   url: string
@@ -14,6 +15,7 @@ export type ImageType = {
 }
 
 export default function Images() {
+  const { t } = useLanguageStore()
   const events = useEventsData()
   const [modalImage, setModalImage] = useState<ImageType | null>(null)
   const searchParams = useSearchParams()
@@ -67,7 +69,7 @@ export default function Images() {
               style={{ cursor: 'pointer' }}
             >
               <Image src={image.url} alt={image.alt} width={2000} height={2000} />
-              <p title={`Bilgi kaynağı: ${image.source}`}>
+              <p title={`${t.InformationSource}: ${image.source}`}>
                 {image.alt}
                 <a href={image.source} target='_blank' rel='noopener noreferrer'>
                   *
@@ -106,11 +108,11 @@ export default function Images() {
                 height={800}
                 style={{ minWidth: '100%', maxWidth: '80dvw', height: 'auto' }}
               />
-              <p title={`Bilgi kaynağı: ${modalImage.source}`}>
+              <p title={`${t.InformationSource}: ${modalImage.source}`}>
                 {modalImage.alt}
                 {modalImage.source && (
                   <a href={modalImage.source} target='_blank' rel='noopener noreferrer'>
-                    {modalImage.source.includes('https://') ? '*' : 'Bilgi Kaynağı'}
+                    {modalImage.source.includes('https://') ? '*' : t.InformationSource}
                   </a>
                 )}
               </p>

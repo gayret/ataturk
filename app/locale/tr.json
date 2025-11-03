@@ -1,63 +1,64 @@
 {
-    "Header": {
-        "title": "Atatürk Kronolojisi"
+  "Header": {
+    "title": "Atatürk Kronolojisi"
+  },
+  "About": {
+    "title": "Çocuklara ve Türk Gençliğine!",
+    "description": "Ulu Önder Gazi Mustafa Kemal Atatürk, Türk milletinin bağımsızlık mücadelesine önderlik ederek Türkiye Cumhuriyeti'nin kurucusu olmuştur.",
+    "mission": "Bu projenin amacı, Atatürk'ün cesaret, vizyon ve özveriyle dolu olan hayatını kronolojik olarak anlatıp gençlere ilham vermektir.",
+    "usageTitle": "Kullanım",
+    "usageDescription": "Bu projenin amacı, Atatürk'ün cesaret, vizyon ve özveriyle dolu olan hayatını kronolojik olarak anlatıp gençlere ilham vermektir.",
+    "translatorsTitle": "Çevirmenler",
+    "Contributors": {
+      "title": "Geliştirenler",
+      "intro": "Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için",
+      "linkText": "GitHub"
     },
-    "About": {
-        "title": "Çocuklara ve Türk Gençliğine!",
-        "description": "Ulu Önder Gazi Mustafa Kemal Atatürk, Türk milletinin bağımsızlık mücadelesine önderlik ederek Türkiye Cumhuriyeti'nin kurucusu olmuştur.",
-        "mission": "Bu projenin amacı, Atatürk'ün cesaret, vizyon ve özveriyle dolu olan hayatını kronolojik olarak anlatıp gençlere ilham vermektir.",
-        "usageTitle": "Kullanım",
-        "usageDescription": "Bu projenin amacı, Atatürk'ün cesaret, vizyon ve özveriyle dolu olan hayatını kronolojik olarak anlatıp gençlere ilham vermektir.",
-        "translatorsTitle": "Çevirmenler",
-        "Contributors": {
-            "title": "Geliştirenler",
-            "intro": "Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için",
-            "linkText": "GitHub"
-        },
-        "Story": {
-            "title": "Projenin Hikayesi",
-            "iframeTitle": "Gömülü gönderi"
-        }
-    },
-    "Share": {
-        "title": "Bu olayı paylaş"
-    },
-    "Content": {
-        "ageText": "yaş"
-    },
-    "ActionButtons": {
-        "streetViewTitle": "Sokak Görünümü",
-        "streetViewIconAlt": "Sokak Görünümü ikonu",
-        "eventFilterOpen": "Filtreleri aç",
-        "eventFilterClose": "Filtreleri kapat",
-        "directionTitle": "Yol tarifi",
-        "directionIconAlt": "Yol tarifi ikonu",
-        "searchTitle": "Arama",
-        "searchIconAlt": "Arama ikonu",
-        "searchPlaceholder": "Arama yapın...",
-        "shareTitle": "Bu olayı paylaş",
-        "shareIconAlt": "Paylaş ikonu",
-        "shareLinkedinTitle": "LinkedIn'de paylaş",
-        "shareLinkedinIconAlt": "LinkedIn ikonu",
-        "shareTwitterTitle": "X'te paylaş",
-        "shareTwitterIconAlt": "X ikonu",
-        "shareFacebookTitle": "Facebook'ta paylaş",
-        "shareFacebookIconAlt": "Facebook ikonu",
-        "shareWhatsappTitle": "WhatsApp'ta paylaş",
-        "shareWhatsappIconAlt": "WhatsApp ikonu",
-        "shareText": "Atatürk Kronolojisi - Mustafa Kemal Atatürk'ün hayatını haritalar, görsel ve işitsel kaynaklarla keşfedin!",
-        "autoPlayActiveTitle": "Otomatik geçiş aktif",
-        "autoPlayActiveStopTitle": "Durdur (Space)",
-        "autoPlaySpeedTitle": "Hız",
-        "autoPlaySpeedChangeTitle": "Tıkla değiştir",
-        "autoPlayMinutesText": "dk",
-        "autoPlaySecondsText": "s",
-        "autoPlayIconAlt": "Otomatik geçiş ikonu",
-        "languageSelectorTitle": "Dil seç",
-        "languageSelectorIconAlt": "Dil ikonu"
-    },
-    "SupportMe": {
-        "description": "Kitap satın alarak destek ol",
-        "imageAlt": "Kitap kapağı"
+    "Story": {
+      "title": "Projenin Hikayesi",
+      "iframeTitle": "Gömülü gönderi"
     }
+  },
+  "Share": {
+    "title": "Bu olayı paylaş"
+  },
+  "Content": {
+    "ageText": "yaş"
+  },
+  "ActionButtons": {
+    "streetViewTitle": "Sokak Görünümü",
+    "streetViewIconAlt": "Sokak Görünümü ikonu",
+    "eventFilterOpen": "Filtreleri aç",
+    "eventFilterClose": "Filtreleri kapat",
+    "directionTitle": "Yol tarifi",
+    "directionIconAlt": "Yol tarifi ikonu",
+    "searchTitle": "Arama",
+    "searchIconAlt": "Arama ikonu",
+    "searchPlaceholder": "Arama yapın...",
+    "shareTitle": "Bu olayı paylaş",
+    "shareIconAlt": "Paylaş ikonu",
+    "shareLinkedinTitle": "LinkedIn'de paylaş",
+    "shareLinkedinIconAlt": "LinkedIn ikonu",
+    "shareTwitterTitle": "X'te paylaş",
+    "shareTwitterIconAlt": "X ikonu",
+    "shareFacebookTitle": "Facebook'ta paylaş",
+    "shareFacebookIconAlt": "Facebook ikonu",
+    "shareWhatsappTitle": "WhatsApp'ta paylaş",
+    "shareWhatsappIconAlt": "WhatsApp ikonu",
+    "shareText": "Atatürk Kronolojisi - Mustafa Kemal Atatürk'ün hayatını haritalar, görsel ve işitsel kaynaklarla keşfedin!",
+    "autoPlayActiveTitle": "Otomatik geçiş aktif",
+    "autoPlayActiveStopTitle": "Durdur (Space)",
+    "autoPlaySpeedTitle": "Hız",
+    "autoPlaySpeedChangeTitle": "Tıkla değiştir",
+    "autoPlayMinutesText": "dk",
+    "autoPlaySecondsText": "s",
+    "autoPlayIconAlt": "Otomatik geçiş ikonu",
+    "languageSelectorTitle": "Dil seç",
+    "languageSelectorIconAlt": "Dil ikonu"
+  },
+  "SupportMe": {
+    "description": "Kitap satın alarak destek ol",
+    "imageAlt": "Kitap kapağı"
+  },
+  "InformationSource": "Bilgi kaynağı"
 }

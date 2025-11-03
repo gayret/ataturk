@@ -56,15 +56,20 @@ export default function Content() {
           <div className={styles.date}>
             {formattedDate}
             {computedAge !== null && computedAge > 0 && computedAge <= 57 && (
-              <span className={styles.computedAge}>{computedAge}. {t.Content.ageText}</span>
+              <span className={styles.computedAge}>
+                {computedAge}. {t.Content.ageText}
+              </span>
             )}
           </div>
           <h1 className={styles.title}>
             {selectedItem?.title}
             {selectedItem?.source && (
-              <span className={styles.source} title={`Bilgi kaynağı: ${selectedItem.source}`}>
+              <span
+                className={styles.source}
+                title={`${t.InformationSource}: ${selectedItem.source}`}
+              >
                 <a href={selectedItem.source} target='_blank' rel='noopener noreferrer'>
-                  {selectedItem.source.includes('https://') ? '*' : 'Bilgi Kaynağı'}
+                  {selectedItem.source.includes('https://') ? '*' : t.InformationSource}
                 </a>
               </span>
             )}
@@ -89,11 +94,11 @@ export default function Content() {
           <div className={styles.sounds}>
             {selectedItem.sounds.map((sound, index) => (
               <div key={index} className={styles.sound}>
-                <p title={`Bilgi kaynağı: ${sound.source}`}>
+                <p title={`${t.InformationSource}: ${sound.source}`}>
                   {sound.alt}
                   {sound.source && (
                     <a href={sound.source} target='_blank' rel='noopener noreferrer'>
-                      {sound.source.includes('https://') ? '*' : 'Bilgi Kaynağı'}
+                      {sound.source.includes('https://') ? '*' : t.InformationSource}
                     </a>
                   )}
                 </p>
