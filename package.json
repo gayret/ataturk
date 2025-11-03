@@ -14,7 +14,8 @@
     "next": "15.4.7",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-leaflet": "5.0.0"
+    "react-leaflet": "5.0.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
