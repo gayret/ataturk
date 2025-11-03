@@ -5,10 +5,12 @@ import { persist } from 'zustand/middleware'
 import tr from '../locale/tr.json'
 import en from '../locale/en.json'
 
+type LocaleData = typeof tr
+
 interface Language {
     code: string
     name: string
-    file: any
+    file: LocaleData
 }
 
 // Desteklenen diller
@@ -35,7 +37,7 @@ const getLanguageFile = (code: string) => {
 const getBrowserLanguage = (): string => {
     if (typeof window === 'undefined') return 'tr'
 
-    const browserLang = navigator.language || (navigator as any).userLanguage
+    const browserLang = navigator.language || (navigator as Navigator & { userLanguage?: string }).userLanguage || 'tr'
     const langCode = browserLang.split('-')[0].toLowerCase()
 
     // Desteklenen diller arasında yoksa tr kullanılsın
@@ -45,7 +47,7 @@ const getBrowserLanguage = (): string => {
 
 interface LanguageStore {
     currentLanguageCode: string
-    t: any
+    t: LocaleData
     setLanguage: (code: string) => void
 }
 
