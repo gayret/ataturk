@@ -8,31 +8,43 @@ import Direction from './widgets/direction/Direction'
 import EventFilter from './widgets/event-filter/EventFilter'
 import Search from './widgets/search/Search'
 import AutoPlay from './widgets/auto-play/AutoPlay'
+import LanguageSelector from './widgets/language-selector/LanguageSelector'
 
-export default function ActionButtons() {
+export default function ActionButtons({ showOnlyLanguageSelector = false }: { showOnlyLanguageSelector?: boolean }) {
   const searchParams = useSearchParams()
   const events = useEventsData()
 
   const selectedItem =
     events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
 
+  if (showOnlyLanguageSelector) {
+    return (
+      <div className={styles.actionButtons}>
+        <LanguageSelector />
+      </div>
+    )
+  }
+
   return (
     <div className={styles.actionButtons}>
-      {selectedItem && (
-        <>
-          <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
+      {
+        selectedItem && (
+          <>
+            <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
-          <EventFilter />
+            <EventFilter />
 
-          <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
+            <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
-          <Search />
+            <Search />
 
-          <Share />
+            <Share />
 
-          <AutoPlay />
-        </>
-      )}
+            <AutoPlay />
+
+            <LanguageSelector />
+          </>
+        )}
     </div>
   )
 }

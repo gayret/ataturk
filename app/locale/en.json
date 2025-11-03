@@ -1,0 +1,63 @@
+{
+    "Header": {
+        "title": "A Chronological History of Atatürk"
+    },
+    "About": {
+        "title": "To the Children and Youth of Turkey!",
+        "description": "The Great Leader Gazi Mustafa Kemal Atatürk led the Turkish nation's struggle for independence and became the founder of the Republic of Turkey.",
+        "mission": "The aim of this project is to chronologically narrate Atatürk's life, filled with courage, vision, and self-sacrifice, and to inspire young people.",
+        "usageTitle": "Usage",
+        "usageDescription": "The aim of this project is to chronologically narrate Atatürk's life, filled with courage, vision, and self-sacrifice, and to inspire young people.",
+        "translatorsTitle": "Translators",
+        "Contributors": {
+            "title": "Developers",
+            "intro": "The source code and data of the project are open to everyone. You can view the code on",
+            "linkText": "GitHub"
+        },
+        "Story": {
+            "title": "Our Journey",
+            "iframeTitle": "Embedded post"
+        }
+    },
+    "Share": {
+        "title": "Share this event"
+    },
+    "Content": {
+        "ageText": "years old"
+    },
+    "ActionButtons": {
+        "streetViewTitle": "Street View",
+        "streetViewIconAlt": "Street View icon",
+        "eventFilterOpen": "Open filters",
+        "eventFilterClose": "Close filters",
+        "directionTitle": "Direction",
+        "directionIconAlt": "Direction icon",
+        "searchTitle": "Search",
+        "searchIconAlt": "Search icon",
+        "searchPlaceholder": "Search...",
+        "shareTitle": "Share this event",
+        "shareIconAlt": "Share icon",
+        "shareLinkedinTitle": "Share on LinkedIn",
+        "shareLinkedinIconAlt": "LinkedIn icon",
+        "shareTwitterTitle": "Share on Twitter",
+        "shareTwitterIconAlt": "Twitter icon",
+        "shareFacebookTitle": "Share on Facebook",
+        "shareFacebookIconAlt": "Facebook icon",
+        "shareWhatsappTitle": "Share on WhatsApp",
+        "shareWhatsappIconAlt": "WhatsApp icon",
+        "shareText": "A Chronological History of Atatürk - Discover the life of Mustafa Kemal Atatürk through maps, visual and audio sources!",
+        "autoPlayActiveTitle": "Automatic transition active",
+        "autoPlayActiveStopTitle": "Stop (Space)",
+        "autoPlaySpeedTitle": "Speed",
+        "autoPlaySpeedChangeTitle": "Click to change",
+        "autoPlayMinutesText": "m",
+        "autoPlaySecondsText": "s",
+        "autoPlayIconAlt": "Automatic transition icon",
+        "languageSelectorTitle": "Select language",
+        "languageSelectorIconAlt": "Language icon"
+    },
+    "SupportMe": {
+        "description": "Support me by buying the book",
+        "imageAlt": "Book cover"
+    }
+}

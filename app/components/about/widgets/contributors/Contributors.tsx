@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import styles from './Contributors.module.css'
+import Link from 'next/link'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 type Contributor = {
   login: string
@@ -107,12 +109,19 @@ export default function Contributors() {
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 })
   const [isLoadingProfile, setIsLoadingProfile] = useState(false)
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const { t } = useLanguageStore()
 
   useEffect(() => {
     // Fetch contributors from GitHub API
     fetch('https://api.github.com/repos/gayret/ataturk/contributors')
       .then((response) => response.json())
       .then((data) => {
+        // data bir dizi değilse (hata durumunda)
+        if (!Array.isArray(data)) {
+          setContributors([])
+          return
+        }
+
         const contributors = data.map((contributor: Contributor) => ({
           login: contributor.login,
           avatar_url: contributor.avatar_url,
@@ -179,30 +188,32 @@ export default function Contributors() {
     contributors.length > 0 && (
       <>
         <section>
-          <h2>Geliştirenler</h2>
+          <h2>{t.About.Contributors.title}</h2>
 
           <small>
-            Projenin kaynak kodları ve verileri herkese açıktır. Geliştirmek için{' '}
-            <a href='https://github.com/gayret/ataturk' target='_blank'>
-              <strong>GitHub</strong>&#39;a
-            </a>{' '}
-            göz atabilirsiniz.
+            {t.About.Contributors.intro}&nbsp;
+            <Link href='https://github.com/gayret/ataturk' target='_blank'>
+              {t.About.Contributors.linkText}
+            </Link>
+            .
           </small>
 
           <div className={styles.contributors}>
-            {contributors.map((contributor, index) => (
-              <a
-                href={contributor.html_url}
-                key={index}
-                title={contributor.login}
-                target='_blank'
-                className={styles.contributor}
-                onMouseEnter={(e) => handleMouseEnter(contributor, e)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <img src={contributor.avatar_url} width={50} height={50} alt={contributor.login} />
-              </a>
-            ))}
+            {
+              contributors.map((contributor, index) => (
+                <a
+                  href={contributor.html_url}
+                  key={index}
+                  title={contributor.login}
+                  target='_blank'
+                  className={styles.contributor}
+                  onMouseEnter={(e) => handleMouseEnter(contributor, e)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <img src={contributor.avatar_url} width={50} height={50} alt={contributor.login} />
+                </a>
+              ))
+            }
           </div>
         </section>
 

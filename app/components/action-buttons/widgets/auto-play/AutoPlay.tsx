@@ -8,11 +8,13 @@ import Timer from '@/app/components/action-buttons/widgets/auto-play/widgets/tim
 import { useEventsData } from '@/app/helpers/data'
 import { calculateReadingTime } from '@/app/helpers/readingTime'
 import styles from './AutoPlay.module.css'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 export default function AutoPlay() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const events = useEventsData()
+  const { t } = useLanguageStore()
 
   const speedOptions = [0.5, 1, 1.5, 2]
 
@@ -88,9 +90,9 @@ export default function AutoPlay() {
     const minutes = Math.floor(seconds / 60)
     const remainingSeconds = seconds % 60
     if (minutes > 0) {
-      return `${minutes}dk ${remainingSeconds}s`
+      return `${minutes}${t.ActionButtons.autoPlayMinutesText} ${remainingSeconds}${t.ActionButtons.autoPlaySecondsText}`
     }
-    return `${remainingSeconds}s`
+    return `${remainingSeconds}${t.ActionButtons.autoPlaySecondsText}`
   }, [])
 
   const getButtonTitle = useCallback(() => {
@@ -98,7 +100,7 @@ export default function AutoPlay() {
       return `${formatTime(totalRemainingMs)}`
     }
     if (isActive) {
-      return `Otomatik geçiş aktif - Durdur (Space)`
+      return `${t.ActionButtons.autoPlayActiveTitle} - ${t.ActionButtons.autoPlayActiveStopTitle}`
     }
     return `${formatTime(totalDurationSeconds * 1000)}`
   }, [isActive, isHovering, totalRemainingMs, totalDurationSeconds, formatTime])
@@ -307,7 +309,7 @@ export default function AutoPlay() {
           {isActive ? (
             <span className={styles.timerDisplay}>{Math.ceil(currentTimerMs / 1000)}</span>
           ) : (
-            <Image src={autoPlayIcon} alt='Otomatik Geçiş Iconu' width={16} height={16} />
+            <Image src={autoPlayIcon} alt={t.ActionButtons.autoPlayIconAlt} width={16} height={16} />
           )}
         </button>
 
@@ -316,7 +318,7 @@ export default function AutoPlay() {
           <button
             onClick={handleSpeedClick}
             data-auto-play-button='true'
-            title={`Hız: ${speedMultiplier}x - Tıkla değiştir`}
+            title={`${t.ActionButtons.autoPlaySpeedTitle} ${speedMultiplier}x - ${t.ActionButtons.autoPlaySpeedChangeTitle}`}
             className={styles.speedButton}
           >
             <span className={styles.speedText}>{speedMultiplier}x</span>

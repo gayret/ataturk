@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import iconSearch from '../../../../assets/icons/search.svg'
 import iconClose from '../../../../assets/icons/close.svg'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 export default function Search() {
   const events = useEventsData()
@@ -13,6 +14,7 @@ export default function Search() {
   const [isVisibleResults, setIsVisibleResults] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const { t } = useLanguageStore()
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -48,19 +50,19 @@ export default function Search() {
           setIsVisibleResults(false)
         }}
         className={styles.searchButton}
-        title='Arama'
+        title={t.ActionButtons.searchTitle}
       >
         {isSearchOpen ? (
-          <Image src={iconClose} alt='Arama ikonu' width={16} height={16} />
+          <Image src={iconClose} alt={t.ActionButtons.searchIconAlt} width={16} height={16} />
         ) : (
-          <Image src={iconSearch} alt='Arama ikonu' width={16} height={16} />
+          <Image src={iconSearch} alt={t.ActionButtons.searchIconAlt} width={16} height={16} />
         )}
       </button>
 
       {isSearchOpen && (
         <input
           type='text'
-          placeholder='Arama yapın...'
+          placeholder={t.ActionButtons.searchPlaceholder}
           value={searchText}
           onChange={handleSearchChange}
           autoFocus

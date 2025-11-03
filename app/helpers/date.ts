@@ -1,18 +1,23 @@
-export function getYear(date: string): number {
-  const year = new Date(date).getFullYear()
-  return isNaN(year) ? 0 : year
+import { useLanguageStore } from "../stores/languageStore"
+
+const localeMap: Record<string, string> = {
+  'tr': 'tr-TR',
+  'en': 'en-US',
 }
 
 export function formatDate(date: string): string {
+  const currentLanguageCode = useLanguageStore.getState().currentLanguageCode
+  const locale = localeMap[currentLanguageCode] || 'tr-TR'
+
   if (date.length === 17) {
     // ay ve yıl
-    return new Date(date).toLocaleDateString('tr-TR', {
+    return new Date(date).toLocaleDateString(locale, {
       month: 'long',
       year: 'numeric',
     })
   } else if (date.length === 14) {
     // sadece yıl
-    return new Date(date).toLocaleDateString('tr-TR', {
+    return new Date(date).toLocaleDateString(locale, {
       year: 'numeric',
     })
   } else {
@@ -21,8 +26,13 @@ export function formatDate(date: string): string {
       month: 'long',
       day: 'numeric',
     }
-    return new Date(date).toLocaleDateString('tr-TR', options)
+    return new Date(date).toLocaleDateString(locale, options)
   }
+}
+
+export function getYear(date: string): number {
+  const year = new Date(date).getFullYear()
+  return isNaN(year) ? 0 : year
 }
 
 export function convertDateFormat(input: string): string {

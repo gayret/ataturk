@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react'
 import styles from './EventFilter.module.css'
 import filterIcon from '../../../../assets/icons/event-filter.svg'
 import EventTypes from '@/app/constants/EventTypes'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 export default function EventFilter() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const [open, setOpen] = useState(false)
+  const { t } = useLanguageStore()
 
   const handleClick = (label: string) => {
     const params = new URLSearchParams(searchParams.toString())
@@ -47,7 +49,7 @@ export default function EventFilter() {
 
   return (
     <div className={styles.filter}>
-      <button onClick={() => setOpen(!open)} title={open ? 'Filtreleri kapat' : 'Filtreleri aç'}>
+      <button onClick={() => setOpen(!open)} title={open ? t.ActionButtons.eventFilterClose : t.ActionButtons.eventFilterOpen}>
         <Image src={filterIcon} alt='' width={16} height={16} />
       </button>
 
@@ -62,9 +64,8 @@ export default function EventFilter() {
               <button
                 type='button'
                 key={eventType?.id}
-                className={`${styles.filterItemWrapper} ${
-                  isActive ? styles.activeFilterItemWrapper : ''
-                }`}
+                className={`${styles.filterItemWrapper} ${isActive ? styles.activeFilterItemWrapper : ''
+                  }`}
                 title={eventType?.label}
                 onClick={() => handleClick(eventType.title)}
               >
