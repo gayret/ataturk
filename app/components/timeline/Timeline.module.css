@@ -1,5 +1,6 @@
 .timeline {
   display: flex;
+  align-items: center;
   transition: all 0.5s ease-in-out;
   padding: 1rem;
   width: max-content;
@@ -17,12 +18,15 @@
   margin-inline: auto;
   display: flex;
   gap: 1rem;
-  padding: 1rem;
   border-radius: 3rem;
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
-  backdrop-filter: blur(1000px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 1rem;
 }
 
 .timelineItem {
@@ -34,6 +38,13 @@
   position: relative;
   transition: all 0.5s ease-in-out;
   font-size: 0.9rem;
+  cursor: pointer;
+}
+.timelineItem:hover:not(.active) .timelineDate {
+  color: #ff0000;
+}
+.timelineItem.active {
+  cursor: default;
 }
 
 .timelineDate {
@@ -41,15 +52,11 @@
   justify-content: center;
   align-items: center;
   min-height: 1.5rem;
-}
-
-.timelineDate:hover {
-  scale: 1.8;
-  transition: all 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .timelineItem::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 1px;
   height: 10px;
@@ -59,20 +66,13 @@
 }
 
 .timelineItem::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 1px;
   height: 10px;
   background: #000;
   left: 50%;
   top: 140%;
-}
-
-.active {
-  scale: 2;
-  margin-inline: 3rem;
-  color: #000;
-  font-weight: 900;
 }
 
 .active::before,
@@ -89,13 +89,15 @@
   height: 3rem;
   border-radius: 50%;
   transition: all 0.2s ease-in-out;
-  backdrop-filter: invert(0.3);
   scale: 0.8;
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .actionButton:hover {
-  backdrop-filter: invert(0.7);
   scale: 1;
 }
 
@@ -118,22 +120,19 @@
   }
 }
 
-.dotsWrapperFromTop {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 75.5%;
-  gap: 0.1px;
-}
-
+.dotsWrapperFromTop,
 .dotsWrapperFromBottom {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 75%;
-  gap: 0.1px;
+  gap: 0.04rem;
+}
+.dotsWrapperFromTop {
+  top: -10%;
+}
+.dotsWrapperFromBottom {
+  bottom: -10%;
 }
 
 .dot {
@@ -141,21 +140,48 @@
   height: 0.8rem;
   background-color: #ff0000;
   display: inline-block;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s ease, background-color 0.2s ease;
   transform: scale(0.3);
+  cursor: pointer;
+  transform-origin: center;
+}
+
+.dot:hover {
+  transform: scale(0.9);
+  background-color: #ff0000;
 }
 
 .dotActive {
   background-color: #ff0000;
-  transform: scale(0.8);
+  transform: scale(0.5);
 }
 
 .active {
-  scale: 2;
+  scale: 3;
   margin-inline: 2rem;
   color: #000;
-  font-weight: 900;
+  font-weight: 700;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.active:hover {
+  transition: transform 0.2s ease;
+}
+.active .timelineDate {
+  pointer-events: none;
+  cursor: default;
+  transition: scale 0.2s ease;
+  scale: 0.7;
+}
+.active:not(.single):hover .timelineDate {
+  scale: 0.4;
+}
+.active:hover .dot {
+  transform: scale(0.5);
+}
+.active:hover .dot:hover {
+  transform: scale(0.8);
 }
