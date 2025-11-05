@@ -128,16 +128,19 @@ export default function Timeline() {
           return (
             <div
               key={index}
-              role='button'
+               role='button'
               tabIndex={0}
-              onClick={() => onOpenId(item.ids[0])()}
-              className={`${styles.timelineItem} ${isActiveYear ? styles.active : ''}`}
+              onClick={e => {
+                if (!(e.target as HTMLElement).classList.contains(styles.dot)) {
+                  onOpenId(item.ids[0])()
+                }
+              }}
+              className={`${styles.timelineItem} ${isActiveYear ? (item.items.length > 1 ? styles.active : `${styles.active} ${styles.single}`) : ''}`}
               aria-label={`Go to ${item.year} section`}
               data-year={item.year}
               style={{
                 scrollSnapAlign: 'center',
-                scrollSnapStop: 'always',
-                cursor: 'pointer',
+                scrollSnapStop: 'always'
               }}
             >
               {isActiveYear && item.items.length > 1 && (
@@ -146,6 +149,7 @@ export default function Timeline() {
                     <span
                       key={subItem.id}
                       className={`${styles.dot} ${subItem.id === activeId ? styles.dotActive : ''}`}
+                      onClick={() => onOpenId(subItem.id)()}
                       title={subItem.title}
                       role='button'
                       tabIndex={0}
@@ -161,6 +165,7 @@ export default function Timeline() {
                     <span
                       key={subItem.id}
                       className={`${styles.dot} ${subItem.id === activeId ? styles.dotActive : ''}`}
+                      onClick={() => onOpenId(subItem.id)()}
                       title={subItem.title}
                       role='button'
                       tabIndex={0}
