@@ -36,6 +36,11 @@
   font-size: 0.9rem;
 }
 
+.timelineItem:not(.active):hover .timelineDate {
+  transform: scale(1.3);
+  transition: transform 0.2s ease-in-out;
+}
+
 .timelineDate {
   display: flex;
   justify-content: center;
@@ -43,13 +48,14 @@
   min-height: 1.5rem;
   position: relative;
   overflow: hidden;
+  transition: transform 0.2s ease-in-out;
 }
 
-.timelineDate:hover {
+.active .timelineDate:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.timelineDate:hover::before {
+.active .timelineDate:hover::before {
   content: "";
   position: absolute;
   top: 0;
