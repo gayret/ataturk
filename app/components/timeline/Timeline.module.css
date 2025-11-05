@@ -75,7 +75,7 @@
 }
 
 .timelineItem::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 1px;
   height: 10px;
@@ -85,7 +85,7 @@
 }
 
 .timelineItem::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 1px;
   height: 10px;
