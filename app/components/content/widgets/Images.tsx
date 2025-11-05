@@ -7,6 +7,7 @@ import { ItemType } from '../Content'
 import ChevronLeft from '@/app/assets/icons/chevron-left.svg'
 import ChevronRight from '@/app/assets/icons/chevron-right.svg'
 import { useLanguageStore } from '@/app/stores/languageStore'
+import { useImagesStore } from '@/app/stores/imagesStore'
 
 export type ImageType = {
   url: string
@@ -16,6 +17,7 @@ export type ImageType = {
 
 export default function Images() {
   const { t } = useLanguageStore()
+  const { showImages } = useImagesStore()
   const events = useEventsData()
   const [modalImage, setModalImage] = useState<ImageType | null>(null)
   const searchParams = useSearchParams()
@@ -59,7 +61,7 @@ export default function Images() {
 
   return (
     <div>
-      {selectedItem?.images && selectedItem.images.length > 0 && (
+      {showImages && selectedItem?.images && selectedItem.images.length > 0 && (
         <div className={styles.images}>
           {selectedItem.images.map((image: ImageType, index) => (
             <div
