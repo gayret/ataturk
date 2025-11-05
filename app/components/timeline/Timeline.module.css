@@ -41,15 +41,41 @@
   justify-content: center;
   align-items: center;
   min-height: 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .timelineDate:hover {
-  scale: 1.8;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.timelineDate:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 0.6s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .timelineItem::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 1px;
   height: 10px;
@@ -59,7 +85,7 @@
 }
 
 .timelineItem::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 1px;
   height: 10px;
