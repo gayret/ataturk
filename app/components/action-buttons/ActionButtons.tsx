@@ -9,7 +9,6 @@ import EventFilter from './widgets/event-filter/EventFilter'
 import Search from './widgets/search/Search'
 import AutoPlay from './widgets/auto-play/AutoPlay'
 import LanguageSelector from './widgets/language-selector/LanguageSelector'
-import ToggleImages from './widgets/toggle-images/ToggleImages'
 
 export default function ActionButtons({ showOnlyLanguageSelector = false }: { showOnlyLanguageSelector?: boolean }) {
   const searchParams = useSearchParams()
@@ -38,8 +37,6 @@ export default function ActionButtons({ showOnlyLanguageSelector = false }: { sh
             <Direction lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
             <Search />
-
-            <ToggleImages />
 
             <Share />
 
