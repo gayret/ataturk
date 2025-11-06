@@ -54,7 +54,9 @@
     "autoPlaySecondsText": "s",
     "autoPlayIconAlt": "Automatic transition icon",
     "languageSelectorTitle": "Select language",
-    "languageSelectorIconAlt": "Language icon"
+    "languageSelectorIconAlt": "Language icon",
+    "toggleImagesShow": "Show Images",
+    "toggleImagesHide": "Hide Images"
   },
   "SupportMe": {
     "description": "Support me by buying the book",

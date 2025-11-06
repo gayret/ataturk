@@ -54,7 +54,9 @@
     "autoPlaySecondsText": "s",
     "autoPlayIconAlt": "Otomatik geçiş ikonu",
     "languageSelectorTitle": "Dil seç",
-    "languageSelectorIconAlt": "Dil ikonu"
+    "languageSelectorIconAlt": "Dil ikonu",
+    "toggleImagesShow": "Resimleri Göster",
+    "toggleImagesHide": "Resimleri Gizle"
   },
   "SupportMe": {
     "description": "Kitap satın alarak destek ol",
