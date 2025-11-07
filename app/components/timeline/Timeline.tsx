@@ -114,6 +114,56 @@ export default function Timeline() {
     }
   }, [])
 
+  useEffect(() => {
+    // Handle mouse drag for horizontal scrolling
+    const container = timelineContainerRef.current
+    if (!container) return
+
+    let isDown = false
+    let startX: number
+    let scrollLeft: number
+
+    const handleMouseDown = (e: MouseEvent) => {
+      isDown = true
+      container.style.cursor = 'grabbing'
+      startX = e.pageX - container.offsetLeft
+      scrollLeft = container.scrollLeft
+    }
+
+    const handleMouseLeave = () => {
+      isDown = false
+      container.style.cursor = 'grab'
+    }
+
+    const handleMouseUp = () => {
+      isDown = false
+      container.style.cursor = 'grab'
+    }
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDown) return
+      e.preventDefault()
+      const x = e.pageX - container.offsetLeft
+      const walk = (x - startX) * 1 // scroll-hızı
+      container.scrollLeft = scrollLeft - walk
+    }
+
+    container.addEventListener('mousedown', handleMouseDown)
+    container.addEventListener('mouseleave', handleMouseLeave)
+    container.addEventListener('mouseup', handleMouseUp)
+    container.addEventListener('mousemove', handleMouseMove)
+
+    // Set initial cursor
+    container.style.cursor = 'grab'
+
+    return () => {
+      container.removeEventListener('mousedown', handleMouseDown)
+      container.removeEventListener('mouseleave', handleMouseLeave)
+      container.removeEventListener('mouseup', handleMouseUp)
+      container.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
+
   return (
     <section className={styles.timeline}>
       <button className={styles.actionButton} onClick={onGoPrev}>
