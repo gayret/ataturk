@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./QuoteWidget.module.css";
-import ataturkSketch from "@/app/assets/images/404-ataturk.png";
+import ataturkSketch from "@/app/assets/images/widget.png";
 import { mapToPublicQuote, resolveQuotes } from "@/app/helpers/quotes";
 
 type PageProps = {

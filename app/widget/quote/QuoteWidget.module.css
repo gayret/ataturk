@@ -57,6 +57,7 @@
   object-fit: cover;
   object-position: top;
   filter: grayscale(100%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .quote {
@@ -126,12 +127,13 @@
     position: relative;
     left: auto;
     top: auto;
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     margin-bottom: 0.5rem;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.06);
     background: rgba(255, 255, 255, 0.9);
+    filter: grayscale(100%);
   }
 
   .figureImage {
