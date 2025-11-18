@@ -4,6 +4,7 @@ import styles from './About.module.css'
 import Contributors from './widgets/contributors/Contributors'
 import ActionButtons from '../action-buttons/ActionButtons'
 import Translators from './widgets/translators/Translators'
+import QuoteWidgetShowcase from './widgets/quote-widget/QuoteWidgetShowcase'
 
 export default function About() {
   const { t } = useLanguageStore()
@@ -31,6 +32,8 @@ export default function About() {
             className={styles.borderNone}
             title={t.About.Story.iframeTitle}
           ></iframe>
+
+          <QuoteWidgetShowcase />
         </div>
       </div>
       <ActionButtons showOnlyLanguageSelector={true} />

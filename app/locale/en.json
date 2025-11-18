@@ -17,6 +17,19 @@
     "Story": {
       "title": "Our Journey",
       "iframeTitle": "Embedded post"
+    },
+    "Widget": {
+      "sectionLabel": "Ataturk quote widget showcase",
+      "eyebrow": "Widget",
+      "title": "Atatürk Quote Widget",
+      "description": "Embed our lightweight iframe component to show inspiring Atatürk quotes on your own website.",
+      "previewFrameTitle": "Preview of the Atatürk quote widget",
+      "cta": "Add the quote widget to your site",
+      "closeCta": "Hide embed code",
+      "embedTitle": "Paste this snippet on your site",
+      "embedDescription": "Place the container div and script tag wherever you want the widget to appear.",
+      "copy": "Copy snippet",
+      "copied": "Copied!"
     }
   },
   "Share": {
