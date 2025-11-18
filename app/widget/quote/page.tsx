@@ -3,8 +3,10 @@ import styles from "./QuoteWidget.module.css";
 import ataturkSketch from "@/app/assets/images/widget.png";
 import { mapToPublicQuote, resolveQuotes } from "@/app/helpers/quotes";
 
+type SearchParams = Record<string, string | string[] | undefined>;
+
 type PageProps = {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: Promise<SearchParams>;
 };
 
 type Language = "tr" | "en";
@@ -58,19 +60,29 @@ const resolveTheme = (value: string | undefined) => {
   return "light";
 };
 
-export default function QuoteWidgetPage({ searchParams }: PageProps) {
-  const language = selectLanguage(getSingleValue(searchParams.language));
-  const theme = resolveTheme(getSingleValue(searchParams.theme));
-  const hideImage = parseBoolean(getSingleValue(searchParams.hideImage), false);
+export default async function QuoteWidgetPage({ searchParams }: PageProps) {
+  const resolvedSearchParams = await searchParams;
+
+  const language = selectLanguage(
+    getSingleValue(resolvedSearchParams.language)
+  );
+  const theme = resolveTheme(getSingleValue(resolvedSearchParams.theme));
+  const hideImage = parseBoolean(
+    getSingleValue(resolvedSearchParams.hideImage),
+    false
+  );
   const hideSignature = parseBoolean(
-    getSingleValue(searchParams.hideSignature),
+    getSingleValue(resolvedSearchParams.hideSignature),
     false
   );
 
-  const quoteId = getSingleValue(searchParams.quoteId);
-  const eventId = parseNumber(getSingleValue(searchParams.eventId));
-  const date = getSingleValue(searchParams.date);
-  const random = parseBoolean(getSingleValue(searchParams.random), true);
+  const quoteId = getSingleValue(resolvedSearchParams.quoteId);
+  const eventId = parseNumber(getSingleValue(resolvedSearchParams.eventId));
+  const date = getSingleValue(resolvedSearchParams.date);
+  const random = parseBoolean(
+    getSingleValue(resolvedSearchParams.random),
+    true
+  );
 
   const quoteRecords = resolveQuotes(language, {
     quoteId,
