@@ -21,13 +21,13 @@
     "Widget": {
       "sectionLabel": "Atatürk özlü sözleri bileşeni",
       "eyebrow": "Widget",
-      "title": "Atatürk Özlü Sözleri Widget'ı",
+      "title": "Atatürk Özlü Sözleri Bileşeni",
       "description": "Projede kullandığımız sade iframe bileşenini sitene entegre ederek ziyaretçilerine ilham veren rastgele Atatürk sözleri gösterebilirsin.",
       "previewFrameTitle": "Atatürk özlü sözleri widget ön izlemesi",
       "cta": "Atatürk özlü sözleri bileşenini sitene ekle",
       "closeCta": "Embed kodunu gizle",
       "embedTitle": "Bu kodu sitene yapıştır",
-      "embedDescription": "Aşağıdaki div ve script etiketlerini widget'ın görünmesini istediğin yere eklemen yeterli.",
+      "embedDescription": "Aşağıdaki div ve script etiketlerini bileşenin görünmesini istediğin yere eklemen yeterli.",
       "copy": "Kodu kopyala",
       "copied": "Kopyalandı!"
     }
