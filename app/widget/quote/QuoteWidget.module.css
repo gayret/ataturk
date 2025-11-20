@@ -40,9 +40,6 @@
 }
 
 .figure {
-  position: absolute;
-  left: 16px;
-  top: -8px;
   width: 96px;
   height: 96px;
   border-radius: 50%;
@@ -70,8 +67,8 @@
 .quoteText {
   font-size: 1.1rem;
   font-style: italic;
-  margin-top: -0.9rem;
   line-height: 1.6;
+  margin-top: -.9rem;
 }
 
 .footer {
