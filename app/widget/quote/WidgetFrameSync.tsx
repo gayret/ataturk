@@ -40,7 +40,7 @@ export default function WidgetFrameSync({ widgetId, children }: WidgetFrameSyncP
 
     postHeight()
 
-    if ('ResizeObserver' in window) {
+    if (typeof ResizeObserver !== 'undefined') {
       const observer = new ResizeObserver(() => {
         postHeight()
       })
