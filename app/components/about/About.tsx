@@ -24,6 +24,8 @@ export default function About() {
 
           <Translators />
 
+          <QuoteWidgetShowcase />
+
           <h2>{t.About.Story.title}</h2>
           <iframe
             src='https://www.linkedin.com/embed/feed/update/urn:li:share:7357917656097730560?collapsed=1'
@@ -33,7 +35,6 @@ export default function About() {
             title={t.About.Story.iframeTitle}
           ></iframe>
 
-          <QuoteWidgetShowcase />
         </div>
       </div>
       <ActionButtons showOnlyLanguageSelector={true} />
