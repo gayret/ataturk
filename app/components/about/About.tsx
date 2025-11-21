@@ -17,9 +17,6 @@ export default function About() {
 
           <p>{t.About.mission}</p>
 
-          <h2>{t.About.usageTitle}</h2>
-          <p>{t.About.usageDescription}</p>
-
           <Contributors />
 
           <Translators />
@@ -34,7 +31,6 @@ export default function About() {
             className={styles.borderNone}
             title={t.About.Story.iframeTitle}
           ></iframe>
-
         </div>
       </div>
       <ActionButtons showOnlyLanguageSelector={true} />

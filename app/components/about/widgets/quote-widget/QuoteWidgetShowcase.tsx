@@ -61,12 +61,6 @@ export default function QuoteWidgetShowcase() {
     <section className={styles.section} aria-label={widgetCopy.sectionLabel}>
       <h2 className={styles.title}>{widgetCopy.title}</h2>
       <p className={styles.description}>{widgetCopy.description}</p>
-      <iframe
-        className={styles.previewFrame}
-        title={widgetCopy.previewFrameTitle}
-        src={widgetSrc}
-        loading='lazy'
-      />
       <button
         type='button'
         onClick={toggleEmbed}
@@ -75,6 +69,13 @@ export default function QuoteWidgetShowcase() {
       >
         {widgetCopy.cta}
       </button>
+      <iframe
+        className={styles.previewFrame}
+        title={widgetCopy.previewFrameTitle}
+        src={widgetSrc}
+        loading='lazy'
+      />
+
       {isEmbedVisible && (
         <div className={styles.overlay} role='presentation' onClick={toggleEmbed}>
           <div
