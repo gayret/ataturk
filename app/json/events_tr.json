@@ -1853,6 +1853,12 @@
       "lon": 41.2223171
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Tarih bu kongremizi şüphesiz ender ve büyük bir eser olarak kaydedecektir",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -2651,7 +2657,6 @@
   {
     "id": 182,
     "title": "Mustafa Kemal'in 26 Ağustos Taarruzu, 30 Ağustos ve 9 Eylül Zaferleri hakkında Türkiye Büyük Millet Meclisinde konuşması:",
-    "description": "... Bu Anadolu Zaferi tarih sayfaları arasında, bir millet tarafından tamamen benimsenen bir fikrin ne kadar güçlü ve ne zinde bir kuvvet olduğunun en güzel misali olarak kalacaktır.",
     "date": "1922-10-04T00:00:00Z",
     "category": "military",
     "location": {
@@ -2659,6 +2664,12 @@
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Bu Anadolu Zaferi tarih sayfaları arasında, bir millet tarafından tamamen benimsenen bir fikrin ne kadar güçlü ve ne zinde bir kuvvet olduğunun en güzel misali olarak kalacaktır.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -2724,7 +2735,6 @@
   {
     "id": 188,
     "title": "Mustafa Kemal'in İzmir'de toplanan Türkiye İktisat Kongresi'ni açış konuşması:",
-    "description": "... Siyasi, askerî zaferler ne kadar büyük olursa olsunlar ekonomik zaferlerle taçlandırılmazlarsa, meydana gelen zaferler devamlı olamaz, az zamanda söner...",
     "date": "1923-02-17T00:00:00Z",
     "category": "reform",
     "location": {
@@ -2732,12 +2742,17 @@
       "lon": 26.9149105
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Siyasi, askerî zaferler ne kadar büyük olursa olsunlar ekonomik zaferlerle taçlandırılmazlarsa, meydana gelen zaferler devamlı olamaz, az zamanda söner.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
     "id": 189,
     "title": "Mustafa Kemal'in, Türkiye Büyük Millet Meclisinin birinci devre dördüncü toplantı yılını açış konuşması:",
-    "description": "... Bilinmektedir ki izlediğimiz siyaset barışçı bir siyasettir. Memleketimizi hiçbir hak ve adalete dayanmayarak çiğnemek ve çiğnetmek girişimi, muzaffer ordumuzun fedakârane gayretiyle layık olduğu başarısızlığa uğratılmış ve milletimiz, tarihin nadir kaydettiği bir zafer kazanarak sevgili yurdumuzu kurtarmıştır...",
     "date": "1923-03-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -2745,6 +2760,12 @@
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Bilinmektedir ki izlediğimiz siyaset barışçı bir siyasettir. Memleketimizi hiçbir hak ve adalete dayanmayarak çiğnemek ve çiğnetmek girişimi, muzaffer ordumuzun fedakârane gayretiyle layık olduğu başarısızlığa uğratılmış ve milletimiz, tarihin nadir kaydettiği bir zafer kazanarak sevgili yurdumuzu kurtarmıştır.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -2774,7 +2795,6 @@
   {
     "id": 192,
     "title": "Mustafa Kemal'in ikinci defa Türkiye Büyük Millet Meclisi Başkanlığına seçilmesi. Mustafa Kemal'in, Türkiye Büyük Millet Meclisinin ikinci devre birinci toplantı yılını açış konuşması:",
-    "description": "... Memleketimizi bayındır, halkımızı mutlu yapacağız ve refaha kavuşturacağız. Ümidimiz, kararımız ve bilhassa milletimizin ve Yüce Meclisinizin göstereceği birlik ve dayanışma, ilerleme ve uygarlık yolundaki çalışmamızda elbette başarının kefili olacaktır...",
     "date": "1923-08-13T00:00:00Z",
     "category": "political",
     "location": {
@@ -2782,6 +2802,12 @@
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Memleketimizi bayındır, halkımızı mutlu yapacağız ve refaha kavuşturacağız. Ümidimiz, kararımız ve bilhassa milletimizin ve Yüce Meclisinizin göstereceği birlik ve dayanışma, ilerleme ve uygarlık yolundaki çalışmamızda elbette başarının kefili olacaktır.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -2870,7 +2896,6 @@
   {
     "id": 198,
     "title": "Mustafa Kemal'in, Türkiye Büyük Millet Meclisinin ikinci devre birinci toplantı yılını açış konuşması:",
-    "description": "... İslam dinini, asırlardan beri alışılageldiği şekilde bir siyaset vasıtası mevkisinden uzaklaştırmak ve yüceltmek gereğini görüyoruz. Mukaddes ve ilahî inançlarımızı ve vicdanî değerlerimizi, karanlık ve kararsız olan ve her türlü menfaat ve ihtirasların ortaya çıkma sahnesi olan siyasetlerden ve siyasetin bütün kısımlarından bir an önce ve kesinlikle kurtarmak, milletin dünya ve ahiret saadetinin emrettiği bir zorunluluktur. Ancak bu suretle İslam dininin yüksekliği belirir.",
     "date": "1924-03-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -2878,6 +2903,12 @@
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "İslam dinini, asırlardan beri alışılageldiği şekilde bir siyaset vasıtası mevkisinden uzaklaştırmak ve yüceltmek gereğini görüyoruz. Mukaddes ve ilahî inançlarımızı ve vicdanî değerlerimizi, karanlık ve kararsız olan ve her türlü menfaat ve ihtirasların ortaya çıkma sahnesi olan siyasetlerden ve siyasetin bütün kısımlarından bir an önce ve kesinlikle kurtarmak, milletin dünya ve ahiret saadetinin emrettiği bir zorunluluktur. Ancak bu suretle İslam dininin yüksekliği belirir.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -2920,7 +2951,6 @@
   {
     "id": 202,
     "title": "Cumhurbaşkanı Mustafa Kemal'in Türkiye Büyük Millet Meclisinin ikinci devre ikinci toplantı yılını açış konuşması:",
-    "description": "... Hiç şüphe etmemelidir ki, Anadolu ortasında süratle meydana getirilecek yeni ve bayındır bir Ankara, asırlarca ihmal edilen Türk vatanı için başlı başına bir uygarlık merkezi, Türk devleti için pek önemli bir dayanak olacaktır!...",
     "date": "1924-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -2928,6 +2958,12 @@
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Hiç şüphe etmemelidir ki, Anadolu ortasında süratle meydana getirilecek yeni ve bayındır bir Ankara, asırlarca ihmal edilen Türk vatanı için başlı başına bir uygarlık merkezi, Türk devleti için pek önemli bir dayanak olacaktır!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -2993,7 +3029,6 @@
   {
     "id": 208,
     "title": "Cumhurbaşkanı Mustafa Kemal'in Türkiye Büyük Millet Meclisinin ikinci dönem üçüncü toplantı yılını açış konuşması:",
-    "description": "... Cumhuriyet devrinin kendi zihniyet ve ahlakıyla donanmış basınını yine ancak Cumhuriyet'in kendisi yetiştirir...",
     "date": "1925-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3001,6 +3036,12 @@
       "lon": 32.8509197
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Cumhuriyet devrinin kendi zihniyet ve ahlakıyla donanmış basınını yine ancak Cumhuriyet'in kendisi yetiştirir.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3116,7 +3157,6 @@
   {
     "id": 218,
     "title": "Mustafa Kemal'in, Türkiye Büyük Millet Meclisinin ikinci dönem dördüncü toplanma yılını açış konuşması:",
-    "description": "... Bu büyük millet, arzu ve istidadının yöneldiği istikametleri görmeye çalışan ve görebilen evladını daima takdir ve himaye etmiştir...",
     "date": "1926-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3124,6 +3164,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Bu büyük millet, arzu ve istidadının yöneldiği istikametleri görmeye çalışan ve görebilen evladını daima takdir ve himaye etmiştir.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3165,7 +3211,6 @@
   {
     "id": 222,
     "title": "Mustafa Kemal'in Cumhuriyet Halk Partisi II. Büyük Kongresi'nde okuduğu Büyük Nutku'nu bitirmesi:",
-    "description": "... Bugün ulaştığımız netice, asırlardan beri çekilen millî felâketlerin doğurduğu uyanıklığın ve bu aziz vatanın her köşesini sulayan kanların karşılığıdır. Bu neticeyi Türk gençliğine emanet ediyorum. Ey Türk gençliği! Birinci vazifen, Türk istiklalini, Türk Cumhuriyeti'ni ilelebet muhafaza ve müdafaa etmektir. ... Muhtaç olduğun kudret damarlarındaki asil kanda mevcuttur!",
     "date": "1927-10-20T00:00:00Z",
     "category": "political",
     "location": {
@@ -3173,12 +3218,17 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Bugün ulaştığımız netice, asırlardan beri çekilen millî felâketlerin doğurduğu uyanıklığın ve bu aziz vatanın her köşesini sulayan kanların karşılığıdır. Bu neticeyi Türk gençliğine emanet ediyorum. Ey Türk gençliği! Birinci vazifen, Türk istiklalini, Türk Cumhuriyeti'ni ilelebet muhafaza ve müdafaa etmektir. ... Muhtaç olduğun kudret damarlarındaki asil kanda mevcuttur!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
     "id": 223,
     "title": "Mustafa Kemal'in ikinci defa Cumhurbaşkanlığına seçilmesi. Mustafa Kemal'in Türkiye Büyük Millet Meclisinin üçüncü dönem birinci toplanma yılını açış konuşması:",
-    "description": "... Büyük Millet Meclisi, Türk milletinin asırlar süren arayışlarının özü ve onun bizzat kendisini idare etmek şuurunun canlı timsalidir. Türk milleti, mukadderatını Büyük Millet Meclisinin kifayetli ve vatanperver eline bıraktığı günden itibaren karanlıkları sıyırıp kaldırmış ve ümitleri boğan felâketlerden milletin gözlerini kamaştıran güneşler ve zaferler çıkarmıştır...",
     "date": "1927-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3186,6 +3236,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Büyük Millet Meclisi, Türk milletinin asırlar süren arayışlarının özü ve onun bizzat kendisini idare etmek şuurunun canlı timsalidir. Türk milleti, mukadderatını Büyük Millet Meclisinin kifayetli ve vatanperver eline bıraktığı günden itibaren karanlıkları sıyırıp kaldırmış ve ümitleri boğan felâketlerden milletin gözlerini kamaştıran güneşler ve zaferler çıkarmıştır.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3215,7 +3271,6 @@
   {
     "id": 226,
     "title": "Mustafa Kemal'in, İstanbul Sarayburnu Parkı'nda yeni harfler hakkında konuşması:",
-    "description": "... Bizim ahenkli, zengin dilimiz yeni Türk harfleriyle kendini gösterecektir. Asırlardan beri kafalarımızı demir çerçeve içinde bulunduran, anlaşılmayan ve anlamadığımız işaretlerden kendimizi kurtarmak ve bu gereği anlamak mecburiyetindeyiz!...",
     "date": "1928-08-10T00:00:00Z",
     "category": "reform",
     "location": {
@@ -3223,12 +3278,17 @@
       "lon": 28.9864868
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Bizim ahenkli, zengin dilimiz yeni Türk harfleriyle kendini gösterecektir. Asırlardan beri kafalarımızı demir çerçeve içinde bulunduran, anlaşılmayan ve anlamadığımız işaretlerden kendimizi kurtarmak ve bu gereği anlamak mecburiyetindeyiz!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
     "id": 227,
     "title": "Yeni Türk harflerinin kabul ve tatbiki hakkında Kanun'un kabulü. Cumhurbaşkanı Mustafa Kemal'in Türkiye Büyük Millet Meclisinin üçüncü dönem ikinci toplantı yılını açış konuşması:",
-    "description": "... Büyük Millet Meclisinin kararıyla Türk harflerinin kesinlik ve yasallık kazanması, bu memleketin yükselme mücadelesinde başlı başına bir geçit olacaktır...",
     "date": "1928-11-01T00:00:00Z",
     "category": "reform",
     "location": {
@@ -3236,6 +3296,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Büyük Millet Meclisinin kararıyla Türk harflerinin kesinlik ve yasallık kazanması, bu memleketin yükselme mücadelesinde başlı başına bir geçit olacaktır.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3265,7 +3331,6 @@
   {
     "id": 230,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisinin üçüncü dönem üçüncü toplantı yılını açış konuşması:",
-    "description": "... Meclisimizin en büyük eseri olan Türk harfleri, memleketin umumi hayatına tamamen tatbik olunmuştur. İlk müşkülat, milletin ülkü kuvveti ve uygarlığa olan sevgisi sayesinde kolaylıkla yenilmiştir...",
     "date": "1929-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3273,6 +3338,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Meclisimizin en büyük eseri olan Türk harfleri, memleketin umumi hayatına tamamen tatbik olunmuştur. İlk müşkülat, milletin ülkü kuvveti ve uygarlığa olan sevgisi sayesinde kolaylıkla yenilmiştir.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3302,7 +3373,6 @@
   {
     "id": 233,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisinin üçüncü dönem dördüncü toplantı yılını açış konuşması:",
-    "description": "... Geçen senenin önemli olaylarından biri de Sivas'a demiryolunun ulaşmasıdır. Bu kadar müşkülat içinde vatanı bir misli daha genişletmeye ve kuvvetlendirmeye yardımcı olan bu eserin gelecekte Türk milleti tarafından şükranla anılacağına eminim!...",
     "date": "1930-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3310,6 +3380,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Geçen senenin önemli olaylarından biri de Sivas'a demiryolunun ulaşmasıdır. Bu kadar müşkülat içinde vatanı bir misli daha genişletmeye ve kuvvetlendirmeye yardımcı olan bu eserin gelecekte Türk milleti tarafından şükranla anılacağına eminim!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3351,7 +3427,6 @@
   {
     "id": 237,
     "title": "Mustafa Kemal'in Ankara'da toplanan Cumhuriyet Halk Partisi Üçüncü Büyük Kongresi'ni açış konuşması:",
-    "description": "... Millet için ve milletçe yapılan işlerin hatırası her türlü hatıraların üstünde tutulmazsa millî tarih kavramının kıymetini takdir etmek mümkün olamaz!",
     "date": "1931-05-10T00:00:00Z",
     "category": "political",
     "location": {
@@ -3359,12 +3434,17 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Millet için ve milletçe yapılan işlerin hatırası her türlü hatıraların üstünde tutulmazsa millî tarih kavramının kıymetini takdir etmek mümkün olamaz!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
     "id": 238,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisinin dördüncü dönem birinci toplantı yılını açış konuşması:",
-    "description": "... Türkiye'nin güvenliğini gaye tutan, hiçbir milletin aleyhinde olmayan bir barış doğrultusu, bizim daima kuralımız olacaktır.",
     "date": "1931-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3372,6 +3452,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Türkiye'nin güvenliğini gaye tutan, hiçbir milletin aleyhinde olmayan bir barış doğrultusu, bizim daima kuralımız olacaktır.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3401,7 +3487,6 @@
   {
     "id": 241,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisinin dördüncü dönem ikinci toplantı yılını açış konuşması:",
-    "description": "... Millî kültürün her çığırda açılarak yükselmesini Türkiye Cumhuriyeti'nin temel dileği olarak temin edeceğiz!...",
     "date": "1932-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3409,6 +3494,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Millî kültürün her çığırda açılarak yükselmesini Türkiye Cumhuriyeti'nin temel dileği olarak temin edeceğiz!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3438,7 +3529,7 @@
   {
     "id": 244,
     "title": "Mustafa Kemal'in, Cumhuriyet'in 10'uncu Yıl Dönümü nedeniyle Türk milletine ünlü söylevi:",
-    "description": "... Az zamanda çok ve büyük işler yaptık. Bu işlerin en büyüğü, temeli Türk kahramanlığı ve yüksek Türk kültürü olan Türkiye Cumhuriyeti'dir. ... Asla şüphem yoktur ki Türklüğün unutulmuş büyük medeni vasfı ve büyük medeni kabiliyeti bundan sonraki gelişimiyle geleceğin yüksek medeniyet ufkundan yeni bir güneş gibi doğacaktır. ... Ne mutlu Türk'üm diyene!",
+    "description": "... Az zamanda çok ve büyük işler yaptık. Bu işlerin en büyüğü, temeli Türk kahramanlığı ve yüksek Türk kültürü olan Türkiye Cumhuriyeti'dir. ... Asla şüphem yoktur ki Türklüğün unutulmuş büyük medeni vasfı ve büyük medeni kabiliyeti bundan sonraki gelişimiyle geleceğin yüksek medeniyet ufkundan yeni bir güneş gibi doğacaktır.",
     "date": "1933-10-29T00:00:00Z",
     "category": "political",
     "location": {
@@ -3464,7 +3555,6 @@
   {
     "id": 245,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisinin dördüncü dönem üçüncü toplantı yılını açış konuşması:",
-    "description": "... Geçen on sene, gelecek devirler için bir başlangıçtan başka bir şey değildir. Bununla beraber, eski devirlerin tarihi karşısında, Cumhuriyet'in bu on senesi, eşi görülmeyen bir diriliş ve göz kamaştırıcı bir ileri atılış âbidesidir!...",
     "date": "1933-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3472,6 +3562,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Geçen on sene, gelecek devirler için bir başlangıçtan başka bir şey değildir. Bununla beraber, eski devirlerin tarihi karşısında, Cumhuriyet'in bu on senesi, eşi görülmeyen bir diriliş ve göz kamaştırıcı bir ileri atılış âbidesidir!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3501,7 +3597,6 @@
   {
     "id": 248,
     "title": "Mustafa Kemal'in Türkiye Büyük Millet Meclisinin dördüncü dönem dördüncü toplantı yılını açış konuşması:",
-    "description": "... Güzel sanatların hepsinde, ulus gençliğinin ne türlü ilerletilmesini istediğinizi bilirim. Bu yapılmaktadır. Ancak bunda en çabuk, en önde götürülmesi gerekli olan Türk musikisidir. Bir ulusun yeni değişikliğinde ölçü, musikide değişikliği alabilmesi, kavrayabilmesidir...",
     "date": "1934-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3509,6 +3604,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Güzel sanatların hepsinde, ulus gençliğinin ne türlü ilerletilmesini istediğinizi bilirim. Bu yapılmaktadır. Ancak bunda en çabuk, en önde götürülmesi gerekli olan Türk musikisidir. Bir ulusun yeni değişikliğinde ölçü, musikide değişikliği alabilmesi, kavrayabilmesidir.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3574,7 +3675,6 @@
   {
     "id": 254,
     "title": "ATATÜRK'ün Türkkuşunun hizmete açılması nedeniyle Etimesgut Havaalanında yapılan törende konuşması:",
-    "description": "... Türk çocuğu! Her işte olduğu gibi, havacılıkta da, en yüksek düzeyde, gökte seni bekleyen yerini az zamanda dolduracaksın!...",
     "date": "1935-05-03T00:00:00Z",
     "category": "education",
     "location": {
@@ -3582,12 +3682,17 @@
       "lon": 32.6872055
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Türk çocuğu! Her işte olduğu gibi, havacılıkta da, en yüksek düzeyde, gökte seni bekleyen yerini az zamanda dolduracaksın!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
     "id": 255,
     "title": "ATATÜRK'ün, Cumhuriyet Halk Partisi IV. Büyük Kurultayı'nı açış konuşması:",
-    "description": "Uçurum kenarında yıkık bir ülke... Türlü düşmanlarla kanlı boğuşmalar... Yıllarca süren savaş... Ondan sonra, içerde ve dışarda saygı ile tanınan yeni vatan, yeni sosyete, yeni devlet ve bunları başarmak için arasız devrimler... İşte Türk Genel Devrimi'nin bir kısa ifadesi!",
     "date": "1935-05-09T00:00:00Z",
     "category": "political",
     "location": {
@@ -3595,12 +3700,17 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Uçurum kenarında yıkık bir ülke... Türlü düşmanlarla kanlı boğuşmalar... Yıllarca süren savaş... Ondan sonra, içerde ve dışarda saygı ile tanınan yeni vatan, yeni sosyete, yeni devlet ve bunları başarmak için arasız devrimler... İşte Türk Genel Devrimi'nin bir kısa ifadesi!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
     "id": 256,
     "title": "ATATÜRK'ün Türkiye Büyük Millet Meclisinin beşinci dönem birinci toplantı yılını açış konuşması:",
-    "description": " ... Olaylar Türk milletine iki önemli kuralı yeniden hatırlatıyor: Yurdumuzu ve haklarımızı savunacak kuvvette olmak! Barışı koruyacak uluslararası çalışma birliğine önem vermek! ...",
     "date": "1935-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3608,6 +3718,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Olaylar Türk milletine iki önemli kuralı yeniden hatırlatıyor: Yurdumuzu ve haklarımızı savunacak kuvvette olmak! Barışı koruyacak uluslararası çalışma birliğine önem vermek!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3637,7 +3753,6 @@
   {
     "id": 259,
     "title": "ATATÜRK'ün Türkiye Büyük Millet Meclisinin beşinci dönem ikinci toplantı yılını açış konuşması:",
-    "description": "... Cumhuriyet, yeni ve sağlam esaslarıyla Türk milletini emin ve sağlam bir gelecek yoluna koyduğu kadar, asıl fikirlerde ve ruhlarda yarattığı güvenlik itibariyle büsbütün yeni bir hayatın müjdecisi olmuştur...",
     "date": "1936-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3645,6 +3760,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Cumhuriyet, yeni ve sağlam esaslarıyla Türk milletini emin ve sağlam bir gelecek yoluna koyduğu kadar, asıl fikirlerde ve ruhlarda yarattığı güvenlik itibariyle büsbütün yeni bir hayatın müjdecisi olmuştur",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3686,7 +3807,6 @@
   {
     "id": 263,
     "title": "ATATÜRK'ün Türkiye Büyük Millet Meclisinin beşinci dönem üçüncü toplantı yılını açış konuşması:",
-    "description": "... Milletimizin layık olduğu yüksek uygarlık ve refah seviyesine varmasını alıkoyabilecek hiçbir engel düşünmeye yer bırakılmadığını ve bırakılmayacağını huzurunuzda söylemekle bahtiyarım!...",
     "date": "1937-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3694,6 +3814,12 @@
       "lon": 32.8517224
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Milletimizin layık olduğu yüksek uygarlık ve refah seviyesine varmasını alıkoyabilecek hiçbir engel düşünmeye yer bırakılmadığını ve bırakılmayacağını huzurunuzda söylemekle bahtiyarım!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
@@ -3748,7 +3874,6 @@
   {
     "id": 268,
     "title": "ATATÜRK'ün, Cumhuriyet'in 15'inci Yıl Dönümü nedeniyle Türkiye Cumhuriyeti Ordusuna mesajı:",
-    "description": "... Türk vatanının ve Türklük camiasının şan ve şerefini, iç ve dış her türlü tehlikelere karşı korumaktan ibaret olan vazifeni, her an yapmaya hazır olduğuna benim ve büyük ulusumuzun tam bir inanç ve itimadımız vardır...",
     "date": "1938-10-29T00:00:00Z",
     "category": "military",
     "location": {
@@ -3756,12 +3881,17 @@
       "lon": 29.0004781
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Türk vatanının ve Türklük camiasının şan ve şerefini, iç ve dış her türlü tehlikelere karşı korumaktan ibaret olan vazifeni, her an yapmaya hazır olduğuna benim ve büyük ulusumuzun tam bir inanç ve itimadımız vardır",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
     "id": 269,
     "title": "ATATÜRK'ün, Türkiye Büyük Millet Meclisinin beşinci dönem dördüncü toplantı yılını açış konuşmasının Başbakan Celâl Bayar tarafından okunması:",
-    "description": "... Memleketimizi her gün daha çok kuvvetlendirmek, her alanda her türlü ihtimallere karşı koyabilecek bir hâlde bulundurmak ve dünya olaylarının bütün safhalarını büyük bir uyanıklılıkla izlemek, barışsever siyasetimizin dayanacağı esasların başlangıcıdır!...",
     "date": "1938-11-01T00:00:00Z",
     "category": "political",
     "location": {
@@ -3769,6 +3899,12 @@
       "lon": 29.0004781
     },
     "images": [],
+    "quotes": [
+      {
+        "text": "Memleketimizi her gün daha çok kuvvetlendirmek, her alanda her türlü ihtimallere karşı koyabilecek bir hâlde bulundurmak ve dünya olaylarının bütün safhalarını büyük bir uyanıklılıkla izlemek, barışsever siyasetimizin dayanacağı esasların başlangıcıdır!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
   },
   {
