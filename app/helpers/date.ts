@@ -3,6 +3,7 @@ import { useLanguageStore } from "../stores/languageStore"
 const localeMap: Record<string, string> = {
   'tr': 'tr-TR',
   'en': 'en-US',
+  'de': 'de-DE',
 }
 
 export function formatDate(date: string): string {
