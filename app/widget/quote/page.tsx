@@ -7,7 +7,7 @@ type SearchParams = Record<string, string | string[] | undefined>
 type PageProps = {
   searchParams: Promise<SearchParams>
 }
-type Language = 'tr' | 'en'
+type Language = 'tr' | 'en' | 'de'
 
 const UI_COPY: Record<Language, { cta: string; widgetLabel: string; signature: string }> = {
   tr: {
@@ -22,6 +22,13 @@ const UI_COPY: Record<Language, { cta: string; widgetLabel: string; signature: s
     cta: 'Read in the chronology',
 
     widgetLabel: 'Quote by Atatürk',
+
+    signature: 'Mustafa Kemal Atatürk',
+  },
+  de: {
+    cta: 'In der Chronologie lesen',
+
+    widgetLabel: 'Atatürk Zitat',
 
     signature: 'Mustafa Kemal Atatürk',
   },
@@ -51,6 +58,7 @@ const parseNumber = (value: string | undefined) => {
 
 const selectLanguage = (raw: string | undefined): Language => {
   if (raw === 'en') return 'en'
+  if (raw === 'de') return 'de'
 
   return 'tr'
 }
@@ -146,7 +154,7 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
               ) : (
                 <Image
                   src={ataturkSketch}
-                  alt='Mustafa Kemal Atat?rk'
+                  alt='Mustafa Kemal Atatürk'
                   width={120}
                   height={120}
                   className={styles.figureImage}
