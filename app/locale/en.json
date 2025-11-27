@@ -67,7 +67,16 @@
     "autoPlaySecondsText": "s",
     "autoPlayIconAlt": "Automatic transition icon",
     "languageSelectorTitle": "Select language",
-    "languageSelectorIconAlt": "Language icon"
+    "languageSelectorIconAlt": "Language icon",
+    "filters": {
+      "personal": "Personal",
+      "military": "Military",
+      "political": "Political",
+      "education": "Education",
+      "reform": "Reform",
+      "visit": "Visit",
+      "other": "Other"
+    }
   },
   "SupportMe": {
     "description": "Support me by buying the book",
