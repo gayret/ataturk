@@ -1,7 +1,8 @@
 import eventsTr from '@/app/json/events_tr.json'
 import eventsEn from '@/app/json/events_en.json'
+import eventsDe from '@/app/json/events_de.json'
 
-type Language = 'tr' | 'en'
+type Language = 'tr' | 'en' | 'de'
 
 type RawEventImage = {
   url: string
@@ -48,11 +49,13 @@ export type QuoteQuery = {
 const datasets: Record<Language, RawEvent[]> = {
   tr: eventsTr as RawEvent[],
   en: eventsEn as RawEvent[],
+  de: eventsDe as RawEvent[],
 }
 
 const quoteCache: Record<Language, QuoteRecord[]> = {
   tr: buildQuoteDataset('tr'),
   en: buildQuoteDataset('en'),
+  de: buildQuoteDataset('de'),
 }
 
 export const MAX_QUOTES_PER_REQUEST = 10

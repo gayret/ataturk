@@ -4,6 +4,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import tr from '../locale/tr.json'
 import en from '../locale/en.json'
+import de from '../locale/de.json'
 
 type LocaleData = typeof tr
 
@@ -25,6 +26,11 @@ export const availableLanguages: Language[] = [
         name: 'English',
         file: en,
     },
+    {
+        code: 'de',
+        name: 'Deutsch',
+        file: de,
+    }
 ]
 
 // Dil dosyasını çağırma fonksiyonu
