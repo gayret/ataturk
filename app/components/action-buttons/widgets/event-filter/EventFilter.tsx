@@ -66,13 +66,13 @@ export default function EventFilter() {
                 key={eventType?.id}
                 className={`${styles.filterItemWrapper} ${isActive ? styles.activeFilterItemWrapper : ''
                   }`}
-                title={eventType?.label}
+                title={t.ActionButtons.filters[eventType.title as keyof typeof t.ActionButtons.filters]}
                 onClick={() => handleClick(eventType.title)}
               >
-                <span className={styles.filterItemLabel}>{eventType?.label}</span>
+                <span className={styles.filterItemLabel}>{t.ActionButtons.filters[eventType.title as keyof typeof t.ActionButtons.filters]}</span>
                 <Image
                   src={eventType?.icon}
-                  alt={eventType?.label}
+                  alt={t.ActionButtons.filters[eventType.title as keyof typeof t.ActionButtons.filters]}
                   width={16}
                   height={16}
                   className={styles.filterItemIcon}

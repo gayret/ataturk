@@ -9,37 +9,31 @@ const EventTypes = [
   {
     id: 1,
     title: 'personal',
-    label: 'Kişisel',
     icon: personalIcon,
   },
   {
     id: 2,
     title: 'military',
-    label: 'Askeri',
     icon: militaryIcon,
   },
   {
     id: 3,
     title: 'political',
-    label: 'Politika',
     icon: politicalIcon,
   },
   {
     id: 4,
     title: 'education',
-    label: 'Eğitim',
     icon: educationIcon,
   },
   {
     id: 5,
     title: 'reform',
-    label: 'Reform',
     icon: reformIcon,
   },
   {
     id: 6,
     title: 'visit',
-    label: 'Ziyaret',
     icon: visitIcon,
   },
 ]

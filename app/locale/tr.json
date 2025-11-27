@@ -67,7 +67,16 @@
     "autoPlaySecondsText": "s",
     "autoPlayIconAlt": "Otomatik geçiş ikonu",
     "languageSelectorTitle": "Dil seç",
-    "languageSelectorIconAlt": "Dil ikonu"
+    "languageSelectorIconAlt": "Dil ikonu",
+    "filters": {
+      "personal": "Kişisel",
+      "military": "Askeri",
+      "political": "Politika",
+      "education": "Eğitim",
+      "reform": "Reform",
+      "visit": "Ziyaret",
+      "other": "Diğer"
+    }
   },
   "SupportMe": {
     "description": "Kitap satın alarak destek ol",

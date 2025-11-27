@@ -67,7 +67,16 @@
         "autoPlaySecondsText": "Sek",
         "autoPlayIconAlt": "Symbol für automatischen Ablauf",
         "languageSelectorTitle": "Sprache auswählen",
-        "languageSelectorIconAlt": "Sprachsymbol"
+        "languageSelectorIconAlt": "Sprachsymbol",
+        "filters": {
+            "personal": "Persönlich",
+            "military": "Militärisch",
+            "political": "Politisch",
+            "education": "Bildung",
+            "reform": "Reform",
+            "visit": "Besuch",
+            "other": "Sonstige"
+        }
     },
     "SupportMe": {
         "description": "Unterstützen Sie mich, indem Sie das Buch kaufen",
