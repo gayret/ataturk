@@ -3532,7 +3532,9 @@
     "images": [],
     "sounds": [
       {
-        "alt": "Rede zum zehnten Jahrestag in Atatürks Stimme"
+        "url": "/sounds/onuncu_yil_nutku.mp3",
+        "alt": "Rede zum zehnten Jahrestag in Atatürks Stimme",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturkun-onuncu-yil-nutku"
       }
     ],
     "id": 244,
