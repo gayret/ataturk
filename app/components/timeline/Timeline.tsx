@@ -66,6 +66,10 @@ export default function Timeline() {
     const currentId = searchParams.get('id') || 1
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     const nextIndex = (currentIndex + 1) % events.length
+    console.log('nextIndex', nextIndex)
+
+    console.log('events[nextIndex]', events[nextIndex])
+
     url.searchParams.set('id', events[nextIndex].id.toString())
     window.history.pushState({}, '', url.toString())
   }, [searchParams, events])
@@ -180,17 +184,23 @@ export default function Timeline() {
               key={index}
               role='button'
               tabIndex={0}
-              onClick={e => {
+              onClick={(e) => {
                 if (!(e.target as HTMLElement).classList.contains(styles.dot)) {
                   onOpenId(item.ids[0])()
                 }
               }}
-              className={`${styles.timelineItem} ${isActiveYear ? (item.items.length > 1 ? styles.active : `${styles.active} ${styles.single}`) : ''}`}
+              className={`${styles.timelineItem} ${
+                isActiveYear
+                  ? item.items.length > 1
+                    ? styles.active
+                    : `${styles.active} ${styles.single}`
+                  : ''
+              }`}
               aria-label={`Go to ${item.year} section`}
               data-year={item.year}
               style={{
                 scrollSnapAlign: 'center',
-                scrollSnapStop: 'always'
+                scrollSnapStop: 'always',
               }}
             >
               {isActiveYear && item.items.length > 1 && (

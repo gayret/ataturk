@@ -10,7 +10,7 @@ import Balloons from '@/app/components/ceremonies/widgets/ballons/Balloons'
 import Clouds from '@/app/components/ceremonies/widgets/clouds/Clouds'
 import ActionButtons from '@/app/components/action-buttons/ActionButtons'
 import Ceremonies from '@/app/components/ceremonies/Ceremonies'
-import Content from '@/app/components/content/Content'
+import Content, { QuoteType } from '@/app/components/content/Content'
 import SupportMe from '../support-me/SupportMe'
 
 interface EventImage {
@@ -24,16 +24,11 @@ interface EventLocation {
   lon: number
 }
 
-interface EventQuote {
-  text: string
-  source: string
-}
-
 interface Event {
   id: number
   title: string
   description?: string | null
-  quotes?: EventQuote[]
+  quotes?: QuoteType[]
   date: string
   location: EventLocation
   images: EventImage[]

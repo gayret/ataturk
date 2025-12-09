@@ -1,86 +1,87 @@
 {
-    "Header": {
-        "title": "Eine chronologische Geschichte Atatürks"
+  "Header": {
+    "title": "Eine chronologische Geschichte Atatürks"
+  },
+  "About": {
+    "title": "An die Kinder und die Jugend der Türkei!",
+    "description": "Der Große Führer Gazi Mustafa Kemal Atatürk leitete den Unabhängigkeitskampf der türkischen Nation und wurde zum Gründer der Republik Türkei.",
+    "mission": "Ziel dieses Projekts ist es, Atatürks Leben – geprägt von Mut, Weitsicht und Selbstaufopferung – chronologisch zu erzählen und junge Menschen zu inspirieren.",
+    "usageTitle": "Verwendung",
+    "usageDescription": "Ziel dieses Projekts ist es, Atatürks Leben – geprägt von Mut, Weitsicht und Selbstaufopferung – chronologisch zu erzählen und junge Menschen zu inspirieren.",
+    "translatorsTitle": "Übersetzer",
+    "Contributors": {
+      "title": "Entwickler",
+      "intro": "Der Quellcode und die Daten dieses Projekts sind für alle frei zugänglich. Sie können den Code auf",
+      "linkText": "GitHub"
     },
-    "About": {
-        "title": "An die Kinder und die Jugend der Türkei!",
-        "description": "Der Große Führer Gazi Mustafa Kemal Atatürk leitete den Unabhängigkeitskampf der türkischen Nation und wurde zum Gründer der Republik Türkei.",
-        "mission": "Ziel dieses Projekts ist es, Atatürks Leben – geprägt von Mut, Weitsicht und Selbstaufopferung – chronologisch zu erzählen und junge Menschen zu inspirieren.",
-        "usageTitle": "Verwendung",
-        "usageDescription": "Ziel dieses Projekts ist es, Atatürks Leben – geprägt von Mut, Weitsicht und Selbstaufopferung – chronologisch zu erzählen und junge Menschen zu inspirieren.",
-        "translatorsTitle": "Übersetzer",
-        "Contributors": {
-            "title": "Entwickler",
-            "intro": "Der Quellcode und die Daten dieses Projekts sind für alle frei zugänglich. Sie können den Code auf",
-            "linkText": "GitHub"
-        },
-        "Story": {
-            "title": "Unsere Reise",
-            "iframeTitle": "Eingebetteter Beitrag"
-        },
-        "Widget": {
-            "sectionLabel": "Präsentation des Atatürk-Zitat-Widgets",
-            "eyebrow": "Widget",
-            "title": "Atatürk-Zitat-Widget",
-            "description": "Binden Sie unsere schlanke iFrame-Komponente ein, um inspirierende Atatürk-Zitate auf Ihrer eigenen Website anzuzeigen.",
-            "previewFrameTitle": "Vorschau des Atatürk-Zitat-Widgets",
-            "cta": "Zitat-Widget auf Ihrer Website einbinden",
-            "closeCta": "Einbettungscode ausblenden",
-            "embedTitle": "Fügen Sie dieses Snippet in Ihre Website ein",
-            "embedDescription": "Platzieren Sie das Container-Div und das Script-Tag an der Stelle, an der das Widget erscheinen soll.",
-            "copy": "Snippet kopieren",
-            "copied": "Kopiert!"
-        }
+    "Story": {
+      "title": "Unsere Reise",
+      "iframeTitle": "Eingebetteter Beitrag"
     },
-    "Share": {
-        "title": "Dieses Ereignis teilen"
+    "Widget": {
+      "sectionLabel": "Präsentation des Atatürk-Zitat-Widgets",
+      "eyebrow": "Widget",
+      "title": "Atatürk-Zitat-Widget",
+      "description": "Binden Sie unsere schlanke iFrame-Komponente ein, um inspirierende Atatürk-Zitate auf Ihrer eigenen Website anzuzeigen.",
+      "previewFrameTitle": "Vorschau des Atatürk-Zitat-Widgets",
+      "cta": "Zitat-Widget auf Ihrer Website einbinden",
+      "closeCta": "Einbettungscode ausblenden",
+      "embedTitle": "Fügen Sie dieses Snippet in Ihre Website ein",
+      "embedDescription": "Platzieren Sie das Container-Div und das Script-Tag an der Stelle, an der das Widget erscheinen soll.",
+      "copy": "Snippet kopieren",
+      "copied": "Kopiert!"
+    }
+  },
+  "Share": {
+    "title": "Dieses Ereignis teilen"
+  },
+  "Content": {
+    "ageText": "Jahre alt"
+  },
+  "ActionButtons": {
+    "streetViewTitle": "Street View",
+    "streetViewIconAlt": "Street-View-Symbol",
+    "eventFilterOpen": "Filter öffnen",
+    "eventFilterClose": "Filter schließen",
+    "directionTitle": "Route",
+    "directionIconAlt": "Routensymbol",
+    "searchTitle": "Suche",
+    "searchIconAlt": "Suchsymbol",
+    "searchPlaceholder": "Suchen...",
+    "shareTitle": "Dieses Ereignis teilen",
+    "shareIconAlt": "Teilen-Symbol",
+    "shareLinkedinTitle": "Auf LinkedIn teilen",
+    "shareLinkedinIconAlt": "LinkedIn-Symbol",
+    "shareTwitterTitle": "Auf X (Twitter) teilen",
+    "shareTwitterIconAlt": "X/Twitter-Symbol",
+    "shareFacebookTitle": "Auf Facebook teilen",
+    "shareFacebookIconAlt": "Facebook-Symbol",
+    "shareWhatsappTitle": "Auf WhatsApp teilen",
+    "shareWhatsappIconAlt": "WhatsApp-Symbol",
+    "shareText": "Eine chronologische Geschichte Atatürks – Entdecken Sie das Leben Mustafa Kemal Atatürks anhand von Karten sowie visuellen und akustischen Quellen!",
+    "autoPlayActiveTitle": "Automatischer Ablauf aktiv",
+    "autoPlayActiveStopTitle": "Stopp (Leertaste)",
+    "autoPlaySpeedTitle": "Geschwindigkeit",
+    "autoPlaySpeedChangeTitle": "Zum Ändern klicken",
+    "autoPlayMinutesText": "Min",
+    "autoPlaySecondsText": "Sek",
+    "autoPlayIconAlt": "Symbol für automatischen Ablauf",
+    "languageSelectorTitle": "Sprache auswählen",
+    "languageSelectorIconAlt": "Sprachsymbol",
+    "filters": {
+      "personal": "Persönlich",
+      "military": "Militärisch",
+      "political": "Politisch",
+      "education": "Bildung",
+      "reform": "Reform",
+      "visit": "Besuch",
+      "other": "Sonstige"
     },
-    "Content": {
-        "ageText": "Jahre alt"
-    },
-    "ActionButtons": {
-        "streetViewTitle": "Street View",
-        "streetViewIconAlt": "Street-View-Symbol",
-        "eventFilterOpen": "Filter öffnen",
-        "eventFilterClose": "Filter schließen",
-        "directionTitle": "Route",
-        "directionIconAlt": "Routensymbol",
-        "searchTitle": "Suche",
-        "searchIconAlt": "Suchsymbol",
-        "searchPlaceholder": "Suchen...",
-        "shareTitle": "Dieses Ereignis teilen",
-        "shareIconAlt": "Teilen-Symbol",
-        "shareLinkedinTitle": "Auf LinkedIn teilen",
-        "shareLinkedinIconAlt": "LinkedIn-Symbol",
-        "shareTwitterTitle": "Auf X (Twitter) teilen",
-        "shareTwitterIconAlt": "X/Twitter-Symbol",
-        "shareFacebookTitle": "Auf Facebook teilen",
-        "shareFacebookIconAlt": "Facebook-Symbol",
-        "shareWhatsappTitle": "Auf WhatsApp teilen",
-        "shareWhatsappIconAlt": "WhatsApp-Symbol",
-        "shareText": "Eine chronologische Geschichte Atatürks – Entdecken Sie das Leben Mustafa Kemal Atatürks anhand von Karten sowie visuellen und akustischen Quellen!",
-        "autoPlayActiveTitle": "Automatischer Ablauf aktiv",
-        "autoPlayActiveStopTitle": "Stopp (Leertaste)",
-        "autoPlaySpeedTitle": "Geschwindigkeit",
-        "autoPlaySpeedChangeTitle": "Zum Ändern klicken",
-        "autoPlayMinutesText": "Min",
-        "autoPlaySecondsText": "Sek",
-        "autoPlayIconAlt": "Symbol für automatischen Ablauf",
-        "languageSelectorTitle": "Sprache auswählen",
-        "languageSelectorIconAlt": "Sprachsymbol",
-        "filters": {
-            "personal": "Persönlich",
-            "military": "Militärisch",
-            "political": "Politisch",
-            "education": "Bildung",
-            "reform": "Reform",
-            "visit": "Besuch",
-            "other": "Sonstige"
-        }
-    },
-    "SupportMe": {
-        "description": "Unterstützen Sie mich, indem Sie das Buch kaufen",
-        "imageAlt": "Buchcover"
-    },
-    "InformationSource": "Informationsquelle"
+    "editThisContent": "Diesen Inhalt bearbeiten"
+  },
+  "SupportMe": {
+    "description": "Unterstützen Sie mich, indem Sie das Buch kaufen",
+    "imageAlt": "Buchcover"
+  },
+  "InformationSource": "Informationsquelle"
 }

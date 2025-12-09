@@ -87,8 +87,8 @@ export default function Search() {
                 item.quotes &&
                 item.quotes.some(
                   (q) =>
-                    q.text.toLocaleLowerCase().includes(search) ||
-                    q.source.toLocaleLowerCase().includes(search)
+                    q?.text?.toLocaleLowerCase().includes(search) ||
+                    q?.source?.toLocaleLowerCase().includes(search)
                 )
 
               return inTitle || inDescription || inDate || inQuotes

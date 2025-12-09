@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import styles from './Contributors.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguageStore } from '@/app/stores/languageStore'
 
 type Contributor = {
@@ -63,7 +64,7 @@ const HoverCard = ({
       ) : userProfile ? (
         <>
           <div className={styles.hovercardHeader}>
-            <img
+            <Image
               src={userProfile.avatar_url}
               alt={userProfile.login}
               className={styles.hovercardAvatar}
@@ -213,7 +214,12 @@ export default function Contributors() {
                 onMouseEnter={(e) => handleMouseEnter(contributor, e)}
                 onMouseLeave={handleMouseLeave}
               >
-                <img src={contributor.avatar_url} width={50} height={50} alt={contributor.login} />
+                <Image
+                  src={contributor.avatar_url}
+                  width={50}
+                  height={50}
+                  alt={contributor.login}
+                />
               </a>
             ))}
           </div>

@@ -1,6 +1,7 @@
 import eventsTr from '@/app/json/events_tr.json'
 import eventsEn from '@/app/json/events_en.json'
 import eventsDe from '@/app/json/events_de.json'
+import { QuoteType } from '../components/content/Content'
 
 type Language = 'tr' | 'en' | 'de'
 
@@ -10,17 +11,12 @@ type RawEventImage = {
   source?: string
 }
 
-type RawEventQuote = {
-  text: string
-  source?: string
-}
-
 type RawEvent = {
   id: number
   date: string
   title: string
   description?: string
-  quotes?: RawEventQuote[]
+  quotes?: QuoteType[]
   images?: RawEventImage[]
   category?: string
 }

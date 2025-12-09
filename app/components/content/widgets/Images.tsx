@@ -26,9 +26,10 @@ export default function Images() {
     events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
 
   // Resimlere tıklanıp modal açılırken çağırılan fonksiyon
-  const openModal = (image: ImageType) => {
+  const openModal = (image: ImageType | null) => {
     setModalImage(image)
-    const imageIndex = selectedItem.images.findIndex((img) => img.url === image.url)
+    if (!selectedItem.images) return
+    const imageIndex = selectedItem.images.findIndex((img) => img.url === image?.url)
     setCurrentImageIndex(imageIndex)
     setCurrentImages(selectedItem.images)
   }

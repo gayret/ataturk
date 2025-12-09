@@ -21,10 +21,10 @@ export type ItemType = {
   date: string
   title: string
   description?: string
-  images?: ImageType[]
+  images?: ImageType[] | null
   source?: string
-  sounds?: { url: string; alt: string; source?: string }[]
-  quotes?: QuoteType[]
+  sounds?: { url: string; alt: string; source?: string }[] | null
+  quotes?: QuoteType[] | null
 }
 
 export default function Content() {

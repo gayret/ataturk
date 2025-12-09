@@ -10,6 +10,7 @@ import Search from './widgets/search/Search'
 import AutoPlay from './widgets/auto-play/AutoPlay'
 import LanguageSelector from './widgets/language-selector/LanguageSelector'
 import { useState } from 'react'
+import EditThisContent from './widgets/edit-this-content/EditThisContent'
 
 export default function ActionButtons({
   showOnlyLanguageSelector = false,
@@ -49,6 +50,8 @@ export default function ActionButtons({
             <AutoPlay />
 
             <LanguageSelector />
+
+            <EditThisContent />
           </>
         )}
       </div>

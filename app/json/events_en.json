@@ -25,20 +25,25 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 2,
     "title": "Starting primary education.",
-    "description": "(He attended the local primary school for a short period, then transferred to Şemsi Efendi School, which provided modern education, and completed his primary education there.)",
     "date": "1886T00:00:00Z",
     "category": "education",
     "location": {
       "lat": 40.639956,
       "lon": 22.9471617
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 3,
@@ -49,13 +54,15 @@
       "lat": 40.635833,
       "lon": 22.954444
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 4,
     "title": "Enrollment in the Thessaloniki Military Middle School.",
-    "description": "(After Şemsi Efendi Primary School, he attended Thessaloniki Civil Middle School for a while, but left this school after a mathematics teacher named Kaymak Hafız unjustly beat him with a stick. He then applied to the Military Middle School on his own initiative and decision, and continued his education there.)",
     "date": "1894T00:00:00Z",
     "category": "education",
     "location": {
@@ -69,7 +76,10 @@
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/manastir-askeri-idadisindeki-ogrenimi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 5,
@@ -92,7 +102,10 @@
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/manastir-askeri-idadisindeki-ogrenimi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 6,
@@ -120,7 +133,10 @@
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/harbiyedeki-ogrenimi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 7,
@@ -131,8 +147,11 @@
       "lat": 41.0481642,
       "lon": 28.9878852
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 8,
@@ -143,8 +162,11 @@
       "lat": 41.0481642,
       "lon": 28.9878852
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 9,
@@ -162,7 +184,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 10,
@@ -173,8 +198,11 @@
       "lat": 33.5131,
       "lon": 36.2919
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 11,
@@ -207,7 +235,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 12,
@@ -230,20 +261,25 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 13,
     "title": "Assignment from Damascus to the 3rd Army Headquarters located in Manastır.",
-    "description": "(He served at this headquarters' branch in Thessaloniki.)",
     "date": "1907-10-13T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 14,
@@ -254,8 +290,11 @@
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 15,
@@ -266,8 +305,11 @@
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 16,
@@ -278,8 +320,11 @@
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 17,
@@ -290,8 +335,11 @@
       "lat": 41.032251,
       "lon": 28.988042
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 18,
@@ -302,8 +350,11 @@
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 19,
@@ -314,8 +365,11 @@
       "lat": 41.032251,
       "lon": 28.988042
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 20,
@@ -348,7 +402,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 21,
@@ -359,8 +416,11 @@
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 22,
@@ -371,21 +431,26 @@
       "lat": 41.747033,
       "lon": 22.1982176
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 23,
     "title": "Convening of the 'Committee of Union and Progress Grand Congress' in Thessaloniki.",
-    "description": "(Mustafa Kemal delivered a speech at this congress, arguing that the army should stay out of politics.)",
     "date": "1909-09-22T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 24,
@@ -396,21 +461,26 @@
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 25,
     "title": "Publication of his book titled 'Cumalı Camp' in Thessaloniki.",
-    "description": "(This small book consists of notes and sketches taken during the military manoeuvre held at Cumalı Ordugâhı between 30 August and 8 September 1909.)",
     "date": "1909-10-06T00:00:00Z",
     "category": "education",
     "location": {
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 26,
@@ -438,7 +508,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 27,
@@ -491,7 +564,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 28,
@@ -502,8 +578,11 @@
       "lat": 40.6355501,
       "lon": 22.9543124
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 29,
@@ -521,12 +600,14 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 30,
     "title": "Participation in the maneuvers conducted by the 5th Corps between Thessaloniki and Kilkis.",
-    "description": "(Manevra, 20 Nisan 1911 akşamı sona ermiştir.)",
     "date": "1911-04-19T00:00:00Z",
     "category": "military",
     "location": {
@@ -540,7 +621,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 31,
@@ -551,8 +635,11 @@
       "lat": 41.0082,
       "lon": 28.9784
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 32,
@@ -563,8 +650,11 @@
       "lat": 32.8829352,
       "lon": 13.1677363
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 33,
@@ -602,7 +692,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 34,
@@ -613,8 +706,11 @@
       "lat": 41.0082,
       "lon": 28.9784
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 35,
@@ -625,8 +721,11 @@
       "lat": 32.0730831,
       "lon": 23.9139912
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 36,
@@ -637,21 +736,26 @@
       "lat": 32.7587972,
       "lon": 22.6224084
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 37,
     "title": "Publication of his book titled Tâbiye Tatbikat Seyahatı (Tactics Exercise Journey) in Thessaloniki.",
-    "description": "(This small book consists of notes and sketches from a military exercise conducted by the 5th Corps on 19-20 April 1911, in which he himself participated.)",
     "date": "1911T00:00:00Z",
     "category": "education",
     "location": {
       "lat": 41.0481642,
       "lon": 28.9878852
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 38,
@@ -662,8 +766,11 @@
       "lat": 32.7587972,
       "lon": 22.6224084
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 39,
@@ -674,8 +781,11 @@
       "lat": 41.0082,
       "lon": 28.9784
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 40,
@@ -686,8 +796,11 @@
       "lat": 42,
       "lon": 22
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 41,
@@ -698,8 +811,11 @@
       "lat": 40.4145591,
       "lon": 26.6619287
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 42,
@@ -710,21 +826,26 @@
       "lat": 41.6688737,
       "lon": 26.5527249
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 43,
     "title": "Signing of the Treaty of London between the Ottoman Empire and the Balkan states.",
-    "description": "(With this agreement, the Ottoman Empire accepted the Midye-Enez line as its border and ceded Edirne to Bulgaria.)",
     "date": "1913-05-30T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 41.6688737,
       "lon": 26.5527249
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 44,
@@ -735,8 +856,11 @@
       "lat": 41.6688737,
       "lon": 26.5527249
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 45,
@@ -747,8 +871,11 @@
       "lat": 41.0082,
       "lon": 28.9784
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 46,
@@ -759,8 +886,11 @@
       "lat": 42.6954026,
       "lon": 23.2415466
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 47,
@@ -771,8 +901,11 @@
       "lat": 42.6954026,
       "lon": 23.2415466
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 48,
@@ -783,8 +916,11 @@
       "lat": 42.6954026,
       "lon": 23.2415466
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 49,
@@ -807,7 +943,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 50,
@@ -818,8 +957,11 @@
       "lat": 42.6954026,
       "lon": 23.2415466
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 51,
@@ -830,8 +972,11 @@
       "lat": 41.0752758,
       "lon": 26.7606859
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 52,
@@ -842,8 +987,11 @@
       "lat": 41.0752758,
       "lon": 26.7606859
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 53,
@@ -854,8 +1002,11 @@
       "lat": 40.1801025,
       "lon": 26.3509787
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 54,
@@ -866,21 +1017,26 @@
       "lat": 40.4145591,
       "lon": 26.6619287
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 55,
     "title": "Decision to establish the 5th Army in Gallipoli following the growing importance of the Dardanelles front, and appointment of German General Marshal Liman von Sanders as its commander.",
-    "description": "(Liman von Sanders arrived at Gallipoli on 26 March 1915 to take command.)",
     "date": "1915-03-24T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 40.4145591,
       "lon": 26.6619287
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 56,
@@ -903,7 +1059,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 57,
@@ -921,13 +1080,16 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 57.1,
     "title": "Award of medal.",
-    "description": "The Silver Imtiyaz Medal (Medal of Merit) awarded to ATATÜRK by Sultan Mehmet V Reşat while he was the Commander of the 19th Division. On the front side is the imperial coat of arms of Sultan Abdülhamit II, and on the back is the inscription 'This medal is reserved for those who demonstrate extraordinary loyalty and bravery for the Ottoman Empire' and the date 1300. On the green and red ribbon, there is a plaque over crossed swords. The year 1332 (1916) is written in old script on the plaque on the ribbon.",
     "date": "1915-04-30T00:00:00Z",
+    "category": "",
     "location": {
       "lat": 40.2355886,
       "lon": 26.3582045
@@ -939,7 +1101,10 @@
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/nisan-ve-madalyalari"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/nisan-ve-madalyalari"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/nisan-ve-madalyalari",
+    "description": ""
   },
   {
     "id": 58,
@@ -957,7 +1122,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 59,
@@ -980,7 +1148,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 60,
@@ -991,8 +1162,11 @@
       "lat": 40.1591672,
       "lon": 26.4091354
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 61,
@@ -1003,8 +1177,11 @@
       "lat": 40.1591672,
       "lon": 26.4091354
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 62,
@@ -1015,8 +1192,11 @@
       "lat": 40.2503121,
       "lon": 26.3052365
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 63,
@@ -1027,8 +1207,11 @@
       "lat": 40.2503121,
       "lon": 26.3052365
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 64,
@@ -1039,8 +1222,11 @@
       "lat": 40.2503116,
       "lon": 26.2975117
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 65,
@@ -1051,8 +1237,11 @@
       "lat": 40.2503116,
       "lon": 26.2975117
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 66,
@@ -1063,8 +1252,11 @@
       "lat": 41.6688737,
       "lon": 26.5527249
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 67,
@@ -1075,8 +1267,11 @@
       "lat": 41.6688737,
       "lon": 26.5527249
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 68,
@@ -1087,8 +1282,11 @@
       "lat": 41.0082,
       "lon": 28.9784
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 69,
@@ -1099,8 +1297,11 @@
       "lat": 41.0082,
       "lon": 28.9784
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 70,
@@ -1111,8 +1312,11 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 71,
@@ -1130,7 +1334,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 72,
@@ -1141,8 +1348,11 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 73,
@@ -1153,8 +1363,11 @@
       "lat": 38.1443441,
       "lon": 40.9739482
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 74,
@@ -1165,8 +1378,11 @@
       "lat": 38.4044977,
       "lon": 42.09232
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 75,
@@ -1177,8 +1393,11 @@
       "lat": 38.7508567,
       "lon": 41.4652661
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 76,
@@ -1196,7 +1415,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 77,
@@ -1207,8 +1429,11 @@
       "lat": 38.4044977,
       "lon": 42.09232
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 78,
@@ -1219,8 +1444,11 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 79,
@@ -1231,8 +1459,11 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 80,
@@ -1243,8 +1474,11 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 81,
@@ -1255,8 +1489,11 @@
       "lat": 33.5073779,
       "lon": 36.1270068
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 82,
@@ -1267,8 +1504,11 @@
       "lat": 33.5073779,
       "lon": 36.1270068
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 83,
@@ -1286,7 +1526,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 84,
@@ -1319,7 +1562,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 85,
@@ -1330,8 +1576,11 @@
       "lat": 37.9227853,
       "lon": 40.1214785
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 86,
@@ -1342,8 +1591,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 87,
@@ -1354,8 +1606,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 88,
@@ -1366,8 +1621,11 @@
       "lat": 36.2064064,
       "lon": 37.0661848
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 89,
@@ -1378,13 +1636,15 @@
       "lat": 36.2064064,
       "lon": 37.0661848
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 90,
     "title": "Reappointment to command of the 2nd Army located in Diyarbakır.",
-    "description": "(Since Mustafa Kemal did not accept this appointment, the process did not take effect, and he came to Istanbul from Aleppo, considered on leave in his capacity as 2nd Army Commander.)",
     "date": "1917-10-09T00:00:00Z",
     "category": "military",
     "location": {
@@ -1408,7 +1668,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 91,
@@ -1419,8 +1682,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 92,
@@ -1431,8 +1697,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 93,
@@ -1443,8 +1712,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 94,
@@ -1455,8 +1727,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 95,
@@ -1467,8 +1742,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 96,
@@ -1479,21 +1757,26 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 97,
     "title": "Travelling from Istanbul to Vienna for treatment due to kidney disease.",
-    "description": "(He received treatment in Vienna and Karlsbad for about 2 months.)",
     "date": "1918-05T00:00:00Z",
     "category": "personal",
     "location": {
       "lat": 48.2202037,
       "lon": 16.2972426
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 98,
@@ -1504,8 +1787,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 99,
@@ -1516,8 +1802,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 100,
@@ -1528,8 +1817,11 @@
       "lat": 32.2243079,
       "lon": 35.2270797
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 101,
@@ -1540,34 +1832,41 @@
       "lat": 32.2243079,
       "lon": 35.2270797
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 102,
     "title": "Decision to move the 7th Army to the east of the Jordan River in face of the advancing British offensive.",
-    "description": "(Following the breach of the 8th Army front against the British offensive of September 19, the 4th and 7th Armies were also in danger of being encircled by the enemy. In this situation, Mustafa Kemal Atatürk gave the order to his troops on September 20 to withdraw to the east of the Jordan River in order to continue fighting under favourable conditions. Upon this decision, the 7th Army units withdrew to Rayak and then to Aleppo without breaking their organization and fighting strength.)",
     "date": "1918-09-20T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 32.4653659,
       "lon": 34.9063649
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 103,
     "title": "Award of the honorary title of aide-de-camp for extraordinary services and saving his army from annihilation.",
-    "description": "(This date is given as September 21 in some sources and September 23 in others.)",
     "date": "1918-09-22T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 32.4653659,
       "lon": 34.9063649
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 104,
@@ -1578,8 +1877,11 @@
       "lat": 36.2064064,
       "lon": 37.0661848
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 105,
@@ -1590,8 +1892,11 @@
       "lat": 36.2064064,
       "lon": 37.0661848
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 106,
@@ -1609,7 +1914,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 107,
@@ -1620,8 +1928,11 @@
       "lat": 36.9973865,
       "lon": 35.2056667
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 108,
@@ -1632,8 +1943,11 @@
       "lat": 36.9973865,
       "lon": 35.2056667
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 109,
@@ -1644,8 +1958,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 110,
@@ -1656,8 +1973,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 111,
@@ -1668,8 +1988,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 112,
@@ -1680,8 +2003,11 @@
       "lat": 38.4175597,
       "lon": 26.914911
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 113,
@@ -1692,8 +2018,11 @@
       "lat": 41.0052041,
       "lon": 28.8473739
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 114,
@@ -1704,8 +2033,11 @@
       "lat": 41.2914662,
       "lon": 36.2724991
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 115,
@@ -1716,8 +2048,11 @@
       "lat": 41.2914662,
       "lon": 36.2724991
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 116,
@@ -1728,8 +2063,11 @@
       "lat": 40.9735932,
       "lon": 35.667075
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 117,
@@ -1740,8 +2078,11 @@
       "lat": 40.6544618,
       "lon": 35.4192545
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 118,
@@ -1759,20 +2100,25 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 119,
     "title": "His circular from Amasya to civil and military authorities in Anatolia.",
-    "description": "'The integrity of the homeland and the independence of the nation are in danger. The determination and decision of the nation will save the independence of the nation. ...'",
     "date": "1919-06-21T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 40.6544618,
       "lon": 35.4192545
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 120,
@@ -1790,7 +2136,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 121,
@@ -1801,34 +2150,41 @@
       "lat": 39.9118927,
       "lon": 41.2223171
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 122,
     "title": "His circular to the army, provinces, and the nation announcing his resignation from both his official duties and military profession.",
-    "description": "'From now on, I declare and announce that I am present among the nation as an individual fighter, ready to work with all kinds of sacrifice for our sacred national goal.'",
     "date": "1919-07-09T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.9118927,
       "lon": 41.2223171
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 123,
     "title": "Public announcement in the Albayrak Newspaper published in Erzurum of his resignation from the military and assumption of leadership of the Erzurum branch of the Association for the Defence of National Rights for the Eastern Provinces.",
-    "description": "'... His Excellency Mustafa Kemal Pasha's resignation letter is a document of determination and faith. It is magnificent evidence showing that the old blood has not yet been extinguished in the nation. Seeing this respected commander, who elevated and exalted national honor at Anafartalar and the sacred duty that history expects from today's generation, at the head of the National Struggle today is a blessed sight.'",
     "date": "1919-07-14T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.9118927,
       "lon": 41.2223171
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 124,
@@ -1839,27 +2195,31 @@
       "lat": 39.9118927,
       "lon": 41.2223171
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 125,
     "title": "Conclusion of the Erzurum Congress with a brief speech by Mustafa Kemal.",
-    "description": "'At the most exciting time when our nation was struggling with hope for salvation, your devoted and respected assembly gathered here in Erzurum, enduring all kinds of hardships. With a sensitive and noble spirit and very strong faith, it made fundamental decisions regarding the salvation of our homeland and nation. Especially, it showed the existence and unity of our nation to the whole world. History will undoubtedly record this congress of ours as a rare and great work.' Election of Mustafa Kemal to the Presidency of the Representative Committee by the Erzurum Congress.",
     "date": "1919-08-07T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.9118927,
       "lon": 41.2223171
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "History will undoubtedly record this congress of ours as a rare and great work.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 126,
@@ -1870,8 +2230,11 @@
       "lat": 39.9118927,
       "lon": 41.2223171
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 127,
@@ -1882,8 +2245,11 @@
       "lat": 39.7483892,
       "lon": 36.95471
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 128,
@@ -1906,7 +2272,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 129,
@@ -1924,12 +2293,14 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 130,
     "title": "Declaration to the nation on behalf of the Representative Committee.",
-    "description": "'There is no doubt that our nation, which has not deviated even slightly from its national dignity and the qualities inherited from its past of respecting everyone's rights even under the most severe historical conditions, will remain steadfast in the same manner and behavior from now on, and will thus have its civilization capacity to possess these blessed lands acknowledged by the whole world.'",
     "date": "1919-10-07T00:00:00Z",
     "category": "political",
     "location": {
@@ -1948,7 +2319,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 131,
@@ -1959,8 +2333,11 @@
       "lat": 40.6544618,
       "lon": 35.4192545
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 132,
@@ -1971,8 +2348,11 @@
       "lat": 40.6544618,
       "lon": 35.4192545
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 133,
@@ -1983,8 +2363,11 @@
       "lat": 40.6544618,
       "lon": 35.4192545
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 134,
@@ -1995,34 +2378,41 @@
       "lat": 40.6544618,
       "lon": 35.4192545
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 135,
     "title": "His arrival in Ankara and reception with grand ceremony.",
-    "description": "(After entering the city, Mustafa Kemal rested and had tea in the governor's office for a while, then visited the 20th Corps, and from there came to the Agricultural School allocated to him and his friends.) Mustafa Kemal's telegram to all organizations announcing 'his arrival in Ankara and that Ankara is the center of the Representative Committee.'",
     "date": "1919-11-07T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 136,
     "title": "Opening of the last 'Ottoman Parliament' in Istanbul.",
-    "description": "(Upon the occupation of Istanbul, the Parliament held its last meeting on March 18, 1920, deciding to suspend its activities, and was closed by imperial decree on April 11, 1920.)",
     "date": "1920-01-12T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 137,
@@ -2033,14 +2423,16 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
+    "images": null,
     "quotes": [
       {
         "text": "At the Erzurum and Sivas congresses, it was necessary to establish a modern national border; I chose the border indicated by the Turkish bayonets.",
         "source": "https://21yyte.org/politik-sosyal-kulturel-arastirmalar-merkezi/misak-i-milli-milli-yemin-ulusal-ant-nin-100-uncu-yili/27569"
       }
     ],
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 138,
@@ -2051,34 +2443,41 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 139,
     "title": "Official occupation of Istanbul by the Allied Powers, which had been under de facto occupation since November 13, 1918. Mustafa Kemal's declaration to the nation due to the occupation of Istanbul.",
-    "description": "'... Today, by forcibly occupying Istanbul, the seven hundred years of life and sovereignty of the Ottoman Empire was ended. That is, today the Turkish nation was called to defend its civilized capacity, its right to live and independence, and its entire future.'",
     "date": "1920-03-16T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 140,
     "title": "His circular to provinces, sub-governorships, and corps commanders for urgent elections to convene a parliament in Ankara.",
-    "description": "'A parliament with extraordinary powers will convene in Ankara to govern and supervise national affairs!'",
     "date": "1920-03-19T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 141,
@@ -2101,7 +2500,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 142,
@@ -2112,14 +2514,16 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "...Throughout all periods of my military and political life, my guiding principle in all my struggles has always been to act in accordance with the national will, striving towards the goals that the nation and the homeland require...",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 143,
@@ -2130,8 +2534,11 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 144,
@@ -2142,8 +2549,11 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 145,
@@ -2154,8 +2564,11 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 146,
@@ -2179,7 +2592,9 @@
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 147,
@@ -2190,8 +2605,11 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 148,
@@ -2202,8 +2620,11 @@
       "lat": 39.902959,
       "lon": 32.4509541
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 149,
@@ -2221,7 +2642,10 @@
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 150,
@@ -2232,8 +2656,11 @@
       "lat": 40.0845598,
       "lon": 29.8492274
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 151,
@@ -2244,8 +2671,11 @@
       "lat": 39.7612458,
       "lon": 30.0489326
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 152,
@@ -2256,14 +2686,16 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "...I pray to Allah that this success may be a auspicious beginning to the definitive victory that will completely liberate our sacred lands from enemy occupation, and I request that this celebration be conveyed to all the soldiers and officers of the Western Army.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 153,
@@ -2274,8 +2706,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 154,
@@ -2286,14 +2721,16 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "...It has now been understood that the provisions of the Treaty of Sèvres cannot be forcibly imposed on Turkey....",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 155,
@@ -2304,8 +2741,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 156,
@@ -2316,14 +2756,16 @@
       "lat": 39.7612458,
       "lon": 30.0489326
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "...You defeated not only the enemy there, but also the nation's misfortune. Along with our unfortunate lands under occupation, the entire homeland is celebrating your victory today, even in its remotest corners. The enemy's lust for conquest was shattered against the sheer cliffs of your determination and loyalty.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 157,
@@ -2334,8 +2776,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 158,
@@ -2346,8 +2791,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 159,
@@ -2358,27 +2806,31 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "...While raising our children and young people, it is essential to instil in them the necessity of combating all foreign elements that conflict with their very existence, their rights, and their unity, and to impress upon them the need to defend national ideas with complete conviction, fiercely and selflessly against any opposing view.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 160,
     "title": "Mustafa Kemal's arrival from Ankara to the Western Front Headquarters in Karacahisar. Mustafa Kemal's directive to İsmet Pasha at the Western Front Headquarters:",
-    "description": "After gathering the army north and south of Eskişehir, it is necessary to put a great distance between our army and the enemy army so that the reorganization and reinforcement of the army can be possible. For this purpose, it is appropriate to withdraw as far as the east of Sakarya.",
     "date": "1921-07-18T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 39.7353106,
       "lon": 30.0876629
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 161,
@@ -2389,8 +2841,11 @@
       "lat": 39.7463489,
       "lon": 32.4784766
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 162,
@@ -2401,14 +2856,16 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "...My confidence and trust that, with Allah's help, we will defeat the enemies who seek to enslave our nation has never wavered for a single moment. At this moment, I declare this firm conviction before your distinguished assembly, before the entire nation, and before the whole world.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 163,
@@ -2419,21 +2876,26 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 164,
     "title": "Greek army's attack and the beginning of the Battle of Sakarya.",
-    "description": "(It lasted for 22 days and 22 nights.)",
     "date": "1921-08-23T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 39.7463489,
       "lon": 32.4784766
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 165,
@@ -2444,14 +2906,16 @@
       "lat": 39.7463489,
       "lon": 32.4784766
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "There is no defense line, but defense territory. That territory is the entire homeland. Not a single inch of the homeland can be abandoned until it is soaked with the blood of its citizens!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 166,
@@ -2462,8 +2926,11 @@
       "lat": 39.7463489,
       "lon": 32.4784766
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 167,
@@ -2474,8 +2941,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 168,
@@ -2486,8 +2956,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 169,
@@ -2498,8 +2971,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 170,
@@ -2510,8 +2986,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 171,
@@ -2522,8 +3001,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 172,
@@ -2534,8 +3016,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 173,
@@ -2546,27 +3031,31 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 174,
     "title": "Mustafa Kemal's opening speech for the third meeting year of the first period of the Turkish Grand National Assembly:",
-    "description": "... Gentlemen! The Grand National Assembly Government is working to ensure the continuity and independence of Turkey and the Turkish people. Because the definite desire and will of the Turkish people, who are the true, legitimate and real owners of Turkey, is in this direction...",
     "date": "1922-03-01T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.9420298,
       "lon": 32.8509197
     },
+    "images": null,
     "quotes": [
       {
         "text": "Agriculture is the foundation of the national economy. The true owner and master of the country is the peasant, the real producer.",
         "source": "https://egitim.tarimorman.gov.tr/adana/Belgeler/MAKALELER/ATAT%C3%9CRK%20VE%20TARIM.pdf"
       }
     ],
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 175,
@@ -2577,8 +3066,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 176,
@@ -2589,8 +3081,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 177,
@@ -2601,8 +3096,11 @@
       "lat": 38.5302528,
       "lon": 30.5419824
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 178,
@@ -2613,34 +3111,41 @@
       "lat": 38.8538701,
       "lon": 29.9792648
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 179,
     "title": "Mustafa Kemal's declaration to the army:",
-    "description": "... I want all my friends to advance considering that other pitched battles will be fought in Anatolia, and for everyone to continue to competitively display their mental powers and sources of heroism and patriotism. Armies! Your first target is the Mediterranean, forward!",
     "date": "1922-09-01T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 38.8538701,
       "lon": 29.9792648
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 180,
     "title": "Mustafa Kemal's message to the armies upon the news of the capture of İzmir:",
-    "description": "I remember with respect and appreciation the effort and sacrifice shown by the armies in reaching the first Mediterranean target I gave. I have complete confidence that the armies will show the same desire and sacrifice in achieving the targets to be given from now on.",
     "date": "1922-09-09T00:00:00Z",
     "category": "military",
     "location": {
       "lat": 38.8538701,
       "lon": 29.9792648
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 181,
@@ -2651,8 +3156,11 @@
       "lat": 38.4178287,
       "lon": 26.9149105
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 182,
@@ -2663,14 +3171,16 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "This Anatolian Victory will remain among the pages of history as the most beautiful example of how powerful and vigorous a force an idea completely adopted by a nation can be.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 183,
@@ -2681,8 +3191,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 184,
@@ -2693,8 +3206,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 185,
@@ -2705,8 +3221,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 186,
@@ -2717,8 +3236,11 @@
       "lat": 38.4178287,
       "lon": 26.9149105
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 187,
@@ -2729,8 +3251,11 @@
       "lat": 38.4178287,
       "lon": 26.9149105
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 188,
@@ -2741,14 +3266,16 @@
       "lat": 38.4178287,
       "lon": 26.9149105
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "No matter how great political and military victories may be, if they are not crowned with economic victories, the resulting victories cannot be permanent and will fade away in a short time.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 189,
@@ -2759,14 +3286,16 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "It is known that the policy we follow is a peaceful policy. The attempt to trample and have our country trampled without any basis in right and justice has been met with the failure it deserved through the self-sacrificing efforts of our victorious army, and our nation has saved our beloved homeland by achieving a victory rarely recorded in history.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 190,
@@ -2777,8 +3306,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 191,
@@ -2789,8 +3321,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 192,
@@ -2801,14 +3336,16 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "We will make our country prosperous, our people happy and bring them to prosperity. Our hope, our decision and especially the unity and solidarity that our nation and your High Assembly will show will surely be the guarantee of success in our work on the path of progress and civilization.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 193,
@@ -2819,8 +3356,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 194,
@@ -2831,8 +3371,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 194.1,
@@ -2843,13 +3386,16 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "Gentlemen! We shall declare the republic tomorrow!",
         "source": "http://www.golbasi.gov.tr/efendiler-yarin-cumhuriyeti-ilan-edecegiz"
       }
-    ]
+    ],
+    "sounds": null,
+    "source": "",
+    "description": ""
   },
   {
     "id": 195,
@@ -2867,7 +3413,10 @@
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/cumhuriyet-donemi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 196,
@@ -2878,8 +3427,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 197,
@@ -2890,8 +3442,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 198,
@@ -2902,27 +3457,31 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "We see the need to remove Islam from its position as a political tool, as has been customary for centuries, and to elevate it. It is imperative, for the sake of the nation's happiness in this world and the next, to rescue our sacred and divine beliefs and moral values from politics and all its aspects, which are dark and uncertain and a stage for all kinds of interests and passions to emerge. Only in this way will the greatness of Islam be revealed.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 199,
     "title": "Adoption of the Tevhid-i Tedrisat (Unification of Education) Law. Adoption of the Law on the abolition of the Caliphate and the removal of the Ottoman dynasty from the borders of the Republic of Turkey. Adoption of the Law on the abolition of the Ministry of Religious Affairs and Foundations (Şeriye ve Evkaf Vekâleti) and the Ministry of General Staff (Erkân-ı Harbiye-i Umumiye Vekâleti).",
-    "description": "(The Presidency of Religious Affairs was established to carry out the religious services of the Ministry of Religious Affairs and Foundations, and the General Staff was established in place of the Ministry of General Staff.)",
     "date": "1924-03-03T00:00:00Z",
     "category": "reform",
     "location": {
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 200,
@@ -2933,8 +3492,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 201,
@@ -2945,8 +3507,11 @@
       "lat": 38.8430563,
       "lon": 29.9581278
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 202,
@@ -2957,14 +3522,16 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "There should be no doubt that a new and prosperous Ankara, rapidly created in the middle of Anatolia, will be a center of civilization in its own right for the Turkish homeland that has been neglected for centuries, and a very important support for the Turkish state!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 203,
@@ -2975,8 +3542,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 204,
@@ -2987,8 +3557,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 205,
@@ -2999,8 +3572,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 206,
@@ -3011,8 +3587,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 207,
@@ -3023,8 +3602,11 @@
       "lat": 41.9792091,
       "lon": 33.7611811
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 208,
@@ -3035,27 +3617,31 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "Only the Republic itself raises the press equipped with its own mentality and morality of the Republican era.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 209,
     "title": "Mustafa Kemal's speech at the opening ceremony of Ankara Law School:",
-    "description": "I have never felt the happiness I felt at the opening of this great institution that will be the strength and support of the Republic in any enterprise, and I am pleased to show and express this.",
     "date": "1925-11-05T00:00:00Z",
     "category": "education",
     "location": {
       "lat": 39.9285606,
       "lon": 32.8722001
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 210,
@@ -3066,8 +3652,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 211,
@@ -3078,8 +3667,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 212,
@@ -3090,8 +3682,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 213,
@@ -3102,8 +3697,11 @@
       "lat": 39.9420298,
       "lon": 32.8509197
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 214,
@@ -3114,8 +3712,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 215,
@@ -3126,8 +3727,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 216,
@@ -3138,21 +3742,26 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 217,
     "title": "Mustafa Kemal's statement to Anadolu Agency about the İzmir assassination attempt:",
-    "description": "... There is no doubt that the vile attempt was directed rather at our sacred Republic and the high principles on which it is based than at my person. My humble body will surely become soil one day; but the Republic of Turkey will live forever!",
     "date": "1926-06-18T00:00:00Z",
     "category": "personal",
     "location": {
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 218,
@@ -3163,14 +3772,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "This great nation has always appreciated and protected its children who try to see and can see the directions towards which their desires and talents are oriented.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 219,
@@ -3181,8 +3792,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 220,
@@ -3193,8 +3807,11 @@
       "lat": 41.038994,
       "lon": 29.0004438
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 221,
@@ -3205,8 +3822,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 222,
@@ -3217,14 +3837,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "The outcome we have achieved today is the result of the vigilance born of centuries of national calamities and the blood shed in every corner of this sacred homeland. I entrust this outcome to the Turkish youth. O Turkish Youth! Your first duty is to preserve and defend Turkish independence and the Turkish Republic forever. ... You will find the strength you need in your noble blood!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 223,
@@ -3235,14 +3857,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "The Grand National Assembly is the essence of the Turkish nation's centuries-long searches and the living symbol of its consciousness to govern itself. Since the day the Turkish nation entrusted its destiny to the capable and patriotic hands of the Grand National Assembly, it has stripped away the darkness and produced suns and victories that dazzled the nation's eyes from disasters that stifled hopes.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 224,
@@ -3253,8 +3877,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 225,
@@ -3265,8 +3892,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 226,
@@ -3277,14 +3907,16 @@
       "lat": 41.0168397,
       "lon": 28.9864868
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "Our harmonious, rich language will reveal itself through the new Turkish alphabet. We must free ourselves from the incomprehensible and ununderstandable symbols that have confined our minds within an iron frame for centuries, and we must understand this necessity!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 227,
@@ -3295,14 +3927,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "The Turkish letters gaining certainty and legality by the decision of the Grand National Assembly will be a victory in itself in this country's struggle for advancement.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 228,
@@ -3313,8 +3947,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 229,
@@ -3325,8 +3962,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 230,
@@ -3337,14 +3977,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "Turkish letters, which are the greatest work of our Assembly, have been completely applied to the general life of the country. The initial difficulties have been easily overcome thanks to the nation's ideal strength and love for civilization.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 231,
@@ -3355,8 +3997,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 232,
@@ -3367,8 +4012,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 233,
@@ -3379,14 +4027,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "One of the important events of last year was the arrival of the railway to Sivas. I am confident that this work, which helps to expand and strengthen the homeland even more despite so many difficulties, will be remembered with gratitude by the Turkish nation in the future!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 234,
@@ -3397,8 +4047,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 235,
@@ -3409,8 +4062,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 236,
@@ -3421,8 +4077,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 237,
@@ -3433,14 +4092,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "If the memory of works done for the nation and by the nation is not held above all kinds of memories, it is impossible to appreciate the value of the concept of national history!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 238,
@@ -3451,14 +4112,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "A peace direction that aims for Turkey's security and is not against any nation will always be our rule.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 239,
@@ -3469,8 +4132,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 240,
@@ -3481,8 +4147,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 241,
@@ -3493,14 +4162,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "We will ensure the advancement of national culture in every field as the fundamental wish of the Republic of Turkey!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 242,
@@ -3511,8 +4182,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 243,
@@ -3523,34 +4197,37 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 244,
     "title": "Mustafa Kemal's famous speech to the Turkish nation on the occasion of the 10th Anniversary of the Republic:",
-    "description": "... We have accomplished many great things in a short time. The greatest of these works is the Republic of Turkey, whose foundation is Turkish heroism and high Turkish culture. ... I have no doubt that the forgotten great civilized character and great civilized capability of Turkishness will rise like a new sun from the high civilization horizon of the future with its future development.",
     "date": "1933-10-29T00:00:00Z",
     "category": "political",
     "location": {
       "lat": 39.9705415,
       "lon": 32.6766068
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
-    "sounds": [
-      {
-        "url": "/sounds/onuncu_yil_nutku.mp3",
-        "alt": "Tenth Anniversary Speech in Atatürk's voice",
-        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturkun-onuncu-yil-nutku"
-      }
-    ],
+    "images": null,
     "quotes": [
       {
         "text": "How happy is the one who says, 'I am a Turk!'",
         "source": "https://tr.wikipedia.org/wiki/Ne_mutlu_T%C3%BCrk%27%C3%BCm_diyene"
       }
-    ]
+    ],
+    "sounds": [
+      {
+        "url": "/sounds/onuncu_yil_nutku.mp3",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturkun-onuncu-yil-nutku",
+        "alt": "Tenth Anniversary Speech in Atatürk's voice"
+      }
+    ],
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 245,
@@ -3561,14 +4238,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "The past ten years is nothing but a beginning for future periods. Nevertheless, in the face of the history of old periods, these ten years of the Republic are a monument of unprecedented revival and dazzling leap forward!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 246,
@@ -3579,8 +4258,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 247,
@@ -3591,8 +4273,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 248,
@@ -3603,14 +4288,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "I know how you want the nation's youth to be advanced in all fine arts. This is being done. However, the most urgent thing to be carried forward in this is Turkish music. The measure of a nation's new change is its ability to receive and grasp change in music.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 249,
@@ -3621,8 +4308,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 250,
@@ -3633,8 +4323,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 251,
@@ -3645,8 +4338,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 252,
@@ -3657,8 +4353,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 253,
@@ -3669,8 +4368,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 254,
@@ -3681,14 +4383,16 @@
       "lat": 39.9518735,
       "lon": 32.6872055
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "Turkish child! As in every work, in aviation too, at the highest level, you will soon fill your place waiting for you in the sky!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 255,
@@ -3699,14 +4403,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "A ruined country on the edge of a cliff... Bloody struggles with various enemies... Years of war... After that, a new homeland, new society, new state recognized with respect at home and abroad, and continuous revolutions to achieve these... Here is a brief expression of the Turkish General Revolution!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 256,
@@ -3717,14 +4423,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "Events remind the Turkish nation of two important rules again: To be strong enough to defend our homeland and our rights! To give importance to international cooperation that will preserve peace!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 257,
@@ -3735,8 +4443,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 258,
@@ -3747,8 +4458,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 259,
@@ -3759,14 +4473,16 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "The Republic, as much as it has put the Turkish nation on a safe and secure path to the future with its new and solid foundations, has become the herald of a completely new life in terms of the security it has created in ideas and spirits",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 260,
@@ -3777,8 +4493,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 261,
@@ -3789,8 +4508,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 262,
@@ -3801,8 +4523,11 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 263,
@@ -3813,27 +4538,31 @@
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "I am pleased to declare before you that there is no room for thinking that any obstacle could prevent our nation from reaching the high level of civilisation and prosperity it deserves, and that there will be no room for such thinking!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 264,
     "title": "Publication of the first official bulletin about ATATÜRK's illness by the General Secretariat of the Presidency after Prof. Dr. Fissenger, invited from France, examined ATATÜRK.",
-    "description": "(This report states that Fissenger's examination found no cause for concern regarding Atatürk's health and that a recommendation for approximately one and a half months of rest was deemed sufficient.)",
     "date": "1938-03-30T00:00:00Z",
     "category": "personal",
     "location": {
       "lat": 39.9412155,
       "lon": 32.8517224
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 265,
@@ -3844,8 +4573,11 @@
       "lat": 41.0391345,
       "lon": 29.0004781
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 266,
@@ -3856,8 +4588,11 @@
       "lat": 41.0391345,
       "lon": 29.0004781
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 267,
@@ -3868,8 +4603,11 @@
       "lat": 41.0391345,
       "lon": 29.0004781
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 268,
@@ -3880,14 +4618,16 @@
       "lat": 41.0391345,
       "lon": 29.0004781
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "I and our great nation have complete faith and confidence that you are ready at all times to perform your duty, which consists of protecting the honor and dignity of the Turkish homeland and the Turkish community against all kinds of internal and external dangers",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 269,
@@ -3898,14 +4638,16 @@
       "lat": 41.0391345,
       "lon": 29.0004781
     },
-    "images": [],
+    "images": null,
     "quotes": [
       {
         "text": "To strengthen our country more every day, to keep it in a state that can resist all kinds of possibilities in every field, and to follow all phases of world events with great vigilance, is the beginning of the principles on which our peace-loving policy will be based!",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
       }
     ],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 270,
@@ -3916,8 +4658,11 @@
       "lat": 41.0391345,
       "lon": 29.0004781
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 271,
@@ -3928,8 +4673,11 @@
       "lat": 41.0391345,
       "lon": 29.0004781
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   },
   {
     "id": 272,
@@ -3940,7 +4688,10 @@
       "lat": 41.0391345,
       "lon": 29.0004781
     },
-    "images": [],
-    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+    "images": null,
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
+    "description": ""
   }
 ]

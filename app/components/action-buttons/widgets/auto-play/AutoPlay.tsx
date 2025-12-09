@@ -85,25 +85,40 @@ export default function AutoPlay() {
     }
   }, [currentId, isActive, currentEventDurationMs])
 
-  const formatTime = useCallback((ms: number) => {
-    const seconds = Math.ceil(ms / 1000)
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
-    if (minutes > 0) {
-      return `${minutes}${t.ActionButtons.autoPlayMinutesText} ${remainingSeconds}${t.ActionButtons.autoPlaySecondsText}`
-    }
-    return `${remainingSeconds}${t.ActionButtons.autoPlaySecondsText}`
-  }, [])
+  const formatTime = useCallback(
+    (ms: number) => {
+      const seconds = Math.ceil(ms / 1000)
+      const minutes = Math.floor(seconds / 60)
+      const remainingSeconds = seconds % 60
+
+      if (minutes > 0) {
+        return `${minutes}${t.ActionButtons.autoPlayMinutesText} ${remainingSeconds}${t.ActionButtons.autoPlaySecondsText}`
+      }
+
+      return `${remainingSeconds}${t.ActionButtons.autoPlaySecondsText}`
+    },
+    [t.ActionButtons.autoPlayMinutesText, t.ActionButtons.autoPlaySecondsText]
+  )
 
   const getButtonTitle = useCallback(() => {
     if (isActive && isHovering) {
       return `${formatTime(totalRemainingMs)}`
     }
+
     if (isActive) {
       return `${t.ActionButtons.autoPlayActiveTitle} - ${t.ActionButtons.autoPlayActiveStopTitle}`
     }
+
     return `${formatTime(totalDurationSeconds * 1000)}`
-  }, [isActive, isHovering, totalRemainingMs, totalDurationSeconds, formatTime])
+  }, [
+    isActive,
+    isHovering,
+    totalRemainingMs,
+    totalDurationSeconds,
+    formatTime,
+    t.ActionButtons.autoPlayActiveTitle,
+    t.ActionButtons.autoPlayActiveStopTitle,
+  ])
 
   const scrollToStart = useCallback(() => {
     const timelineContainer = document.querySelector('[data-timeline-container]') as HTMLElement
@@ -210,11 +225,13 @@ export default function AutoPlay() {
     (e: React.MouseEvent) => {
       e.stopPropagation()
       e.preventDefault()
+
       const currentSpeedIndex = speedOptions.indexOf(speedMultiplier)
       const nextSpeedIndex = (currentSpeedIndex + 1) % speedOptions.length
+
       setSpeedMultiplier(speedOptions[nextSpeedIndex])
     },
-    [speedMultiplier]
+    [speedMultiplier, speedOptions]
   )
 
   useEffect(() => {
@@ -309,7 +326,12 @@ export default function AutoPlay() {
           {isActive ? (
             <span className={styles.timerDisplay}>{Math.ceil(currentTimerMs / 1000)}</span>
           ) : (
-            <Image src={autoPlayIcon} alt={t.ActionButtons.autoPlayIconAlt} width={16} height={16} />
+            <Image
+              src={autoPlayIcon}
+              alt={t.ActionButtons.autoPlayIconAlt}
+              width={16}
+              height={16}
+            />
           )}
         </button>
 
