@@ -5,7 +5,6 @@ import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
-import TurkishCountryLabels from './widgets/TurkishCountryLabels'
 import { useEventsData } from '@/app/helpers/data'
 import { useSearchParams } from 'next/navigation'
 import { formatDate } from '@/app/helpers/date'
@@ -174,8 +173,6 @@ export default function Map({ location }: MapProps) {
         <GeoJSONComp events={events} searchParams={searchParams} />
 
         <MapCenterUpdater location={location} />
-
-        <TurkishCountryLabels />
       </MapContainer>
     </div>
   )
