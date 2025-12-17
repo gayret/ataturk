@@ -66,9 +66,6 @@ export default function Timeline() {
     const currentId = searchParams.get('id') || 1
     const currentIndex = events.findIndex((item) => item.id === Number(currentId))
     const nextIndex = (currentIndex + 1) % events.length
-    console.log('nextIndex', nextIndex)
-
-    console.log('events[nextIndex]', events[nextIndex])
 
     url.searchParams.set('id', events[nextIndex].id.toString())
     window.history.pushState({}, '', url.toString())
