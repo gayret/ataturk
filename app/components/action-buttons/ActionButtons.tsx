@@ -11,6 +11,9 @@ import AutoPlay from './widgets/auto-play/AutoPlay'
 import LanguageSelector from './widgets/language-selector/LanguageSelector'
 import { useState } from 'react'
 import EditThisContent from './widgets/edit-this-content/EditThisContent'
+import hamburgerButtonIcon from '@/app/assets/icons/hamburger-button.svg'
+import close from '@/app/assets/icons/close.svg'
+import Image from 'next/image'
 
 export default function ActionButtons({
   showOnlyLanguageSelector = false,
@@ -60,9 +63,12 @@ export default function ActionButtons({
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label='Menüyü aç/kapat'
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <Image
+          width={24}
+          height={24}
+          src={isMenuOpen ? close : hamburgerButtonIcon}
+          alt={isMenuOpen ? 'Menüyü kapat' : 'Menüyü aç'}
+        />
       </div>
     </div>
   )

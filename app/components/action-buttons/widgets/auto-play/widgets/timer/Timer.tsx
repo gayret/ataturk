@@ -12,7 +12,14 @@ interface TimerProps {
   resetKey?: string | number
 }
 
-export default function Timer({ duration, isActive, speedMultiplier = 1, onComplete, onProgress, resetKey }: TimerProps) {
+export default function Timer({
+  duration,
+  isActive,
+  speedMultiplier = 1,
+  onComplete,
+  onProgress,
+  resetKey,
+}: TimerProps) {
   const [progress, setProgress] = useState(0)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
   const startTimeRef = useRef<number | null>(null)
@@ -47,7 +54,7 @@ export default function Timer({ duration, isActive, speedMultiplier = 1, onCompl
     }
 
     return cleanup
-  }, [isActive, cleanup, reset])
+  }, [isActive, cleanup, reset, onProgress, duration])
 
   useEffect(() => {
     if (isActive) {
@@ -101,10 +108,7 @@ export default function Timer({ duration, isActive, speedMultiplier = 1, onCompl
 
   return (
     <div className={styles.timerContainer}>
-      <div
-        className={styles.timerBar}
-        style={{ width: `${progress}%` }}
-      />
+      <div className={styles.timerBar} style={{ width: `${progress}%` }} />
     </div>
   )
 }

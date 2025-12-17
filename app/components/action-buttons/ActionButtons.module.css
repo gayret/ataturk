@@ -62,12 +62,3 @@
     align-items: center;
   }
 }
-
-.hamburgerButton span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #000;
-  border-radius: 6px;
-  transition: 0.3s;
-}

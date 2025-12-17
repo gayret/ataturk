@@ -28,6 +28,7 @@ export default function AutoPlay() {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
 
   const initialTotalDurationRef = useRef<number>(0)
+  const tooltipTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const currentId = searchParams?.get('id')
   const urlIsActive = searchParams?.get('auto-play') === 'true'
@@ -97,7 +98,7 @@ export default function AutoPlay() {
 
       return `${remainingSeconds}${t.ActionButtons.autoPlaySecondsText}`
     },
-    [t.ActionButtons.autoPlayMinutesText, t.ActionButtons.autoPlaySecondsText]
+    [t]
   )
 
   const getButtonTitle = useCallback(() => {
@@ -221,18 +222,17 @@ export default function AutoPlay() {
     [handleAutoPlayToggle]
   )
 
-  const handleSpeedClick = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation()
-      e.preventDefault()
+  const handleSpeedClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation()
+    e.preventDefault()
 
-      const currentSpeedIndex = speedOptions.indexOf(speedMultiplier)
+    setSpeedMultiplier((prev) => {
+      const currentSpeedIndex = speedOptions.indexOf(prev)
       const nextSpeedIndex = (currentSpeedIndex + 1) % speedOptions.length
-
-      setSpeedMultiplier(speedOptions[nextSpeedIndex])
-    },
-    [speedMultiplier, speedOptions]
-  )
+      return speedOptions[nextSpeedIndex]
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -287,7 +287,15 @@ export default function AutoPlay() {
       window.removeEventListener('dragstart', handleDragStart)
       document.removeEventListener('fullscreenchange', handleFullscreenChange)
     }
-  }, [currentId, isActive, handleAutoPlayToggle, stopAutoPlay, router])
+  }, [currentId, isActive, handleAutoPlayToggle, stopAutoPlay])
+
+  useEffect(() => {
+    return () => {
+      if (tooltipTimeoutRef.current) {
+        clearTimeout(tooltipTimeoutRef.current)
+      }
+    }
+  }, [])
 
   return (
     <>
@@ -316,11 +324,20 @@ export default function AutoPlay() {
             })
 
             setShowTooltip(true)
-            setTimeout(() => setShowTooltip(false), 1500)
+
+            if (tooltipTimeoutRef.current) {
+              clearTimeout(tooltipTimeoutRef.current)
+            }
+
+            tooltipTimeoutRef.current = setTimeout(() => setShowTooltip(false), 1500)
           }}
           onMouseLeave={() => {
             setIsHovering(false)
             setShowTooltip(false)
+
+            if (tooltipTimeoutRef.current) {
+              clearTimeout(tooltipTimeoutRef.current)
+            }
           }}
         >
           {isActive ? (

@@ -2,15 +2,39 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
+function parseFileNumber(fileName) {
+  return fileName
+    .replace(/\.md$/, '')
+    .split('.')
+    .map((part) => Number(part))
+}
+
+function compareFileNames(a, b) {
+  const aParts = parseFileNumber(a)
+  const bParts = parseFileNumber(b)
+
+  const maxLength = Math.max(aParts.length, bParts.length)
+
+  for (let i = 0; i < maxLength; i++) {
+    const aVal = aParts[i] ?? 0
+    const bVal = bParts[i] ?? 0
+
+    if (aVal !== bVal) {
+      return aVal - bVal
+    }
+  }
+
+  // 57 < 57.1
+  return aParts.length - bParts.length
+}
+
 function getEventsForLang(lang) {
   const dir = path.join(process.cwd(), 'data/events', lang)
 
-  // 🔥 Dosya adlarını numerik olarak sırala
-  const files = fs.readdirSync(dir).sort((a, b) => {
-    const aNum = parseInt(a, 10)
-    const bNum = parseInt(b, 10)
-    return aNum - bNum
-  })
+  const files = fs
+    .readdirSync(dir)
+    .filter((file) => file.endsWith('.md'))
+    .sort(compareFileNames)
 
   return files.map((file) => {
     const fullPath = path.join(dir, file)
@@ -25,7 +49,10 @@ function getEventsForLang(lang) {
 }
 
 const languages = ['tr', 'en', 'de']
+
 languages.forEach((lang) => {
   const events = getEventsForLang(lang)
-  fs.writeFileSync(`app/json/events_${lang}.json`, JSON.stringify(events, null, 2))
+  const outputPath = path.join(process.cwd(), 'app/json', `events_${lang}.json`)
+
+  fs.writeFileSync(outputPath, JSON.stringify(events, null, 2), 'utf-8')
 })
