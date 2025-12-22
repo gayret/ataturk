@@ -10,6 +10,7 @@ import { useEventsData } from '@/app/helpers/data'
 import Quote from '../quote/Quote'
 import { ImageType } from './widgets/Images'
 import { useLanguageStore } from '@/app/stores/languageStore'
+import SourceLink from '@/app/components/common/SourceLink'
 
 export type QuoteType = {
   text: string
@@ -64,14 +65,10 @@ export default function Content() {
           <h1 className={styles.title}>
             {selectedItem?.title}
             {selectedItem?.source && (
-              <span
-                className={styles.source}
-                title={`${t.InformationSource}: ${selectedItem.source}`}
-              >
-                <a href={selectedItem.source} target='_blank' rel='noopener noreferrer'>
-                  {selectedItem.source.includes('https://') ? '*' : t.InformationSource}
-                </a>
-              </span>
+              <>
+                {' '}
+                <SourceLink href={selectedItem.source} label={t.InformationSource} />
+              </>
             )}
           </h1>
           {selectedItem?.description && (
@@ -97,9 +94,10 @@ export default function Content() {
                 <p title={`${t.InformationSource}: ${sound.source}`}>
                   {sound.alt}
                   {sound.source && (
-                    <a href={sound.source} target='_blank' rel='noopener noreferrer'>
-                      {sound.source.includes('https://') ? '*' : t.InformationSource}
-                    </a>
+                    <>
+                      {' '}
+                      <SourceLink href={sound.source} label={t.InformationSource} />
+                    </>
                   )}
                 </p>
                 <audio
