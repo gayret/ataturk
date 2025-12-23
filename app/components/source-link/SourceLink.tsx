@@ -1,18 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
 import styles from './SourceLink.module.css'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 type SourceLinkProps = {
   href: string
   label?: string
   className?: string
-}
-
-type MetaResult = {
-  title?: string
-  favicon?: string
 }
 
 const normalizeUrl = (rawUrl: string) => {
@@ -28,55 +23,13 @@ const normalizeUrl = (rawUrl: string) => {
   }
 }
 
-const metaCache = new Map<string, MetaResult>()
-
 export default function SourceLink({ href, label, className }: SourceLinkProps) {
-  const [meta, setMeta] = useState<MetaResult | null>(null)
-
-  const normalizedUrl = useMemo(() => normalizeUrl(href), [href])
-
-  useEffect(() => {
-    if (!normalizedUrl) return
-
-    const cached = metaCache.get(normalizedUrl.href)
-    if (cached) {
-      setMeta(cached)
-      return
-    }
-
-    const controller = new AbortController()
-
-    const fetchMeta = async () => {
-      try {
-        const res = await fetch(`/api/source-meta?url=${encodeURIComponent(normalizedUrl.href)}`, {
-          signal: controller.signal,
-          cache: 'force-cache',
-        })
-        if (!res.ok) return
-        const data = (await res.json()) as MetaResult
-        metaCache.set(normalizedUrl.href, data)
-        setMeta(data)
-      } catch {
-        // ignore errors, fall back to defaults
-      }
-    }
-
-    fetchMeta()
-
-    return () => controller.abort()
-  }, [normalizedUrl])
-
-  const tooltipText = meta?.title || label || normalizedUrl?.hostname || href
-
-  const faviconUrl = useMemo(() => {
-    if (meta?.favicon) return meta.favicon
-    if (normalizedUrl?.hostname) {
-      return `https://www.google.com/s2/favicons?sz=32&domain=${normalizedUrl.hostname}`
-    }
-    return ''
-  }, [meta?.favicon, normalizedUrl?.hostname])
+  const { t } = useLanguageStore()
+  const normalizedUrl = normalizeUrl(href)
 
   if (!href || !normalizedUrl) return null
+
+  const tooltipText = label || t.InformationSource || normalizedUrl.hostname
 
   return (
     <span className={`${styles.wrapper} ${className || ''}`}>
@@ -84,7 +37,7 @@ export default function SourceLink({ href, label, className }: SourceLinkProps) 
         href={href}
         target='_blank'
         rel='noopener noreferrer'
-        aria-label={tooltipText ? `Kaynak: ${tooltipText}` : 'Kaynak bağlantısı'}
+        aria-label={tooltipText ? `${tooltipText}` : 'Kaynak bağlantısı'}
         className={styles.iconLink}
       >
         <svg
@@ -107,16 +60,6 @@ export default function SourceLink({ href, label, className }: SourceLinkProps) 
       </Link>
 
       <span className={styles.tooltip} role='tooltip'>
-        {faviconUrl && (
-          <img
-            src={faviconUrl}
-            alt=''
-            className={styles.favicon}
-            loading='lazy'
-            width={14}
-            height={14}
-          />
-        )}
         <span className={styles.tooltipText} title={tooltipText}>
           {tooltipText}
         </span>

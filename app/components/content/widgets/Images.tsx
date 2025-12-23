@@ -7,7 +7,7 @@ import { ItemType } from '../Content'
 import ChevronLeft from '@/app/assets/icons/chevron-left.svg'
 import ChevronRight from '@/app/assets/icons/chevron-right.svg'
 import { useLanguageStore } from '@/app/stores/languageStore'
-import SourceLink from '@/app/components/common/SourceLink'
+import SourceLink from '@/app/components/source-link/SourceLink'
 
 export type ImageType = {
   url: string
@@ -68,7 +68,7 @@ export default function Images() {
               key={index}
               className={styles.image}
               onClick={() => openModal(image)}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
             >
               <Image
                 src={image.url}
@@ -80,10 +80,7 @@ export default function Images() {
               <p title={`${t.InformationSource}: ${image.source}`}>
                 {image.alt}
                 {image.source && (
-                  <>
-                    {' '}
-                    <SourceLink href={image.source} label={t.InformationSource} />
-                  </>
+                  <SourceLink href={image.source} label={t.InformationSource} />
                 )}
               </p>
             </div>
@@ -95,54 +92,64 @@ export default function Images() {
         <div
           className={styles.modal}
           onClick={(e) => {
-            const element = e.target as HTMLImageElement
-            if (element.classList[0]?.split(' ')[0]?.includes('chevronButton')) return
-            setModalImage(null)
+            const element = e.target as HTMLImageElement;
+            if (element.classList[0]?.split(" ")[0]?.includes("chevronButton"))
+              return;
+            setModalImage(null);
           }}
-          role='dialog'
-          aria-modal='true'
+          role="dialog"
+          aria-modal="true"
         >
           <button
             className={styles.closeButton}
             onClick={() => setModalImage(null)}
-            aria-label='Kapat'
+            aria-label="Kapat"
           >
             &#x2715;
           </button>
 
-          <div onClick={(e) => e.stopPropagation()} className={styles.imagesWrapper}>
-            <div className={styles.modalContent} style={{ position: 'relative' }}>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className={styles.imagesWrapper}
+          >
+            <div
+              className={styles.modalContent}
+              style={{ position: "relative" }}
+            >
               <Image
                 src={modalImage.url}
                 alt={modalImage.alt}
                 width={800}
                 height={800}
                 className={styles.modalImage}
-                style={{ minWidth: '100%', maxWidth: '80dvw', height: 'auto' }}
+                style={{ minWidth: "100%", maxWidth: "80dvw", height: "auto" }}
               />
               <p title={`${t.InformationSource}: ${modalImage.source}`}>
                 {modalImage.alt}
                 {modalImage.source && (
-                  <>
-                    {' '}
-                    <SourceLink href={modalImage.source} label={t.InformationSource} />
-                  </>
+                  <SourceLink
+                    href={modalImage.source}
+                    label={t.InformationSource}
+                  />
                 )}
               </p>
             </div>
           </div>
 
-          <div className={styles.chevronContainer} aria-hidden='true'>
-            <button className={styles.chevronButton} onClick={() => goToPrevious()}>
-              <Image src={ChevronLeft} alt='Sol' width={16} height={16} />
+          <div className={styles.chevronContainer} aria-hidden="true">
+            <button
+              className={styles.chevronButton}
+              onClick={() => goToPrevious()}
+            >
+              <Image src={ChevronLeft} alt="Sol" width={16} height={16} />
             </button>
 
             <button className={styles.chevronButton} onClick={() => goToNext()}>
-              <Image src={ChevronRight} alt='Sağ' width={16} height={16} />
+              <Image src={ChevronRight} alt="Sağ" width={16} height={16} />
             </button>
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }
