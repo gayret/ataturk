@@ -7,6 +7,7 @@ import { ItemType } from '../Content'
 import ChevronLeft from '@/app/assets/icons/chevron-left.svg'
 import ChevronRight from '@/app/assets/icons/chevron-right.svg'
 import { useLanguageStore } from '@/app/stores/languageStore'
+import SourceLink from '@/app/components/common/SourceLink'
 
 export type ImageType = {
   url: string
@@ -69,12 +70,21 @@ export default function Images() {
               onClick={() => openModal(image)}
               style={{ cursor: 'pointer' }}
             >
-              <Image src={image.url} alt={image.alt} width={2000} height={2000} />
+              <Image
+                src={image.url}
+                alt={image.alt}
+                width={2000}
+                height={2000}
+                className={styles.thumb}
+              />
               <p title={`${t.InformationSource}: ${image.source}`}>
                 {image.alt}
-                <a href={image.source} target='_blank' rel='noopener noreferrer'>
-                  *
-                </a>
+                {image.source && (
+                  <>
+                    {' '}
+                    <SourceLink href={image.source} label={t.InformationSource} />
+                  </>
+                )}
               </p>
             </div>
           ))}
@@ -107,14 +117,16 @@ export default function Images() {
                 alt={modalImage.alt}
                 width={800}
                 height={800}
+                className={styles.modalImage}
                 style={{ minWidth: '100%', maxWidth: '80dvw', height: 'auto' }}
               />
               <p title={`${t.InformationSource}: ${modalImage.source}`}>
                 {modalImage.alt}
                 {modalImage.source && (
-                  <a href={modalImage.source} target='_blank' rel='noopener noreferrer'>
-                    {modalImage.source.includes('https://') ? '*' : t.InformationSource}
-                  </a>
+                  <>
+                    {' '}
+                    <SourceLink href={modalImage.source} label={t.InformationSource} />
+                  </>
                 )}
               </p>
             </div>
