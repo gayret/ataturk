@@ -23,14 +23,14 @@
   background-color: #fff;
 }
 
-.image img {
+.thumb {
   object-fit: contain;
   width: 200px;
   height: 200px;
   border-radius: 0.5rem;
 }
 
-.image:hover img {
+.image:hover .thumb {
   transform: scale(1.03);
   transition: transform 0.3s ease-in-out;
 }
@@ -101,7 +101,7 @@
   text-align: center;
 }
 
-.modalContent img {
+.modalImage {
   max-height: 70dvh;
   border-radius: 8px;
   object-fit: contain;
