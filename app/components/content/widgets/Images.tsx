@@ -77,13 +77,6 @@ export default function Images() {
                 height={2000}
                 className={styles.thumb}
               />
-              <Image
-                src={image.url}
-                alt={image.alt}
-                width={2000}
-                height={2000}
-                className={styles.thumb}
-              />
               <p title={`${t.InformationSource}: ${image.source}`}>
                 {image.alt}
                 {image.source && (
