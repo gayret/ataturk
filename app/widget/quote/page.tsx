@@ -3,6 +3,8 @@ import styles from './QuoteWidget.module.css'
 import ataturkSketch from '@/app/assets/images/widget.png'
 import { mapToPublicQuote, resolveQuotes } from '@/app/helpers/quotes'
 import WidgetFrameSync from './WidgetFrameSync'
+import { ataturk } from '@/app/fonts'
+
 type SearchParams = Record<string, string | string[] | undefined>
 type PageProps = {
   searchParams: Promise<SearchParams>
@@ -165,10 +167,10 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
         </div>
 
         <blockquote className={styles.quote}>
-          <p className={styles.quoteText}>{publicQuote.text}</p>
+          <p className={(styles.quoteText, ataturk.variable)}>{publicQuote.text}</p>
         </blockquote>
 
-        <div className={styles.footer}>
+        <div className={(styles.footer, ataturk.variable)}>
           {!hideSignature && <p className={styles.signature}>{copy.signature}</p>}
         </div>
       </div>
