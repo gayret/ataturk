@@ -1,0 +1,122 @@
+.voiceControls {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  z-index: 20;
+}
+
+.toggleButton {
+  all: unset;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(245, 245, 245, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(6px);
+}
+
+.toggleButton:hover {
+  transform: translateY(-1px);
+  background: rgba(230, 240, 255, 0.95);
+}
+
+.toggleButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.active {
+  background: rgba(230, 240, 255, 0.95);
+  border-color: rgba(0, 102, 204, 0.12);
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(6px);
+  min-width: 170px;
+}
+
+.panelContent {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.slider {
+  width: 100%;
+  accent-color: #1a73e8;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  all: unset;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(245, 245, 245, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(6px);
+}
+.secondaryButton:hover {
+  transform: translateY(-1px);
+  background: rgba(230, 240, 255, 0.95);
+}
+
+.restartButton img {
+  transition: transform 0.25s ease;
+}
+
+.restartButton:hover img {
+  transform: rotate(360deg);
+}
+
+.settingsButton:hover {
+  background: rgba(230, 240, 255, 0.95);
+}
+
+.tooltip {
+  background: #111;
+  color: #fff;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .voiceControls {
+    right: 0.75rem;
+    top: 0.75rem;
+  }
+
+  .panel {
+    min-width: 150px;
+  }
+}

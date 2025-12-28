@@ -12,6 +12,8 @@ import ActionButtons from '@/app/components/action-buttons/ActionButtons'
 import Ceremonies from '@/app/components/ceremonies/Ceremonies'
 import Content, { QuoteType } from '@/app/components/content/Content'
 import SupportMe from '../support-me/SupportMe'
+import VoiceControls from '@/app/components/voice/VoiceControls'
+import VoiceManager from '@/app/components/voice/VoiceManager'
 
 interface EventImage {
   url: string
@@ -55,28 +57,32 @@ export default function HomeClient({ events }: HomeClientProps) {
   const selectedEvent = events.find((item) => item.id === Number(currentId)) || events[0]
   const selectedLocation = selectedEvent?.location || events[0]?.location
 
-  if (currentId === 'about') {
-    return (
-      <>
-        <Header />
-        <Timeline />
-        <About />
-        <Balloons />
-      </>
-    )
-  }
-  if (currentId !== 'about') {
-    return (
-      <>
-        {currentId !== null && <Clouds />}
-        <MapWithNoSSR location={selectedLocation} />
-        <Header />
-        <Content />
-        <ActionButtons />
-        <Timeline />
-        <Ceremonies />
-        <SupportMe />
-      </>
-    )
-  }
+  const isAbout = currentId === 'about'
+
+  return (
+    <>
+      <VoiceManager />
+      <VoiceControls />
+
+      {isAbout ? (
+        <>
+          <Header />
+          <Timeline />
+          <About />
+          <Balloons />
+        </>
+      ) : (
+        <>
+          {currentId !== null && <Clouds />}
+          <MapWithNoSSR location={selectedLocation} />
+          <Header />
+          <Content />
+          <ActionButtons />
+          <Timeline />
+          <Ceremonies />
+          <SupportMe />
+        </>
+      )}
+    </>
+  )
 }
