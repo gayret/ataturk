@@ -13,7 +13,16 @@ export default function VoiceManager() {
   const searchParams = useSearchParams()
   const events = useEventsData() as ItemType[]
   const { currentLanguageCode } = useLanguageStore()
-  const { enabled, volume, preferredVoices, setIsSupported, setEnabled, forceReplayToken } = useVoiceStore()
+  const {
+    enabled,
+    volume,
+    preferredVoices,
+    setIsSupported,
+    setEnabled,
+    forceReplayToken,
+    setSpeechState,
+    clearSpeechState,
+  } = useVoiceStore()
 
   const currentId = searchParams?.get('id')
 
@@ -44,6 +53,7 @@ export default function VoiceManager() {
     if (!isSpeechSupported()) {
       setIsSupported(false)
       setEnabled(false)
+      clearSpeechState()
       return
     }
 
@@ -53,27 +63,32 @@ export default function VoiceManager() {
         setIsSupported(supported)
         if (!supported) {
           setEnabled(false)
+          clearSpeechState()
         }
       })
       .catch(() => {
         setIsSupported(false)
         setEnabled(false)
+        clearSpeechState()
       })
 
     return () => {
       stopSpeakingWithFade()
+      clearSpeechState()
     }
-  }, [setEnabled, setIsSupported])
+  }, [setEnabled, setIsSupported, clearSpeechState])
 
   useEffect(() => {
     if (!enabled) {
       stopSpeakingWithFade()
       lastEventIdRef.current = null
+      clearSpeechState()
       return
     }
 
     if (!selectedEvent || currentId === 'about') {
       stopSpeakingWithFade()
+      clearSpeechState()
       return
     }
 
@@ -90,16 +105,39 @@ export default function VoiceManager() {
     lastLanguageRef.current = currentLanguageCode
     lastReplayTokenRef.current = forceReplayToken
 
-    speakEvent({
+    const speechToken = Date.now()
+
+    const speechPromise = speakEvent({
       event: selectedEvent,
       formattedDate,
       languageCode: currentLanguageCode,
       preferredVoices,
-    }).catch(() => {
-      setIsSupported(false)
-      setEnabled(false)
     })
-  }, [enabled, selectedEvent, currentId, formattedDate, currentLanguageCode, preferredVoices, forceReplayToken, setEnabled, setIsSupported])
+
+    setSpeechState(speechToken, speechPromise)
+
+    speechPromise
+      .then(() => {
+        setSpeechState(speechToken, null)
+      })
+      .catch(() => {
+        setSpeechState(speechToken, null)
+        setIsSupported(false)
+        setEnabled(false)
+      })
+  }, [
+    enabled,
+    selectedEvent,
+    currentId,
+    formattedDate,
+    currentLanguageCode,
+    preferredVoices,
+    forceReplayToken,
+    setEnabled,
+    setIsSupported,
+    setSpeechState,
+    clearSpeechState,
+  ])
 
   return null
 }

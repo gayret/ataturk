@@ -9,12 +9,15 @@ import { useEventsData } from '@/app/helpers/data'
 import { calculateReadingTime } from '@/app/helpers/readingTime'
 import styles from './AutoPlay.module.css'
 import { useLanguageStore } from '@/app/stores/languageStore'
+import { useVoiceStore } from '@/app/stores/voiceStore'
+import { stopSpeakingWithFade } from '@/app/helpers/speech'
 
 export default function AutoPlay() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const events = useEventsData()
   const { t } = useLanguageStore()
+  const { enabled: voiceEnabled, speechPromise, speechToken } = useVoiceStore()
 
   const speedOptions = [0.5, 1, 1.5, 2]
 
@@ -29,6 +32,7 @@ export default function AutoPlay() {
 
   const initialTotalDurationRef = useRef<number>(0)
   const tooltipTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const speechTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const currentId = searchParams?.get('id')
   const urlIsActive = searchParams?.get('auto-play') === 'true'
@@ -136,6 +140,10 @@ export default function AutoPlay() {
       url.searchParams.delete('auto-play')
       router.push(url.toString())
 
+      if (voiceEnabled) {
+        await stopSpeakingWithFade()
+      }
+
       if (document.fullscreenElement) {
         try {
           await document.exitFullscreen()
@@ -148,7 +156,7 @@ export default function AutoPlay() {
         scrollToStart()
       }
     },
-    [router, scrollToStart]
+    [router, scrollToStart, voiceEnabled]
   )
 
   const startAutoPlay = useCallback(async () => {
@@ -194,8 +202,10 @@ export default function AutoPlay() {
   }, [currentId, events, router, scrollToStart])
 
   const handleTimerComplete = useCallback(() => {
-    goToNextEvent()
-  }, [goToNextEvent])
+    if (!voiceEnabled || !speechPromise) {
+      goToNextEvent()
+    }
+  }, [goToNextEvent, voiceEnabled, speechPromise])
 
   const handleTimerProgress = useCallback(
     (_progress: number, remainingMs: number) => {
@@ -233,6 +243,40 @@ export default function AutoPlay() {
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    if (speechTimeoutRef.current) {
+      clearTimeout(speechTimeoutRef.current)
+      speechTimeoutRef.current = null
+    }
+
+    if (!isActive || !voiceEnabled) {
+      return
+    }
+
+    if (!speechPromise) {
+      return
+    }
+
+    const currentSpeechToken = speechToken
+    const fallbackMs = Math.max(currentEventDurationMs * 1.5, currentEventDurationMs + 2000)
+
+    const advance = () => {
+      if (!isActive || !voiceEnabled) return
+      if (currentSpeechToken !== speechToken) return
+      goToNextEvent()
+    }
+
+    speechPromise.then(advance).catch(advance)
+    speechTimeoutRef.current = window.setTimeout(advance, fallbackMs)
+
+    return () => {
+      if (speechTimeoutRef.current) {
+        clearTimeout(speechTimeoutRef.current)
+        speechTimeoutRef.current = null
+      }
+    }
+  }, [isActive, voiceEnabled, speechPromise, speechToken, currentEventDurationMs, goToNextEvent])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

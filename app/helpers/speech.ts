@@ -7,6 +7,7 @@ const FADE_STEPS = 5
 let activeUtterances: SpeechSynthesisUtterance[] = []
 let currentVolume = 0.8
 let stopRequestId = 0
+let speakRequestId = 0
 
 export const isSpeechSupported = () =>
   typeof window !== 'undefined' &&
@@ -154,7 +155,7 @@ export const speakEvent = async ({
   preferredVoices,
 }: SpeakEventParams) => {
   if (!isSpeechSupported() || !event) {
-    return
+    return Promise.resolve()
   }
 
   await stopSpeakingWithFade()
@@ -182,8 +183,43 @@ export const speakEvent = async ({
   }
 
   activeUtterances = utterances
+  const requestId = ++speakRequestId
+
+  const completionPromise = new Promise<void>((resolve, reject) => {
+    if (utterances.length === 0) {
+      resolve()
+      return
+    }
+
+    let finished = 0
+    let settled = false
+
+    const finalize = (isError: boolean = false) => {
+      if (settled) return
+      if (requestId !== speakRequestId) return
+
+      if (isError) {
+        settled = true
+        reject(new Error('Speech synthesis failed'))
+        return
+      }
+
+      finished += 1
+      if (finished >= utterances.length) {
+        settled = true
+        resolve()
+      }
+    }
+
+    utterances.forEach((utterance) => {
+      utterance.onend = () => finalize(false)
+      utterance.onerror = () => finalize(true)
+    })
+  })
 
   utterances.forEach((utterance) => {
     window.speechSynthesis.speak(utterance)
   })
+
+  return completionPromise
 }
