@@ -48,9 +48,10 @@
 
 .sliderPopup {
   position: absolute;
-  left: 52px;
+  right: 52px;
   top: 50%;
   transform: translateY(-50%);
+  min-width: 170px;
   padding: 0.5rem 0.65rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 0.75rem;
@@ -60,7 +61,7 @@
   align-items: center;
   gap: 0.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-  z-index: 2;
+  z-index: 10;
 }
 
 .tooltip {
@@ -72,9 +73,3 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-  .voiceControls {
-    right: 0.75rem;
-    top: 0.75rem;
-  }
-}

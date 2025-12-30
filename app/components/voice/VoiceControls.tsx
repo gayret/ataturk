@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './VoiceControls.module.css'
 import volumeUpIcon from '@/app/assets/icons/volume-up.svg'
 import volumeMuteIcon from '@/app/assets/icons/volume-mute.svg'
@@ -10,6 +10,7 @@ import { useVoiceStore } from '@/app/stores/voiceStore'
 export default function VoiceControls() {
   const { enabled, setEnabled, volume, setVolume, isSupported } = useVoiceStore()
   const [showSlider, setShowSlider] = useState(false)
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     if (!enabled) {
@@ -17,11 +18,37 @@ export default function VoiceControls() {
     }
   }, [enabled])
 
+  useEffect(() => {
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current)
+      }
+    }
+  }, [])
+
+  const openSlider = () => {
+    if (!enabled) return
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current)
+      hideTimeoutRef.current = null
+    }
+    setShowSlider(true)
+  }
+
+  const scheduleHideSlider = () => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current)
+    }
+    hideTimeoutRef.current = setTimeout(() => {
+      setShowSlider(false)
+    }, 200)
+  }
+
   const handleToggle = () => {
     const nextState = !enabled
     setEnabled(nextState)
     if (nextState) {
-      setShowSlider(true)
+      openSlider()
     }
   }
 
@@ -35,10 +62,10 @@ export default function VoiceControls() {
   return (
     <div
       className={styles.voiceControls}
-      onMouseEnter={() => enabled && setShowSlider(true)}
-      onMouseLeave={() => setShowSlider(false)}
-      onFocus={() => enabled && setShowSlider(true)}
-      onBlur={() => setShowSlider(false)}
+      onMouseEnter={openSlider}
+      onMouseLeave={scheduleHideSlider}
+      onFocus={openSlider}
+      onBlur={scheduleHideSlider}
     >
       <button
         type='button'
