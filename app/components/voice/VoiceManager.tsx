@@ -19,7 +19,6 @@ export default function VoiceManager() {
     preferredVoices,
     setIsSupported,
     setEnabled,
-    forceReplayToken,
     setSpeechState,
     clearSpeechState,
   } = useVoiceStore()
@@ -39,7 +38,6 @@ export default function VoiceManager() {
 
   const lastEventIdRef = useRef<number | null>(null)
   const lastLanguageRef = useRef<string | null>(null)
-  const lastReplayTokenRef = useRef<number | null>(null)
 
   useEffect(() => {
     updateSpeechVolume(volume)
@@ -93,9 +91,7 @@ export default function VoiceManager() {
     }
 
     const shouldReplay =
-      lastEventIdRef.current !== selectedEvent.id ||
-      lastLanguageRef.current !== currentLanguageCode ||
-      lastReplayTokenRef.current !== forceReplayToken
+      lastEventIdRef.current !== selectedEvent.id || lastLanguageRef.current !== currentLanguageCode
 
     if (!shouldReplay) {
       return
@@ -103,8 +99,6 @@ export default function VoiceManager() {
 
     lastEventIdRef.current = selectedEvent.id
     lastLanguageRef.current = currentLanguageCode
-    lastReplayTokenRef.current = forceReplayToken
-
     const speechToken = Date.now()
 
     const speechPromise = speakEvent({
@@ -132,7 +126,6 @@ export default function VoiceManager() {
     formattedDate,
     currentLanguageCode,
     preferredVoices,
-    forceReplayToken,
     setEnabled,
     setIsSupported,
     setSpeechState,

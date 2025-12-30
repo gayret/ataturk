@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.35rem;
+  position: relative;
 }
 
 .toggleButton {
@@ -34,28 +35,6 @@
   border-color: rgba(0, 102, 204, 0.12);
 }
 
-.panel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.65rem;
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 0.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(6px);
-  min-width: 170px;
-}
-
-.panelContent {
-  all: unset;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-}
-
 .label {
   font-size: 0.75rem;
   color: #333;
@@ -67,34 +46,21 @@
   cursor: pointer;
 }
 
-.secondaryButton {
-  all: unset;
-  cursor: pointer;
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(245, 245, 245, 0.95);
+.sliderPopup {
+  position: absolute;
+  left: 52px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem 0.65rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 0.75rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, background 0.2s ease;
   backdrop-filter: blur(6px);
-}
-.secondaryButton:hover {
-  transform: translateY(-1px);
-  background: rgba(230, 240, 255, 0.95);
-}
-
-.restartButton img {
-  transition: transform 0.25s ease;
-}
-
-.restartButton:hover img {
-  transform: rotate(360deg);
-}
-
-.settingsButton:hover {
-  background: rgba(230, 240, 255, 0.95);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  z-index: 2;
 }
 
 .tooltip {
@@ -110,9 +76,5 @@
   .voiceControls {
     right: 0.75rem;
     top: 0.75rem;
-  }
-
-  .panel {
-    min-width: 150px;
   }
 }

@@ -13,14 +13,12 @@ type VoiceState = {
   volume: number
   preferredVoices: VoicePreferences
   isSupported: boolean
-  forceReplayToken: number
   speechToken: number
   speechPromise: Promise<void> | null
   setEnabled: (value: boolean) => void
   setVolume: (value: number) => void
   setPreferredVoices: (prefs: VoicePreferences) => void
   setIsSupported: (supported: boolean) => void
-  triggerReplay: () => void
   setSpeechState: (token: number, promise: Promise<void> | null) => void
   clearSpeechState: () => void
 }
@@ -34,7 +32,6 @@ export const useVoiceStore = create<VoiceState>()(
       volume: DEFAULT_VOLUME,
       preferredVoices: {},
       isSupported: true,
-      forceReplayToken: 0,
       speechToken: 0,
       speechPromise: null,
       setEnabled: (value: boolean) =>
@@ -55,10 +52,6 @@ export const useVoiceStore = create<VoiceState>()(
         set({
           isSupported: supported,
         }),
-      triggerReplay: () =>
-        set((state) => ({
-          forceReplayToken: state.forceReplayToken + 1,
-        })),
       setSpeechState: (token: number, promise: Promise<void> | null) =>
         set({
           speechToken: token,
