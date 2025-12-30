@@ -12,7 +12,6 @@ import ActionButtons from '@/app/components/action-buttons/ActionButtons'
 import Ceremonies from '@/app/components/ceremonies/Ceremonies'
 import Content, { QuoteType } from '@/app/components/content/Content'
 import SupportMe from '../support-me/SupportMe'
-import VoiceControls from '@/app/components/voice/VoiceControls'
 import VoiceManager from '@/app/components/voice/VoiceManager'
 
 interface EventImage {
@@ -62,7 +61,6 @@ export default function HomeClient({ events }: HomeClientProps) {
   return (
     <>
       <VoiceManager />
-      <VoiceControls />
 
       {isAbout ? (
         <>

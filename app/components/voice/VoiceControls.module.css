@@ -1,12 +1,8 @@
 .voiceControls {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 0.35rem;
-  z-index: 20;
 }
 
 .toggleButton {
