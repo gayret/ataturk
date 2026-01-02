@@ -55,29 +55,28 @@ export default function HomeClient({ events }: HomeClientProps) {
   const selectedEvent = events.find((item) => item.id === Number(currentId)) || events[0]
   const selectedLocation = selectedEvent?.location || events[0]?.location
 
-  const isAbout = currentId === 'about'
-
-  return (
-    <>
-      {isAbout ? (
-        <>
-          <Header />
-          <Timeline />
-          <About />
-          <Balloons />
-        </>
-      ) : (
-        <>
-          {currentId !== null && <Clouds />}
-          <MapWithNoSSR location={selectedLocation} />
-          <Header />
-          <Content />
-          <ActionButtons />
-          <Timeline />
-          <Ceremonies />
-          <SupportMe />
-        </>
-      )}
-    </>
-  )
+  if (currentId === 'about') {
+    return (
+      <>
+        <Header />
+        <Timeline />
+        <About />
+        <Balloons />
+      </>
+    )
+  }
+  if (currentId !== 'about') {
+    return (
+      <>
+        {currentId !== null && <Clouds />}
+        <MapWithNoSSR location={selectedLocation} />
+        <Header />
+        <Content />
+        <ActionButtons />
+        <Timeline />
+        <Ceremonies />
+        <SupportMe />
+      </>
+    )
+  }
 }
