@@ -1,30 +1,209 @@
 "use client"
 
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import styles from './VoiceControls.module.css'
 import volumeUpIcon from '@/app/assets/icons/volume-up.svg'
 import volumeMuteIcon from '@/app/assets/icons/volume-mute.svg'
-import { useVoiceStore } from '@/app/stores/voiceStore'
+import { useEventsData } from '@/app/helpers/data'
+import { useLanguageStore } from '@/app/stores/languageStore'
+import { formatDate } from '@/app/helpers/date'
+import type { ItemType } from '@/app/components/content/Content'
+
+const supportsSpeech = () =>
+  typeof window !== 'undefined' &&
+  typeof window.speechSynthesis !== 'undefined' &&
+  typeof window.SpeechSynthesisUtterance !== 'undefined'
 
 export default function VoiceControls() {
-  const { enabled, setEnabled, volume, setVolume, isSupported } = useVoiceStore()
+  const events = useEventsData() as ItemType[]
+  const searchParams = useSearchParams()
+  const { t, currentLanguageCode } = useLanguageStore()
+
+  const [enabled, setEnabled] = useState(false)
   const [showSlider, setShowSlider] = useState(false)
+  const [volume, setVolume] = useState(0.8)
+  const [isSupported, setIsSupported] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [isSpeaking, setIsSpeaking] = useState(false)
+
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const activeUtterancesRef = useRef<SpeechSynthesisUtterance[]>([])
+  const speakRequestRef = useRef(0)
+
+  const currentId = searchParams?.get('id')
+
+  const selectedEvent = useMemo(() => {
+    if (!events || events.length === 0) return null
+    const found = events.find((item) => item.id === Number(currentId))
+    return found || events[0]
+  }, [events, currentId])
+
+  const formattedDate = useMemo(() => {
+    if (!selectedEvent?.date) return ''
+    return formatDate(selectedEvent.date)
+  }, [selectedEvent, currentLanguageCode])
+
+  const cancelSpeech = useCallback(() => {
+    if (!supportsSpeech()) return
+    speakRequestRef.current += 1
+    activeUtterancesRef.current = []
+    setIsSpeaking(false)
+    try {
+      window.speechSynthesis.cancel()
+    } catch (speechError) {
+      console.log('Speech cancel error', speechError)
+    }
+  }, [])
 
   useEffect(() => {
-    if (!enabled) {
-      setShowSlider(false)
+    if (!supportsSpeech()) {
+      setIsSupported(false)
+      setEnabled(false)
+      setError(t.Voice.unsupported)
     }
-  }, [enabled])
+  }, [t.Voice.unsupported])
 
   useEffect(() => {
     return () => {
+      cancelSpeech()
       if (hideTimeoutRef.current) {
         clearTimeout(hideTimeoutRef.current)
       }
     }
+  }, [cancelSpeech])
+
+  const loadVoices = useCallback(() => {
+    if (!supportsSpeech()) return Promise.resolve<SpeechSynthesisVoice[]>([])
+
+    const existing = window.speechSynthesis.getVoices()
+    if (existing.length > 0) {
+      return Promise.resolve(existing)
+    }
+
+    return new Promise<SpeechSynthesisVoice[]>((resolve) => {
+      const handleVoicesChanged = () => {
+        resolve(window.speechSynthesis.getVoices())
+        window.speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged)
+      }
+
+      window.speechSynthesis.addEventListener('voiceschanged', handleVoicesChanged)
+      window.speechSynthesis.getVoices()
+
+      setTimeout(() => {
+        resolve(window.speechSynthesis.getVoices())
+        window.speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged)
+      }, 500)
+    })
   }, [])
+
+  const pickVoice = useCallback(
+    (voices: SpeechSynthesisVoice[]) => {
+      return (
+        voices.find((voice) => voice.lang?.toLowerCase().startsWith(currentLanguageCode.toLowerCase())) ||
+        voices[0] ||
+        null
+      )
+    },
+    [currentLanguageCode]
+  )
+
+  const speakCurrentEvent = useCallback(async () => {
+    if (!enabled) return
+
+    if (!selectedEvent || currentId === 'about') {
+      cancelSpeech()
+      return
+    }
+
+    if (!supportsSpeech()) {
+      setIsSupported(false)
+      setEnabled(false)
+      setError(t.Voice.unsupported)
+      return
+    }
+
+    cancelSpeech()
+    const requestId = speakRequestRef.current
+    setError(null)
+
+    const voices = await loadVoices()
+    if (!voices || voices.length === 0) {
+      setIsSupported(false)
+      setEnabled(false)
+      setError(t.Voice.unsupported)
+      return
+    }
+
+    if (requestId !== speakRequestRef.current) {
+      return
+    }
+
+    const voice = pickVoice(voices)
+    const parts = [formattedDate, selectedEvent.title, selectedEvent.description].filter(Boolean) as string[]
+
+    if (parts.length === 0) {
+      return
+    }
+
+    const utterances = parts.map((text) => {
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.volume = volume
+      utterance.lang = voice?.lang || currentLanguageCode
+      if (voice) {
+        utterance.voice = voice
+      }
+      return utterance
+    })
+
+    if (requestId !== speakRequestRef.current) {
+      return
+    }
+
+    activeUtterancesRef.current = utterances
+    setIsSpeaking(true)
+
+    let remaining = utterances.length
+
+    const settle = (hasError: boolean) => {
+      if (requestId !== speakRequestRef.current) return
+
+      remaining -= 1
+      if (hasError) {
+        setError(t.Voice.error)
+        cancelSpeech()
+        return
+      }
+
+      if (remaining <= 0) {
+        setIsSpeaking(false)
+      }
+    }
+
+    utterances.forEach((utterance) => {
+      utterance.onend = () => settle(false)
+      utterance.onerror = () => settle(true)
+      window.speechSynthesis.speak(utterance)
+    })
+  }, [enabled, selectedEvent, currentId, formattedDate, volume, currentLanguageCode, t.Voice, cancelSpeech, loadVoices, pickVoice])
+
+  useEffect(() => {
+    if (!enabled) {
+      cancelSpeech()
+      setShowSlider(false)
+      return
+    }
+
+    speakCurrentEvent()
+  }, [enabled, speakCurrentEvent, cancelSpeech])
+
+  useEffect(() => {
+    if (!isSpeaking) return
+    activeUtterancesRef.current.forEach((utterance) => {
+      utterance.volume = volume
+    })
+  }, [volume, isSpeaking])
 
   const openSlider = () => {
     if (!enabled) return
@@ -47,17 +226,23 @@ export default function VoiceControls() {
   const handleToggle = () => {
     const nextState = !enabled
     setEnabled(nextState)
-    if (nextState) {
+    if (!nextState) {
+      cancelSpeech()
+      setError(null)
+    } else {
       openSlider()
     }
   }
 
   const buttonLabel = !isSupported
-    ? 'Tarayıcınız sesli okuma desteklemiyor'
+    ? t.Voice.unsupported
     : enabled
-    ? 'Sesli okuma açık - kapatmak için tıklayın'
-    : 'Sesli okuma kapalı - açmak için tıklayın'
-  const toggleTitle = enabled ? 'Sesi Kapat' : 'Sesi Aç'
+    ? t.Voice.toggleOnLabel
+    : t.Voice.toggleOffLabel
+  const toggleTitle = enabled ? t.Voice.turnOffTitle : t.Voice.turnOnTitle
+  const iconAlt = enabled ? t.Voice.iconAltOn : t.Voice.iconAltOff
+
+  const visibleError = error || (!isSupported ? t.Voice.unsupported : null)
 
   return (
     <div
@@ -76,19 +261,11 @@ export default function VoiceControls() {
         disabled={!isSupported}
         title={toggleTitle}
       >
-        <Image
-          src={enabled ? volumeUpIcon : volumeMuteIcon}
-          alt={enabled ? 'Sesli okuma açık' : 'Sesli okuma kapalı'}
-          width={20}
-          height={20}
-        />
+        <Image src={enabled ? volumeUpIcon : volumeMuteIcon} alt={iconAlt} width={20} height={20} />
       </button>
 
       {enabled && showSlider && (
         <div className={styles.sliderPopup}>
-          <label htmlFor='voice-volume' className={styles.label}>
-            Ses Seviyesi
-          </label>
           <input
             id='voice-volume'
             type='range'
@@ -98,12 +275,18 @@ export default function VoiceControls() {
             value={volume}
             onChange={(event) => setVolume(Number(event.target.value))}
             className={styles.slider}
-            title='Ses Seviyesi'
+            aria-label={t.Voice.volumeLabel}
           />
         </div>
       )}
 
-      {!isSupported && <div className={styles.tooltip}>Tarayıcı bu özellik için destek vermiyor.</div>}
+      {!isSupported && <div className={styles.tooltip}>{t.Voice.unsupported}</div>}
+
+      {visibleError && (
+        <div className={styles.errorMessage} role='alert'>
+          {visibleError}
+        </div>
+      )}
     </div>
   )
 }

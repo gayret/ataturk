@@ -79,6 +79,17 @@
     },
     "editThisContent": "Bu içeriği düzenle"
   },
+  "Voice": {
+    "toggleOnLabel": "Sesli okuma açık - kapatmak için tıklayın",
+    "toggleOffLabel": "Sesli okuma kapalı - açmak için tıklayın",
+    "turnOnTitle": "Sesli okumayı açın",
+    "turnOffTitle": "Sesli okumayı kapatın",
+    "iconAltOn": "Sesli okuma açık",
+    "iconAltOff": "Sesli okuma kapalı",
+    "unsupported": "Tarayıcınız sesli okuma özelliğini desteklemiyor.",
+    "error": "Sesli okuma başlatılırken bir sorun oluştu. Lütfen tekrar deneyin.",
+    "volumeLabel": "Ses seviyesi"
+  },
   "SupportMe": {
     "description": "Destek ol"
   },
