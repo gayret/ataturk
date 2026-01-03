@@ -31,6 +31,7 @@ export default function VoiceControls() {
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const activeUtterancesRef = useRef<SpeechSynthesisUtterance[]>([])
   const speakRequestRef = useRef(0)
+  const volumeRef = useRef(0.8)
 
   const currentId = searchParams?.get('id')
 
@@ -42,7 +43,7 @@ export default function VoiceControls() {
 
   const formattedDate = useMemo(() => {
     if (!selectedEvent?.date) return ''
-    return formatDate(selectedEvent.date)
+    return formatDate(selectedEvent.date, currentLanguageCode)
   }, [selectedEvent, currentLanguageCode])
 
   const cancelSpeech = useCallback(() => {
@@ -52,6 +53,7 @@ export default function VoiceControls() {
     setIsSpeaking(false)
     try {
       window.speechSynthesis.cancel()
+      window.speechSynthesis.resume()
     } catch (speechError) {
       console.log('Speech cancel error', speechError)
     }
@@ -128,6 +130,9 @@ export default function VoiceControls() {
     const requestId = speakRequestRef.current
     setError(null)
 
+    // Give the speech engine a brief moment to flush the previous queue.
+    await new Promise((resolve) => setTimeout(resolve, 60))
+
     const voices = await loadVoices()
     if (!voices || voices.length === 0) {
       setIsSupported(false)
@@ -149,7 +154,7 @@ export default function VoiceControls() {
 
     const utterances = parts.map((text) => {
       const utterance = new SpeechSynthesisUtterance(text)
-      utterance.volume = volume
+      utterance.volume = volumeRef.current
       utterance.lang = voice?.lang || currentLanguageCode
       if (voice) {
         utterance.voice = voice
@@ -186,7 +191,7 @@ export default function VoiceControls() {
       utterance.onerror = () => settle(true)
       window.speechSynthesis.speak(utterance)
     })
-  }, [enabled, selectedEvent, currentId, formattedDate, volume, currentLanguageCode, t.Voice, cancelSpeech, loadVoices, pickVoice])
+  }, [enabled, selectedEvent, currentId, formattedDate, currentLanguageCode, t.Voice, cancelSpeech, loadVoices, pickVoice])
 
   useEffect(() => {
     if (!enabled) {
@@ -199,6 +204,7 @@ export default function VoiceControls() {
   }, [enabled, speakCurrentEvent, cancelSpeech])
 
   useEffect(() => {
+    volumeRef.current = volume
     if (!isSpeaking) return
     activeUtterancesRef.current.forEach((utterance) => {
       utterance.volume = volume

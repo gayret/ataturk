@@ -39,6 +39,8 @@
   width: 100%;
   accent-color: #1a73e8;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
 .sliderPopup {

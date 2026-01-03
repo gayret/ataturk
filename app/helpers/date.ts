@@ -1,13 +1,13 @@
 import { useLanguageStore } from "../stores/languageStore"
 
 const localeMap: Record<string, string> = {
-  'tr': 'tr-TR',
-  'en': 'en-US',
-  'de': 'de-DE',
+  tr: 'tr-TR',
+  en: 'en-US',
+  de: 'de-DE',
 }
 
-export function formatDate(date: string): string {
-  const currentLanguageCode = useLanguageStore.getState().currentLanguageCode
+export function formatDate(date: string, languageCode?: string): string {
+  const currentLanguageCode = languageCode ?? useLanguageStore.getState().currentLanguageCode
   const locale = localeMap[currentLanguageCode] || 'tr-TR'
 
   if (date.length === 17) {
