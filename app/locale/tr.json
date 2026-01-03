@@ -79,6 +79,17 @@
     },
     "editThisContent": "Bu içeriği düzenle"
   },
+  "Voice": {
+    "unsupported": "Tarayıcı metinden sese desteğini sağlamıyor.",
+    "error": "Sesli okuma sırasında bir hata oluştu.",
+    "toggleOnLabel": "Sesli anlatımı aç",
+    "toggleOffLabel": "Sesli anlatımı kapat",
+    "turnOnTitle": "Sesli anlatımı etkinleştir",
+    "turnOffTitle": "Sesli anlatımı devre dışı bırak",
+    "iconAltOn": "Sesli anlatım açık",
+    "iconAltOff": "Sesli anlatım kapalı",
+    "volumeLabel": "Ses yüksekliği"
+  },
   "SupportMe": {
     "description": "Destek ol"
   },

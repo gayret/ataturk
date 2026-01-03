@@ -79,6 +79,17 @@
     },
     "editThisContent": "Diesen Inhalt bearbeiten"
   },
+  "Voice": {
+    "unsupported": "Ihr Browser unterstuetzt keine Sprachausgabe.",
+    "error": "Beim Vorlesen ist ein Fehler aufgetreten.",
+    "toggleOnLabel": "Sprachausgabe einschalten",
+    "toggleOffLabel": "Sprachausgabe ausschalten",
+    "turnOnTitle": "Sprachausgabe aktivieren",
+    "turnOffTitle": "Sprachausgabe deaktivieren",
+    "iconAltOn": "Sprachausgabe ist an",
+    "iconAltOff": "Sprachausgabe ist aus",
+    "volumeLabel": "Lautstaerke der Sprachausgabe"
+  },
   "SupportMe": {
     "description": "Unterstützung"
   },
