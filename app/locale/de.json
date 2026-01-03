@@ -79,17 +79,6 @@
     },
     "editThisContent": "Diesen Inhalt bearbeiten"
   },
-  "Voice": {
-    "toggleOnLabel": "Sprachausgabe an – zum Deaktivieren klicken",
-    "toggleOffLabel": "Sprachausgabe aus – zum Aktivieren klicken",
-    "turnOnTitle": "Sprachausgabe einschalten",
-    "turnOffTitle": "Sprachausgabe ausschalten",
-    "iconAltOn": "Sprachausgabe aktiviert",
-    "iconAltOff": "Sprachausgabe deaktiviert",
-    "unsupported": "Ihr Browser unterstützt keine Sprachausgabe.",
-    "error": "Die Sprachausgabe konnte nicht gestartet werden. Bitte versuchen Sie es erneut.",
-    "volumeLabel": "Lautstärke"
-  },
   "SupportMe": {
     "description": "Unterstützung"
   },

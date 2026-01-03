@@ -144,12 +144,12 @@ export default function AutoPlay() {
         }
       }
 
-    if (shouldScrollToStart) {
-      scrollToStart()
-    }
-  },
-  [router, scrollToStart]
-)
+      if (shouldScrollToStart) {
+        scrollToStart()
+      }
+    },
+    [router, scrollToStart]
+  )
 
   const startAutoPlay = useCallback(async () => {
     setLocalIsActive(true)

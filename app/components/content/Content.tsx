@@ -55,7 +55,7 @@ export default function Content() {
         ? new Date(selectedItem.date).getFullYear() - 1881
         : null
     );
-    setFormattedDate(formatDate(selectedItem?.date || "", currentLanguageCode));
+    setFormattedDate(formatDate(selectedItem?.date || ""));
   }, [selectedItem, currentLanguageCode]);
 
   return (

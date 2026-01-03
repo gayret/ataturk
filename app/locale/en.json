@@ -79,17 +79,6 @@
     },
     "editThisContent": "Edit this content"
   },
-  "Voice": {
-    "toggleOnLabel": "Voice narration on - click to turn off",
-    "toggleOffLabel": "Voice narration off - click to turn on",
-    "turnOnTitle": "Turn on voice narration",
-    "turnOffTitle": "Turn off voice narration",
-    "iconAltOn": "Voice narration enabled",
-    "iconAltOff": "Voice narration disabled",
-    "unsupported": "Your browser does not support text-to-speech.",
-    "error": "We couldn't start voice narration. Please try again.",
-    "volumeLabel": "Volume"
-  },
   "SupportMe": {
     "description": "Support me"
   },
