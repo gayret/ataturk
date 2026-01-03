@@ -111,7 +111,7 @@ export default function VoiceControls() {
     [currentLanguageCode]
   )
 
-  const speakCurrentEvent = useCallback(async () => {
+  const speakCurrentEvent = useCallback(async (options?: { skipCancel?: boolean }) => {
     if (!enabled) return
 
     if (!selectedEvent || currentId === 'about') {
@@ -126,7 +126,9 @@ export default function VoiceControls() {
       return
     }
 
-    cancelSpeech()
+    if (!options?.skipCancel) {
+      cancelSpeech()
+    }
     const requestId = speakRequestRef.current
     setError(null)
 
@@ -203,13 +205,27 @@ export default function VoiceControls() {
     speakCurrentEvent()
   }, [enabled, speakCurrentEvent, cancelSpeech])
 
+  const lastVolumeRef = useRef(volume)
+
   useEffect(() => {
+    const previousVolume = lastVolumeRef.current
+    lastVolumeRef.current = volume
     volumeRef.current = volume
-    if (!isSpeaking) return
-    activeUtterancesRef.current.forEach((utterance) => {
-      utterance.volume = volume
-    })
-  }, [volume, isSpeaking])
+
+    if (isSpeaking) {
+      activeUtterancesRef.current.forEach((utterance) => {
+        utterance.volume = volume
+      })
+    }
+
+    // Chromium applies volume only at utterance start. If the user moves the slider mid-speech,
+    // restart the narration once to apply the new level immediately.
+    if (!enabled || !isSpeaking) return
+    if (volume === previousVolume) return
+
+    cancelSpeech()
+    speakCurrentEvent({ skipCancel: true })
+  }, [volume, isSpeaking, enabled, cancelSpeech, speakCurrentEvent])
 
   const openSlider = () => {
     if (!enabled) return
