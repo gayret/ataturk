@@ -9,6 +9,7 @@ import { useEventsData } from '@/app/helpers/data'
 import { calculateReadingTime } from '@/app/helpers/readingTime'
 import styles from './AutoPlay.module.css'
 import { useLanguageStore } from '@/app/stores/languageStore'
+import { VOICE_PLAYBACK_EVENT, type VoicePlaybackDetail } from '@/app/helpers/voicePlaybackEvents'
 
 export default function AutoPlay() {
   const searchParams = useSearchParams()
@@ -16,19 +17,26 @@ export default function AutoPlay() {
   const events = useEventsData()
   const { t } = useLanguageStore()
 
+  const VOICE_BUFFER_MS = 2000
+
   const speedOptions = [0.5, 1, 1.5, 2]
 
   const [speedMultiplier, setSpeedMultiplier] = useState<number>(1)
-  const [currentTimerMs, setCurrentTimerMs] = useState<number>(0)
-  const [totalRemainingMs, setTotalRemainingMs] = useState<number>(0)
+  const [currentTimerMs, setCurrentTimerMs] = useState<number | null>(0)
+  const [totalRemainingMs, setTotalRemainingMs] = useState<number | null>(0)
   const [localIsActive, setLocalIsActive] = useState<boolean>(false)
 
   const [isHovering, setIsHovering] = useState<boolean>(false)
   const [showTooltip, setShowTooltip] = useState<boolean>(false)
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
+  const [voiceModeActive, setVoiceModeActive] = useState<boolean>(false)
+  const [voiceWaiting, setVoiceWaiting] = useState<boolean>(false)
+  const [voiceTimerResetKey, setVoiceTimerResetKey] = useState<number>(0)
 
   const initialTotalDurationRef = useRef<number>(0)
   const tooltipTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const voiceStartFallbackRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const lastVoiceEventIdRef = useRef<number | null>(null)
 
   const currentId = searchParams?.get('id')
   const urlIsActive = searchParams?.get('auto-play') === 'true'
@@ -58,6 +66,11 @@ export default function AutoPlay() {
     return eventDurationsMs[effectiveIndex] || 10000
   }, [eventDurationsMs, currentIndex])
 
+  const currentEventId = useMemo(() => {
+    const effectiveIndex = currentIndex === -1 ? 0 : currentIndex
+    return events[effectiveIndex]?.id ?? null
+  }, [currentIndex, events])
+
   const totalDurationSeconds = useMemo(() => {
     return Math.round(eventDurationsMs.reduce((total, duration) => total + duration, 0) / 1000)
   }, [eventDurationsMs])
@@ -73,6 +86,35 @@ export default function AutoPlay() {
   }, [isVoiceEnabled])
 
   useEffect(() => {
+    setVoiceWaiting(false)
+
+    if (voiceStartFallbackRef.current) {
+      clearTimeout(voiceStartFallbackRef.current)
+      voiceStartFallbackRef.current = null
+    }
+
+    if (isVoiceEnabled && isActive) {
+      setVoiceModeActive(true)
+      setCurrentTimerMs(null)
+      setTotalRemainingMs(null)
+
+      voiceStartFallbackRef.current = setTimeout(() => {
+        setVoiceModeActive(false)
+        setCurrentTimerMs(currentEventDurationMs)
+      }, 2000)
+    } else {
+      setVoiceModeActive(false)
+    }
+
+    return () => {
+      if (voiceStartFallbackRef.current) {
+        clearTimeout(voiceStartFallbackRef.current)
+        voiceStartFallbackRef.current = null
+      }
+    }
+  }, [isVoiceEnabled, isActive, currentId, currentEventDurationMs])
+
+  useEffect(() => {
     if (isActive && initialTotalDurationRef.current === 0) {
       const startIndex = currentIndex === -1 ? 0 : currentIndex
       const totalMs = eventDurationsMs
@@ -83,19 +125,71 @@ export default function AutoPlay() {
       setTotalRemainingMs(totalMs)
     } else if (!isActive) {
       initialTotalDurationRef.current = 0
-      setTotalRemainingMs(0)
-      setCurrentTimerMs(0)
+      setTotalRemainingMs(null)
+      setCurrentTimerMs(null)
     }
   }, [isActive, currentIndex, eventDurationsMs])
 
   useEffect(() => {
     if (isActive) {
-      setCurrentTimerMs(currentEventDurationMs)
+      if (voiceModeActive) {
+        setCurrentTimerMs(null)
+      } else {
+        setCurrentTimerMs(currentEventDurationMs)
+      }
     }
-  }, [currentId, isActive, currentEventDurationMs])
+  }, [currentId, isActive, currentEventDurationMs, voiceModeActive])
+
+  useEffect(() => {
+    const handleVoicePlayback = (event: Event) => {
+      if (!isActive || !isVoiceEnabled) return
+
+      const detail = (event as CustomEvent<VoicePlaybackDetail>).detail
+      if (!detail) return
+
+      const eventId = detail.eventId
+      const effectiveCurrentEventId = currentEventId
+
+      if (eventId && effectiveCurrentEventId && eventId !== effectiveCurrentEventId) {
+        return
+      }
+
+      if (voiceStartFallbackRef.current) {
+        clearTimeout(voiceStartFallbackRef.current)
+        voiceStartFallbackRef.current = null
+      }
+
+      if (detail.status === 'start') {
+        lastVoiceEventIdRef.current = eventId ?? effectiveCurrentEventId ?? null
+        setVoiceModeActive(true)
+        setVoiceWaiting(false)
+        setCurrentTimerMs(null)
+        setTotalRemainingMs(null)
+        return
+      }
+
+      if (detail.status === 'end' || detail.status === 'cancel' || detail.status === 'error') {
+        if (lastVoiceEventIdRef.current && eventId && lastVoiceEventIdRef.current !== eventId) {
+          return
+        }
+
+        setVoiceModeActive(true)
+        setVoiceWaiting(true)
+        setVoiceTimerResetKey((prev) => prev + 1)
+        setCurrentTimerMs(VOICE_BUFFER_MS)
+      }
+    }
+
+    window.addEventListener(VOICE_PLAYBACK_EVENT, handleVoicePlayback)
+    return () => window.removeEventListener(VOICE_PLAYBACK_EVENT, handleVoicePlayback)
+  }, [isActive, isVoiceEnabled, currentEventId])
 
   const formatTime = useCallback(
-    (ms: number) => {
+    (ms: number | null) => {
+      if (ms === null || Number.isNaN(ms)) {
+        return '...'
+      }
+
       const seconds = Math.ceil(ms / 1000)
       const minutes = Math.floor(seconds / 60)
       const remainingSeconds = seconds % 60
@@ -308,12 +402,14 @@ export default function AutoPlay() {
   return (
     <>
       <Timer
-        duration={currentEventDurationMs}
-        speedMultiplier={speedMultiplier}
-        isActive={isActive}
+        duration={voiceModeActive ? VOICE_BUFFER_MS : currentEventDurationMs}
+        speedMultiplier={voiceModeActive ? 1 : speedMultiplier}
+        isActive={isActive && (!voiceModeActive || voiceWaiting)}
         onComplete={handleTimerComplete}
         onProgress={handleTimerProgress}
-        resetKey={currentId || undefined}
+        resetKey={
+          voiceModeActive ? `${currentId || 'voice'}-${voiceTimerResetKey}` : currentId || undefined
+        }
       />
 
       <div className={styles.container}>
@@ -349,7 +445,19 @@ export default function AutoPlay() {
           }}
         >
           {isActive ? (
-            <span className={styles.timerDisplay}>{Math.ceil(currentTimerMs / 1000)}</span>
+            currentTimerMs === null || Number.isNaN(currentTimerMs) ? (
+              <Image
+                src={autoPlayIcon}
+                alt={t.ActionButtons.autoPlayIconAlt}
+                width={16}
+                height={16}
+                className={styles.spinnerIcon}
+              />
+            ) : (
+              <span className={styles.timerDisplay}>
+                {Math.max(1, Math.ceil(currentTimerMs / 1000))}
+              </span>
+            )
           ) : (
             <Image
               src={autoPlayIcon}

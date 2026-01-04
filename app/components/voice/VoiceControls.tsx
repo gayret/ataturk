@@ -10,6 +10,7 @@ import Image from 'next/image'
 import volumeOnIcon from '@/app/assets/icons/volume-up.svg'
 import volumeOffIcon from '@/app/assets/icons/volume-off.svg'
 import styles from './VoiceControls.module.css'
+import { dispatchVoicePlaybackEvent } from '@/app/helpers/voicePlaybackEvents'
 
 const supportsSpeech = () =>
   typeof window !== 'undefined' &&
@@ -31,6 +32,8 @@ export default function VoiceControls() {
   const volumeRef = useRef(volume)
   const activeUtterance = useRef<SpeechSynthesisUtterance | null>(null)
   const volumeSpeakTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const activeEventIdRef = useRef<number | null>(null)
+  const utteranceStartedAt = useRef<number | null>(null)
 
   const currentId = searchParams?.get('id')
   const voiceParam = searchParams?.get('voice')
@@ -66,6 +69,14 @@ export default function VoiceControls() {
       }
       window.speechSynthesis.cancel()
       activeUtterance.current = null
+      if (activeEventIdRef.current !== null) {
+        dispatchVoicePlaybackEvent({
+          status: 'cancel',
+          eventId: activeEventIdRef.current,
+        })
+      }
+      activeEventIdRef.current = null
+      utteranceStartedAt.current = null
     } catch (speechError) {
       console.log('Speech cancel error', speechError)
     }
@@ -86,13 +97,39 @@ export default function VoiceControls() {
 
     const textParts = [formatDate(selectedEvent.date), selectedEvent.title].filter(Boolean)
     const utterance = new SpeechSynthesisUtterance(textParts.join('. '))
+    const eventId = selectedEvent.id
+    activeEventIdRef.current = eventId
     utterance.lang = currentLanguageCode
     utterance.volume = volumeRef.current
+
+    utterance.onstart = () => {
+      const startedAt = performance.now()
+      utteranceStartedAt.current = startedAt
+      dispatchVoicePlaybackEvent({
+        status: 'start',
+        eventId,
+        startedAt,
+      })
+    }
 
     utterance.onend = () => {
       if (activeUtterance.current === utterance) {
         activeUtterance.current = null
       }
+      const endedAt = performance.now()
+      const startedAt = utteranceStartedAt.current ?? endedAt
+      const durationMs = Math.max(0, endedAt - startedAt)
+
+      dispatchVoicePlaybackEvent({
+        status: 'end',
+        eventId,
+        startedAt,
+        endedAt,
+        durationMs,
+      })
+
+      activeEventIdRef.current = null
+      utteranceStartedAt.current = null
     }
 
     utterance.onerror = () => {
@@ -100,6 +137,12 @@ export default function VoiceControls() {
         setError(t.Voice.error)
         activeUtterance.current = null
       }
+      dispatchVoicePlaybackEvent({
+        status: 'error',
+        eventId,
+      })
+      activeEventIdRef.current = null
+      utteranceStartedAt.current = null
     }
 
     activeUtterance.current = utterance
