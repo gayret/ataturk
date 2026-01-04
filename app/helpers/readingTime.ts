@@ -22,9 +22,13 @@ export function calculateReadingTime(
   options?: CalculateReadingTimeOptions
 ): number {
   const WORDS_PER_MINUTE = 200
-  const VOICE_WORDS_PER_MINUTE = 110
   const MIN_DURATION = 5
-  const VOICE_MIN_DURATION = 8
+  const VOICE_MIN_DURATION = 3
+  const VOICE_LONG_WORDS_PER_MINUTE = 90
+  const VOICE_SHORT_WORDS_PER_MINUTE = 110
+  const VOICE_SHORT_THRESHOLD = 25
+  const VOICE_BUFFER_SHORT = 2
+  const VOICE_BUFFER_LONG = 2
 
   const isVoiceEnabled =
     options?.voiceEnabled ||
@@ -58,10 +62,17 @@ export function calculateReadingTime(
     .split(/\s+/)
     .filter((word) => word.length > 0).length
 
-  const wordsPerMinute = isVoiceEnabled ? VOICE_WORDS_PER_MINUTE : WORDS_PER_MINUTE
-  const minDuration = isVoiceEnabled ? VOICE_MIN_DURATION : MIN_DURATION
+  const wordsPerMinute = isVoiceEnabled
+    ? wordCount < VOICE_SHORT_THRESHOLD
+      ? VOICE_SHORT_WORDS_PER_MINUTE
+      : VOICE_LONG_WORDS_PER_MINUTE
+    : WORDS_PER_MINUTE
 
-  const readingTimeSeconds = Math.ceil((wordCount / wordsPerMinute) * 60)
+  const minDuration = isVoiceEnabled ? VOICE_MIN_DURATION : MIN_DURATION
+  const bufferSeconds =
+    isVoiceEnabled && wordCount < VOICE_SHORT_THRESHOLD ? VOICE_BUFFER_SHORT : VOICE_BUFFER_LONG
+
+  const readingTimeSeconds = Math.ceil((wordCount / wordsPerMinute) * 60 + (isVoiceEnabled ? bufferSeconds : 0))
 
   return Math.max(minDuration, readingTimeSeconds)
 }
