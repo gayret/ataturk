@@ -13,9 +13,27 @@ export interface EventContent {
   images?: EventImage[] | null
 }
 
-export function calculateReadingTime(event: EventContent): number {
+export interface CalculateReadingTimeOptions {
+  voiceEnabled?: boolean
+}
+
+export function calculateReadingTime(
+  event: EventContent,
+  options?: CalculateReadingTimeOptions
+): number {
   const WORDS_PER_MINUTE = 200
   const MIN_DURATION = 5
+  const VOICE_MIN_DURATION = 3
+  const VOICE_LONG_WORDS_PER_MINUTE = 90
+  const VOICE_SHORT_WORDS_PER_MINUTE = 110
+  const VOICE_SHORT_THRESHOLD = 25
+  const VOICE_BUFFER_SHORT = 2
+  const VOICE_BUFFER_LONG = 2
+
+  const isVoiceEnabled =
+    options?.voiceEnabled ||
+    (typeof window !== 'undefined' &&
+      new URLSearchParams(window.location.search).get('voice') === 'enabled')
 
   let totalText = event.title || ''
 
@@ -44,7 +62,17 @@ export function calculateReadingTime(event: EventContent): number {
     .split(/\s+/)
     .filter((word) => word.length > 0).length
 
-  const readingTimeSeconds = Math.ceil((wordCount / WORDS_PER_MINUTE) * 60)
+  const wordsPerMinute = isVoiceEnabled
+    ? wordCount < VOICE_SHORT_THRESHOLD
+      ? VOICE_SHORT_WORDS_PER_MINUTE
+      : VOICE_LONG_WORDS_PER_MINUTE
+    : WORDS_PER_MINUTE
 
-  return Math.max(MIN_DURATION, readingTimeSeconds)
+  const minDuration = isVoiceEnabled ? VOICE_MIN_DURATION : MIN_DURATION
+  const bufferSeconds =
+    isVoiceEnabled && wordCount < VOICE_SHORT_THRESHOLD ? VOICE_BUFFER_SHORT : VOICE_BUFFER_LONG
+
+  const readingTimeSeconds = Math.ceil((wordCount / wordsPerMinute) * 60 + (isVoiceEnabled ? bufferSeconds : 0))
+
+  return Math.max(minDuration, readingTimeSeconds)
 }

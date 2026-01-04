@@ -79,6 +79,17 @@
     },
     "editThisContent": "Edit this content"
   },
+  "Voice": {
+    "unsupported": "Your browser does not support text to speech.",
+    "error": "Something went wrong while trying to speak.",
+    "toggleOnLabel": "Turn on voice narration",
+    "toggleOffLabel": "Turn off voice narration",
+    "turnOnTitle": "Enable voice narration",
+    "turnOffTitle": "Disable voice narration",
+    "iconAltOn": "Voice narration is on",
+    "iconAltOff": "Voice narration is off",
+    "volumeLabel": "Voice volume"
+  },
   "SupportMe": {
     "description": "Support me"
   },
