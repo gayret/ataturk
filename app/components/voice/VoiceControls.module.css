@@ -61,7 +61,10 @@
 }
 
 .errorMessage {
-  margin-top: 0.2rem;
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
   max-width: 210px;
   background: #fff4f2;
   color: #5f1a1a;
@@ -70,6 +73,7 @@
   padding: 0.5rem 0.65rem;
   font-size: 0.8rem;
   line-height: 1.3;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+  z-index: 12;
 }
