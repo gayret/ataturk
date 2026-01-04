@@ -32,6 +32,7 @@ export default function AutoPlay() {
 
   const currentId = searchParams?.get('id')
   const urlIsActive = searchParams?.get('auto-play') === 'true'
+  const isVoiceEnabled = searchParams?.get('voice') === 'enabled'
 
   const isActive = localIsActive
 
@@ -47,9 +48,10 @@ export default function AutoPlay() {
           description: event.description,
           quotes: event.quotes,
           images: event.images,
-        }) * 1000
+        },
+        { voiceEnabled: isVoiceEnabled }) * 1000
     )
-  }, [events])
+  }, [events, isVoiceEnabled])
 
   const currentEventDurationMs = useMemo(() => {
     const effectiveIndex = currentIndex === -1 ? 0 : currentIndex
@@ -63,6 +65,12 @@ export default function AutoPlay() {
   useEffect(() => {
     setLocalIsActive(urlIsActive)
   }, [urlIsActive])
+
+  useEffect(() => {
+    if (isVoiceEnabled) {
+      setSpeedMultiplier(1)
+    }
+  }, [isVoiceEnabled])
 
   useEffect(() => {
     if (isActive && initialTotalDurationRef.current === 0) {
@@ -353,7 +361,7 @@ export default function AutoPlay() {
         </button>
 
         {/* Speed Button */}
-        {isActive && (
+        {isActive && !isVoiceEnabled && (
           <button
             onClick={handleSpeedClick}
             data-auto-play-button='true'

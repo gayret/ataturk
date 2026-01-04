@@ -13,9 +13,23 @@ export interface EventContent {
   images?: EventImage[] | null
 }
 
-export function calculateReadingTime(event: EventContent): number {
+export interface CalculateReadingTimeOptions {
+  voiceEnabled?: boolean
+}
+
+export function calculateReadingTime(
+  event: EventContent,
+  options?: CalculateReadingTimeOptions
+): number {
   const WORDS_PER_MINUTE = 200
+  const VOICE_WORDS_PER_MINUTE = 110
   const MIN_DURATION = 5
+  const VOICE_MIN_DURATION = 8
+
+  const isVoiceEnabled =
+    options?.voiceEnabled ||
+    (typeof window !== 'undefined' &&
+      new URLSearchParams(window.location.search).get('voice') === 'enabled')
 
   let totalText = event.title || ''
 
@@ -44,7 +58,10 @@ export function calculateReadingTime(event: EventContent): number {
     .split(/\s+/)
     .filter((word) => word.length > 0).length
 
-  const readingTimeSeconds = Math.ceil((wordCount / WORDS_PER_MINUTE) * 60)
+  const wordsPerMinute = isVoiceEnabled ? VOICE_WORDS_PER_MINUTE : WORDS_PER_MINUTE
+  const minDuration = isVoiceEnabled ? VOICE_MIN_DURATION : MIN_DURATION
 
-  return Math.max(MIN_DURATION, readingTimeSeconds)
+  const readingTimeSeconds = Math.ceil((wordCount / wordsPerMinute) * 60)
+
+  return Math.max(minDuration, readingTimeSeconds)
 }
