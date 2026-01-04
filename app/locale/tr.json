@@ -82,11 +82,5 @@
   "SupportMe": {
     "description": "Destek ol"
   },
-  "InformationSource": "Bilgi kaynağı",
-  "Voice": {
-    "voiceOff": "Ses kapat",
-    "voiceOn": "Ses aç",
-    "isVoiceOn": "Ses açık",
-    "isVoiceOff": "Ses kapalı"
-  }
+  "InformationSource": "Bilgi kaynağı"
 }

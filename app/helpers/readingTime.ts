@@ -44,7 +44,7 @@ export function calculateReadingTime(event: EventContent): number {
     .split(/\s+/)
     .filter((word) => word.length > 0).length
 
-  const readingTimeSeconds = Math.ceil((wordCount / WORDS_PER_MINUTE) * 60) + 30
+  const readingTimeSeconds = Math.ceil((wordCount / WORDS_PER_MINUTE) * 60)
 
   return Math.max(MIN_DURATION, readingTimeSeconds)
 }
