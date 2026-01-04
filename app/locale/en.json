@@ -82,5 +82,11 @@
   "SupportMe": {
     "description": "Support me"
   },
-  "InformationSource": "Information source"
+  "InformationSource": "Information source",
+  "Voice": {
+    "voiceOff": "Voice off",
+    "voiceOn": "Voice on",
+    "isVoiceOn": "Voice on",
+    "isVoiceOff": "Voice off"
+  }
 }

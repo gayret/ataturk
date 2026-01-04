@@ -82,5 +82,11 @@
   "SupportMe": {
     "description": "Unterstützung"
   },
-  "InformationSource": "Informationsquelle"
+  "InformationSource": "Informationsquelle",
+  "Voice": {
+    "voiceOff": "Den Ton stumm schalten",
+    "voiceOn": "Dreh die Lautstärke auf",
+    "isVoiceOn": "Ton an",
+    "isVoiceOff": "Ton stummgeschaltet"
+  }
 }

@@ -14,6 +14,7 @@ import EditThisContent from './widgets/edit-this-content/EditThisContent'
 import hamburgerButtonIcon from '@/app/assets/icons/hamburger-button.svg'
 import close from '@/app/assets/icons/close.svg'
 import Image from 'next/image'
+import Voice from './widgets/voice/Voice'
 
 export default function ActionButtons({
   showOnlyLanguageSelector = false,
@@ -53,6 +54,8 @@ export default function ActionButtons({
             <AutoPlay />
 
             <LanguageSelector />
+
+            <Voice />
 
             <EditThisContent />
           </>
