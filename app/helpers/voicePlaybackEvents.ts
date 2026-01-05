@@ -1,20 +1,20 @@
-'use client'
+"use client";
 
-export type VoicePlaybackStatus = 'start' | 'end' | 'cancel' | 'error'
+export type VoicePlaybackStatus = "start" | "end" | "cancel" | "error";
 
 export interface VoicePlaybackDetail {
-  status: VoicePlaybackStatus
-  eventId?: number
-  startedAt?: number
-  endedAt?: number
-  durationMs?: number
+  status: VoicePlaybackStatus;
+  eventId?: number;
 }
 
-export const VOICE_PLAYBACK_EVENT = 'voice-playback'
+export const VOICE_PLAYBACK_EVENT = "voice-playback";
 
 export function dispatchVoicePlaybackEvent(detail: VoicePlaybackDetail) {
-  if (typeof window === 'undefined') return
+  if (typeof window === "undefined") return;
 
-  const voiceEvent = new CustomEvent<VoicePlaybackDetail>(VOICE_PLAYBACK_EVENT, { detail })
-  window.dispatchEvent(voiceEvent)
+  const voiceEvent = new CustomEvent<VoicePlaybackDetail>(
+    VOICE_PLAYBACK_EVENT,
+    { detail }
+  );
+  window.dispatchEvent(voiceEvent);
 }

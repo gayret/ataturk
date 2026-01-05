@@ -1,235 +1,292 @@
-"use client"
+"use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useEventsData } from '@/app/helpers/data'
-import { formatDate } from '@/app/helpers/date'
-import { useLanguageStore } from '@/app/stores/languageStore'
-import type { ItemType } from '@/app/components/content/Content'
-import Image from 'next/image'
-import volumeOnIcon from '@/app/assets/icons/volume-up.svg'
-import volumeOffIcon from '@/app/assets/icons/volume-off.svg'
-import styles from './VoiceControls.module.css'
-import { dispatchVoicePlaybackEvent } from '@/app/helpers/voicePlaybackEvents'
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEventsData } from "@/app/helpers/data";
+import { formatDate } from "@/app/helpers/date";
+import { useLanguageStore } from "@/app/stores/languageStore";
+import type { ItemType } from "@/app/components/content/Content";
+import Image from "next/image";
+import volumeOnIcon from "@/app/assets/icons/volume-up.svg";
+import volumeOffIcon from "@/app/assets/icons/volume-off.svg";
+import styles from "./VoiceControls.module.css";
+import { dispatchVoicePlaybackEvent } from "@/app/helpers/voicePlaybackEvents";
 
 const supportsSpeech = () =>
-  typeof window !== 'undefined' &&
-  typeof window.speechSynthesis !== 'undefined' &&
-  typeof window.SpeechSynthesisUtterance !== 'undefined'
+  typeof window !== "undefined" &&
+  typeof window.speechSynthesis !== "undefined" &&
+  typeof window.SpeechSynthesisUtterance !== "undefined";
+
+const isChromiumBrowser = () => {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent;
+  return /Chrome|Chromium|Edg\//.test(ua) && !/Firefox\//.test(ua);
+};
 
 export default function VoiceControls() {
-  const events = useEventsData() as ItemType[]
-  const searchParams = useSearchParams()
-  const router = useRouter()
-  const { t, currentLanguageCode } = useLanguageStore()
+  const events = useEventsData() as ItemType[];
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const { t, currentLanguageCode } = useLanguageStore();
 
-  const [enabled, setEnabled] = useState(false)
-  const [volume, setVolume] = useState(0.85)
-  const [showSlider, setShowSlider] = useState(false)
-  const [isSupported, setIsSupported] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const hideSliderTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const volumeRef = useRef(volume)
-  const activeUtterance = useRef<SpeechSynthesisUtterance | null>(null)
-  const volumeSpeakTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const activeEventIdRef = useRef<number | null>(null)
-  const utteranceStartedAt = useRef<number | null>(null)
+  const [enabled, setEnabled] = useState(false);
+  const [volume, setVolume] = useState(0.85);
+  const [showSlider, setShowSlider] = useState(false);
+  const [isSupported, setIsSupported] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const hideSliderTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const volumeRef = useRef(volume);
+  const activeUtterance = useRef<SpeechSynthesisUtterance | null>(null);
+  const volumeSpeakTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const activeEventIdRef = useRef<number | null>(null);
+  const hasUserGestureRef = useRef(false);
+  const pendingAutoSpeakRef = useRef(false);
+  const voicesRetryAttachedRef = useRef(false);
+  const speakCurrentRef = useRef<() => void>(() => {});
 
-  const currentId = searchParams?.get('id')
-  const voiceParam = searchParams?.get('voice')
+  const currentId = searchParams?.get("id");
+  const voiceParam = searchParams?.get("voice");
 
   useEffect(() => {
-    setEnabled(voiceParam === 'enabled')
-  }, [voiceParam])
+    setEnabled(voiceParam === "enabled");
+  }, [voiceParam]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const markGestureAndSpeak = () => {
+      hasUserGestureRef.current = true;
+      if (pendingAutoSpeakRef.current) {
+        pendingAutoSpeakRef.current = false;
+      }
+      speakCurrentRef.current();
+    };
+
+    window.addEventListener("pointerdown", markGestureAndSpeak, { once: true });
+    window.addEventListener("keydown", markGestureAndSpeak, { once: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", markGestureAndSpeak);
+      window.removeEventListener("keydown", markGestureAndSpeak);
+    };
+  }, []);
 
   const selectedEvent = useMemo(() => {
-    if (!events || events.length === 0) return null
-    const found = events.find((item) => item.id === Number(currentId))
-    return found || events[0]
-  }, [events, currentId])
+    if (!events || events.length === 0) return null;
+    const found = events.find((item) => item.id === Number(currentId));
+    return found || events[0];
+  }, [events, currentId]);
 
   const updateVoiceParam = (nextEnabled: boolean) => {
-    if (typeof window === 'undefined') return
-    const url = new URL(window.location.href)
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
     if (nextEnabled) {
-      url.searchParams.set('voice', 'enabled')
+      url.searchParams.set("voice", "enabled");
     } else {
-      url.searchParams.delete('voice')
+      url.searchParams.delete("voice");
     }
-    router.replace(url.toString(), { scroll: false })
-    setEnabled(nextEnabled)
-  }
+    router.replace(url.toString(), { scroll: false });
+    setEnabled(nextEnabled);
+  };
 
   const cancelSpeech = useCallback(() => {
-    if (!supportsSpeech()) return
+    if (!supportsSpeech()) return;
     try {
       if (activeUtterance.current) {
-        activeUtterance.current.onerror = null
-        activeUtterance.current.onend = null
+        activeUtterance.current.onerror = null;
+        activeUtterance.current.onend = null;
       }
-      window.speechSynthesis.cancel()
-      activeUtterance.current = null
+      window.speechSynthesis.cancel();
+      activeUtterance.current = null;
       if (activeEventIdRef.current !== null) {
         dispatchVoicePlaybackEvent({
-          status: 'cancel',
+          status: "cancel",
           eventId: activeEventIdRef.current,
-        })
+        });
       }
-      activeEventIdRef.current = null
-      utteranceStartedAt.current = null
+      activeEventIdRef.current = null;
     } catch (speechError) {
-      console.log('Speech cancel error', speechError)
+      console.log("Speech cancel error", speechError);
     }
-  }, [])
+  }, []);
 
   const speakCurrent = useCallback(() => {
-    if (!enabled) return
+    if (!enabled) return;
     if (!supportsSpeech()) {
-      setIsSupported(false)
-      setError(t.Voice.unsupported)
-      setEnabled(false)
-      return
+      setIsSupported(false);
+      setError(t.Voice.unsupported);
+      setEnabled(false);
+      return;
     }
-    if (!selectedEvent) return
+    if (!selectedEvent) return;
 
-    cancelSpeech()
-    setError(null)
+    if (isChromiumBrowser() && !hasUserGestureRef.current) {
+      pendingAutoSpeakRef.current = true;
+      setError(null);
+      return;
+    }
 
-    const textParts = [formatDate(selectedEvent.date), selectedEvent.title].filter(Boolean)
-    const utterance = new SpeechSynthesisUtterance(textParts.join('. '))
-    const eventId = selectedEvent.id
-    activeEventIdRef.current = eventId
-    utterance.lang = currentLanguageCode
-    utterance.volume = volumeRef.current
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length === 0 && !voicesRetryAttachedRef.current) {
+      voicesRetryAttachedRef.current = true;
+      const retry = () => {
+        voicesRetryAttachedRef.current = false;
+        window.speechSynthesis.removeEventListener("voiceschanged", retry);
+        speakCurrentRef.current();
+      };
+      window.speechSynthesis.addEventListener("voiceschanged", retry);
+      setTimeout(retry, 600);
+      return;
+    }
+
+    cancelSpeech();
+    setError(null);
+
+    const textParts = [
+      formatDate(selectedEvent.date),
+      selectedEvent.title,
+    ].filter(Boolean);
+    const utterance = new SpeechSynthesisUtterance(textParts.join(". "));
+    const eventId = selectedEvent.id;
+    activeEventIdRef.current = eventId;
+    utterance.lang = currentLanguageCode;
+    utterance.volume = volumeRef.current;
+
+    const matchingVoice = voices.find((voice) =>
+      voice.lang?.toLowerCase().startsWith(currentLanguageCode.toLowerCase())
+    );
+    if (matchingVoice) {
+      utterance.voice = matchingVoice;
+    }
 
     utterance.onstart = () => {
-      const startedAt = performance.now()
-      utteranceStartedAt.current = startedAt
       dispatchVoicePlaybackEvent({
-        status: 'start',
+        status: "start",
         eventId,
-        startedAt,
-      })
-    }
+      });
+    };
 
     utterance.onend = () => {
       if (activeUtterance.current === utterance) {
-        activeUtterance.current = null
+        activeUtterance.current = null;
       }
-      const endedAt = performance.now()
-      const startedAt = utteranceStartedAt.current ?? endedAt
-      const durationMs = Math.max(0, endedAt - startedAt)
-
       dispatchVoicePlaybackEvent({
-        status: 'end',
+        status: "end",
         eventId,
-        startedAt,
-        endedAt,
-        durationMs,
-      })
+      });
 
-      activeEventIdRef.current = null
-      utteranceStartedAt.current = null
-    }
+      activeEventIdRef.current = null;
+    };
 
-    utterance.onerror = () => {
+    utterance.onerror = (event) => {
+      const speechErrorEvent = event as SpeechSynthesisErrorEvent | undefined;
+      const errorCode = speechErrorEvent?.error;
+
+      if (errorCode === "not-allowed" || errorCode === "interrupted") {
+        pendingAutoSpeakRef.current = true;
+        activeEventIdRef.current = null;
+        return;
+      }
       if (activeUtterance.current === utterance) {
-        setError(t.Voice.error)
-        activeUtterance.current = null
+        setError(t.Voice.error);
+        activeUtterance.current = null;
       }
       dispatchVoicePlaybackEvent({
-        status: 'error',
+        status: "error",
         eventId,
-      })
-      activeEventIdRef.current = null
-      utteranceStartedAt.current = null
-    }
+      });
+      activeEventIdRef.current = null;
+    };
 
-    activeUtterance.current = utterance
-    window.speechSynthesis.speak(utterance)
-  }, [enabled, selectedEvent, currentLanguageCode, cancelSpeech, t.Voice])
+    activeUtterance.current = utterance;
+    window.speechSynthesis.speak(utterance);
+  }, [enabled, selectedEvent, currentLanguageCode, cancelSpeech, t.Voice]);
+
+  useEffect(() => {
+    speakCurrentRef.current = speakCurrent;
+  }, [speakCurrent]);
 
   useEffect(() => {
     if (!enabled) {
-      cancelSpeech()
-      setShowSlider(false)
-      return
+      cancelSpeech();
+      setShowSlider(false);
+      return;
     }
-    speakCurrent()
-  }, [enabled, selectedEvent, currentLanguageCode, speakCurrent, cancelSpeech])
+    speakCurrent();
+  }, [enabled, selectedEvent, currentLanguageCode, speakCurrent, cancelSpeech]);
 
   useEffect(() => {
     if (!supportsSpeech()) {
-      setIsSupported(false)
-      setEnabled(false)
-      setError(t.Voice.unsupported)
+      setIsSupported(false);
+      setEnabled(false);
+      setError(t.Voice.unsupported);
     }
-    return () => cancelSpeech()
-  }, [cancelSpeech, t.Voice.unsupported])
+    return () => cancelSpeech();
+  }, [cancelSpeech, t.Voice.unsupported]);
 
   const handleToggle = () => {
-    const next = !enabled
-    updateVoiceParam(next)
+    const next = !enabled;
+    updateVoiceParam(next);
     if (!next) {
-      setError(null)
-      cancelSpeech()
-      setShowSlider(false)
+      setError(null);
+      cancelSpeech();
+      setShowSlider(false);
     } else {
-      speakCurrent()
+      speakCurrent();
     }
-  }
+  };
 
   const handleVolumeChange = (value: number) => {
-    setVolume(value)
-    volumeRef.current = value
-    if (!enabled) return
+    setVolume(value);
+    volumeRef.current = value;
+    if (!enabled) return;
     if (volumeSpeakTimeout.current) {
-      clearTimeout(volumeSpeakTimeout.current)
+      clearTimeout(volumeSpeakTimeout.current);
     }
     volumeSpeakTimeout.current = setTimeout(() => {
-      speakCurrent()
-      volumeSpeakTimeout.current = null
-    }, 150)
-  }
+      speakCurrent();
+      volumeSpeakTimeout.current = null;
+    }, 150);
+  };
 
   const buttonLabel = !isSupported
     ? t.Voice.unsupported
     : enabled
     ? t.Voice.toggleOnLabel
-    : t.Voice.toggleOffLabel
-  const toggleTitle = enabled ? t.Voice.turnOffTitle : t.Voice.turnOnTitle
-  const iconAlt = enabled ? t.Voice.iconAltOn : t.Voice.iconAltOff
-  const visibleError = error || (!isSupported ? t.Voice.unsupported : null)
+    : t.Voice.toggleOffLabel;
+  const toggleTitle = enabled ? t.Voice.turnOffTitle : t.Voice.turnOnTitle;
+  const iconAlt = enabled ? t.Voice.iconAltOn : t.Voice.iconAltOff;
+  const visibleError = error || (!isSupported ? t.Voice.unsupported : null);
 
   const showSliderWithCancel = () => {
-    if (!enabled) return
+    if (!enabled) return;
     if (hideSliderTimeout.current) {
-      clearTimeout(hideSliderTimeout.current)
-      hideSliderTimeout.current = null
+      clearTimeout(hideSliderTimeout.current);
+      hideSliderTimeout.current = null;
     }
-    setShowSlider(true)
-  }
+    setShowSlider(true);
+  };
 
   const hideSliderWithDelay = () => {
     if (hideSliderTimeout.current) {
-      clearTimeout(hideSliderTimeout.current)
+      clearTimeout(hideSliderTimeout.current);
     }
     hideSliderTimeout.current = setTimeout(() => {
-      setShowSlider(false)
-      hideSliderTimeout.current = null
-    }, 200)
-  }
+      setShowSlider(false);
+      hideSliderTimeout.current = null;
+    }, 200);
+  };
 
   useEffect(() => {
     return () => {
       if (hideSliderTimeout.current) {
-        clearTimeout(hideSliderTimeout.current)
+        clearTimeout(hideSliderTimeout.current);
       }
       if (volumeSpeakTimeout.current) {
-        clearTimeout(volumeSpeakTimeout.current)
+        clearTimeout(volumeSpeakTimeout.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <div
@@ -240,8 +297,8 @@ export default function VoiceControls() {
       onBlur={hideSliderWithDelay}
     >
       <button
-        type='button'
-        className={`${styles.toggleButton} ${enabled ? styles.active : ''}`}
+        type="button"
+        className={`${styles.toggleButton} ${enabled ? styles.active : ""}`}
         onClick={handleToggle}
         aria-pressed={enabled}
         aria-label={buttonLabel}
@@ -259,11 +316,11 @@ export default function VoiceControls() {
       {enabled && showSlider && (
         <div className={styles.sliderPopup}>
           <input
-            id='voice-volume'
-            type='range'
-            min='0'
-            max='1'
-            step='0.05'
+            id="voice-volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.05"
             value={volume}
             onChange={(event) => handleVolumeChange(Number(event.target.value))}
             className={styles.slider}
@@ -273,10 +330,10 @@ export default function VoiceControls() {
       )}
 
       {visibleError && (
-        <div className={styles.errorMessage} role='alert'>
+        <div className={styles.errorMessage} role="alert">
           {visibleError}
         </div>
       )}
     </div>
-  )
+  );
 }
