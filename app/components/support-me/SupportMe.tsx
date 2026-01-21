@@ -11,7 +11,7 @@ export default function SupportMe() {
       href='https://buymeacoffee.com/safagayret'
       className={styles.supportButton}
     >
-      {t.SupportMe.description} 🤝
+      ☕ {t.SupportMe.description}
     </Link>
   )
 }
