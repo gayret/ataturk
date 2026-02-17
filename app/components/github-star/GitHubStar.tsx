@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import styles from './GitHubStar.module.css'
 
 interface GitHubRepo {
@@ -27,13 +28,13 @@ export default function GitHubStar() {
     fetchStars()
   }, [])
 
-  const handleClick = () => {
-    window.open('https://github.com/gayret/ataturk', '_blank')
-  }
+  // navigation now handled by Next's Link
 
   return (
-    <button
-      onClick={handleClick}
+    <Link
+      href='https://github.com/gayret/ataturk'
+      target='_blank'
+      rel='noopener noreferrer'
       className={styles.githubStar}
       aria-label='GitHub repository'
       title="GitHub repository'yi ziyaret et"
@@ -43,6 +44,6 @@ export default function GitHubStar() {
       </svg>
       <span className={styles.text}>{loading ? '...' : stars ? stars.toLocaleString() : '0'}</span>
       <span style={{ fontSize: '10px' }}>★</span>
-    </button>
+    </Link>
   )
 }
