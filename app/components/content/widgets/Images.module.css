@@ -118,3 +118,16 @@
   background-color: #fff;
   color: #666;
 }
+
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .thumb {
+    object-fit: contain;
+    width: 80px;
+    height: 80px;
+    border-radius: 0.5rem;
+  }
+}
