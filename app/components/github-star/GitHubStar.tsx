@@ -28,7 +28,7 @@ export default function GitHubStar() {
   }, [])
 
   const handleClick = () => {
-    window.open('https://github.com/gayret/ataturk', '_blank')
+    window.open('https://github.com/gayret/ataturk')
   }
 
   return (
