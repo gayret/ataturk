@@ -3,6 +3,7 @@ import './globals.css'
 import { Barlow } from 'next/font/google'
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
+import GitHubStar from './components/github-star/GitHubStar'
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   title: 'Atatürk Kronolojisi',
   description:
     "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
-  metadataBase: new URL("https://ataturk-kronolojisi.org"),
+  metadataBase: new URL('https://ataturk-kronolojisi.org'),
   keywords: [
     'Atatürk',
     'Mustafa Kemal',
@@ -62,21 +63,21 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#f0f0f0'
+  themeColor: '#f0f0f0',
 }
 
 // Structured data (JSON-LD for SEO rich results)
 const ldData = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Atatürk Kronolojisi",
-  url: "https://ataturk-kronolojisi.org",
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Atatürk Kronolojisi',
+  url: 'https://ataturk-kronolojisi.org',
   description:
     "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
-  inLanguage: "tr",
+  inLanguage: 'tr',
   publisher: {
-    "@type": "Organization",
-    name: "Atatürk Kronolojisi",
+    '@type': 'Organization',
+    name: 'Atatürk Kronolojisi',
   },
 }
 
@@ -86,16 +87,17 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="tr">
+    <html lang='tr'>
       <head>
         <script
-          type="application/ld+json"
+          type='application/ld+json'
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(ldData),
           }}
         />
       </head>
       <body className={barlow.className}>
+        <GitHubStar />
         <Suspense>{children}</Suspense>
         <Analytics />
       </body>
