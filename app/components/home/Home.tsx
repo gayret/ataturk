@@ -12,6 +12,7 @@ import ActionButtons from '@/app/components/action-buttons/ActionButtons'
 import Ceremonies from '@/app/components/ceremonies/Ceremonies'
 import Content, { QuoteType } from '@/app/components/content/Content'
 import SupportMe from '../support-me/SupportMe'
+import GitHubStar from '../github-star/GitHubStar'
 
 interface EventImage {
   url: string
@@ -49,7 +50,7 @@ export default function HomeClient({ events }: HomeClientProps) {
       dynamic(() => import('@/app/components/map/Map'), {
         ssr: false,
       }),
-    []
+    [],
   )
 
   const selectedEvent = events.find((item) => item.id === Number(currentId)) || events[0]
@@ -62,6 +63,7 @@ export default function HomeClient({ events }: HomeClientProps) {
         <Timeline />
         <About />
         <Balloons />
+        <GitHubStar />
       </>
     )
   }
@@ -76,6 +78,7 @@ export default function HomeClient({ events }: HomeClientProps) {
         <Timeline />
         <Ceremonies />
         <SupportMe />
+        <GitHubStar />
       </>
     )
   }

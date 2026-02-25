@@ -3,7 +3,6 @@ import './globals.css'
 import { Barlow } from 'next/font/google'
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
-import GitHubStar from './components/github-star/GitHubStar'
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -97,7 +96,6 @@ export default async function RootLayout({
         />
       </head>
       <body className={barlow.className}>
-        <GitHubStar />
         <Suspense>{children}</Suspense>
         <Analytics />
       </body>
