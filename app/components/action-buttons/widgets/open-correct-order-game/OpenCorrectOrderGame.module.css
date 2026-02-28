@@ -1,0 +1,17 @@
+.button:hover {
+  scale: 2 !important;
+  animation: game 2s linear infinite;
+  right: 1rem;
+}
+
+@keyframes game {
+  0% {
+    transform: translate(0.1rem, 0.1rem);
+  }
+  50% {
+    transform: translate(-0.1rem, -0.1rem);
+  }
+  100% {
+    transform: translate(0.1rem, 0.1rem);
+  }
+}

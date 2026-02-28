@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #ccc;
+  transition: all 0.2s ease-in-out;
+
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.isCorrect {
+  background-color: #00863a;
+  border: 2px solid green;
+  color: white;
+}
