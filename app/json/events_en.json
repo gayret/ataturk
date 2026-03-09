@@ -3127,7 +3127,12 @@
       "lon": 29.9792648
     },
     "images": null,
-    "quotes": null,
+    "quotes": [
+      {
+        "text": "I wish that all my comrades, bearing in mind that further major battles will be fought in Anatolia, advance resolutely and continue to display, as if in competition, their mental strength and their sources of courage and patriotism. Armies! Your first objective is the Mediterranean — forward!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "sounds": null,
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
     "description": ""
@@ -3142,7 +3147,12 @@
       "lon": 29.9792648
     },
     "images": null,
-    "quotes": null,
+    "quotes": [
+      {
+        "text": "I commemorate with respect and appreciation the effort and sacrifice shown by the armies in reaching the first objective I set, the Mediterranean. I have complete confidence that the armies will display the same determination and self-sacrifice in attaining the objectives that will be set hereafter.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "sounds": null,
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
     "description": ""
@@ -4478,6 +4488,10 @@
       {
         "text": "The Republic, as much as it has put the Turkish nation on a safe and secure path to the future with its new and solid foundations, has become the herald of a completely new life in terms of the security it has created in ideas and spirits",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      },
+      {
+        "text": "Hatay is my personal cause. You should know that this is not a joke.",
+        "source": "https://hatay.ktb.gov.tr/TR-60863/ataturk-ve-hatay.html"
       }
     ],
     "sounds": null,

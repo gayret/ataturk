@@ -3127,7 +3127,12 @@
       "lon": 29.9792648
     },
     "images": null,
-    "quotes": null,
+    "quotes": [
+      {
+        "text": "Ich wünsche, dass alle meine Kameraden, in der Voraussicht weiterer großer Feldschlachten in Anatolien, entschlossen voranschreiten und weiterhin wetteifernd ihre geistige Kraft sowie ihre Quellen von Tapferkeit und Vaterlandsliebe unter Beweis stellen. Armeen! Euer erstes Ziel ist das Mittelmeer – vorwärts!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "sounds": null,
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
     "description": ""
@@ -3142,7 +3147,12 @@
       "lon": 29.9792648
     },
     "images": null,
-    "quotes": null,
+    "quotes": [
+      {
+        "text": "Die Anstrengung und Opferbereitschaft, mit der die Armeen das von mir zuerst gesetzte Ziel, das Mittelmeer, erreicht haben, gedenke ich mit Achtung und Anerkennung. Mein Vertrauen ist vollkommen, dass die Armeen auch bei der Erreichung der künftig zu setzenden Ziele denselben Willen und dieselbe Opferbereitschaft zeigen werden.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "sounds": null,
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
     "description": ""
@@ -4478,6 +4488,10 @@
       {
         "text": "...Die Republik hat mit ihren neuen und soliden Prinzipien die türkische Nation auf einen sicheren und gesunden Weg in die Zukunft geführt und mit der Sicherheit, die sie in Bezug auf grundlegende Ideen und Gesinnung geschaffen hat, auch ein völlig neues Leben eingeläutet.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      },
+      {
+        "text": "Hatay ist meine persönliche Herzensangelegenheit. Das ist kein Scherz.",
+        "source": "https://hatay.ktb.gov.tr/TR-60863/ataturk-ve-hatay.html"
       }
     ],
     "sounds": null,
