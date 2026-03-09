@@ -1,5 +1,6 @@
 import { ItemType } from '@/app/components/content/Content'
 import styles from './Select.module.css'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 interface SelectProps {
   randomEvents: ItemType[]
@@ -18,14 +19,21 @@ export default function CorrectOrderSelect({
   index,
   onDrop,
 }: SelectProps) {
+  const { t } = useLanguageStore()
+
   const otherSelected = selectedEvents.filter((_, i) => i !== index).filter((s) => s !== '')
-  const availableEvents = randomEvents.filter(
-    (event) => !otherSelected.includes(event.id) || event.id === value,
-  )
+
+  // prepare list of options, disabling items that are already chosen elsewhere
+  const availableEvents = randomEvents.map((event) => ({
+    ...event,
+    disabled: otherSelected.includes(event.id) && event.id !== value,
+  }))
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault()
     const id = parseInt(e.dataTransfer.getData('text/plain'))
+    // if this event is already selected in another slot, ignore
+    if (otherSelected.includes(id)) return
     onDrop?.(index, id)
   }
 
@@ -38,16 +46,16 @@ export default function CorrectOrderSelect({
       {value ? (
         <span>{randomEvents.find((e) => e.id === value)?.title}</span>
       ) : (
-        <span>Buraya bırakın veya seçin</span>
+        <span>{t.correctOrder?.dropHere || 'Buraya bırakın veya seçin'}</span>
       )}
       <select
         className={styles.select}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
       >
-        <option value=''>Seçim yapınız</option>
+        <option value=''>{t.correctOrder?.selectPlaceholder || 'Seçim yapınız'}</option>
         {availableEvents.map((event) => (
-          <option key={event.id} value={event.id}>
+          <option key={event.id} value={event.id} disabled={event.disabled}>
             {event.title}
           </option>
         ))}

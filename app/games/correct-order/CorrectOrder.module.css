@@ -9,20 +9,30 @@
   position: relative;
 }
 
+/* previously used for in-container score badge; now replaced by header */
 .totalScoreCard {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: linear-gradient(135deg, #ffd700, #ffa500);
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.6rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.scoreHeader {
+  max-width: 900px;
+  margin: 1rem auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.3rem;
-  min-width: 120px;
-  text-align: center;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.scoreHeader .attempts {
+  font-weight: bold;
+  color: #ffd700;
+  font-size: 1.1rem;
+}
+
+.scoreHeader .totalScoreLabel {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .totalScoreLabel {

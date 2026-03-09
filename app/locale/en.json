@@ -35,6 +35,29 @@
   "Share": {
     "title": "Share this event"
   },
+  "correctOrder": {
+    "title": "Arrange the given events in chronological order",
+    "confirmationTitle": "Confirm order",
+    "dropHere": "Drop here or select",
+    "selectPlaceholder": "Choose an event",
+    "pleaseFill": "Please fill all fields.",
+    "wrongOrder": "Wrong order. Correct cards have been locked. Try others.",
+    "congratulations": "Congratulations! You arranged correctly. Score: {{score}}",
+    "eventsTitle": "Events",
+    "orderTitle": "Order",
+    "attemptsLabel": "Attempt: {{count}}",
+    "winTitle": "🎉 Congratulations!",
+    "attemptsText": "Completed successfully in {{count}} attempts.",
+    "scoreText": "Score:",
+    "totalScoreText": "Total Score",
+    "historyTitle": "Order History",
+    "shareText": "Atatürk Event Ordering Game: I got it right in {{attempts}} tries! Score: {{score}} points. #AtaturkGame",
+    "shareTwitter": "Share on X",
+    "shareFacebook": "Share on Facebook",
+    "shareLinkedin": "Share on LinkedIn",
+    "newGame": "Start New Game",
+    "duplicateError": "The same event cannot be selected more than once."
+  },
   "Content": {
     "ageText": "years old"
   },

@@ -12,11 +12,7 @@ export default function OpenCorrectOrderGame() {
 
   return (
     <section>
-      <Modal
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        title='Size verilen olayları tarihe göre sıralayınız'
-      >
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} title={t.correctOrder?.title || ''}>
         <CorrectOrder />
       </Modal>
 

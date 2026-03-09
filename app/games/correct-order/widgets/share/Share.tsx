@@ -2,6 +2,7 @@
 
 import styles from './Share.module.css'
 import { ItemType } from '@/app/components/content/Content'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 interface AttemptResult {
   attempt: number
@@ -25,7 +26,13 @@ export default function Share({
   randomEvents,
   totalScore,
 }: ShareProps) {
-  const shareText = `Atatürk Olay Sıralama Oyunu: ${attempts}. denemede doğru sıraladım! Skor: ${score} puan. #AtaturkGame`
+  const { t } = useLanguageStore()
+
+  const shareText = t.correctOrder?.shareText
+    ? t.correctOrder.shareText
+        .replace('{{attempts}}', attempts.toString())
+        .replace('{{score}}', score.toString())
+    : `Atatürk Olay Sıralama Oyunu: ${attempts}. denemede doğru sıraladım! Skor: ${score} puan. #AtaturkGame`
 
   const shareUrl = encodeURIComponent(window.location.href)
   const shareTextEncoded = encodeURIComponent(shareText)
@@ -41,17 +48,23 @@ export default function Share({
   return (
     <div className={styles.shareContainer}>
       <div className={styles.content}>
-        <h2 className={styles.title}>🎉 Tebrikler!</h2>
-        <p className={styles.resultText}>{attempts}. denemede başarıyla tamamladınız.</p>
+        <h2 className={styles.title}>{t.correctOrder?.winTitle || '🎉 Tebrikler!'}</h2>
+        <p className={styles.resultText}>
+          {t.correctOrder?.attemptsText?.replace('{{count}}', attempts.toString()) ||
+            `${attempts}. denemede başarıyla tamamladınız.`}
+        </p>
         <p className={styles.scoreText}>
-          Skor: <span className={styles.score}>{score}</span>
+          {t.correctOrder?.scoreText || 'Skor:'} <span className={styles.score}>{score}</span>
         </p>
         <p className={styles.totalScoreText}>
-          Toplam Skor: <span className={styles.totalScore}>{totalScore}</span>
+          {t.correctOrder?.totalScoreText || 'Toplam Skor:'}{' '}
+          <span className={styles.totalScore}>{totalScore}</span>
         </p>
 
         <div className={styles.historySection}>
-          <h3 className={styles.historyTitle}>Sıralama Geçmişi</h3>
+          <h3 className={styles.historyTitle}>
+            {t.correctOrder?.historyTitle || 'Sıralama Geçmişi'}
+          </h3>
           <div className={styles.attemptsList}>
             {attemptHistory.map((attempt) => (
               <div key={attempt.attempt} className={styles.attemptItem}>
@@ -78,7 +91,7 @@ export default function Share({
             rel='noopener noreferrer'
             className={styles.shareButton}
           >
-            𝕏 Twitter&apos;da Paylaş
+            {t.correctOrder?.shareTwitter || "𝕏 Twitter'da Paylaş"}
           </a>
           <a
             href={facebookUrl}
@@ -86,7 +99,7 @@ export default function Share({
             rel='noopener noreferrer'
             className={styles.shareButton}
           >
-            f Facebook&apos;ta Paylaş
+            {t.correctOrder?.shareFacebook || "f Facebook'ta Paylaş"}
           </a>
           <a
             href={linkedinUrl}
@@ -94,12 +107,12 @@ export default function Share({
             rel='noopener noreferrer'
             className={styles.shareButton}
           >
-            in LinkedIn&apos;de Paylaş
+            {t.correctOrder?.shareLinkedin || "in LinkedIn'de Paylaş"}
           </a>
         </div>
 
         <button className={styles.newGameButton} onClick={onNewGame}>
-          Yeni Oyun Başla
+          {t.correctOrder?.newGame || 'Yeni Oyun Başla'}
         </button>
       </div>
     </div>

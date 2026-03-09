@@ -35,6 +35,29 @@
   "Share": {
     "title": "Bu olayı paylaş"
   },
+  "correctOrder": {
+    "title": "Size verilen olayları tarihe göre sıralayınız",
+    "confirmationTitle": "Sıralamayı onayla",
+    "dropHere": "Buraya bırakın veya seçin",
+    "selectPlaceholder": "Seçim yapınız",
+    "pleaseFill": "Lütfen tüm alanları doldurunuz.",
+    "wrongOrder": "Yanlış sıralama. Doğru yapılan kartlar kilitlendi. Diğerlerini deneyin.",
+    "congratulations": "Tebrikler! Doğru sıraladınız. Skor: {{score}}",
+    "eventsTitle": "Etkinlikler",
+    "orderTitle": "Sıralama",
+    "attemptsLabel": "Deneme: {{count}}",
+    "winTitle": "🎉 Tebrikler!",
+    "attemptsText": "{{count}}. denemede başarıyla tamamladınız.",
+    "scoreText": "Skor:",
+    "totalScoreText": "Toplam Puan",
+    "historyTitle": "Sıralama Geçmişi",
+    "shareText": "Atatürk Olay Sıralama Oyunu: {{attempts}}. denemede doğru sıraladım! Skor: {{score}} puan. #AtaturkGame",
+    "shareTwitter": "𝕏 Twitter'da Paylaş",
+    "shareFacebook": "f Facebook'ta Paylaş",
+    "shareLinkedin": "in LinkedIn'de Paylaş",
+    "newGame": "Yeni Oyun",
+    "duplicateError": "Aynı etkinlik birden fazla kez seçilemez."
+  },
   "Content": {
     "ageText": "yaş"
   },

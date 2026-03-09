@@ -35,6 +35,29 @@
   "Share": {
     "title": "Dieses Ereignis teilen"
   },
+  "correctOrder": {
+    "title": "Ordnen Sie die gegebenen Ereignisse in chronologischer Reihenfolge an",
+    "confirmationTitle": "Reihenfolge bestätigen",
+    "dropHere": "Hierher ziehen oder auswählen",
+    "selectPlaceholder": "Wählen Sie ein Ereignis",
+    "pleaseFill": "Bitte füllen Sie alle Felder aus.",
+    "wrongOrder": "Falsche Reihenfolge. Korrekte Karten wurden gesperrt. Versuchen Sie andere.",
+    "congratulations": "Glückwunsch! Sie haben es richtig sortiert. Punktzahl: {{score}}",
+    "eventsTitle": "Ereignisse",
+    "orderTitle": "Reihenfolge",
+    "attemptsLabel": "Versuch: {{count}}",
+    "winTitle": "🎉 Glückwunsch!",
+    "attemptsText": "Erfolgreich in {{count}} Versuchen abgeschlossen.",
+    "scoreText": "Punktzahl:",
+    "totalScoreText": "Gesamtpunktzahl",
+    "historyTitle": "Reihenfolgeverlauf",
+    "shareText": "Atatürk Ereignis-Reihenfolge-Spiel: Ich habe es in {{attempts}} Versuchen richtig gemacht! Punktzahl: {{score}} Punkte. #AtaturkGame",
+    "shareTwitter": "Auf X teilen",
+    "shareFacebook": "Auf Facebook teilen",
+    "shareLinkedin": "Auf LinkedIn teilen",
+    "newGame": "Neues Spiel starten",
+    "duplicateError": "Dasselbe Ereignis kann nicht mehr als einmal ausgewählt werden."
+  },
   "Content": {
     "ageText": "Jahre alt"
   },

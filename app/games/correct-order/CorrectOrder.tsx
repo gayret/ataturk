@@ -4,6 +4,7 @@ import styles from './CorrectOrder.module.css'
 import { useEventsData } from '@/app/helpers/data'
 import { ItemType } from '@/app/components/content/Content'
 import { useEffect, useState } from 'react'
+import { useLanguageStore } from '@/app/stores/languageStore'
 import Select from './widgets/select/Select'
 import Card from './widgets/card/Card'
 import Share from './widgets/share/Share'
@@ -15,6 +16,7 @@ interface AttemptResult {
 
 export default function CorrectOrder() {
   const events = useEventsData()
+  const { t } = useLanguageStore()
   const [randomEvents, setRandomEvents] = useState<ItemType[]>([])
   const [selectedEvents, setSelectedEvents] = useState<(number | '')[]>(['', '', ''])
   const [feedback, setFeedback] = useState<string>('')
@@ -59,24 +61,37 @@ export default function CorrectOrder() {
   }
 
   const checkOrder = () => {
-    const newAttempts = attempts + 1
-    setAttempts(newAttempts)
-
+    // preliminary validation – don't count attempts when input is invalid
     if (selectedEvents.includes('')) {
-      setFeedback('Lütfen tüm alanları doldurunuz.')
+      setFeedback(t.correctOrder?.pleaseFill || 'Lütfen tüm alanları doldurunuz.')
       return
     }
+
+    // ensure no duplicates are chosen
+    if (new Set(selectedEvents).size < selectedEvents.length) {
+      setFeedback(t.correctOrder?.duplicateError || 'Aynı etkinlik birden fazla kez seçilemez.')
+      return
+    }
+
+    const newAttempts = attempts + 1
+    setAttempts(newAttempts)
 
     const selectedItems = selectedEvents.map((id) => randomEvents.find((e) => e.id === id)!)
     const sortedSelected = [...selectedItems].sort(
       (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
     )
 
+    // count occurrences to mark duplicates invalid
+    const idCounts: Record<number, number> = {}
+    selectedItems.forEach((item) => {
+      idCounts[item.id] = (idCounts[item.id] || 0) + 1
+    })
+
     // Her pozisyon için kontrol et
     const results = selectedItems.map((item, index) => ({
       cardId: item.id,
       position: index,
-      isCorrect: item.id === sortedSelected[index].id,
+      isCorrect: idCounts[item.id] === 1 && item.id === sortedSelected[index].id,
     }))
 
     setAttemptHistory([...attemptHistory, { attempt: newAttempts, results }])
@@ -88,9 +103,14 @@ export default function CorrectOrder() {
       setSuccess(true)
       const newScore = Math.max(100 - newAttempts * 10, 10)
       setScore(newScore)
-      setFeedback(`Tebrikler! Doğru sıraladınız. Skor: ${newScore}`)
-      const totalScore = parseInt(localStorage.getItem('correctOrderScore') || '0') + newScore
-      localStorage.setItem('correctOrderScore', totalScore.toString())
+      setFeedback(
+        t.correctOrder?.congratulations.replace('{{score}}', newScore.toString()) ||
+          `Tebrikler! Doğru sıraladınız. Skor: ${newScore}`,
+      )
+      const updatedTotal = parseInt(localStorage.getItem('correctOrderScore') || '0') + newScore
+      localStorage.setItem('correctOrderScore', updatedTotal.toString())
+      // update state so UI reflects latest total immediately
+      setTotalScore(updatedTotal)
     } else {
       // Doğru yapılan pozisyonları kilitle
       const newLocked = new Set(lockedPositions)
@@ -100,7 +120,10 @@ export default function CorrectOrder() {
         }
       })
       setLockedPositions(newLocked)
-      setFeedback('Yanlış sıralama. Doğru yapılan kartlar kilitlendi. Diğerlerini deneyin.')
+      setFeedback(
+        t.correctOrder?.wrongOrder ||
+          'Yanlış sıralama. Doğru yapılan kartlar kilitlendi. Diğerlerini deneyin.',
+      )
       // Seçimleri yanlış olanlar için sıfırla
       const newSelected = [...selectedEvents]
       results.forEach((result) => {
@@ -119,75 +142,83 @@ export default function CorrectOrder() {
   }, [])
 
   return (
-    <div className={styles.container}>
-      <div className={styles.totalScoreCard}>
-        <span className={styles.totalScoreLabel}>Toplam Skor</span>
-        <span className={styles.totalScoreValue}>{totalScore}</span>
+    <>
+      <div className={styles.scoreHeader}>
+        <span className={styles.attempts}>
+          {t.correctOrder?.attemptsLabel?.replace('{{count}}', attempts.toString()) ||
+            `${t.correctOrder?.attemptsLabel || 'Attempt'}: ${attempts}`}
+        </span>
+        <span className={styles.totalScoreLabel}>
+          {t.correctOrder?.totalScoreText || 'Total Score'}: {totalScore}
+        </span>
       </div>
-      {success ? (
-        <Share
-          attempts={attempts}
-          score={score}
-          onNewGame={() => fetchRandomEvents(3)}
-          attemptHistory={attemptHistory}
-          randomEvents={randomEvents}
-          totalScore={totalScore}
-        />
-      ) : (
-        <>
-          <main className={styles.main}>
-            <div className={styles.eventsContainer}>
-              <div className={styles.randomEvents}>
-                <h3 className={styles.subtitle}>Etkinlikler</h3>
-                <ul className={styles.list}>
-                  {randomEvents.map((event) => (
-                    <Card event={event} key={event.id} showDate={showDates} />
-                  ))}
-                </ul>
-              </div>
+      <div className={styles.container}>
+        {success ? (
+          <Share
+            attempts={attempts}
+            score={score}
+            onNewGame={() => fetchRandomEvents(3)}
+            attemptHistory={attemptHistory}
+            randomEvents={randomEvents}
+            totalScore={totalScore}
+          />
+        ) : (
+          <>
+            <main className={styles.main}>
+              <div className={styles.eventsContainer}>
+                <div className={styles.randomEvents}>
+                  <h3 className={styles.subtitle}>
+                    {t.correctOrder?.eventsTitle || 'Etkinlikler'}
+                  </h3>
+                  <ul className={styles.list}>
+                    {randomEvents.map((event) => (
+                      <Card event={event} key={event.id} showDate={showDates} />
+                    ))}
+                  </ul>
+                </div>
 
-              <div className={styles.randomEvents}>
-                <h3 className={styles.subtitle}>Sıralama</h3>
-                <p className={styles.attempts}>Deneme: {attempts}</p>
-                <ol className={styles.dropzoneList}>
-                  {selectedEvents.map((selected, index) => {
-                    const isLocked = lockedPositions.has(index)
-                    return (
-                      <li key={index} className={isLocked ? styles.lockedItem : ''}>
-                        {!isLocked && (
-                          <Select
-                            randomEvents={randomEvents}
-                            selectedEvents={selectedEvents}
-                            value={selected}
-                            onChange={(value) => handleSelectChange(index, value)}
-                            index={index}
-                            onDrop={handleDrop}
-                          />
-                        )}
-                        {isLocked && selected && (
-                          <div className={styles.lockedCard}>
-                            <span className={styles.checkIcon}>✓</span>
-                            <span className={styles.lockedTitle}>
-                              {randomEvents.find((e) => e.id === selected)?.title}
-                            </span>
-                          </div>
-                        )}
-                      </li>
-                    )
-                  })}
-                </ol>
-                {feedback && <p className={styles.feedback}>{feedback}</p>}
+                <div className={styles.randomEvents}>
+                  <h3 className={styles.subtitle}>{t.correctOrder?.orderTitle || 'Sıralama'}</h3>
+                  <ol className={styles.dropzoneList}>
+                    {selectedEvents.map((selected, index) => {
+                      const isLocked = lockedPositions.has(index)
+                      return (
+                        <li key={index} className={isLocked ? styles.lockedItem : ''}>
+                          {!isLocked && (
+                            <Select
+                              randomEvents={randomEvents}
+                              selectedEvents={selectedEvents}
+                              value={selected}
+                              onChange={(value) => handleSelectChange(index, value)}
+                              index={index}
+                              onDrop={handleDrop}
+                            />
+                          )}
+                          {isLocked && selected && (
+                            <div className={styles.lockedCard}>
+                              <span className={styles.checkIcon}>✓</span>
+                              <span className={styles.lockedTitle}>
+                                {randomEvents.find((e) => e.id === selected)?.title}
+                              </span>
+                            </div>
+                          )}
+                        </li>
+                      )
+                    })}
+                  </ol>
+                  {feedback && <p className={styles.feedback}>{feedback}</p>}
+                </div>
               </div>
-            </div>
-          </main>
+            </main>
 
-          <footer className={styles.footer}>
-            <button className={styles.button} onClick={checkOrder}>
-              Onaylıyorum
-            </button>
-          </footer>
-        </>
-      )}
-    </div>
+            <footer className={styles.footer}>
+              <button className={styles.button} onClick={checkOrder}>
+                {t.correctOrder?.confirmationTitle || 'Confirm Order'}
+              </button>
+            </footer>
+          </>
+        )}
+      </div>
+    </>
   )
 }
