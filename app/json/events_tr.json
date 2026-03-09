@@ -3127,7 +3127,12 @@
       "lon": 29.9792648
     },
     "images": null,
-    "quotes": null,
+    "quotes": [
+      {
+        "text": "Bütün arkadaşlarımın Anadolu'da daha başka meydan muharebeleri verileceğini göz önüne alarak ilerlemesini ve herkesin zihinsel güçlerini ve kahramanlık ve vatanseverlik kaynaklarını yarışırcasına göstermeye devam etmesini isterim. Ordular! İlk Hedefiniz Akdeniz'dir, ileri!",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "sounds": null,
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
     "description": ""
@@ -3142,7 +3147,12 @@
       "lon": 29.9792648
     },
     "images": null,
-    "quotes": null,
+    "quotes": [
+      {
+        "text": "İlk verdiğim Akdeniz hedefine varmakta orduların gösterdiği gayret ve fedâkarlığı hürmet ve takdirle anarım. Orduların bundan sonra verilecek hedeflerin elde edilişinde de aynı istek ve fedakârlığı göstereceklerine güvenim tamdır.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "sounds": null,
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
     "description": ""
@@ -4478,6 +4488,10 @@
       {
         "text": "Cumhuriyet, yeni ve sağlam esaslarıyla Türk milletini emin ve sağlam bir gelecek yoluna koyduğu kadar, asıl fikirlerde ve ruhlarda yarattığı güvenlik itibariyle büsbütün yeni bir hayatın müjdecisi olmuştur.",
         "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      },
+      {
+        "text": "Hatay benim şahsî davamdır. Şakaya gelmeyeceğini bilmelisiniz.",
+        "source": "https://hatay.ktb.gov.tr/TR-60863/ataturk-ve-hatay.html"
       }
     ],
     "sounds": null,

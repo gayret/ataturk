@@ -1,0 +1,262 @@
+.shareContainer {
+  max-width: 100%;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  animation: slideIn 0.5s ease-out;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.resultText {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.scoreText {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.totalScoreText {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.score {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.totalScore {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.historySection {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.historyTitle {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.attemptsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.attemptItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  border-left: 3px solid #ffd700;
+}
+
+.attemptLabel {
+  font-weight: bold;
+  color: #ffd700;
+  min-width: 80px;
+}
+
+.resultIcons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.resultIcon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: help;
+}
+
+.resultIcon.correct {
+  background: #27ae60;
+  color: #ffd700;
+}
+
+.resultIcon.incorrect {
+  background: #e74c3c;
+  color: white;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.legendCorrect {
+  background: #27ae60;
+  color: #ffd700;
+}
+
+.legendIncorrect {
+  background: #e74c3c;
+  color: white;
+}
+
+.shareButtons {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.shareButton {
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  color: #2c3e50;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.shareButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.newGameButton {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.newGameButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.iconTooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 10;
+  margin-bottom: 0.5rem;
+}
+
+.resultIcon:hover .iconTooltip {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .shareContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .shareButtons {
+    gap: 0.5rem;
+  }
+
+  .shareButton {
+    min-width: 120px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .legend {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .attemptItem {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .resultIcons {
+    width: 100%;
+    justify-content: center;
+  }
+}

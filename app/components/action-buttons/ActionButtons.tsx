@@ -14,6 +14,7 @@ import EditThisContent from './widgets/edit-this-content/EditThisContent'
 import hamburgerButtonIcon from '@/app/assets/icons/hamburger-button.svg'
 import close from '@/app/assets/icons/close.svg'
 import Image from 'next/image'
+import OpenCorrectOrderGame from './widgets/open-correct-order-game/OpenCorrectOrderGame'
 
 export default function ActionButtons({
   showOnlyLanguageSelector = false,
@@ -40,6 +41,8 @@ export default function ActionButtons({
       <div className={`${styles.buttonsWrapper} ${isMenuOpen ? styles.open : ''}`}>
         {selectedItem && (
           <>
+            <OpenCorrectOrderGame />
+
             <StreetView lat={selectedItem?.location.lat} lon={selectedItem?.location.lon} />
 
             <EventFilter />
