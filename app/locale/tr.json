@@ -43,7 +43,7 @@
     "pleaseFill": "Lütfen tüm alanları doldurunuz.",
     "wrongOrder": "Yanlış sıralama. Doğru yapılan kartlar kilitlendi. Diğerlerini deneyin.",
     "congratulations": "Tebrikler! Doğru sıraladınız. Skor: {{score}}",
-    "eventsTitle": "Etkinlikler",
+    "eventsTitle": "Olaylar",
     "orderTitle": "Sıralama",
     "attemptsLabel": "Deneme: {{count}}",
     "winTitle": "🎉 Tebrikler!",
