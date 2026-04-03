@@ -1,9 +1,10 @@
-import { useLanguageStore } from "../stores/languageStore"
+import { useLanguageStore } from '../stores/languageStore'
 
 const localeMap: Record<string, string> = {
-  'tr': 'tr-TR',
-  'en': 'en-US',
-  'de': 'de-DE',
+  tr: 'tr-TR',
+  en: 'en-US',
+  de: 'de-DE',
+  es: 'es-ES',
 }
 
 export function formatDate(date: string): string {
@@ -39,9 +40,8 @@ export function getYear(date: string): number {
 export function convertDateFormat(input: string): string {
   // Input: "31.12.1885 23:00:00"
   // Output: "1885-12-31 23:00:00"
-  const [datePart, timePart] = input?.split(" ");
-  const [day, month, year] = datePart?.split(".");
+  const [datePart, timePart] = input?.split(' ')
+  const [day, month, year] = datePart?.split('.')
 
-  return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")} ${timePart}`;
+  return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')} ${timePart}`
 }
-

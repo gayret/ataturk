@@ -1,0 +1,109 @@
+{
+  "Header": {
+    "title": "Cronología de Atatürk"
+  },
+  "About": {
+    "title": "¡A los niños y a la juventud turca!",
+    "description": "El Gran Líder Gazi Mustafa Kemal Atatürk se convirtió en el fundador de la República de Turquía al liderar la lucha por la independencia del pueblo turco.",
+    "mission": "El objetivo de este proyecto es narrar cronológicamente la vida de Atatürk, llena de valentía, visión y sacrificio, e inspirar a los jóvenes.",
+    "usageTitle": "Uso",
+    "usageDescription": "El objetivo de este proyecto es narrar cronológicamente la vida de Atatürk, llena de valentía, visión y sacrificio, e inspirar a los jóvenes.",
+    "translatorsTitle": "Traductores",
+    "Contributors": {
+      "title": "Desarrolladores",
+      "intro": "El código fuente y los datos del proyecto están abiertos a todos. Para revisarlo o contribuir",
+      "linkText": "Enlace de GitHub"
+    },
+    "Story": {
+      "title": "Historia del Proyecto",
+      "iframeTitle": "Publicación incrustada"
+    },
+    "Widget": {
+      "sectionLabel": "Componente de citas de Atatürk",
+      "eyebrow": "Widget",
+      "title": "Componente de citas de Atatürk",
+      "description": "Al agregar este componente a tu sitio, puedes mostrar citas aleatorias inspiradoras de Atatürk a tus visitantes.",
+      "previewFrameTitle": "Vista previa del widget de citas de Atatürk",
+      "cta": "Añadir a tu sitio",
+      "closeCta": "Ocultar código de inserción",
+      "embedTitle": "Pega este código en tu sitio",
+      "embedDescription": "Solo necesitas agregar las etiquetas div y script a continuación en el lugar donde deseas que aparezca el componente.",
+      "copy": "Copiar código",
+      "copied": "¡Copiado!"
+    }
+  },
+  "Share": {
+    "title": "Comparte este evento"
+  },
+  "correctOrder": {
+    "title": "Ordena los eventos dados según la fecha",
+    "confirmationTitle": "Confirmar orden",
+    "dropHere": "Suelta aquí o selecciona",
+    "selectPlaceholder": "Selecciona",
+    "pleaseFill": "Por favor completa todos los campos.",
+    "wrongOrder": "Orden incorrecto. Las tarjetas correctas se han bloqueado. Intenta con las demás.",
+    "congratulations": "¡Felicidades! Has ordenado correctamente. Puntuación: {{score}}",
+    "eventsTitle": "Eventos",
+    "orderTitle": "Orden",
+    "attemptsLabel": "Intento: {{count}}",
+    "winTitle": "🎉 ¡Felicidades!",
+    "attemptsText": "Completado con éxito en el intento {{count}}.",
+    "scoreText": "Puntuación:",
+    "totalScoreText": "Puntuación total",
+    "historyTitle": "Historial de orden",
+    "shareText": "Juego de Orden de Eventos de Atatürk: ¡Lo ordené correctamente en el intento {{attempts}}! Puntuación: {{score}} puntos. #AtaturkGame",
+    "shareTwitter": "Compartir en 𝕏 Twitter",
+    "shareFacebook": "Compartir en Facebook",
+    "shareLinkedin": "Compartir en LinkedIn",
+    "newGame": "Nuevo juego",
+    "duplicateError": "No se puede seleccionar el mismo evento más de una vez."
+  },
+  "Content": {
+    "ageText": "edad"
+  },
+  "ActionButtons": {
+    "streetViewTitle": "Vista de la calle",
+    "streetViewIconAlt": "Icono de Vista de la calle",
+    "eventFilterOpen": "Abrir filtros",
+    "eventFilterClose": "Cerrar filtros",
+    "directionTitle": "Indicaciones",
+    "directionIconAlt": "Icono de indicaciones",
+    "searchTitle": "Buscar",
+    "searchIconAlt": "Icono de búsqueda",
+    "searchPlaceholder": "Buscar...",
+    "shareTitle": "Comparte este evento",
+    "shareIconAlt": "Icono de compartir",
+    "shareLinkedinTitle": "Compartir en LinkedIn",
+    "shareLinkedinIconAlt": "Icono de LinkedIn",
+    "shareTwitterTitle": "Compartir en X",
+    "shareTwitterIconAlt": "Icono de X",
+    "shareFacebookTitle": "Compartir en Facebook",
+    "shareFacebookIconAlt": "Icono de Facebook",
+    "shareWhatsappTitle": "Compartir en WhatsApp",
+    "shareWhatsappIconAlt": "Icono de WhatsApp",
+    "shareText": "Cronología de Atatürk - ¡Descubre la vida de Mustafa Kemal Atatürk con mapas y recursos visuales y auditivos!",
+    "autoPlayActiveTitle": "Reproducción automática activa",
+    "autoPlayActiveStopTitle": "Detener (Space)",
+    "autoPlaySpeedTitle": "Velocidad",
+    "autoPlaySpeedChangeTitle": "Haz clic para cambiar",
+    "autoPlayMinutesText": "min",
+    "autoPlaySecondsText": "s",
+    "autoPlayIconAlt": "Icono de reproducción automática",
+    "languageSelectorTitle": "Seleccionar idioma",
+    "languageSelectorIconAlt": "Icono de idioma",
+    "filters": {
+      "personal": "Personal",
+      "military": "Militar",
+      "political": "Política",
+      "education": "Educación",
+      "reform": "Reforma",
+      "visit": "Visita",
+      "other": "Otros"
+    },
+    "editThisContent": "Editar este contenido"
+  },
+  "SupportMe": {
+    "description": "Invítame a un café"
+  },
+  "InformationSource": "Fuente de información"
+}

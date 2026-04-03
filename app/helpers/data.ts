@@ -2,6 +2,7 @@ import { useMemo, useEffect } from 'react'
 import jsonDataTr from '../json/events_tr.json'
 import jsonDataEn from '../json/events_en.json'
 import jsonDataDe from '../json/events_de.json'
+import jsonDataEs from '../json/events_es.json'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import { useLanguageStore } from '../stores/languageStore'
 
@@ -39,6 +40,8 @@ export const useEventsData = () => {
         return jsonDataEn
       case 'de':
         return jsonDataDe
+      case 'es':
+        return jsonDataEs
       default:
         return jsonDataTr
     }

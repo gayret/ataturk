@@ -4,6 +4,7 @@ import { useLanguageStore } from '@/app/stores/languageStore'
 import Image from 'next/image'
 import AEnesSolProfilePicture from '@/app/assets/images/a-enes-sol.jpeg'
 import KaanKarakocProfilePicture from '@/app/assets/images/kaan-karakoc.jpeg'
+import MursideAkiProfilePicture from '@/app/assets/images/murside-aki.jpeg'
 import Link from 'next/link'
 
 export default function Translators() {
@@ -26,6 +27,13 @@ export default function Translators() {
             <span>Kaan Karakoç</span>
           </Link>
           - Deutsch
+        </li>
+        <li>
+          <Link target='_blank' href='https://www.linkedin.com/in/m%C3%BCr%C5%9Fide-aki-7803602a3/'>
+            <Image src={MursideAkiProfilePicture} alt='Mürşide Aki' width={50} height={50} />
+            <span>Mürşide Aki</span>
+          </Link>
+          - Español
         </li>
       </ul>
     </div>

@@ -68,6 +68,8 @@ const HoverCard = ({
               src={userProfile.avatar_url}
               alt={userProfile.login}
               className={styles.hovercardAvatar}
+              width={50}
+              height={50}
             />
             <div className={styles.hovercardInfo}>
               <h4 className={styles.hovercardName}>{userProfile.name || userProfile.login}</h4>
@@ -136,7 +138,7 @@ export default function Contributors() {
         }))
 
         setContributors(
-          contributors.filter((contributor: Contributor) => contributor.type !== 'Bot')
+          contributors.filter((contributor: Contributor) => contributor.type !== 'Bot'),
         )
       })
       .catch((error) => console.error('Error fetching contributors:', error))
