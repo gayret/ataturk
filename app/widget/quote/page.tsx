@@ -1,7 +1,7 @@
-﻿import Image from 'next/image'
+import Image from 'next/image'
 import styles from './QuoteWidget.module.css'
 import ataturkSketch from '@/app/assets/images/widget.png'
-import { mapToPublicQuote, resolveQuotes } from '@/app/helpers/quotes'
+import { mapToPublicQuote, resolveQuotes, Language } from '@/app/helpers/quotes'
 import WidgetFrameSync from './WidgetFrameSync'
 import { ataturk } from '@/app/fonts'
 
@@ -9,138 +9,83 @@ type SearchParams = Record<string, string | string[] | undefined>
 type PageProps = {
   searchParams: Promise<SearchParams>
 }
-type Language = 'tr' | 'en' | 'de'
 
-const UI_COPY: Record<Language, { cta: string; widgetLabel: string; signature: string }> = {
+const UI_COPY: Record<Language, { cta: string; widgetLabel: string; signature: string; empty: string }> = {
   tr: {
     cta: 'Kronolojide oku',
-
     widgetLabel: 'Atatürk Sözü',
-
     signature: 'Mustafa Kemal Atatürk',
+    empty: 'Gösterilecek söz bulunamadı.',
   },
-
   en: {
     cta: 'Read in the chronology',
-
     widgetLabel: 'Quote by Atatürk',
-
     signature: 'Mustafa Kemal Atatürk',
+    empty: 'No quote found to display.',
   },
   de: {
     cta: 'In der Chronologie lesen',
-
     widgetLabel: 'Atatürk Zitat',
-
     signature: 'Mustafa Kemal Atatürk',
+    empty: 'Kein Zitat zum Anzeigen gefunden.',
+  },
+  es: {
+    cta: 'Leer en la cronología',
+    widgetLabel: 'Cita de Atatürk',
+    signature: 'Mustafa Kemal Atatürk',
+    empty: 'No se encontró ninguna cita para mostrar.',
   },
 }
 
-const getSingleValue = (value: string | string[] | undefined) => {
-  if (Array.isArray(value)) {
-    return value[0]
-  }
-
-  return value ?? undefined
-}
-
-const parseBoolean = (value: string | undefined, fallback: boolean) => {
-  if (value === undefined) return fallback
-
-  return value === 'true'
-}
-
-const parseNumber = (value: string | undefined) => {
-  if (value === undefined) return null
-
-  const parsed = Number(value)
-
-  return Number.isNaN(parsed) ? null : parsed
-}
-
-const selectLanguage = (raw: string | undefined): Language => {
-  if (raw === 'en') return 'en'
-  if (raw === 'de') return 'de'
-
-  return 'tr'
-}
-
-const THEME_CLASSNAMES = {
-  light: styles.light,
-
-  dark: styles.dark,
-}
-
-const resolveTheme = (value: string | undefined) => {
-  if (value === 'dark') return 'dark'
-
-  return 'light'
-}
+const getSingleParam = (val: string | string[] | undefined): string | undefined => 
+  Array.isArray(val) ? val[0] : val;
 
 export default async function QuoteWidgetPage({ searchParams }: PageProps) {
-  const resolvedSearchParams = await searchParams
+  const params = await searchParams
 
-  const language = selectLanguage(getSingleValue(resolvedSearchParams.language))
+  const rawLang = getSingleParam(params.language) as Language
+  const language = Object.keys(UI_COPY).includes(rawLang) ? rawLang : 'tr'
+  const copy = UI_COPY[language]
 
-  const theme = resolveTheme(getSingleValue(resolvedSearchParams.theme))
+  const theme = getSingleParam(params.theme) === 'dark' ? 'dark' : 'light'
+  const themeClass = theme === 'dark' ? styles.dark : styles.light
 
-  const hideImage = parseBoolean(
-    getSingleValue(resolvedSearchParams.hideImage),
+  const hideImage = getSingleParam(params.hideImage) === 'true'
+  const hideSignature = getSingleParam(params.hideSignature) === 'true'
+  
+  const widgetId = getSingleParam(params.widgetId)
+  const quoteId = getSingleParam(params.quoteId)
+  
+  const eventIdParams = getSingleParam(params.eventId)
+  const eventId = eventIdParams ? Number(eventIdParams) : null
+  
+  const date = getSingleParam(params.date)
+  
+  // Default to true if not explicitly passed as 'false'
+  const random = getSingleParam(params.random) !== 'false'
 
-    false
-  )
-
-  const hideSignature = parseBoolean(
-    getSingleValue(resolvedSearchParams.hideSignature),
-
-    false
-  )
-
-  const widgetId = getSingleValue(resolvedSearchParams.widgetId)
-
-  const quoteId = getSingleValue(resolvedSearchParams.quoteId)
-
-  const eventId = parseNumber(getSingleValue(resolvedSearchParams.eventId))
-
-  const date = getSingleValue(resolvedSearchParams.date)
-
-  const random = parseBoolean(
-    getSingleValue(resolvedSearchParams.random),
-
-    true
-  )
-
-  const quoteRecords = resolveQuotes(language, {
+  const [selectedQuote] = resolveQuotes(language, {
     quoteId,
-
-    eventId,
-
+    eventId: Number.isNaN(eventId) ? null : eventId,
     date,
-
     random,
-
     count: 1,
   })
-
-  const selectedQuote = quoteRecords[0]
-
+  
   const publicQuote = selectedQuote ? mapToPublicQuote(selectedQuote, language) : null
-
   const figureImage = selectedQuote?.image ?? null
-
-  const copy = UI_COPY[language]
 
   if (!publicQuote) {
     return (
-      <div className={`${styles.widget} ${THEME_CLASSNAMES[theme]}`}>
-        <p className={styles.empty}>Gösterilecek söz bulunamadı.</p>
+      <div className={`${styles.widget} ${themeClass}`}>
+        <p className={styles.empty}>{copy.empty}</p>
       </div>
     )
   }
 
   const widgetContent = (
     <WidgetFrameSync widgetId={widgetId}>
-      <div className={`${styles.widget} ${THEME_CLASSNAMES[theme]}`} data-theme={theme}>
+      <div className={`${styles.widget} ${themeClass}`} data-theme={theme}>
         <div className={styles.header}>
           {!hideImage && (
             <div className={styles.figure}>
@@ -167,11 +112,13 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
         </div>
 
         <blockquote className={styles.quote}>
-          <p className={(styles.quoteText, ataturk.variable)}>{publicQuote.text}</p>
+          <p className={styles.quoteText}>{publicQuote.text}</p>
         </blockquote>
 
-        <div className={(styles.footer, ataturk.variable)}>
-          {!hideSignature && <p className={styles.signature}>{copy.signature}</p>}
+        <div className={styles.footer}>
+          {!hideSignature && (
+            <p className={`${styles.signature} ${ataturk.className}`}>{copy.signature}</p>
+          )}
         </div>
       </div>
     </WidgetFrameSync>
@@ -182,7 +129,7 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
       <a
         href={publicQuote.permalink}
         className={styles.cardLink}
-        aria-label='Alıntıya git'
+        aria-label={copy.cta}
         target='_blank'
         rel='noopener noreferrer'
       >
