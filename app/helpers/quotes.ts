@@ -1,9 +1,10 @@
 import eventsTr from '@/app/json/events_tr.json'
 import eventsEn from '@/app/json/events_en.json'
 import eventsDe from '@/app/json/events_de.json'
+import eventsEs from '@/app/json/events_es.json'
 import { QuoteType } from '../components/content/Content'
 
-type Language = 'tr' | 'en' | 'de'
+export type Language = 'tr' | 'en' | 'de' | 'es'
 
 type RawEventImage = {
   url: string
@@ -46,35 +47,47 @@ const datasets: Record<Language, RawEvent[]> = {
   tr: eventsTr as RawEvent[],
   en: eventsEn as RawEvent[],
   de: eventsDe as RawEvent[],
+  es: eventsEs as RawEvent[],
 }
 
 const quoteCache: Record<Language, QuoteRecord[]> = {
   tr: buildQuoteDataset('tr'),
   en: buildQuoteDataset('en'),
   de: buildQuoteDataset('de'),
+  es: buildQuoteDataset('es'),
 }
 
 export const MAX_QUOTES_PER_REQUEST = 10
 export const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL || process.env.BASE_URL || 'https://ataturk-kronolojisi.org'
 
+type FlexibleQuote = string | { text?: string; '-text'?: string; source?: string }
+
 function buildQuoteDataset(language: Language): QuoteRecord[] {
   const dataset = datasets[language] ?? datasets.tr
 
   return dataset.flatMap((event) => {
-    const quotes = event.quotes || []
-    return quotes.map((quote, index) => ({
-      id: `${event.id}-${index}`,
-      eventId: event.id,
-      date: event.date,
-      title: event.title,
-      description: event.description,
-      quote: quote.text,
-      source: quote.source,
-      language,
-      eventCategory: event.category,
-      image: event.images?.[0] ?? null,
-    }))
+    const rawQuotes = event.quotes ?? []
+    const quotesArray = (Array.isArray(rawQuotes) ? rawQuotes : [rawQuotes]) as FlexibleQuote[]
+
+    return quotesArray.map((quote, index) => {
+      const isString = typeof quote === 'string'
+      const quoteText = isString ? quote : (quote?.text ?? quote?.['-text'] ?? '')
+      const quoteSource = isString ? undefined : quote?.source
+      
+      return {
+        id: `${event.id}-${index}`,
+        eventId: event.id,
+        date: event.date,
+        title: event.title,
+        description: event.description,
+        quote: quoteText,
+        source: quoteSource,
+        language,
+        eventCategory: event.category,
+        image: event.images?.[0] ?? null,
+      }
+    })
   })
 }
 
