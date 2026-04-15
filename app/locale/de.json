@@ -28,6 +28,18 @@
       "closeCta": "Einbettungscode ausblenden",
       "embedTitle": "Fügen Sie dieses Snippet in Ihre Website ein",
       "embedDescription": "Platzieren Sie das Container-Div und das Script-Tag an der Stelle, an der das Widget erscheinen soll.",
+      "languageLabel": "Widget-Sprache",
+      "themeLabel": "Design",
+      "languages": {
+        "tr": "Türkisch",
+        "en": "Englisch",
+        "de": "Deutsch",
+        "es": "Spanisch"
+      },
+      "themes": {
+        "light": "Hell",
+        "dark": "Dunkel"
+      },
       "copy": "Snippet kopieren",
       "copied": "Kopiert!"
     }

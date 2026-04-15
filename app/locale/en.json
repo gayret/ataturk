@@ -28,6 +28,18 @@
       "closeCta": "Hide embed code",
       "embedTitle": "Paste this snippet on your site",
       "embedDescription": "Place the container div and script tag wherever you want the widget to appear.",
+      "languageLabel": "Widget language",
+      "themeLabel": "Theme",
+      "languages": {
+        "tr": "Turkish",
+        "en": "English",
+        "de": "German",
+        "es": "Spanish"
+      },
+      "themes": {
+        "light": "Light",
+        "dark": "Dark"
+      },
       "copy": "Copy snippet",
       "copied": "Copied!"
     }

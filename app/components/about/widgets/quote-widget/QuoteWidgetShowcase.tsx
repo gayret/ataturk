@@ -1,33 +1,42 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useLanguageStore } from '@/app/stores/languageStore'
 import styles from './QuoteWidgetShowcase.module.css'
 
 const FALLBACK_LANGUAGE = 'tr'
+const FALLBACK_THEME = 'light'
+const LANGUAGE_OPTIONS = ['tr', 'en', 'de', 'es'] as const
+const THEME_OPTIONS = ['light', 'dark'] as const
 
 export default function QuoteWidgetShowcase() {
   const { t, currentLanguageCode } = useLanguageStore()
   const [isEmbedVisible, setIsEmbedVisible] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [selectedLanguage, setSelectedLanguage] = useState(FALLBACK_LANGUAGE)
+  const [selectedTheme, setSelectedTheme] = useState(FALLBACK_THEME)
 
   const language = currentLanguageCode || FALLBACK_LANGUAGE
   const widgetCopy = t.About.Widget
 
+  useEffect(() => {
+    setSelectedLanguage(language)
+  }, [language])
+
   const widgetSrc = useMemo(() => {
     const params = new URLSearchParams({
-      language,
-      theme: 'light',
+      language: selectedLanguage,
+      theme: selectedTheme,
       random: 'true',
     })
     return `/widget/quote?${params.toString()}`
-  }, [language])
+  }, [selectedLanguage, selectedTheme])
 
   const embedCode = useMemo(
     () =>
-      `<div data-ataturk-quote-widget data-language="${language}" data-theme="light"></div>
-<script async src="https://ataturk-kronolojisi.org/widget/quote.js" data-language="${language}" data-theme="light"></script>`,
-    [language]
+      `<div data-ataturk-quote-widget data-language="${selectedLanguage}" data-theme="${selectedTheme}"></div>
+<script async src="https://ataturk-kronolojisi.org/widget/quote.js" data-language="${selectedLanguage}" data-theme="${selectedTheme}"></script>`,
+    [selectedLanguage, selectedTheme]
   )
 
   const toggleEmbed = () => {
@@ -96,6 +105,36 @@ export default function QuoteWidgetShowcase() {
             <div className={styles.modalContent}>
               <p className={styles.embedTitle}>{widgetCopy.embedTitle}</p>
               <p className={styles.embedDescription}>{widgetCopy.embedDescription}</p>
+              <div className={styles.controls}>
+                <label className={styles.field}>
+                  <span className={styles.fieldLabel}>{widgetCopy.languageLabel}</span>
+                  <select
+                    className={styles.select}
+                    value={selectedLanguage}
+                    onChange={(event) => setSelectedLanguage(event.target.value)}
+                  >
+                    {LANGUAGE_OPTIONS.map((option) => (
+                      <option key={option} value={option}>
+                        {widgetCopy.languages[option]}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label className={styles.field}>
+                  <span className={styles.fieldLabel}>{widgetCopy.themeLabel}</span>
+                  <select
+                    className={styles.select}
+                    value={selectedTheme}
+                    onChange={(event) => setSelectedTheme(event.target.value)}
+                  >
+                    {THEME_OPTIONS.map((option) => (
+                      <option key={option} value={option}>
+                        {widgetCopy.themes[option]}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
               <pre className={styles.codeBlock} aria-live='polite'>
                 <code>
                   <span className={styles.codeLine}>
@@ -104,11 +143,12 @@ export default function QuoteWidgetShowcase() {
                     <span className={styles.codeAttr}>
                       {' '}
                       data-language=
-                      <span className={styles.codeValue}>&quot;{language}&quot;</span>
+                      <span className={styles.codeValue}>&quot;{selectedLanguage}&quot;</span>
                     </span>
                     <span className={styles.codeAttr}>
                       {' '}
-                      data-theme=<span className={styles.codeValue}>&quot;light&quot;</span>
+                      data-theme=
+                      <span className={styles.codeValue}>&quot;{selectedTheme}&quot;</span>
                     </span>
                     <span className={styles.codeTag}>&gt;</span>
                   </span>
@@ -128,11 +168,12 @@ export default function QuoteWidgetShowcase() {
                     <span className={styles.codeAttr}>
                       {' '}
                       data-language=
-                      <span className={styles.codeValue}>&quot;{language}&quot;</span>
+                      <span className={styles.codeValue}>&quot;{selectedLanguage}&quot;</span>
                     </span>
                     <span className={styles.codeAttr}>
                       {' '}
-                      data-theme=<span className={styles.codeValue}>&quot;light&quot;</span>
+                      data-theme=
+                      <span className={styles.codeValue}>&quot;{selectedTheme}&quot;</span>
                     </span>
                     <span className={styles.codeTag}>&gt;</span>
                   </span>

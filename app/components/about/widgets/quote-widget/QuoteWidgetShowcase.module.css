@@ -80,6 +80,43 @@
   gap: 0.75rem;
 }
 
+.controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.fieldLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #344054;
+}
+
+.select {
+  appearance: none;
+  border: 1px solid #d0d5dd;
+  background: #f8fafc;
+  color: #0f172a;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.select:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+  background: #fff;
+}
+
 .embedTitle {
   margin: 0;
   font-size: 1.1rem;
@@ -145,5 +182,9 @@
 @media (max-width: 600px) {
   .previewFrame {
     height: 280px;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
   }
 }
