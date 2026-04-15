@@ -30,6 +30,8 @@
       "embedDescription": "Place the container div and script tag wherever you want the widget to appear.",
       "languageLabel": "Widget language",
       "themeLabel": "Theme",
+      "backgroundColorLabel": "Background color",
+      "textColorLabel": "Text color",
       "languages": {
         "tr": "Turkish",
         "en": "English",

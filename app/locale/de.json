@@ -30,6 +30,8 @@
       "embedDescription": "Platzieren Sie das Container-Div und das Script-Tag an der Stelle, an der das Widget erscheinen soll.",
       "languageLabel": "Widget-Sprache",
       "themeLabel": "Design",
+      "backgroundColorLabel": "Hintergrundfarbe",
+      "textColorLabel": "Textfarbe",
       "languages": {
         "tr": "Türkisch",
         "en": "Englisch",

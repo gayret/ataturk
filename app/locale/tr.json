@@ -30,6 +30,8 @@
       "embedDescription": "Aşağıdaki div ve script etiketlerini bileşenin görünmesini istediğin yere eklemen yeterli.",
       "languageLabel": "Widget dili",
       "themeLabel": "Tema",
+      "backgroundColorLabel": "Arkaplan rengi",
+      "textColorLabel": "Yazı rengi",
       "languages": {
         "tr": "Türkçe",
         "en": "English",

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import type { CSSProperties } from 'react'
 import styles from './QuoteWidget.module.css'
 import ataturkSketch from '@/app/assets/images/widget.png'
 import { mapToPublicQuote, resolveQuotes, Language } from '@/app/helpers/quotes'
@@ -9,6 +10,19 @@ type SearchParams = Record<string, string | string[] | undefined>
 type PageProps = {
   searchParams: Promise<SearchParams>
 }
+
+const THEME_PRESETS = {
+  light: {
+    backgroundColor: '#FFFFFF',
+    textColor: '#2F2F2F',
+  },
+  dark: {
+    backgroundColor: '#050608',
+    textColor: '#F7F7F7',
+  },
+} as const
+
+const HEX_COLOR_PATTERN = /^#[0-9A-F]{6}$/i
 
 const UI_COPY: Record<Language, { cta: string; widgetLabel: string; signature: string; empty: string }> = {
   tr: {
@@ -40,6 +54,11 @@ const UI_COPY: Record<Language, { cta: string; widgetLabel: string; signature: s
 const getSingleParam = (val: string | string[] | undefined): string | undefined => 
   Array.isArray(val) ? val[0] : val;
 
+const normalizeHexColor = (value?: string) => {
+  if (!value) return null
+  return HEX_COLOR_PATTERN.test(value) ? value.toUpperCase() : null
+}
+
 export default async function QuoteWidgetPage({ searchParams }: PageProps) {
   const params = await searchParams
 
@@ -49,7 +68,10 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
 
   const theme = getSingleParam(params.theme) === 'dark' ? 'dark' : 'light'
   const themeClass = theme === 'dark' ? styles.dark : styles.light
-  const pageBackground = theme === 'dark' ? '#050608' : '#ffffff'
+  const presetColors = THEME_PRESETS[theme]
+  const backgroundColor =
+    normalizeHexColor(getSingleParam(params.backgroundColor)) ?? presetColors.backgroundColor
+  const textColor = normalizeHexColor(getSingleParam(params.textColor)) ?? presetColors.textColor
 
   const hideImage = getSingleParam(params.hideImage) === 'true'
   const hideSignature = getSingleParam(params.hideSignature) === 'true'
@@ -75,13 +97,17 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
   
   const publicQuote = selectedQuote ? mapToPublicQuote(selectedQuote, language) : null
   const figureImage = selectedQuote?.image ?? null
-  const pageStyle = <style>{`html, body { background: ${pageBackground}; }`}</style>
+  const pageStyle = <style>{`html, body { background: ${backgroundColor}; }`}</style>
+  const widgetStyle = {
+    ['--widget-background' as '--widget-background']: backgroundColor,
+    ['--widget-text' as '--widget-text']: textColor,
+  } as CSSProperties
 
   if (!publicQuote) {
     return (
       <>
         {pageStyle}
-        <div className={`${styles.widget} ${themeClass}`}>
+        <div className={`${styles.widget} ${themeClass}`} style={widgetStyle}>
           <p className={styles.empty}>{copy.empty}</p>
         </div>
       </>
@@ -90,7 +116,7 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
 
   const widgetContent = (
     <WidgetFrameSync widgetId={widgetId}>
-      <div className={`${styles.widget} ${themeClass}`} data-theme={theme}>
+      <div className={`${styles.widget} ${themeClass}`} data-theme={theme} style={widgetStyle}>
         <div className={styles.header}>
           {!hideImage && (
             <div className={styles.figure}>

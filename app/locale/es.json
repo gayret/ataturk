@@ -30,6 +30,8 @@
       "embedDescription": "Solo necesitas agregar las etiquetas div y script a continuación en el lugar donde deseas que aparezca el componente.",
       "languageLabel": "Idioma del widget",
       "themeLabel": "Tema",
+      "backgroundColorLabel": "Color de fondo",
+      "textColorLabel": "Color del texto",
       "languages": {
         "tr": "Turco",
         "en": "Inglés",
