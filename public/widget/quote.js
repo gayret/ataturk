@@ -97,6 +97,7 @@
     iframe.setAttribute('allowtransparency', 'true')
 
     iframe.style.border = '0'
+    iframe.style.display = 'block'
 
     iframe.style.width = element.getAttribute('data-width') || '100%'
 

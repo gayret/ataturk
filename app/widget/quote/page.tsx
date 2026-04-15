@@ -49,6 +49,7 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
 
   const theme = getSingleParam(params.theme) === 'dark' ? 'dark' : 'light'
   const themeClass = theme === 'dark' ? styles.dark : styles.light
+  const pageBackground = theme === 'dark' ? '#050608' : '#ffffff'
 
   const hideImage = getSingleParam(params.hideImage) === 'true'
   const hideSignature = getSingleParam(params.hideSignature) === 'true'
@@ -74,12 +75,16 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
   
   const publicQuote = selectedQuote ? mapToPublicQuote(selectedQuote, language) : null
   const figureImage = selectedQuote?.image ?? null
+  const pageStyle = <style>{`html, body { background: ${pageBackground}; }`}</style>
 
   if (!publicQuote) {
     return (
-      <div className={`${styles.widget} ${themeClass}`}>
-        <p className={styles.empty}>{copy.empty}</p>
-      </div>
+      <>
+        {pageStyle}
+        <div className={`${styles.widget} ${themeClass}`}>
+          <p className={styles.empty}>{copy.empty}</p>
+        </div>
+      </>
     )
   }
 
@@ -126,17 +131,25 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
 
   if (publicQuote.permalink) {
     return (
-      <a
-        href={publicQuote.permalink}
-        className={styles.cardLink}
-        aria-label={copy.cta}
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        {widgetContent}
-      </a>
+      <>
+        {pageStyle}
+        <a
+          href={publicQuote.permalink}
+          className={styles.cardLink}
+          aria-label={copy.cta}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          {widgetContent}
+        </a>
+      </>
     )
   }
 
-  return widgetContent
+  return (
+    <>
+      {pageStyle}
+      {widgetContent}
+    </>
+  )
 }

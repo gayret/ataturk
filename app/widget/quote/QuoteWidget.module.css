@@ -91,7 +91,7 @@
 }
 
 .cardLink {
-  display: inline-block;
+  display: block;
   text-decoration: none;
   color: inherit;
 }
