@@ -11,6 +11,10 @@
 
   const defaultTheme = currentScript?.getAttribute('data-theme') || 'light'
 
+  const defaultBackgroundColor = currentScript?.getAttribute('data-background-color')
+
+  const defaultTextColor = currentScript?.getAttribute('data-text-color')
+
   const scriptSrc = currentScript?.src || ''
 
   const baseUrl =
@@ -52,6 +56,11 @@
 
     const hideSignature = element.getAttribute('data-hide-signature')
 
+    const backgroundColor =
+      element.getAttribute('data-background-color') || defaultBackgroundColor
+
+    const textColor = element.getAttribute('data-text-color') || defaultTextColor
+
     if (quoteId) {
       params.set('quoteId', quoteId)
 
@@ -72,6 +81,14 @@
 
     if (hideSignature === 'true') {
       params.set('hideSignature', 'true')
+    }
+
+    if (backgroundColor) {
+      params.set('backgroundColor', backgroundColor)
+    }
+
+    if (textColor) {
+      params.set('textColor', textColor)
     }
 
     if (widgetId) {
@@ -97,6 +114,7 @@
     iframe.setAttribute('allowtransparency', 'true')
 
     iframe.style.border = '0'
+    iframe.style.display = 'block'
 
     iframe.style.width = element.getAttribute('data-width') || '100%'
 

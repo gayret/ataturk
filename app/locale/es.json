@@ -28,6 +28,20 @@
       "closeCta": "Ocultar código de inserción",
       "embedTitle": "Pega este código en tu sitio",
       "embedDescription": "Solo necesitas agregar las etiquetas div y script a continuación en el lugar donde deseas que aparezca el componente.",
+      "languageLabel": "Idioma del widget",
+      "themeLabel": "Tema",
+      "backgroundColorLabel": "Color de fondo",
+      "textColorLabel": "Color del texto",
+      "languages": {
+        "tr": "Turco",
+        "en": "Inglés",
+        "de": "Alemán",
+        "es": "Español"
+      },
+      "themes": {
+        "light": "Claro",
+        "dark": "Oscuro"
+      },
       "copy": "Copiar código",
       "copied": "¡Copiado!"
     }
