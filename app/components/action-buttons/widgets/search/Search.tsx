@@ -2,19 +2,58 @@ import styles from './Search.module.css'
 import { useEventsData } from '@/app/helpers/data'
 import { formatDate } from '@/app/helpers/date'
 import { useState, useRef, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import iconSearch from '../../../../assets/icons/search.svg'
 import iconClose from '../../../../assets/icons/close.svg'
 import { useLanguageStore } from '@/app/stores/languageStore'
 
+type QuoteLike = string | { text?: string; '-text'?: string; source?: string }
+
+const normalizeQuotes = (quotes: unknown): QuoteLike[] => {
+  if (Array.isArray(quotes)) {
+    return quotes.filter(
+      (quote): quote is QuoteLike => typeof quote === 'string' || !!quote && typeof quote === 'object'
+    )
+  }
+
+  if (typeof quotes === 'string' || (!!quotes && typeof quotes === 'object')) {
+    return [quotes as QuoteLike]
+  }
+
+  return []
+}
+
+const getQuoteText = (quote: QuoteLike) => {
+  if (typeof quote === 'string') return quote
+  return quote.text ?? quote['-text'] ?? ''
+}
+
+const getQuoteSource = (quote: QuoteLike) => {
+  if (typeof quote === 'string') return ''
+  return quote.source ?? ''
+}
+
 export default function Search() {
   const events = useEventsData()
+  const searchParams = useSearchParams()
   const [searchText, setSearchText] = useState('')
   const [isVisibleResults, setIsVisibleResults] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  const { t } = useLanguageStore()
+  const { t, currentLanguageCode } = useLanguageStore()
+
+  const getResultHref = (id: number) => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.set('id', id.toString())
+
+    if (!params.get('language')) {
+      params.set('language', currentLanguageCode)
+    }
+
+    return `/?${params.toString()}`
+  }
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -83,35 +122,39 @@ export default function Search() {
 
               const inDate = formatDate(item.date).toLocaleLowerCase().includes(search)
 
-              const inQuotes =
-                item.quotes &&
-                item.quotes.some(
-                  (q) =>
-                    q?.text?.toLocaleLowerCase().includes(search) ||
-                    q?.source?.toLocaleLowerCase().includes(search)
-                )
+              const quotes = normalizeQuotes(item.quotes)
+              const inQuotes = quotes.some((quote) => {
+                const quoteText = getQuoteText(quote).toLocaleLowerCase()
+                const quoteSource = getQuoteSource(quote).toLocaleLowerCase()
+
+                return quoteText.includes(search) || quoteSource.includes(search)
+              })
 
               return inTitle || inDescription || inDate || inQuotes
             })
-            .map((item, index) => (
-              <Link
-                href={`/?id=${item.id}`}
-                onClick={() => {
-                  setIsVisibleResults(false)
-                  setIsSearchOpen(false)
-                  setSearchText('')
-                }}
-                className={styles.resultLink}
-                key={index}
-              >
-                <div className={styles.resultItem}>
-                  <h3>{item.title}</h3>
-                  <h3>{!item.title && item.quotes && item.quotes[0].text}</h3>
-                  <p>{formatDate(item.date)}</p>
-                  {item.description && <p>{item.description}</p>}
-                </div>
-              </Link>
-            ))}
+            .map((item, index) => {
+              const firstQuoteText = getQuoteText(normalizeQuotes(item.quotes)[0] ?? '')
+
+              return (
+                <Link
+                  href={getResultHref(item.id)}
+                  onClick={() => {
+                    setIsVisibleResults(false)
+                    setIsSearchOpen(false)
+                    setSearchText('')
+                  }}
+                  className={styles.resultLink}
+                  key={index}
+                >
+                  <div className={styles.resultItem}>
+                    <h3>{item.title}</h3>
+                    <h3>{!item.title && firstQuoteText}</h3>
+                    <p>{formatDate(item.date)}</p>
+                    {item.description && <p>{item.description}</p>}
+                  </div>
+                </Link>
+              )
+            })}
         </div>
       )}
     </div>

@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  z-index: 1200;
   /* padding: 0 1rem; */
 }
 
@@ -26,15 +27,16 @@
 
 .resultsContainer {
   position: absolute;
-  z-index: 1;
-  bottom: 130%;
-  right: 110%;
-  width: 300px;
+  z-index: 1201;
+  bottom: calc(100% + 0.5rem);
+  right: calc(100% + 0.75rem);
+  width: min(320px, 80vw);
   background-color: var(--background);
   border-radius: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  max-height: 400px;
-  overflow: auto;
+  max-height: min(50vh, calc(100dvh - 8rem));
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .resultsList {
