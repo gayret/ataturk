@@ -44,12 +44,13 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  z-index: 50;
+  z-index: 1100;
 }
 
 .modal {
   position: relative;
   width: min(640px, 100%);
+  max-height: calc(100vh - 2rem);
   background: #fff;
   border-radius: 20px;
   padding: 2rem 2rem 1.5rem;
@@ -57,6 +58,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .closeButton {
