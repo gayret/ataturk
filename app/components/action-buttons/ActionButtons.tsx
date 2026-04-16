@@ -1,3 +1,5 @@
+"use client";
+
 import styles from './ActionButtons.module.css'
 import { useSearchParams } from 'next/navigation'
 import StreetView from './widgets/street-view/StreetView'
@@ -26,7 +28,8 @@ export default function ActionButtons({
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const selectedItem =
-    events.find((item: ItemType) => item.id === Number(searchParams.get('id'))) || events[0]
+    events.find((item) => item.id === Number(searchParams.get("id"))) ||
+    events[0];
 
   if (showOnlyLanguageSelector) {
     return (
