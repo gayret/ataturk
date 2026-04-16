@@ -1,48 +1,52 @@
-'use client'
+"use client";
 
-import { usePathname, useSearchParams, useRouter } from 'next/navigation'
-import styles from './LanguageSelector.module.css'
-import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import languageIcon from '@/app/assets/icons/language.svg'
-import { useLanguageStore } from '@/app/stores/languageStore'
-import { availableLanguages } from '@/app/stores/languageStore'
-import chevronRight from '@/app/assets/icons/chevron-right.svg'
+import { useSearchParams } from "next/navigation";
+import styles from "./LanguageSelector.module.css";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import languageIcon from "@/app/assets/icons/language.svg";
+import { useLanguageStore } from "@/app/stores/languageStore";
+import { availableLanguages } from "@/app/stores/languageStore";
+import chevronRight from "@/app/assets/icons/chevron-right.svg";
 
 export default function LanguageSelector() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-  const { t, setLanguage, currentLanguageCode } = useLanguageStore()
+  const searchParams = useSearchParams();
+  const { t, setLanguage, currentLanguageCode } = useLanguageStore();
+  const languageRef = useRef<HTMLDivElement>(null);
 
   const handleSelect = (langCode: string) => {
-    setLanguage(langCode)
-    const params = new URLSearchParams(searchParams.toString())
-    params.set('language', langCode)
-    router.replace(`${pathname}?${params.toString()}`)
-    setOpen(false)
-  }
+    const url = new URL(window.location.href);
+    url.searchParams.set("language", langCode);
+    window.history.pushState({}, "", url.toString());
+    setLanguage(langCode);
+    setOpen(false);
+  };
 
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   // Eğer kullanıcı sayfanın dışına tıklarsa open'ı false yap
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      const languageElement = document.querySelector(`.${styles.language}`)
-      if (languageElement && !languageElement.contains(event.target as Node)) {
-        setOpen(false)
+      if (
+        languageRef.current &&
+        !languageRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className={styles.language}>
-      <button onClick={() => setOpen(!open)} title={t.ActionButtons.languageSelectorTitle}>
+    <div className={styles.language} ref={languageRef}>
+      <button
+        onClick={() => setOpen(!open)}
+        title={t.ActionButtons.languageSelectorTitle}
+      >
         <Image
           src={languageIcon}
           alt={t.ActionButtons.languageSelectorIconAlt}
@@ -60,7 +64,9 @@ export default function LanguageSelector() {
               title={language.name}
               aria-label={language.name}
               disabled={language.code === currentLanguageCode}
-              className={language.code === currentLanguageCode ? styles.active : ''}
+              className={
+                language.code === currentLanguageCode ? styles.active : ""
+              }
             >
               {language.code === currentLanguageCode && (
                 <Image
@@ -76,5 +82,5 @@ export default function LanguageSelector() {
         </div>
       )}
     </div>
-  )
+  );
 }
