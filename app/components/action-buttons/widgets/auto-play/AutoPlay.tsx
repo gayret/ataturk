@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import autoPlayIcon from '@/app/assets/icons/auto-play.svg'
 import Timer from '@/app/components/action-buttons/widgets/auto-play/widgets/timer/Timer'
 import { useEventsData } from '@/app/helpers/data'
@@ -12,7 +12,6 @@ import { useLanguageStore } from '@/app/stores/languageStore'
 
 export default function AutoPlay() {
   const searchParams = useSearchParams()
-  const router = useRouter()
   const events = useEventsData()
   const { t } = useLanguageStore()
 
@@ -47,7 +46,7 @@ export default function AutoPlay() {
           description: event.description,
           quotes: event.quotes,
           images: event.images,
-        }) * 1000
+        }) * 1000,
     )
   }, [events])
 
@@ -98,7 +97,7 @@ export default function AutoPlay() {
 
       return `${remainingSeconds}${t.ActionButtons.autoPlaySecondsText}`
     },
-    [t]
+    [t],
   )
 
   const getButtonTitle = useCallback(() => {
@@ -134,7 +133,7 @@ export default function AutoPlay() {
 
       const url = new URL(window.location.href)
       url.searchParams.delete('auto-play')
-      router.push(url.toString())
+      window.history.pushState({}, '', url.toString())
 
       if (document.fullscreenElement) {
         try {
@@ -148,7 +147,7 @@ export default function AutoPlay() {
         scrollToStart()
       }
     },
-    [router, scrollToStart]
+    [scrollToStart],
   )
 
   const startAutoPlay = useCallback(async () => {
@@ -156,7 +155,7 @@ export default function AutoPlay() {
 
     const url = new URL(window.location.href)
     url.searchParams.set('auto-play', 'true')
-    router.push(url.toString())
+    window.history.pushState({}, '', url.toString())
 
     if (!document.fullscreenElement) {
       try {
@@ -165,7 +164,7 @@ export default function AutoPlay() {
         console.log('Fullscreen error:', error)
       }
     }
-  }, [router])
+  }, [])
 
   const handleAutoPlayToggle = useCallback(async () => {
     if (isActive) {
@@ -176,13 +175,12 @@ export default function AutoPlay() {
   }, [isActive, stopAutoPlay, startAutoPlay])
 
   const goToNextEvent = useCallback(() => {
-    const effectiveCurrentId = currentId || '1'
+    const effectiveCurrentId = currentId || events[0]?.id?.toString() || '1'
     const effectiveCurrentIndex = events.findIndex((item) => item.id === Number(effectiveCurrentId))
     const nextIndex = (effectiveCurrentIndex + 1) % events.length
 
     if (nextIndex === 0) {
-      window.history.replaceState({}, '', '/')
-      router.push('/')
+      window.history.pushState({}, '', '/')
       setTimeout(() => scrollToStart(), 100)
       return
     }
@@ -190,8 +188,8 @@ export default function AutoPlay() {
     const nextEventId = events[nextIndex].id
     const url = new URL(window.location.href)
     url.searchParams.set('id', nextEventId.toString())
-    router.push(url.toString())
-  }, [currentId, events, router, scrollToStart])
+    window.history.pushState({}, '', url.toString())
+  }, [currentId, events, scrollToStart])
 
   const handleTimerComplete = useCallback(() => {
     goToNextEvent()
@@ -210,7 +208,7 @@ export default function AutoPlay() {
         setTotalRemainingMs(remainingMs + futureEventsMs)
       }
     },
-    [currentIndex, eventDurationsMs]
+    [currentIndex, eventDurationsMs],
   )
 
   const handleTimerClick = useCallback(
@@ -219,7 +217,7 @@ export default function AutoPlay() {
       e.preventDefault()
       handleAutoPlayToggle()
     },
-    [handleAutoPlayToggle]
+    [handleAutoPlayToggle],
   )
 
   const handleSpeedClick = useCallback((e: React.MouseEvent) => {
@@ -252,8 +250,9 @@ export default function AutoPlay() {
     }
 
     const handleClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement
-      const isAutoPlayButton = target.closest('[data-auto-play-button="true"]')
+      const target = event.target
+      const isAutoPlayButton =
+        target instanceof Element ? target.closest('[data-auto-play-button="true"]') : null
 
       if (isAutoPlayButton) {
         return
@@ -311,6 +310,7 @@ export default function AutoPlay() {
       <div className={styles.container}>
         {/* Main Timer Button */}
         <button
+          type='button'
           onClick={handleTimerClick}
           data-auto-play-button='true'
           className={`${styles.timerButton} ${isActive ? styles.active : ''}`}
@@ -355,6 +355,7 @@ export default function AutoPlay() {
         {/* Speed Button */}
         {isActive && (
           <button
+            type='button'
             onClick={handleSpeedClick}
             data-auto-play-button='true'
             title={`${t.ActionButtons.autoPlaySpeedTitle} ${speedMultiplier}x - ${t.ActionButtons.autoPlaySpeedChangeTitle}`}
