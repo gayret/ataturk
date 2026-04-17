@@ -1,55 +1,44 @@
 # Atatürk Kronolojisi
 
 ## Projenin hikayesi
+
 <img width="508" height="854" alt="image" src="https://github.com/user-attachments/assets/1671330e-3898-4836-8f7b-131b824fc6a1" />
-
-## Teknik açıklama
-
-Bu proje, [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) ile oluşturulmuş bir [Next.js](https://nextjs.org) uygulamasıdır.
-
-## Başlangıç
-
-Geliştirme sunucusunu başlatmak için aşağıdaki komutlardan birini kullanabilirsiniz:
-
-```bash
-npm run dev
-# veya
-yarn dev
-# veya
-pnpm dev
-# veya
-bun dev
-```
-
-Sunucu başlatıldıktan sonra [http://localhost:3000](http://localhost:3000) adresini tarayıcınızda açarak uygulamayı görüntüleyebilirsiniz.
-
-## Dosya Yapısı
-
-- `app/page.tsx`: Ana sayfa bileşeni. Sayfa üzerinde değişiklik yapmak için bu dosyayı düzenleyebilirsiniz.
-- `public/`: Statik dosyalar (görseller, favicon vb.).
-- `styles/`: Proje genelindeki stil dosyaları.
-- `components/`: Tekrar kullanılabilir React bileşenleri.
-
-## Özellikler
-
-- **Next.js 14+** ile modern web uygulaması geliştirme
-- Otomatik sayfa güncelleme (Hot Reload)
-- [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) ile optimize edilmiş font kullanımı ([Geist](https://vercel.com/font))
-- Kolay dağıtım ve ölçeklenebilirlik
 
 ## Nasıl Katkı Sağlanır?
 
-1. Bu repoyu forklayın.
-2. Yeni bir branch oluşturun (`git checkout -b ozellik/yeniozellik`).
-3. Değişikliklerinizi yapın ve commit edin (`git commit -m 'Yeni özellik eklendi'`).
-4. Branch’i pushlayın (`git push origin ozellik/yeniozellik`).
-5. Bir Pull Request açın.
+### Geliştiriciler için
 
-## Daha Fazla Bilgi
+1. Yapılacak işler için [Issues](https://github.com/gayret/ataturk/issues) bölümüne göz atın veya yeni bir issue oluşturun.
+2. Bu repoyu forklayın.
+3. Yeni bir branch oluşturun (`git checkout -b ozellik/yeni-ozellik`).
+4. Değişikliklerinizi yapın ve commit edin (`git commit -m 'Yeni özellik eklendi'`).
+5. Branch’i pushlayın (`git push origin ozellik/yeni-ozellik`).
+6. Bir Pull Request açın.
 
-- [Next.js Dokümantasyonu](https://nextjs.org/docs) — Next.js özellikleri ve API’leri hakkında bilgi edinin.
-- [Next.js Öğrenme](https://nextjs.org/learn) — Etkileşimli Next.js eğitimleri.
-- [Next.js GitHub](https://github.com/vercel/next.js) — Geri bildirim ve katkılarınızı paylaşabilirsiniz.
+### Gönüllü Çevirmenler için
+
+Bu projede kabul ettiğimiz dil dosya formatı, ana dizindeki `data/events` klasörü altındaki dil klasörleri ve bu klasörlerin içindeki `.md` dosyalarıdır.
+Gönüllü çevirmenlerden, çeviri katkılarını bu formatta hazırlamalarını bekliyoruz.
+
+1. Çevirmek istediğiniz dilin kısa koduyla (Örneğin `tr`, `en`, `de`, `es`...) bir klasör oluşturun.
+2. Dosyaları `data/events/{dil}/{id}.md` formatında hazırlayın.
+3. Dosya başındaki frontmatter yapısını koruyun.
+4. Çevrilebilir alanları çevirin: `title`, `images` içindeki `alt` metinleri ve varsa frontmatter sonrası gövde metni.
+5. Yapısal alanları değiştirmeyin: `id`, `date`, `category`, `location`, `images.url`, `source`, `quotes`, `sounds`.
+6. Görsel yollarını, koordinatları ve kaynak bağlantılarını olduğu gibi bırakın.
+7. Çeviriyi tamamladıktan sonra değişiklikleri commit edip Pull Request açın.
+8. Yedinci adım sizin için karmaşık görünüyorsa [buraya tıklayarak gönüllü bir yazılımcıdan yardım talep edebilirsiniz.](https://github.com/gayret/ataturk/issues/new?title=Haz%C4%B1rlad%C4%B1%C4%9F%C4%B1m%20%C3%A7eviriyi%20aktif%20etmek%20istiyorum&labels=Verilerle%20ilgili&body=Bir%20yaz%C4%B1l%C4%B1mc%C4%B1n%C4%B1n%20yard%C4%B1m%C4%B1na%20ihtiyac%C4%B1m%20var)
+
+Örnek çeviri dosyası yapısı:
+
+```text
+data/events/tr/1.md
+data/events/en/1.md
+data/events/de/1.md
+data/events/es/1.md
+```
+
+Önemli not: Mevcut olay numaralandırmasını (`id`) ve dosya adlarını koruyarak ilerleyin. Böylece diller arası eşleşme ve bakım süreci sorunsuz kalır.
 
 ## Lisans
 
