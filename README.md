@@ -42,10 +42,10 @@ data/events/es/1.md
 
 ### Gönüllü Tarihçiler için
 
-Tarihsel içeriklerin doğruluğu ve zenginleştirilmesi konusunda katkı sağlamak isteyenler tarihçiler aşağıdaki yönergeleri takip edebilirler.
+Tarihsel içeriklerin doğruluğu ve zenginleştirilmesi konusunda katkı sağlamak isteyen tarihçiler aşağıdaki yönergeleri takip edebilirler.
 
 1. Yapılacak işler için [Issues](https://github.com/gayret/ataturk/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Verilerle%20ilgili%22) bölümüne göz atın veya yeni bir issue oluşturun.
-2. Tespit ettiğiniz eksik veya hatalı bilgiler için Issues bölümünde [kayıt oluşturun](https://github.com/gayret/ataturk/issues/new?title=Tarih%20bilgim%20ile%20katk%C4%B1%20sa%C4%9Flamak%20istiyorum&labels=Verilerle+ilgili&body=Yard%C4%B1mc%C4%B1%20olabilece%C4%9Fim%20hususlar%20%C5%9Funlar%0A%0A1.).
+2. Tespit ettiğiniz eksik veya hatalı bilgiler için Issues bölümünde [kayıt oluşturun](https://github.com/gayret/ataturk/issues/new?title=Tarihi...&labels=Verilerle+ilgili&body=Yard%C4%B1mc%C4%B1%20olmak%20istedi%C4%9Fim%20hususlar%20%C5%9Funlar%0A%0A1.).
 3. Tarihi kaynaklar ve referans belgelerle desteklenmiş katkılarınızı ilgili Issue altında paylaşın.
 
 ## Lisans
