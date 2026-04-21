@@ -283,7 +283,7 @@
   },
   {
     "id": 14,
-    "title": "La publicación en Salónica del libro titulado “Instrucción de Combate de la Unidad”, traducido del general Litzmann y relacionado con la formación militar.",
+    "title": "La publicación en Tesalónica del libro titulado “Instrucción de Combate de la Unidad”, traducido del general Litzmann y relacionado con la formación militar.",
     "date": "1908T00:00:00Z",
     "category": "education",
     "location": {
@@ -596,7 +596,7 @@
     "images": [
       {
         "url": "/images/1910-1940/ataturk-1911.jpg",
-        "alt": "",
+        "alt": "Mustafa Kemal, 1911",
         "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
       }
     ],
@@ -1066,7 +1066,7 @@
   },
   {
     "id": 57,
-    "title": "El inicio del desembarco de las fuerzas británicas en Çanakkale, junto con tropas francesas y el Cuerpo ANZAC, en las costas de Arıburnu, Seddülbahir y Kumkale; y la obligación de estas fuerzas de retirarse tras el contraataque de la 19.ª División bajo el mando de Mustafa Kemal, que había partido desde Bigali.",
+    "title": "El inicio del desembarco de las fuerzas británicas en Çanakkale, junto con tropas francesas y el Cuerpo Anzac, en las costas de Arıburnu, Seddülbahir y Kumkale; y la obligación de estas fuerzas de retirarse tras el contraataque de la 19.ª División bajo el mando de Mustafa Kemal, que había partido desde Bigali.",
     "date": "1915-04-25T00:00:00Z",
     "category": "military",
     "location": {
@@ -2127,7 +2127,7 @@
   },
   {
     "id": 120,
-    "title": "Su llegada a Erzurum fue recibida con muestras de afecto por parte del pueblo y los soldados..",
+    "title": "Su llegada a Erzurum y su recepción con demostraciones de afecto por parte del pueblo y los soldados.",
     "date": "1919-07-03T00:00:00Z",
     "category": "political",
     "location": {
@@ -3224,7 +3224,7 @@
   },
   {
     "id": 184,
-    "title": "Hilafet ve Saltanat'ın birbirinden ayrılarak Saltanat'ın kaldırılması kararı.",
+    "title": "La decisión de separar el Califato del Sultanato y la abolición del Sultanato.",
     "date": "1922-11-01T00:00:00Z",
     "category": "reform",
     "location": {
@@ -3663,10 +3663,12 @@
       "lon": 32.8722001
     },
     "images": null,
-    "quotes": {
-      "-text": "En ninguna otra iniciativa he sentido la felicidad que experimento en la apertura de esta gran institución, que será la fuerza y el apoyo de la República; me complace mostrarlo y expresarlo.",
-      "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
-    },
+    "quotes": [
+      {
+        "text": "En ninguna otra iniciativa he sentido la felicidad que experimento en la apertura de esta gran institución, que será la fuerza y el apoyo de la República; me complace mostrarlo y expresarlo.",
+        "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi"
+      }
+    ],
     "sounds": null,
     "source": "https://ata.msb.gov.tr/Sayfa/SayfaGoster/ataturk-kronolojisi",
     "description": ""
@@ -4173,7 +4175,7 @@
   },
   {
     "id": 240,
-    "title": "La fundación de la Sociedad para el Examen de la Lengua Turca (Türk Dili Tetkik Cemiyeti) por directiva de Mustafa Kemal. (Más tarde tomó el nombre de 'Sociedad de la Lengua Turca' [Türk Dil Kurumu])",
+    "title": "La fundación de la Sociedad para el Examen de la Lengua Turca (Türk Dili Tetkik Cemiyeti) por directiva de Mustafa Kemal. (Más tarde tomó el nombre de 'Sociedad de la Lengua Turca' (Türk Dil Kurumu))",
     "date": "1932-07-12T00:00:00Z",
     "category": "education",
     "location": {
@@ -4238,7 +4240,7 @@
   },
   {
     "id": 244,
-    "title": "El famoso discurso de Mustafa Kemal a la nación turca con motivo del 10.º Aniversario de la República:",
+    "title": "El Discurso del Décimo Año (Onuncu Yıl Nutku) en la voz de Atatürk:",
     "date": "1933-10-29T00:00:00Z",
     "category": "political",
     "location": {
