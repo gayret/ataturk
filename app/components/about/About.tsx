@@ -4,6 +4,8 @@ import styles from './About.module.css'
 import Contributors from './widgets/contributors/Contributors'
 import ActionButtons from '../action-buttons/ActionButtons'
 import Translators from './widgets/translators/Translators'
+import SocialMediaManagers from './widgets/social-media-managers/SocialMediaManagers'
+import SocialMediaLinks from './widgets/social-media-links/SocialMediaLinks'
 import QuoteWidgetShowcase from './widgets/quote-widget/QuoteWidgetShowcase'
 
 export default function About() {
@@ -20,6 +22,10 @@ export default function About() {
           <Contributors />
 
           <Translators />
+
+          <SocialMediaLinks />
+
+          <SocialMediaManagers />
 
           <QuoteWidgetShowcase />
 

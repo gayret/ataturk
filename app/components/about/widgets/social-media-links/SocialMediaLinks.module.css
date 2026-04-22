@@ -1,0 +1,31 @@
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.list {
+  all: unset;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.list li a {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #1f2937;
+  transition:
+    transform 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+.list li a:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
