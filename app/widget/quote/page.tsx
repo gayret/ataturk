@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import type { CSSProperties } from 'react'
 import styles from './QuoteWidget.module.css'
-import ataturkSketch from '@/app/assets/images/widget.png'
+import ataturkSketch from '@/app/assets/images/logo4-aralik-1921.jpeg'
 import { mapToPublicQuote, resolveQuotes, Language } from '@/app/helpers/quotes'
 import WidgetFrameSync from './WidgetFrameSync'
 import { ataturk } from '@/app/fonts'
@@ -24,7 +24,10 @@ const THEME_PRESETS = {
 
 const HEX_COLOR_PATTERN = /^#[0-9A-F]{6}$/i
 
-const UI_COPY: Record<Language, { cta: string; widgetLabel: string; signature: string; empty: string }> = {
+const UI_COPY: Record<
+  Language,
+  { cta: string; widgetLabel: string; signature: string; empty: string }
+> = {
   tr: {
     cta: 'Kronolojide oku',
     widgetLabel: 'Atatürk Sözü',
@@ -51,8 +54,8 @@ const UI_COPY: Record<Language, { cta: string; widgetLabel: string; signature: s
   },
 }
 
-const getSingleParam = (val: string | string[] | undefined): string | undefined => 
-  Array.isArray(val) ? val[0] : val;
+const getSingleParam = (val: string | string[] | undefined): string | undefined =>
+  Array.isArray(val) ? val[0] : val
 
 const normalizeHexColor = (value?: string) => {
   if (!value) return null
@@ -75,15 +78,15 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
 
   const hideImage = getSingleParam(params.hideImage) === 'true'
   const hideSignature = getSingleParam(params.hideSignature) === 'true'
-  
+
   const widgetId = getSingleParam(params.widgetId)
   const quoteId = getSingleParam(params.quoteId)
-  
+
   const eventIdParams = getSingleParam(params.eventId)
   const eventId = eventIdParams ? Number(eventIdParams) : null
-  
+
   const date = getSingleParam(params.date)
-  
+
   // Default to true if not explicitly passed as 'false'
   const random = getSingleParam(params.random) !== 'false'
 
@@ -94,7 +97,7 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
     random,
     count: 1,
   })
-  
+
   const publicQuote = selectedQuote ? mapToPublicQuote(selectedQuote, language) : null
   const figureImage = selectedQuote?.image ?? null
   const pageStyle = <style>{`html, body { background: ${backgroundColor}; }`}</style>
@@ -124,9 +127,9 @@ export default async function QuoteWidgetPage({ searchParams }: PageProps) {
                 <Image
                   src={figureImage.url}
                   alt={figureImage.alt}
-                  width={120}
-                  height={120}
-                  sizes='120px'
+                  width={100}
+                  height={100}
+                  sizes='100px'
                   className={styles.figureImage}
                 />
               ) : (

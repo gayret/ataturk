@@ -11,9 +11,9 @@
 }
 
 .logo {
-  border-radius: 1rem;
-  width: 50px;
-  height: 50px;
+  border-radius: 0.5rem;
+  width: 65px;
+  height: 61px;
 }
 
 .title {
@@ -22,6 +22,7 @@
   text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.9);
   animation: zoomOut 1s ease-in-out;
   font-weight: 400;
+  margin-top: 0;
 }
 
 @media (max-width: 600px) {

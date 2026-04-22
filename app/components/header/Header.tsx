@@ -1,9 +1,9 @@
-"use client"
+'use client'
 import styles from './Header.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
-import HeaderPicture from '@/app/assets/images/header.jpg'
-import { useLanguageStore } from '@/app/stores/languageStore';
+import HeaderPicture from '@/app/assets/images/logo4-aralik-1921.jpeg'
+import { useLanguageStore } from '@/app/stores/languageStore'
 
 export default function Header() {
   const { t, currentLanguageCode } = useLanguageStore()

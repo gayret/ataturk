@@ -3023,6 +3023,27 @@
     "description": ""
   },
   {
+    "id": 171.1,
+    "title": "Ankara",
+    "date": "1921-12-04T00:00:00Z",
+    "category": "military",
+    "location": {
+      "lat": 39.9420298,
+      "lon": 32.8509197
+    },
+    "images": [
+      {
+        "url": "/images/1910-1940/ataturk-4-aralik-1921.png",
+        "alt": "Mariscal Gazi Mustafa Kemal Bajá, Ankara, 4 de diciembre de 1921",
+        "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf",
+    "description": ""
+  },
+  {
     "id": 172,
     "title": "La creación del 'Consejo de Guerra' (Harp Encümeni) bajo la presidencia de Mustafa Kemal, compuesto por el Vicepresidente de la Asamblea, los Ministros de Finanzas y Defensa Nacional, el Jefe del Estado Mayor y los presidentes de las comisiones de Defensa Nacional y Finanzas.",
     "date": "1922-01-14T00:00:00Z",

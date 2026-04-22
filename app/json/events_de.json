@@ -3008,6 +3008,27 @@
     "description": ""
   },
   {
+    "id": 171.1,
+    "title": "Ankara",
+    "date": "1921-12-04T00:00:00Z",
+    "category": "military",
+    "location": {
+      "lat": 39.9420298,
+      "lon": 32.8509197
+    },
+    "images": [
+      {
+        "url": "/images/1910-1940/ataturk-4-aralik-1921.png",
+        "alt": "Marschall Gazi Mustafa Kemal Pascha, Ankara, 4. Dezember 1921",
+        "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf"
+      }
+    ],
+    "quotes": null,
+    "sounds": null,
+    "source": "https://ata.msb.gov.tr/Upload/Docs/fotograflarla%20ataturk%20albumu%20TR-EN.pdf",
+    "description": ""
+  },
+  {
     "id": 172,
     "title": "Einrichtung eines „Kriegsrates“ unter dem Vorsitz von Mustafa Kemal, bestehend aus dem Vizepräsidenten der Nationalversammlung, den Ministern für Finanzen und Verteidigung, dem Chef des Generalstabs und den Vorsitzenden des Verteidigungs- und Finanzrates.",
     "date": "1922-01-14T00:00:00Z",
