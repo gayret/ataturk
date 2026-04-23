@@ -60,6 +60,7 @@ export default function Map({ location }: MapProps) {
   const searchParams = useSearchParams()
   const events = useEventsData()
   const [filteredEvents, setFilteredEvents] = useState<typeof events>([])
+  const [isOnline, setIsOnline] = useState(true)
 
   const displayedLocations = useMemo(() => {
     return searchParams.get('displayed-locations')?.split(',') || []
@@ -70,6 +71,26 @@ export default function Map({ location }: MapProps) {
   }, [searchParams])
 
   const showAllLocations = displayedLocations.length > 0
+
+  useEffect(() => {
+    setIsOnline(window.navigator.onLine)
+
+    const handleOnline = () => {
+      setIsOnline(true)
+    }
+
+    const handleOffline = () => {
+      setIsOnline(false)
+    }
+
+    window.addEventListener('online', handleOnline)
+    window.addEventListener('offline', handleOffline)
+
+    return () => {
+      window.removeEventListener('online', handleOnline)
+      window.removeEventListener('offline', handleOffline)
+    }
+  }, [])
 
   const handleMarkerClick = useCallback((id: number) => {
     const url = new URL(window.location.href)
@@ -128,6 +149,19 @@ export default function Map({ location }: MapProps) {
   // Events yüklenene kadar veya filtrelenmiş eventler yoksa null döndür
   if (!events || filteredEvents.length === 0) {
     return null
+  }
+
+  if (!isOnline) {
+    return (
+      <div className={styles.fallback}>
+        <div className={styles.fallbackCard}>
+          <strong>Harita baglantisiz modda kullanilamiyor.</strong>
+          <p>
+            Zaman cizelgesi ve olay icerigi cihaza kaydedildigi icin gezinmeye devam edebilirsiniz.
+          </p>
+        </div>
+      </div>
+    )
   }
 
   // Sabit zoom level kullan

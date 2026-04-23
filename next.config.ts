@@ -31,6 +31,8 @@ const createContentSecurityPolicy = (options?: SecurityHeaderOptions) => {
     "img-src 'self' data: https:;",
     "font-src 'self' https:;",
     "connect-src 'self' https:;",
+    "manifest-src 'self';",
+    "worker-src 'self' blob:;",
     "frame-src 'self' https://www.linkedin.com https://www.youtube.com https://platform.twitter.com;",
   ]
 
@@ -38,7 +40,10 @@ const createContentSecurityPolicy = (options?: SecurityHeaderOptions) => {
     directives.push("frame-ancestors 'self';")
   }
 
-  return directives.join(' ').replace(/\s{2,}/g, ' ').trim()
+  return directives
+    .join(' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
 }
 
 const createSecurityHeaders = (options?: SecurityHeaderOptions) => {
@@ -81,6 +86,15 @@ const nextConfig: NextConfig = {
   trailingSlash: false, // SEO-friendly URLs
   async headers() {
     return [
+      {
+        source: '/sw.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
       {
         source: '/widget/:path*',
         headers: embeddableSecurityHeaders,

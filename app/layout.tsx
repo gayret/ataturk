@@ -3,6 +3,7 @@ import './globals.css'
 import { Barlow } from 'next/font/google'
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
+import PWARegister from '@/app/components/pwa/PWARegister'
 
 const barlow = Barlow({
   subsets: ['latin'],
@@ -13,9 +14,16 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
   title: 'Atatürk Kronolojisi',
+  applicationName: 'Atatürk Kronolojisi',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Atatürk Kronolojisi',
+  },
   description:
     "Mustafa Kemal Atatürk'ün hayatını, doğumundan vefatına kadar tüm önemli olayları interaktif bir harita üzerinde kronolojik olarak keşfedin.",
   metadataBase: new URL('https://ataturk-kronolojisi.org'),
+  manifest: '/manifest.webmanifest',
   keywords: [
     'Atatürk',
     'Mustafa Kemal',
@@ -54,8 +62,33 @@ export const metadata: Metadata = {
     images: ['https://ataturk-kronolojisi.org/images/1910-1940/gelibolu-1915.jpg'],
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      {
+        url: '/icon',
+        type: 'image/png',
+      },
+      {
+        url: '/pwa-icons/192',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        url: '/pwa-icons/512',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
+    apple: [
+      {
+        url: '/apple-icon',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+    shortcut: ['/icon'],
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
   },
 }
 
@@ -97,6 +130,7 @@ export default async function RootLayout({
       </head>
       <body className={barlow.className}>
         <Suspense>{children}</Suspense>
+        <PWARegister />
         <Analytics />
       </body>
     </html>

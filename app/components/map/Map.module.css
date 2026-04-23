@@ -4,3 +4,37 @@
   z-index: -1;
   position: fixed;
 }
+
+.fallback {
+  align-items: flex-start;
+  background:
+    linear-gradient(180deg, rgba(240, 240, 240, 0.94), rgba(255, 255, 255, 0.98)),
+    radial-gradient(circle at top, rgba(186, 28, 28, 0.16), transparent 42%);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 6rem 1.5rem 1.5rem;
+  position: fixed;
+  z-index: -1;
+}
+
+.fallbackCard {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(186, 28, 28, 0.18);
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.08);
+  color: #2a2a2a;
+  max-width: 32rem;
+  padding: 1rem 1.1rem;
+}
+
+.fallbackCard strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.fallbackCard p {
+  line-height: 1.6;
+}
