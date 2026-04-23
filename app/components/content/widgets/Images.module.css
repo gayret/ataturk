@@ -26,7 +26,7 @@
 .thumb {
   object-fit: contain;
   width: 200px;
-  height: 200px;
+  height: auto;
   border-radius: 0.5rem;
 }
 
@@ -127,7 +127,7 @@
   .thumb {
     object-fit: contain;
     width: 80px;
-    height: 80px;
+    height: auto;
     border-radius: 0.5rem;
   }
 }
