@@ -45,3 +45,12 @@ export function convertDateFormat(input: string): string {
 
   return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')} ${timePart}`
 }
+
+const HATAY_INDEPENDENT_START_TS = new Date('1921-10-20T00:00:00Z').getTime()
+const HATAY_INDEPENDENT_END_TS = new Date('1939-07-23T23:59:59Z').getTime()
+
+export function isHatayOutsideTurkeyPeriod(timestamp: number): boolean {
+  if (!Number.isFinite(timestamp)) return false
+
+  return timestamp >= HATAY_INDEPENDENT_START_TS && timestamp <= HATAY_INDEPENDENT_END_TS
+}
