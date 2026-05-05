@@ -88,6 +88,10 @@ export default function HomeClient({ events }: HomeClientProps) {
       bufferRef.current = (bufferRef.current + event.key).slice(-SECRET_CODE.length)
       if (bufferRef.current === SECRET_CODE) {
         removeElements()
+        document.querySelectorAll('path.leaflet-interactive').forEach((el) => {
+          ;(el as HTMLElement).style.stroke = 'red'
+          ;(el as HTMLElement).style.strokeWidth = '2px'
+        })
         bufferRef.current = ''
       }
     }
