@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import { useSearchParams } from 'next/navigation'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import Header from '@/app/components/header/Header'
 import Timeline from '@/app/components/timeline/Timeline'
 import About from '@/app/components/about/About'
@@ -40,10 +40,61 @@ interface HomeClientProps {
   events: Event[]
 }
 
+const SECRET_CODE = 'sadeceharita'
+
+function removeElements() {
+  const selectorsByTag = ['header']
+  const classKeywords = [
+    'Content',
+    'ActionButtons',
+    'Timeline',
+    'GitHubStar',
+    'SupportMe',
+    'leaflet-control-attribution',
+  ]
+
+  selectorsByTag.forEach((tag) => {
+    document.querySelectorAll(tag).forEach((el) => el.remove())
+  })
+
+  classKeywords.forEach((keyword) => {
+    document.querySelectorAll('*').forEach((el) => {
+      if (el.classList && el.classList.length > 0) {
+        const matches = Array.from(el.classList).some((className) =>
+          className.toLowerCase().includes(keyword.toLowerCase()),
+        )
+        if (matches && document.body.contains(el)) {
+          el.remove()
+        }
+      }
+    })
+  })
+}
+
 export default function HomeClient({ events }: HomeClientProps) {
   const searchParams = useSearchParams()
+  const bufferRef = useRef('')
 
   const currentId = searchParams?.get('id')
+
+  useEffect(() => {
+    if (currentId === 'about') return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)
+        return
+
+      bufferRef.current = (bufferRef.current + event.key).slice(-SECRET_CODE.length)
+      if (bufferRef.current === SECRET_CODE) {
+        removeElements()
+        bufferRef.current = ''
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [currentId])
 
   const MapWithNoSSR = useMemo(
     () =>
